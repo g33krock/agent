@@ -2,15 +2,20 @@ const Pool = require("pg").Pool;
 
 const pool = new Pool({
   user: "postgres",
-  password: "Take1Twice",
-  host: "localhost",
+  password: "El3ph!n08o0b",
+  host: "db.jwvonytjrpiueyuwsjpa.supabase.co",
   port: 5432,
-  database: "agentsite",
+  database: "postgres",
+  // user: "postgres",
+  // password: "Take1Twice",
+  // host: "localhost",
+  // port: 5432,
+  // database: "agentsite",
 });
 
 const getAgents = (request, response) => {
   pool.query(
-    "SELECT * FROM agent ORDER BY agent_id ASC",
+    "SELECT * FROM agent ORDER BY id ASC",
     (error, results) => {
       if (error) {
         throw error;
@@ -25,7 +30,7 @@ const getAgentById = (request, response) => {
 
   console.log("Successful connection... you are the best!");
   pool.query(
-    "SELECT * FROM agent WHERE agent_id = $1",
+    "SELECT * FROM agent WHERE id = $1",
     [id],
     (error, results) => {
       if (error) {
@@ -110,7 +115,7 @@ function updateAgent(request, response) {
   } = request.body;
 
   pool.query(
-    "UPDATE agent SET firstname = $1, lastname = $2, logo = $3, facebook = $4, instagram = $5, twitter = $6, email = $7, phone = $8, address1 = $9, state = $10, city = $11, zip = $12, message1 = $13, message2 = $14, testimonial1 = $15, testimonial2 = $16, testimonial3 = $17 WHERE agent_id = $18",
+    "UPDATE agent SET firstname = $1, lastname = $2, logo = $3, facebook = $4, instagram = $5, twitter = $6, email = $7, phone = $8, address1 = $9, state = $10, city = $11, zip = $12, message1 = $13, message2 = $14, testimonial1 = $15, testimonial2 = $16, testimonial3 = $17 WHERE id = $18",
     [
       firstName,
       lastName,
@@ -144,7 +149,7 @@ const deleteAgent = (request, response) => {
   const id = parseInt(request.params.id);
 
   pool.query(
-    "DELETE FROM agent WHERE agent_id = $1",
+    "DELETE FROM agent WHERE id = $1",
     [id],
     (error, results) => {
       if (error) {
@@ -155,10 +160,38 @@ const deleteAgent = (request, response) => {
   );
 };
 
+const getVideos = (request, response) => {
+  pool.query(
+    "SELECT * FROM video ORDER BY id ASC",
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    }
+  );
+};
+
+const getAddAgents = (request, response) => {
+  const agency = parseInt(request.params.agency);
+  pool.query(
+    "SELECT * FROM addagent WHERE agency = $1",
+    [agency],
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    }
+  );
+};
+
 module.exports = {
   getAgents,
   getAgentById,
   createAgent,
   updateAgent,
   deleteAgent,
+  getVideos,
+  getAddAgents,
 };

@@ -36,6 +36,12 @@ app.put('/agent/:id', db.updateAgent)
 //delete an agent
 app.delete('/agent/:id', db.deleteAgent)
 
+//get all videos
+app.get('/videos', db.getVideos)
+
+//get all addagents
+app.get('/addagents/:agency', db.getAddAgents)
+
 app.listen(5000, () => {
     console.log("server has started on port 5000");
 });
