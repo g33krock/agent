@@ -1,0 +1,667 @@
+.App {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.295);
+  font-family: 'montserrat';
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@font-face {
+  font-family: montserrat;
+  src: url(https://qyctrtcwtwasdktftmuy.supabase.in/storage/v1/object/public/font/Montserrat-Regular.ttf)
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.header {
+  z-index: 1 !important;
+}
+
+#basic-nav-dropdown {
+  color: rgba(4, 0, 255, 0.5)
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sideMenu {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.sidebutton {
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left: -20px;
+  padding-right: -20px;
+}
+
+.bottom {
+  height: 200px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#bottom-left {
+  background-image: radial-gradient(rgb(255, 255, 74),rgb(255, 255, 0), rgb(150, 150, 1));
+  position: relative;
+  padding: 20px;
+  border-radius: 1%;
+  border: 2px solid black;
+}
+
+#bottom-center {
+  background-image: radial-gradient(rgb(255, 255, 255),rgb(187, 187, 187), rgb(143, 143, 143));
+  position: relative;
+  padding: 20px;
+  border-radius: 1%;
+  border: 2px solid black;
+}
+
+#bottom-right {
+  background-color: black;
+  color: white;
+  position: relative;
+  padding: 20px;
+  margin-right: 0px;
+  margin-left: 0px
+  /* border-radius: 1%;
+  border: 2px solid grey; */
+}
+
+#button {
+  background-color: #ffcc00;
+  color: black;
+}
+
+.head {
+  background-image:linear-gradient(to right, black, rgb(78, 78, 78), black);
+  padding: left 20px;
+}
+
+.foot {
+  background-image:linear-gradient(to right, black, rgb(78, 78, 78), black);
+  font-family: 'Montserrat';
+}
+
+.fade-in-text {
+  display: inline-block;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  animation: fadeIn linear 2s;
+  -webkit-animation: fadeIn linear 2s;
+  -moz-animation: fadeIn linear 2s;
+  -o-animation: fadeIn linear 2s;
+  -ms-animation: fadeIn linear 2s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-30px);
+		-ms-transform:     translateY(-30px);
+		transform:         translateY(-30px)
+	}
+	60% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform:     translateY(-15px);
+		transform:         translateY(-15px)
+	}
+}
+.bouncey {  
+  position: absolute;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  color: white;
+}
+.bouncey:hover {
+  cursor: pointer;
+  animation-name: bounce;
+  -moz-animation-name: bounce;
+}
+
+.lightTxt,
+.text-muted.small {
+    color: rgb(136, 136, 136);
+    padding: 0px 0;
+    margin-top: 0px;
+    font-size: .813em;
+    line-height: inherit;
+}
+
+.form-group input {
+    background-color: #f9f9f9;
+    padding: 10px 10px 0px 10px;
+    border: solid 1px grey !important;
+    border-radius: 3px;
+    width: calc(50% - 8px);
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    text-align: left;
+}
+
+.form-group input[type="text"] {
+    width: calc(50% - 8px);
+}
+
+.form-group input[type="radio"] {
+    width: auto;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.form-group ul,
+.form-group ul li {
+    list-style-type: none;
+    padding: 2px 0px 2px 0px;
+}
+
+.form-group ul li .control-label {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.maincalcualtion {
+    border: solid 4px #ffcc00;
+    background-color: white;
+    box-shadow: 5px 5px 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    transform: scale(1.08);
+}
+
+.maincalcualtion input,
+#AnnualRetirementIncome {
+    font-size: 1.55em;
+    font-weight: 600;
+    color: black;
+    /* background-color: rgba(255, 214, 51, .7); */
+    text-align: center;
+    text-shadow: 0.1em 0.1em 0.14em #000000;
+    margin-bottom: 10px
+}
+
+.maincalcualtion input,
+#RothMonthly {
+    font-size: 1.55em;
+    font-weight: 600;
+    color: black;
+    /* background-color: rgba(255, 214, 51, .7); */
+    text-align: center;
+    text-shadow: 0.1em 0.1em 0.14em #000000;
+    margin-bottom: 10px
+}
+
+.ci-hero-item-hidden {
+  opacity: 0 !important;
+  z-index: -1 !important;
+}
+
+.ci-hero-slider-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 0;
+  transition: 1s;
+}
+
+.ci-rpw-desktop .ci-result-row, .ci-rpw-desktop .ci-rpw-row {
+  height: auto !important;
+  background-color: #ededed;
+  margin: 0px;
+  display: flex;
+}
+  
+.ci-rpw-desktop .ci-result-row div, .ci-rpw-desktop .ci-rpw-row div {
+  margin: 0px !important;
+}
+  
+.ci-rpw-desktop .ci-result-column-header {
+  font-size: 1em !important;
+  width: 50% !important;
+  font-weight: 700;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+}
+  
+.ci-rpw-desktop .ci-result-column-header.mpi {
+  background-color: #ffcc00;
+  font-size: 1.5em !important;
+}
+  
+.ci-rpw-desktop .ci-result-column-header.roth {
+  background-color: #000;
+  color: #fff;
+  font-size: 1.5em !important;
+}
+  
+.ci-rpw-desktop .ci-result-row-header {
+  height: 40px !important;
+  width: 100% !important;
+  background-color: #ededed !important;
+  font-weight: 600;
+  text-align: center;
+  line-height: 40px;
+  border-top: solid 1px #000;
+  border-bottom: solid 1px #000;
+}
+  
+.ci-rpw-desktop .ci-result-row-value {
+  height: 65px !important;
+  width: 50% !important;
+  font-size: 1.6em;
+  line-height: 65px;
+  font-weight: normal !important;
+  padding: 0px !important;
+  text-align: center;
+}
+  
+.ci-rpw-desktop .ci-result-row-value.mpi {
+  background-color: #ffcc0066 !important;
+}
+
+.ci-rpw-desktop .ci-result-row-value.roth {
+  background-color: #00000066 !important;
+}
+
+.ci-rpw-desktop .ci-result-row-value.text {
+  line-height: 1.2em !important;
+  font-size: 1.3em;
+  padding: 10px 20px !important;
+}
+
+.ci-rpw-desktop .roth-000000 {
+  background-color: #000000 !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: 2em !important;
+  border: solid 1px #000;
+}
+
+.ci-rpw-desktop .mpi-ffcc00 {
+  background-color: #ffcc00 !important;
+  font-weight: 700 !important;
+  font-size: 2em !important;
+  border: solid 1px #000;
+}
+
+.ci-rpw-desktop .ci-result-row-value.percentage {
+  background-color: transparent !important;
+  padding-top: 5px !important;
+  color: #fff;
+  font-size: 1em;
+  text-align: center;
+  font-weight: 900 !important;
+  margin: 0px !important;
+  width: 100% !important;
+}
+
+.ci-rpw-desktop .ci-center {
+  text-align: center;
+}
+
+.ci-rpw-desktop .ci-rpw-btn {
+  color: #000;
+  background-color: #ffcc00;
+  padding: 20px 45px;
+  border-radius: 0.3em;
+  margin: 20px auto;
+  font-weight: 500;
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.ci-rpw-desktop .ci-result-title {
+  font-weight: 900;
+  font-size: 1.5em;
+  color: #000;
+  background-color: #FFF !important;
+}
+
+.ci-rpw-desktop .ci-income-wrapper {
+  border: solid 1px #000;
+  box-shadow: 0 0 15px rgb(0, 0, 0);
+  width: calc(100%);
+  margin: 15px auto !important;
+  padding: 10px;
+  background-color: #ffcc00;
+  border-radius: 0.3em;
+}
+
+.ci-rpw-desktop .ci-income-wrapper .ci-result-row-header {
+  height: auto !important;
+  line-height: normal !important;
+  padding: 5px 0px;
+}
+
+.ci-rpw-desktop .ci-border-black-1 {
+  border: solid 1px #000;
+}
+
+.ci-rpw-desktop .ci-result-col, .ci-rpw-desktop .ci-rpw-col {
+  width: 50%;
+  justify-content: space-evenly;
+}
+
+.ci-rpw-desktop .ci-result-col input, .ci-rpw-desktop .ci-rpw-col input {
+  width: 90%;
+  margin: 0 5%;
+}
+
+.ci-rpw-desktop .ci-result-col label, .ci-rpw-desktop .ci-rpw-col label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.ci-rpw-desktop .ci-rpw-header {
+  width: 100%;
+}
+
+.ci-rpw-desktop .ci-rpw-header h1 {
+  background-color: transparent;
+  font-size: 2.5em;
+  font-weight: 900;
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+}
+
+.ci-rpw-desktop .ci-rpw-col label {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.ci-rpw-desktop .ci-rpw-col input {
+  border-radius: 0.5em;
+  width: 80% !important;
+}
+
+.ci-rpw-desktop .ci-required {
+  color: rgb(255, 0, 0);
+}
+
+.cont{
+  background-color: #013A6B;
+  background-image: -webkit-linear-gradient(45deg, #056FCB 50%, #000000 50%);
+}
+
+@media only screen and (max-width: 1700px) {
+#video {
+  position: fixed;
+  z-index: -1;
+  width: auto;
+  height:contain;
+  left: -50%;
+  top: -50%
+}
+
+.backdrop {
+  position: fixed;
+  z-index: -1;
+  width: auto;
+  height:contain;
+  left: -50%;
+  top: -50%
+}
+}
+
+@media only screen and (min-width: 1700px) {
+  #video {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    left: 0px
+  }
+  .backdrop{
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    left: 0px
+  }
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.sticky2 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20%;
+}
+
+.sticky3 {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
+
+.ficon {
+  text-shadow: 3px 6px #272634;
+}
+
+.rotateRight {
+  transform: rotate(90deg) translateY(82px);
+  position: -webkit-sticky;
+  position: sticky;
+  right: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.cropped {
+  clip:rect(0em,83em,100em,0em);
+  position: absolute;
+  left: 10%
+}
+
+.carousel-root {
+  width: 64% !important;
+  margin: auto !important;
+  margin-top: 3% !important;
+}
+
+.carousel .slide {
+  /* background: #fff !important; */
+  color: black;
+  height: 100%;
+}
+
+.carousel .slide img {
+  width: 139px !important;
+  border-radius: 50%;
+}
+
+.myCarousel {
+  background: #fafafa;
+  margin-top: -6%;
+  width: 54%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 6%;
+  padding-bottom: 8%;
+  padding-left: 5%;
+  padding-right: 5%;
+  border: 1px solid #ddd;
+  height: 286px;
+}
+
+.carousel .control-dots {
+  padding-left: 5px !important;
+  outline: 0;
+  bottom: 5% !important;
+}
+
+.myCarousel h3 {
+  color: #222;
+  font-weight: 100;
+  letter-spacing: 0.2px;
+  margin-bottom: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 17px;
+}
+
+.myCarousel h4 {
+  text-transform: uppercase;
+  margin-top: 0;
+  padding-top: 0;
+  font-weight: 500;
+  color: #787878;
+  font-size: 14px;
+}
+
+.myCarousel p {
+  font-weight: 100 !important;
+  line-height: 29px !important;
+  color: #222;
+  font-size: 15px;
+  font-family: sans-serif;
+  max-height: 67px;
+}
+
+.myCarousel p:before {
+  content: "“";
+  color: #aaa;
+  font-size: 26px;
+  font-family: monospace;
+  font-weight: 100;
+}
+
+.myCarousel p:after {
+  content: "”";
+  color: #aaa;
+  font-size: 26px;
+  font-family: monospace;
+  font-weight: 100;
+  line-height: 0;
+}
+
+.carousel .control-dots .dot {
+  box-shadow: none !important;
+  background: #454545 !important;
+  outline: 0;
+}
+
+.carousel.carousel-slider .control-arrow {
+  background: #000 !important;
+  height: 50px !important;
+  position: absolute;
+  top: 35% !important;
+}
+
+.App {
+  text-align: center;
+}
+
+@media only screen and (max-width: 934px) {
+  .carousel-root {
+    outline: 0;
+    width: 93% !important;
+    margin: auto !important;
+  }
+
+  .carousel.carousel-slider .control-arrow {
+    display: none !important;
+  }
+  .myCarousel {
+    /* background: #fafafa; */
+    margin-top: -9%;
+    width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 8%;
+    padding-bottom: 12.5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border: 1px solid #ddd;
+    height: 269px;
+  }
+
+  .carousel .slide img {
+    width: 24% !important;
+    border-radius: 50%;
+  }
+}
