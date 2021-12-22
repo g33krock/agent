@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Image } from "react-bootstrap";
 import { agentService } from "../services/AgentService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -43,7 +43,7 @@ export class Footer extends Component {
                 <br />
                 <strong>{ag.phone}</strong>
               </Col>
-              <Col style={{padding: "0px"}}></Col>
+              <Col style={{padding: "1%"}}><Image src={ag.icon} style={{maxHeight: "50px"}} /></Col>
               <Col style={{ color: `${ag.textColor}`, padding: "0px" }} >
                 <h3>Connect with us!</h3>
                 

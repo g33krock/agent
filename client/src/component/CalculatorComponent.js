@@ -865,7 +865,7 @@ export const Calculator = (props) => {
   return (
     <Container
       style={{
-        // backgroundColor: "black",
+        backgroundColor: "rgba(0, 0, 0, 0.25)",
         // backgroundColor: props.agent.primaryColor,
         backgroundImage:
           "url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/calculator.png)",

@@ -14,7 +14,7 @@ import { Home } from "./HomeComponent";
 import { VideoSeries } from "./VideoSeriesComponent";
 
 export function Main() {
-  const agentId = 1;
+  const agentId = 4;
   const agentObject = { agentID: agentId };
   const [agent] = useState(() => {
     const initialAgent = agentService.one(agentObject);
@@ -23,17 +23,17 @@ export function Main() {
 
   return (
     <div style={{minHeight: "100vh"}}>
-      <video autoPlay loop muted id="video">
+      {/* <video autoPlay loop muted id="video">
         <source
           src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/videos/waterVideo.mp4"
           type="video/mp4"
         />
-      </video>
+      </video> */}
  
-              {/* <img 
+              <img 
               src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/SDRPBackdrop.png"
               alt="DS"
-              className="backdrop"/> */}
+              className="backdrop"/>
 
       <Header2 agent={agent[0]} Id={agentId} style={{ marginLeft: "0px" }} />
       <Calendar agent={agent[0]} Id={agentId}></Calendar>

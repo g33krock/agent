@@ -4,6 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import { agentService } from "../services/AgentService";
 import { AltCalendar } from "./AltCalendarComponent";
+import $ from 'jquery';
 
 export class AgentCarousel extends Component {
   constructor(props) {
@@ -24,7 +25,21 @@ export class AgentCarousel extends Component {
   }
 
   render() {
-    // const agency = "Not Your Mother's Insurance Agency";
+    $(document).on("scroll", function() {
+      var pageTop = $(document).scrollTop();
+      var pageBottom = pageTop + $(window).height();
+      var tags = $(".tag");
+    
+      for (var i = 0; i < tags.length; i++) {
+        var tag = tags[i];
+    
+        if ($(tag).position().top < pageBottom) {
+          $(tag).addClass("visible");
+        } else {
+          $(tag).removeClass("visible");
+        }
+      }
+    });
     return (
       <Container>
         {this.state.agent &&
