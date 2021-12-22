@@ -15,8 +15,8 @@
   "bugs": {
     "url": "https://github.com/g33krock/agent/issues"
   },
-  "homepage": "https://github.com/g33krock/agent#readme",
   "dependencies": {
-    "@supabase/supabase-js": "^1.28.5"
+    "@supabase/supabase-js": "^1.28.5",
+    "react-responsive-carousel": "^3.2.22"
   }
 }
