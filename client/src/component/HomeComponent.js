@@ -37,7 +37,7 @@ export class Home extends Component {
                   src={ag.logo}
                   alt={ag.agency}
                   width="100%"
-                  style={{marginBottom: "0px", marginTop: "15%"}}/>
+                  style={{marginBottom: "0px", marginTop: "15%", maxHeight: "20vh"}}/>
                   <h1
                     style={{
                       color: `${ag.textColor}`,
