@@ -1,17 +1,14 @@
 const Pool = require("pg").Pool;
+require('dotenv').config()
 
 const pool = new Pool({
-  user: "postgres",
-  password: "El3ph!n08o0b",
-  host: "db.jwvonytjrpiueyuwsjpa.supabase.co",
-  port: 5432,
-  database: "postgres",
-  // user: "postgres",
-  // password: "Take1Twice",
-  // host: "localhost",
-  // port: 5432,
-  // database: "agentsite",
+  user: process.env.DB_USER,
+  password: process.env.DATABASE_PASSWORD,
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  database: process.env.DB_DATABASE,
 });
+
 
 const getAgents = (request, response) => {
   pool.query(
