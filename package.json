@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^1.28.5",
+    "jquery": "^3.6.0",
     "react-responsive-carousel": "^3.2.22"
   }
 }
