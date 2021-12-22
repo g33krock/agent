@@ -34,7 +34,7 @@ export class Footer extends Component {
       <>
         {this.state.agent &&
           this.state.agent.map((ag) => (
-            <Row key={ag.toString()} style={{backgroundColor:"black", width: "100%"}}>
+            <Row key={ag.toString()} style={{backgroundColor:"black", width: "100%", margin: "0px"}}>
               <Col style={{ color: `${ag.textColor}`, padding: "0px" }} >
                 <h3>Location</h3>
                 
