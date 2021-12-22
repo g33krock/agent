@@ -21,8 +21,6 @@ export function Main() {
     return initialAgent;
   });
 
-  console.log({ agent });
-  console.log({ agentObject });
   return (
     <div style={{minHeight: "100vh"}}>
       <video autoPlay loop muted id="video">

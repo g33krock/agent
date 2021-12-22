@@ -21,8 +21,6 @@ export class AgentCarousel extends Component {
     this.setState({ agent });
     const addAgents = await agentService.addAgents(agentObject);
     this.setState({ addAgents });
-    console.log(this.props.agent);
-    console.log(ID);
   }
 
   render() {

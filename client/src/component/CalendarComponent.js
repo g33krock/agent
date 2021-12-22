@@ -24,7 +24,6 @@ export class Calendar extends Component {
   }
 
   render() {
-    console.log(this.state.agent);
     return (
       <div style={{ position: "sticky", top: "50%" }}>
         <Button

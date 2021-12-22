@@ -19,8 +19,6 @@ export class Home extends Component {
     const agentObject = { agentID: ID };
     const agent = await agentService.one(agentObject);
     this.setState({ agent });
-    console.log(this.props.agent);
-    console.log(ID);
   }
 
 

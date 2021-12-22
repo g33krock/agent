@@ -24,8 +24,6 @@ export class Header2 extends Component {
     const agentObject = { agentID: ID };
     const agent = await agentService.one(agentObject);
     this.setState({ agent });
-    console.log(agent);
-    console.log(ID);
   }
 
   render() {

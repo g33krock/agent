@@ -24,9 +24,6 @@ export class Footer extends Component {
     const agentObject = { agentID: ID };
     const agent = await agentService.one(agentObject);
     this.setState({ agent });
-    console.log(this.state.agent);
-    const agentObj = agent.map((ag) => ag);
-    console.log(agentObj);
   }
 
   render() {

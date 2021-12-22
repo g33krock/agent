@@ -17,7 +17,6 @@ export class AltCalendar extends Component {
   }
 
   render() {
-    console.log(this.state.agent);
     return (
             <div>
               <Button
