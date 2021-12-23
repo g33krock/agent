@@ -10,6 +10,11 @@
 }
 
 @font-face {
+  font-family: greatvibes;
+  src: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/fonts/GreatVibes-Regular.ttf)
+}
+
+@font-face {
   font-family: montserrat;
   src: url(https://qyctrtcwtwasdktftmuy.supabase.in/storage/v1/object/public/font/Montserrat-Regular.ttf)
 }
@@ -481,6 +486,14 @@
   left: -50%;
   top: -50%
 }
+#fancyfont {
+  font-family: 'greatvibes';
+  font-size: 150%;
+  text-shadow: 1px 1px 1px black;
+}
+#icons {
+  max-height: 5vw;
+}
 }
 
 @media only screen and (min-width: 1700px) {
@@ -497,6 +510,15 @@
     width: 100%;
     height: auto;
     left: 0px
+  }
+  #fancyfont {
+    font-family: 'greatvibes';
+    font-size: 400%;
+    text-shadow: 2px 2px 2px black;
+  }
+
+  #icons {
+    max-height: 3vw;
   }
 }
 
