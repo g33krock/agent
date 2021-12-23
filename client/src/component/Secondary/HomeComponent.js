@@ -63,9 +63,9 @@ export class Home extends Component {
                 </Container>
               </Col>
               <ButtonBar agent={ag} Id={ag.id} />
-              <AgentCarousel agent={ag} Id={ag.id} />
-              <Calculator agent={ag} />
               <Webinar agent={ag} Id={ag.id} />
+              <Calculator agent={ag} />
+              <AgentCarousel agent={ag} Id={ag.id} />
               {/* <Bottom agent={ag} Id={ag.id} /> */}
             </Row>
           ))}

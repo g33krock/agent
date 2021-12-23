@@ -9,6 +9,7 @@ export class Header2 extends Component {
     super(props);
     this.state = {
       agent: null,
+      email: ""
     };
   }
 
@@ -25,7 +26,6 @@ export class Header2 extends Component {
         {this.state.agent &&
           this.state.agent.map((ag) => (
             <Row style={{ width: "101%", backgroundColor: "rgb(0, 0, 0, 0.5)" }} key={ag.toString()}>
-              <Col xs={1}></Col>
               <Col xs={2}>
                 <Nav.Link style={{ color: `${ag.textColor}` }} href="/">
                   <Image src={ag.icon} id="icons" />{" "}
@@ -38,9 +38,9 @@ export class Header2 extends Component {
                     textShadow: "1px 1px black",
                     marginTop: "5%",
                   }}
-                  href="/videoseries"
+                  href="/about"
                 >
-                  Video Series
+                  About
                 </Nav.Link>
               </Col>
               <Col xs={2}>
@@ -50,9 +50,9 @@ export class Header2 extends Component {
                     textShadow: "1px 1px black",
                     marginTop: "5%",
                   }}
-                  href="/about"
+                  href="/videoseries"
                 >
-                  About
+                  Compound Interest<br/>Video Series
                 </Nav.Link>
               </Col>
               <Col xs={2}>
@@ -79,13 +79,24 @@ export class Header2 extends Component {
                   FAQs
                 </Nav.Link>
               </Col>
+              <Col xs={2}>
+                <Nav.Link
+                  style={{
+                    color: `${ag.textColor}`,
+                    textShadow: "1px 1px black",
+                    marginTop: "5%",
+                  }}
+                  onClick={() => window.open(`mailto:${ag.email}`)}
+                >
+                  Contact Us
+                </Nav.Link>
+              </Col>
               {/* <NavDropdown title="Other Places" id="basic-nav-dropdown">
                 <NavDropdown.Item>Spot 1</NavDropdown.Item>
                 <NavDropdown.Item>Spot 2</NavDropdown.Item>
                 <NavDropdown.Item>Spot 3</NavDropdown.Item>
                 <NavDropdown.Item>Spot 4</NavDropdown.Item>
               </NavDropdown> */}
-              <Col xs={1}></Col>
             </Row>
           ))}
       </div>
