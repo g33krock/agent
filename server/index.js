@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const app = express();
 const cors = require("cors");
 const db = require("./db");
-const port = process.env.DB_PORT || 3001
+const port = process.env.DB_PORT || 3001;
 
 app.use(bodyParser.json());
 app.use(
@@ -42,7 +42,7 @@ app.get('/videos', db.getVideos)
 //get all addagents
 app.get('/addagents/:agency', db.getAddAgents)
 
-app.listen(process.env.DB_PORT || 5000, () => {
-    console.log("server has started on port 5000");
+app.listen( 5000, () => {
+    console.log(`Express server has started on port ${port}. Open http://localhost:${port} to see results`);
 });
 

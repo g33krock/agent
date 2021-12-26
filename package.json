@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd server && nodemon index.js && cd .. && cd client && npm start "
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -21,8 +20,5 @@
     "jquery": "^3.6.0",
     "mkdirp": "^1.0.4",
     "react-responsive-carousel": "^3.2.22"
-  },
-  "engines": {
-    "node": "12.13.0"
   }
 }
