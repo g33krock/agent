@@ -20,7 +20,6 @@ export class About extends Component {
   }
 
   render() {
-    // const agency = "Not Your Mother's Insurance Agency";
     return (
       <Container fluid>
         {this.state.agent &&

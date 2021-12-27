@@ -36,35 +36,35 @@ export class Webinar extends Component {
     });
     return (
 
-                <Container
-                  style={{
-                    backgroundImage: `-webkit-linear-gradient(135deg, ${this.props.agent.primaryColor}, ${this.props.agent.secondaryColor})`,
-                    // borderRadius: "15px",
-                    alignContent: "right",
-                    // marginBottom: "5px",
-                    // marginTop: "5px"
-                  }}
-                >
-                  <Row style={{ minHeight: "300px", marginTop: "5%" }}>
-                  <Col style={{paddingLeft: "0px" }}>
-                      <iframe
-                        width="507"
-                        height="285"
-                        src="https://www.youtube.com/embed/9YsYutkBryE"
-                        title="YouTube video player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        style={{  boxShadow: "2px 2px rgba(0, 0, 0, 0.5)", paddingLeft: "0px", marginBottom: "10%"  }}
-                      ></iframe>
-                    </Col>
-                    <Col>                   
-                      <h1 className="tag" style={{ color: `${this.props.agent.textColor}`, textShadow: "1px 1px black", fontSize: "350%", marginTop: "10%" }}>
-                        What is MPI®?
-                      </h1>
-                    </Col>
-                  </Row>
-                </Container>
+      <Container
+      style={{
+        backgroundImage: `-webkit-linear-gradient(45deg, ${this.props.agent.primaryColor} 50%, ${this.props.agent.secondaryColor} 50%)`,
+        // borderRadius: "15px",
+        alignContent: "right",
+        // marginBottom: "5px",
+        // marginTop: "5px"
+      }}
+    >
+      <Row style={{ minHeight: "300px", marginTop: "5%" }}>
+        <Col>                   
+          <h1 className="tag" style={{ color: `${this.props.agent.textColor}`, textShadow: "1px 1px black", fontSize: "350%", marginTop: "10%" }}>
+            What is MPI®?
+          </h1>
+        </Col>
+        <Col style={{paddingLeft: "0px" }}>
+          <iframe
+            width="507"
+            height="285"
+            src="https://www.youtube.com/embed/9YsYutkBryE"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            style={{  boxShadow: "2px 2px rgba(0, 0, 0, 0.5)", paddingLeft: "0px", marginBottom: "10%"  }}
+          ></iframe>
+        </Col>
+      </Row>
+    </Container>
 
     );
   }

@@ -29,7 +29,7 @@ export class Bottom extends Component {
   render() {
     return (
       <div>
-        <Container fluid style={{ flexDirection: "row" }}>
+        <Container fluid style={{ flexDirection: "row", backgroundColor:"grey" }}>
           <Row
             className="justify-content-md-center"
             style={{ marginBottom: "25px", marginTop: "25px" }}

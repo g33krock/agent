@@ -25,6 +25,18 @@
   }
 }
 
+.homebg {
+  background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/SDRPHomeBackground.png); 
+  background-size:cover;
+  background-repeat: no-repeat;
+  margin: 0px;
+  /* height: 100%; */
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  /* z-index: -100;  */
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

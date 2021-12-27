@@ -47,7 +47,7 @@ export class AgentCarousel extends Component {
             <Row
               key={ag.toString()}
               style={{
-                backgroundImage: `-webkit-linear-gradient(135deg, ${ag.primaryColor}, #000000)`,
+                backgroundImage: `-webkit-linear-gradient(45deg, ${ag.primaryColor} 50%, #000000 50%)`,
               }}
             >
               <Col style={{ margin: "10px" }}>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Container, Row } from "react-bootstrap";
-import { agentService } from "../services/AgentService";
+import { Container, Row, Col } from "react-bootstrap";
+import { agentService } from "../../services/AgentService";
 
 
 
@@ -22,13 +22,44 @@ export class Jumbotron extends Component {
   }
     render() {
       return (
-          <Container fluid style={{ height:"200px", position: "relative"}}>
-            <Row>
-              {this.state.agent && this.state.agent.map(ag => (
-                <h1 key={ag.toString()} style={{position:"absolute", color:"whitesmoke", top:"20%", fontSize:"500%", textShadow:"2px 2px black"}}>{ag.agency}</h1>
-      ))}
+        <Container className="homebg">
+        {this.state.agent &&
+          this.state.agent.map((ag) => (
+            <Row style={{ margin: "0px" }} key={ag.toString()}>
+              <Col style={{ paddingLeft: "0px", paddingRight: "0px" }}>
+                <Container>
+
+                  <img 
+                  src={ag.logo}
+                  alt={ag.agency}
+                  width="100%"
+                  style={{marginBottom: "0px", marginTop: "15%", maxHeight: "20vh"}}/>
+                  <h1
+                    style={{
+                      color: `${ag.textColor}`,
+                      paddingTop: "0px",
+                      marginTop: "0px",
+                      textShadow: "1px 1px black"
+                    }}
+                  >
+                    {ag.about}
+                  </h1>
+                  <h3
+                    style={{
+                      color: `${ag.textColor}`,
+                      marginTop: "20%",
+                      marginBottom: "0%",
+                    }}
+                  >
+                    <strong style={{textShadow: "1px 1px black"}}>
+                      SEE WHAT SECURE COMPOUND INTEREST CAN DO FOR YOU
+                    </strong>
+                  </h3>
+                </Container>
+              </Col>
             </Row>
-          </Container>
+          ))}
+        </Container>
       );
     }
   }

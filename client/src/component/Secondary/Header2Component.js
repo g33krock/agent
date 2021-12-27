@@ -25,7 +25,7 @@ export class Header2 extends Component {
       <div className="sticky header" style={{marginRight: "0px"}}>
         {this.state.agent &&
           this.state.agent.map((ag) => (
-            <Row style={{ width: "101%", backgroundColor: "rgb(0, 0, 0, 0.5)" }} key={ag.toString()}>
+            <Row style={{ width: "101%", backgroundColor: "rgb(0, 0, 0)" }} key={ag.toString()}>
               <Col xs={2}>
                 <Nav.Link style={{ color: `${ag.textColor}` }} href="/">
                   <Image src={ag.icon} id="icons" />{" "}
@@ -86,7 +86,8 @@ export class Header2 extends Component {
                     textShadow: "1px 1px black",
                     marginTop: "5%",
                   }}
-                  onClick={() => window.open(`mailto:${ag.email}`)}
+                  // onClick={() => window.open(`mailto:${ag.email}`)}
+                  href="/contactus"
                 >
                   Contact Us
                 </Nav.Link>
