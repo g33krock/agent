@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const app = express();
 const cors = require("cors");
 const db = require("./db");
-const port = process.env.DB_PORT || 3001;
+const port = 5000;
 
 app.use(bodyParser.json());
 app.use(
@@ -16,7 +16,8 @@ app.use(
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static("public"))
+// app.use(express.static("public"))
+app.use(express.static("../client/build"))
 app.get('/', express.static('public'))
 
 //ROUTES//
