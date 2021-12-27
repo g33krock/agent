@@ -5,9 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm i && npm run server && npm run client",
-    "client": "cd client && npm i && npm run build && npm start",
-    "server": "cd server && npm i && nodemon index"
+    "start": "npm run server",
+    "client": "cd client && npm start",
+    "server": "cd server & nodemon index",
+    "client:build": "cd client && npm i && npm run build && cd ..",
+    "build": "npm i && npm run client:build && npm run server:build",
+    "server:build": "cd server && npm i && cd ..",
+    "start:build": "npm run build && npm run start"
   },
   "repository": {
     "type": "git",
