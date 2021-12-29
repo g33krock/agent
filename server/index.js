@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 const cors = require("cors");
 const db = require("./db");
-const port = process.env.DB_PORT || 5000;
+const port = process.env.PORT || 5000;
 const staticPath = path.join(__dirname, '../client/build')
 
 app.use(bodyParser.json());
