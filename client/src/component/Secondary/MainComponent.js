@@ -3,6 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { agentService } from "../../services/AgentService";
 import { About } from "./AboutComponent";
+import { AboutCurtis } from "./AboutCurtisComponent";
 // import { Bottom } from "./BottomComponent";
 import { Calculator } from "./CalculatorComponent";
 import { Calendar } from "./CalendarComponent";
@@ -77,6 +78,10 @@ export function Main() {
               <Route
                 path="contactus"
                 element={<ContactUs agent={agent[0]} Id={agentId} />}
+              />
+              <Route
+                path="curtisray"
+                element={<AboutCurtis agent={agent[0]} Id={agentId} />}
               />
             </Routes>
           </BrowserRouter>

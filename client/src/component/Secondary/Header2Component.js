@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import { agentService } from "../../services/AgentService";
 
 import { Col, Image, Row } from "react-bootstrap";
@@ -9,7 +10,7 @@ export class Header2 extends Component {
     super(props);
     this.state = {
       agent: null,
-      email: ""
+      email: "",
     };
   }
 
@@ -22,26 +23,28 @@ export class Header2 extends Component {
 
   render() {
     return (
-      <div className="sticky header" style={{marginRight: "0px", marginBottom: "-52px"}}>
+      <div
+        className="sticky header"
+        style={{ marginRight: "0px", marginBottom: "-52px" }}
+      >
         {this.state.agent &&
           this.state.agent.map((ag) => (
-            <Row style={{ width: "101%", backgroundColor: "rgb(0, 0, 0)" }} key={ag.toString()}>
+            <Row
+              style={{ width: "101%", backgroundColor: "rgb(0, 0, 0)" }}
+              key={ag.toString()}
+            >
               <Col>
                 <Nav.Link style={{ color: `${ag.textColor}` }} href="/">
                   <Image src={ag.icon} id="icons" />{" "}
                 </Nav.Link>
               </Col>
-              <Col>
-                <Nav.Link
-                  style={{
-                    color: `${ag.textColor}`,
-                    textShadow: "1px 1px black",
-                    marginTop: "5%",
-                  }}
-                  href="/about"
-                >
-                  About
-                </Nav.Link>
+              <Col style={{ color: `${ag.textColor}`, marginTop:"1%" }}>
+                <NavDropdown title={<span style={{color:"white"}}>About</span>} style={{ color: `${ag.textColor}` }} id="navbarScrollingDropdown">
+                  <NavDropdown.Item href="/about">{ag.agency}</NavDropdown.Item>
+                  <NavDropdown.Item href="/curtisray">
+                    Curtis Ray
+                  </NavDropdown.Item>
+                </NavDropdown>
               </Col>
               <Col>
                 <Nav.Link
@@ -52,7 +55,9 @@ export class Header2 extends Component {
                   }}
                   href="/videoseries"
                 >
-                  Compound Interest<br/>Video Series
+                  Compound Interest
+                  <br />
+                  Video Series
                 </Nav.Link>
               </Col>
               <Col>
@@ -94,7 +99,15 @@ export class Header2 extends Component {
               </Col>
               <Col>
                 <Nav.Link style={{ color: `${ag.textColor}` }} href="/">
-                  <Image src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/transparentmpibadge.png" fluid style={{backgroundColor: `${ag.primaryColor}`, borderRadius:"50%"}} id="icons" />{" "}
+                  <Image
+                    src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/transparentmpibadge.png"
+                    fluid
+                    style={{
+                      backgroundColor: `${ag.primaryColor}`,
+                      borderRadius: "50%",
+                    }}
+                    id="icons"
+                  />{" "}
                 </Nav.Link>
               </Col>
               {/* <NavDropdown title="Other Places" id="basic-nav-dropdown">
