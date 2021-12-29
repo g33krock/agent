@@ -55,10 +55,10 @@ export class AgentCarousel extends Component {
             <Row
               key={ag.toString()}
               style={{
-                backgroundImage: `-webkit-linear-gradient(45deg, ${ag.primaryColor} 50%, #000000 50%)`,
+                backgroundImage: `-webkit-linear-gradient(45deg, ${ag.primaryColor} 40%, #000000 40%)`,
               }}
             >
-              <Col style={{ margin: "10px" }}>
+              <Col style={{ margin: "10px" }} sm={4}>
                 <h2
                   style={{
                     color: ag.textColor,
@@ -85,22 +85,21 @@ export class AgentCarousel extends Component {
                     this.state.addAgents.map((aag) => (
                       <div key={aag.image}>
                         <Row>
-                        <Col sm={6}>
+                        <Col>
                           <img src={aag.image} alt={aag.firstName} />
                           <h3 style={{ color: ag.textColor }}>
                             {aag.firstName} {aag.lastName}
                           </h3>
                           <h4 style={{ color: ag.textColor }}>{aag.title}</h4>
+                        </Col>
+                        <Col>
                           <Button
-                          style={{ backgroundColor: ag.primaryColor, color: "white" }}
                             onClick={() => {
                               toggleBio();
                             }}
                           >
-                            Read Bio
+                            Bio
                           </Button>
-                        </Col>
-                        <Col sm={6}>
                           <p id="bioBlock" style={{ color: ag.textColor }}>
                             {aag.bio}
                           </p>
