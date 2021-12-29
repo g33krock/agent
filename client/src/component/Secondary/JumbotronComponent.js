@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { ButtonBar } from "./ButtonBarComponent";
 import { agentService } from "../../services/AgentService";
 
 
@@ -33,7 +34,7 @@ export class Jumbotron extends Component {
                   src={ag.logo}
                   alt={ag.agency}
                   width="100%"
-                  style={{marginBottom: "0px", marginTop: "15%", maxHeight: "20vh"}}/>
+                  style={{marginBottom: "0px", marginTop: "3%", maxHeight: "20vh"}}/>
                   <h1
                     style={{
                       color: `${ag.textColor}`,
@@ -47,7 +48,7 @@ export class Jumbotron extends Component {
                   <h3
                     style={{
                       color: `${ag.textColor}`,
-                      marginTop: "20%",
+                      marginTop: "15%",
                       marginBottom: "0%",
                     }}
                   >
@@ -57,6 +58,7 @@ export class Jumbotron extends Component {
                   </h3>
                 </Container>
               </Col>
+              <ButtonBar agent={ag} Id={ag.id} />
             </Row>
           ))}
         </Container>

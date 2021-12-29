@@ -22,7 +22,7 @@ export class Header2 extends Component {
 
   render() {
     return (
-      <div className="sticky header" style={{marginRight: "0px"}}>
+      <div className="sticky header" style={{marginRight: "0px", marginBottom: "-35px"}}>
         {this.state.agent &&
           this.state.agent.map((ag) => (
             <Row style={{ width: "101%", backgroundColor: "rgb(0, 0, 0)" }} key={ag.toString()}>

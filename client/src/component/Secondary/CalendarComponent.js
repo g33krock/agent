@@ -28,7 +28,7 @@ export class Calendar extends Component {
       <div style={{ position: "sticky", top: "25%" }}>
         <Button
           style={{
-            backgroundColor: `grey`,
+            backgroundColor: `black`,
             border: "none",
             color: `white`,
             width: "200px",
