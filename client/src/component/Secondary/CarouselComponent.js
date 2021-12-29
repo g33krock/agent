@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col, Container, Button } from "react-bootstrap";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { agentService } from "../../services/AgentService";
 import { AltCalendar } from "./AltCalendarComponent";
-import $ from 'jquery';
+import $ from "jquery";
 
 export class AgentCarousel extends Component {
   constructor(props) {
@@ -25,14 +25,14 @@ export class AgentCarousel extends Component {
   }
 
   render() {
-    $(document).on("scroll", function() {
+    $(document).on("scroll", function () {
       var pageTop = $(document).scrollTop();
       var pageBottom = pageTop + $(window).height();
       var tags = $(".tag");
-    
+
       for (var i = 0; i < tags.length; i++) {
         var tag = tags[i];
-    
+
         if ($(tag).position().top < pageBottom) {
           $(tag).addClass("visible");
         } else {
@@ -40,6 +40,14 @@ export class AgentCarousel extends Component {
         }
       }
     });
+    function toggleBio() {
+      var x = document.getElementById("bioBlock");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
     return (
       <Container>
         {this.state.agent &&
@@ -76,12 +84,28 @@ export class AgentCarousel extends Component {
                   {this.state.addAgents &&
                     this.state.addAgents.map((aag) => (
                       <div key={aag.image}>
-                        <img src={aag.image} alt={aag.firstName} />
-                        <h3 style={{ color: ag.textColor }}>
-                          {aag.firstName} {aag.lastName}
-                        </h3>
-                        <h4 style={{ color: ag.textColor }}>{aag.title}</h4>
-                        <p style={{ color: ag.textColor }}>{aag.bio}</p>
+                        <Row>
+                        <Col sm={6}>
+                          <img src={aag.image} alt={aag.firstName} />
+                          <h3 style={{ color: ag.textColor }}>
+                            {aag.firstName} {aag.lastName}
+                          </h3>
+                          <h4 style={{ color: ag.textColor }}>{aag.title}</h4>
+                          <Button
+                          style={{ backgroundColor: ag.primaryColor, color: "white" }}
+                            onClick={() => {
+                              toggleBio();
+                            }}
+                          >
+                            Read Bio
+                          </Button>
+                        </Col>
+                        <Col sm={6}>
+                          <p id="bioBlock" style={{ color: ag.textColor }}>
+                            {aag.bio}
+                          </p>
+                        </Col>
+                        </Row>
                       </div>
                     ))}
                 </Carousel>

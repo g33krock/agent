@@ -25,6 +25,10 @@
   }
 }
 
+#bioBlock {
+  display: block
+}
+
 .homebg {
   background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/SDRPHomeBackground.png); 
   background-size:cover;
