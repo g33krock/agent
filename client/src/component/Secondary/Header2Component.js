@@ -22,16 +22,16 @@ export class Header2 extends Component {
 
   render() {
     return (
-      <div className="sticky header" style={{marginRight: "0px", marginBottom: "-35px"}}>
+      <div className="sticky header" style={{marginRight: "0px", marginBottom: "-52px"}}>
         {this.state.agent &&
           this.state.agent.map((ag) => (
             <Row style={{ width: "101%", backgroundColor: "rgb(0, 0, 0)" }} key={ag.toString()}>
-              <Col xs={2}>
+              <Col>
                 <Nav.Link style={{ color: `${ag.textColor}` }} href="/">
                   <Image src={ag.icon} id="icons" />{" "}
                 </Nav.Link>
               </Col>
-              <Col xs={2}>
+              <Col>
                 <Nav.Link
                   style={{
                     color: `${ag.textColor}`,
@@ -43,7 +43,7 @@ export class Header2 extends Component {
                   About
                 </Nav.Link>
               </Col>
-              <Col xs={2}>
+              <Col>
                 <Nav.Link
                   style={{
                     color: `${ag.textColor}`,
@@ -55,7 +55,7 @@ export class Header2 extends Component {
                   Compound Interest<br/>Video Series
                 </Nav.Link>
               </Col>
-              <Col xs={2}>
+              <Col>
                 <Nav.Link
                   style={{
                     color: `${ag.textColor}`,
@@ -67,7 +67,7 @@ export class Header2 extends Component {
                   Financial News
                 </Nav.Link>
               </Col>
-              <Col xs={2}>
+              <Col>
                 <Nav.Link
                   style={{
                     color: `${ag.textColor}`,
@@ -79,7 +79,7 @@ export class Header2 extends Component {
                   FAQs
                 </Nav.Link>
               </Col>
-              <Col xs={2}>
+              <Col>
                 <Nav.Link
                   style={{
                     color: `${ag.textColor}`,
@@ -90,6 +90,11 @@ export class Header2 extends Component {
                   href="/contactus"
                 >
                   Contact Us
+                </Nav.Link>
+              </Col>
+              <Col>
+                <Nav.Link style={{ color: `${ag.textColor}` }} href="/">
+                  <Image src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/transparentmpibadge.png" fluid style={{backgroundColor: `${ag.primaryColor}`, borderRadius:"50%"}} id="icons" />{" "}
                 </Nav.Link>
               </Col>
               {/* <NavDropdown title="Other Places" id="basic-nav-dropdown">

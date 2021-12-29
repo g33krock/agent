@@ -36,8 +36,9 @@ export class Calendar extends Component {
           }}
           onClick={() => this.setState({ modal: true })}
           className="rotateRight"
-        >
+        ><p className="upsidedown">
           SCHEDULE A 1 ON 1
+          </p>
         </Button>
 
         <Modal isOpen={this.state.modal} toggle={() => this.toggle()}>

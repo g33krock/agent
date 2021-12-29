@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import { Container, Row } from "react-bootstrap";
 import { agentService } from "../../services/AgentService";
+// import { Bottom } from "./BottomComponent";
+// import { ButtonBar } from "./ButtonBarComponent";
 import { Calculator } from "./CalculatorComponent";
 import { AgentCarousel } from "./CarouselComponent";
 import { Jumbotron } from "./JumbotronComponent";
+import { SCIVideo } from "./SCIVideoComponent";
 import { Webinar } from "./WebinarComponent";
 
 export class Home extends Component {
@@ -32,6 +35,7 @@ export class Home extends Component {
             <Row style={{ margin: "0px" }} key={ag.toString()}>
               <Jumbotron agent={ag} Id={ag.id} />
               <Webinar agent={ag} Id={ag.id} />
+              <SCIVideo agent={ag} Id={ag.id} />
               <Calculator agent={ag} />
               <AgentCarousel agent={ag} Id={ag.id} />
               {/* <Bottom agent={ag} Id={ag.id} /> */}

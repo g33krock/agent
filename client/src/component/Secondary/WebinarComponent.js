@@ -38,7 +38,7 @@ export class Webinar extends Component {
 
       <Container
       style={{
-        backgroundImage: `-webkit-linear-gradient(45deg, ${this.props.agent.primaryColor} 50%, ${this.props.agent.secondaryColor} 50%)`,
+        backgroundImage: `-webkit-linear-gradient(45deg, ${this.props.agent.primaryColor} 40%, ${this.props.agent.secondaryColor} 40%)`,
         // borderRadius: "15px",
         alignContent: "right",
         // marginBottom: "5px",

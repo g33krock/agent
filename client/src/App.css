@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.295);
+  /* background-color: rgba(0, 0, 0, 0.295); */
   font-family: 'montserrat';
 }
 
@@ -480,7 +480,74 @@
   background-image: -webkit-linear-gradient(45deg, #056FCB 50%, #000000 50%);
 }
 
-@media only screen and (max-width: 1700px) {
+@media only screen and (max-width: 690px) {
+  #video {
+    position: fixed;
+    z-index: -1;
+    width: auto;
+    height:contain;
+    left: -50%;
+    top: -50%
+  }
+  
+  .backdrop {
+    position: fixed;
+    z-index: -1;
+    width: auto;
+    height:contain;
+    left: -50%;
+    top: -50%
+  }
+  #fancyfont {
+    font-family: 'greatvibes';
+    font-size: 150%;
+    text-shadow: 1px 1px 1px black;
+  }
+  #icons {
+    max-height: 5vw;
+  }
+
+  .scvis {
+    min-height: 250px
+  }
+
+  .bulletpoints {
+    color: white; 
+    font-size: 100% 
+  }
+
+  .videohead {
+    color: white; 
+    font-size: 125% 
+  }
+
+  .videobody {
+    color: white; 
+    font-size: 100% 
+  }
+
+  .videobutton {
+    width: 33%;
+    margin-bottom: 3%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .videobuttontext {
+    font-size: 80%;
+  }
+
+  .videobuttonrow {
+    margin-bottom: 3%;
+    width: 100%;
+  }
+  .videobuttoncol {
+    width: auto;
+    justify-content:center;
+  }
+}
+
+@media only screen and (min-width: 691px) and (max-width: 1700px) {
 #video {
   position: fixed;
   z-index: -1;
@@ -505,6 +572,44 @@
 }
 #icons {
   max-height: 5vw;
+}
+
+.scvis {
+  min-height: 300px
+}
+
+.bulletpoints {
+  color: white; 
+  font-size: 150% 
+}
+
+.videohead {
+  color: white; 
+  font-size: 200% 
+}
+
+.videobody {
+  color: white; 
+  font-size: 150% 
+}
+
+.videobutton {
+  width: 33%;
+  margin-bottom: 3%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.videobuttontext {
+  font-size: 150%;
+}
+
+.videobuttonrow {
+  margin-bottom: 3%;
+}
+.videobuttoncol {
+  width:auto;
+  justify-content:center
 }
 }
 
@@ -531,6 +636,44 @@
 
   #icons {
     max-height: 3vw;
+  }
+
+  .scvis {
+    min-height: 350px
+  }
+
+  .bulletpoints {
+    color: white; 
+    font-size: 175% 
+  }
+
+  .videohead {
+    color: white; 
+    font-size: 300% 
+  }
+
+  .videobody {
+    color: white; 
+    font-size: 200% 
+  }
+
+  .videobutton {
+    width: 33%;
+    margin-bottom: 3%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .videobuttontext {
+    font-size: 175%;
+  }
+
+  .videobuttonrow {
+    margin-bottom: 3%;
+  }
+  .videobuttoncol {
+    width:auto;
+    justify-content:center
   }
 }
 
@@ -563,6 +706,12 @@
   right: 100%;
   padding: 0px;
   margin: 0px;
+  z-index: 100;
+}
+
+.upsidedown {
+  transform: rotate(180deg);
+  z-index: 100
 }
 
 .cropped {
