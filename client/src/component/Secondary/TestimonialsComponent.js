@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, Container } from "react-bootstrap";
+// import { Row, div, Container } from "react-bootstrap";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { agentService } from "../../services/AgentService";
@@ -27,6 +27,21 @@ export class Testimonials extends Component {
   render() {
     return (
       <div>
+        <h1 style={{marginBottom: "0px", fontSize:"300%", marginTop: "3%"}}>
+          <strong>Testimonials</strong>
+        </h1>
+        <div
+          style={{
+            backgroundColor: this.props.agent.primaryColor,
+            height: "2px",
+            // position: "absolute",
+            // top: "20%",
+            width: "50vw",
+            marginBottom: "1%",
+            marginLeft: "auto",
+            marginRight: "auto"
+          }}
+        ></div>
         {this.state.agent &&
           this.state.agent.map((ag) => (
             <Carousel
@@ -37,6 +52,7 @@ export class Testimonials extends Component {
               autoPlay={true}
               interval={6100}
               centerMode={true}
+              centerSlidePercentage={33}
               key={ag.toString()}
               style={{
                 backgroundColor: "white",
@@ -44,10 +60,9 @@ export class Testimonials extends Component {
             >
               <div
                 style={{
-                  marginBottom: "5%",
-                //   maxBlockSize: "33%",
-                  marginLeft: "0px",
-                  marginRight: "0px",
+                  marginBottom: "15%",
+                  marginLeft: "1%",
+                  marginRight: "1%",
                 }}
               >
                 <img
@@ -55,7 +70,7 @@ export class Testimonials extends Component {
                   alt="Porter Shumway"
                 />
                 <h1 style={{ color: "black" }}>Porter Shumway</h1>
-                <h2 style={{ color: "black" }}>CEO Salt River Financial</h2>
+                <h3 style={{ color: "black" }}>CEO Salt River Financial</h3>
 
                 <p style={{ color: "black" }}>
                   “I have worked closely with financial planners for years. The
@@ -69,10 +84,9 @@ export class Testimonials extends Component {
               </div>
               <div
                 style={{
-                  marginBottom: "5%",
-                //   maxBlockSize: "33%",
-                  marginLeft: "0px",
-                  marginRight: "0px",
+                  marginBottom: "15%",
+                  marginLeft: "1%",
+                  marginRight: "1%",
                 }}
               >
                 <img
@@ -95,10 +109,9 @@ export class Testimonials extends Component {
               </div>
               <div
                 style={{
-                  marginBottom: "5%",
-                //   maxBlockSize: "33%",
-                  marginLeft: "0px",
-                  marginRight: "0px",
+                  marginBottom: "15%",
+                  marginLeft: "1%",
+                  marginRight: "1%",
                 }}
               >
                 <img
@@ -120,10 +133,9 @@ export class Testimonials extends Component {
               </div>
               <div
                 style={{
-                  marginBottom: "5%",
-                //   maxBlockSize: "33%",
-                  marginLeft: "0px",
-                  marginRight: "0px",
+                  marginBottom: "15%",
+                  marginLeft: "1%",
+                  marginRight: "1%",
                 }}
               >
                 <img
