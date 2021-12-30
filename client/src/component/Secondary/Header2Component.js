@@ -30,10 +30,10 @@ export class Header2 extends Component {
         {this.state.agent &&
           this.state.agent.map((ag) => (
             <Row
-              style={{ width: "101%", backgroundColor: "rgb(0, 0, 0)" }}
+              style={{ width: "101%"}}
               key={ag.toString()}
             >
-              <Navbar bg="dark" expand="lg">
+              <Navbar bg="dark" expand="lg" variant="dark">
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse>
               <Col>
