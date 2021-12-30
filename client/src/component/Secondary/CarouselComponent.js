@@ -93,21 +93,22 @@ export class AgentCarousel extends Component {
                       <div key={aag.image}>
                         <Row>
                         <Col>
+                        <h1 style={{ color: ag.textColor }}>
+                            MEET YOUR
+                          </h1>
+                          <h2 style={{ color: ag.textColor }}>
+                            MPI® CERTIFIED ADVISOR
+                          </h2>
                           <img src={aag.image} alt={aag.firstName} />
-                          <h3 style={{ color: ag.textColor }}>
-                            {aag.firstName} {aag.lastName}
-                          </h3>
-                          <h4 style={{ color: ag.textColor }}>{aag.title}</h4>
-                          <Button
-                            style={{backgroundColor: "rgba(0, 0, 0, 0)"}}
+                          <h4 style={{ color: ag.textColor }}>{aag.firstName} {aag.lastName}<br/>{aag.title}</h4>
+                          <Button variant="link"
+                          style={{ color: ag.textColor}}
                             onClick={() => {
                               toggleBio();
                             }}
                           >
-                            Read Bio
+                            <strong style={{ color:aag.textColor}}>READ BIO</strong>
                           </Button>
-                          </Col>
-                          <Col>
                           <p id="bioBlock" style={{ color: ag.textColor, display:this.state.bioDisplay }}>
                             {aag.bio}
                           </p>

@@ -7,6 +7,7 @@ import { Calculator } from "./CalculatorComponent";
 import { AgentCarousel } from "./CarouselComponent";
 import { Jumbotron } from "./JumbotronComponent";
 import { SCIVideo } from "./SCIVideoComponent";
+import { Testimonials } from "./TestimonialsComponent";
 import { Webinar } from "./WebinarComponent";
 
 export class Home extends Component {
@@ -38,6 +39,7 @@ export class Home extends Component {
               <SCIVideo agent={ag} Id={ag.id} />
               <Calculator agent={ag} />
               <AgentCarousel agent={ag} Id={ag.id} />
+              <Testimonials agent={ag} Id={ag.id} />
               {/* <Bottom agent={ag} Id={ag.id} /> */}
             </Row>
           ))}

@@ -1,0 +1,152 @@
+import React, { Component } from "react";
+import { Row, Col, Container } from "react-bootstrap";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+import { agentService } from "../../services/AgentService";
+
+export class Testimonials extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      agent: [],
+      addAgents: [],
+      bioDisplay: "",
+    };
+  }
+
+  async componentDidMount() {
+    const ID = this.props.Id;
+    const agentObject = { agentID: ID };
+    const agent = await agentService.one(agentObject);
+    this.setState({ agent });
+    const addAgents = await agentService.addAgents(agentObject);
+    this.setState({ addAgents });
+    this.setState({ bioDisplay: "none" });
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.agent &&
+          this.state.agent.map((ag) => (
+            <Carousel
+              showArrows={false}
+              infiniteLoop={true}
+              showThumbs={false}
+              showStatus={false}
+              autoPlay={true}
+              interval={6100}
+              centerMode={true}
+              key={ag.toString()}
+              style={{
+                backgroundColor: "white",
+              }}
+            >
+              <div
+                style={{
+                  marginBottom: "5%",
+                //   maxBlockSize: "33%",
+                  marginLeft: "0px",
+                  marginRight: "0px",
+                }}
+              >
+                <img
+                  src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/Porter S Square.png"
+                  alt="Porter Shumway"
+                />
+                <h1 style={{ color: "black" }}>Porter Shumway</h1>
+                <h2 style={{ color: "black" }}>CEO Salt River Financial</h2>
+
+                <p style={{ color: "black" }}>
+                  “I have worked closely with financial planners for years. The
+                  MPI® system takes traditional, and often times overly complex
+                  retirement planning, and simplifies it for the masses. Now, it
+                  isn’t just the wealthy that have access to a bright financial
+                  future. This conservative yet extremely efficient approach
+                  allows for investors to feel confident that they have
+                  minimized risk while maximizing long-term growth.”
+                </p>
+              </div>
+              <div
+                style={{
+                  marginBottom: "5%",
+                //   maxBlockSize: "33%",
+                  marginLeft: "0px",
+                  marginRight: "0px",
+                }}
+              >
+                <img
+                  src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/Ken Kilday Square.png"
+                  alt="Ken Kilday"
+                />
+                <h1 style={{ color: "black" }}>Ken Kilday</h1>
+                <h2 style={{ color: "black" }}>RCC®, CFP®</h2>
+
+                <p style={{ color: "black" }}>
+                  “I was struck how Curtis has brought his visionary innovation
+                  to retirement planning, teaching concepts about compound
+                  interest I believe are life changing. Curtis’ approach
+                  rethinks every assumption we planners have been taught about
+                  money, encourages all to use money wisely, and rewards our
+                  efforts through discipline to “Always Be Compounding!”. A
+                  generous retirement is no longer reserved exclusively for the
+                  wealthy.”
+                </p>
+              </div>
+              <div
+                style={{
+                  marginBottom: "5%",
+                //   maxBlockSize: "33%",
+                  marginLeft: "0px",
+                  marginRight: "0px",
+                }}
+              >
+                <img
+                  src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/Porter S Square.png"
+                  alt="Porter Shumway"
+                />
+                <h1 style={{ color: "black" }}>Porter Shumway</h1>
+                <h2 style={{ color: "black" }}>CEO Salt River Financial</h2>
+
+                <p style={{ color: "black" }}>
+                  “I have worked closely with financial planners for years. The
+                  MPI® system takes traditional, and often times overly complex
+                  retirement planning, and simplifies it for the masses. Now, it
+                  isn’t just the wealthy that have access to a bright financial
+                  future. This conservative yet extremely efficient approach
+                  allows for investors to feel confident that they have
+                  minimized risk while maximizing long-term growth.”
+                </p>
+              </div>
+              <div
+                style={{
+                  marginBottom: "5%",
+                //   maxBlockSize: "33%",
+                  marginLeft: "0px",
+                  marginRight: "0px",
+                }}
+              >
+                <img
+                  src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/Ken Kilday Square.png"
+                  alt="Ken Kilday"
+                />
+                <h1 style={{ color: "black" }}>Ken Kilday</h1>
+                <h2 style={{ color: "black" }}>RCC®, CFP®</h2>
+
+                <p style={{ color: "black" }}>
+                  “I was struck how Curtis has brought his visionary innovation
+                  to retirement planning, teaching concepts about compound
+                  interest I believe are life changing. Curtis’ approach
+                  rethinks every assumption we planners have been taught about
+                  money, encourages all to use money wisely, and rewards our
+                  efforts through discipline to “Always Be Compounding!”. A
+                  generous retirement is no longer reserved exclusively for the
+                  wealthy.”
+                </p>
+              </div>
+            </Carousel>
+          ))}
+      </div>
+    );
+  }
+}
