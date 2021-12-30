@@ -29,18 +29,6 @@
   display: block
 }
 
-.homebg {
-  background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/SDRPHomeBackground.png); 
-  background-size:cover;
-  background-repeat: no-repeat;
-  margin: 0px;
-  /* height: 100%; */
-  /* position: fixed; */
-  top: 0;
-  left: 0;
-  /* z-index: -100;  */
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -549,6 +537,19 @@
     width: auto;
     justify-content:center;
   }
+
+  .homebg {
+    background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/SDRPHomeBackground.png); 
+    background-size:cover;
+    background-repeat: no-repeat;
+    margin: 0px;
+    min-height: 250px;
+    /* height: 100%; */
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    /* z-index: -100;  */
+  }
 }
 
 @media only screen and (min-width: 691px) and (max-width: 1700px) {
@@ -615,6 +616,19 @@
   width:auto;
   justify-content:center
 }
+
+.homebg {
+  background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/SDRPHomeBackground.png); 
+  background-size:cover;
+  background-repeat: no-repeat;
+  margin: 0px;
+  min-height: 350px;
+  /* height: 100%; */
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  /* z-index: -100;  */
+}
 }
 
 @media only screen and (min-width: 1700px) {
@@ -678,6 +692,19 @@
   .videobuttoncol {
     width:auto;
     justify-content:center
+  }
+
+  .homebg {
+    background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/SDRPHomeBackground.png); 
+    background-size:cover;
+    background-repeat: no-repeat;
+    margin: 0px;
+    min-height: 500px;
+    /* height: 100%; */
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    /* z-index: -100;  */
   }
 }
 

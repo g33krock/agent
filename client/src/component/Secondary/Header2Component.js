@@ -3,7 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { agentService } from "../../services/AgentService";
 
-import { Col, Image, Row } from "react-bootstrap";
+import { Col, Image, Navbar, Row } from "react-bootstrap";
 
 export class Header2 extends Component {
   constructor(props) {
@@ -33,6 +33,9 @@ export class Header2 extends Component {
               style={{ width: "101%", backgroundColor: "rgb(0, 0, 0)" }}
               key={ag.toString()}
             >
+              <Navbar bg="dark" expand="lg">
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse>
               <Col>
                 <Nav.Link style={{ color: `${ag.textColor}` }} href="/">
                   <Image src={ag.icon} id="icons" />{" "}
@@ -100,7 +103,7 @@ export class Header2 extends Component {
               <Col>
                 <Nav.Link style={{ color: `${ag.textColor}` }} href="/">
                   <Image
-                    src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/transparentmpibadge.png"
+                    src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/MPIBadgeTransparentWHI.png"
                     fluid
                     style={{
                       backgroundColor: `${ag.primaryColor}`,
@@ -110,6 +113,8 @@ export class Header2 extends Component {
                   />{" "}
                 </Nav.Link>
               </Col>
+              </Navbar.Collapse>
+              </Navbar>
               {/* <NavDropdown title="Other Places" id="basic-nav-dropdown">
                 <NavDropdown.Item>Spot 1</NavDropdown.Item>
                 <NavDropdown.Item>Spot 2</NavDropdown.Item>

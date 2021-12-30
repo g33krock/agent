@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { agentService } from "../../services/AgentService";
 import $ from 'jquery';
+import { ButtonBar } from "./ButtonBarComponent";
 
 export class Webinar extends Component {
   constructor(props) {
@@ -38,7 +39,7 @@ export class Webinar extends Component {
 
       <Container
       style={{
-        backgroundImage: `-webkit-linear-gradient(45deg, ${this.props.agent.primaryColor} 40%, ${this.props.agent.secondaryColor} 40%)`,
+        backgroundImage: `-webkit-linear-gradient(45deg, ${this.props.agent.primaryColor} 45%, ${this.props.agent.secondaryColor} 45%)`,
         // borderRadius: "15px",
         alignContent: "right",
         // marginBottom: "5px",
@@ -46,10 +47,11 @@ export class Webinar extends Component {
       }}
     >
       <Row style={{ minHeight: "300px", marginTop: "5%" }}>
-        <Col>                   
-          <h1 className="tag" style={{ color: `${this.props.agent.textColor}`, textShadow: "1px 1px black", fontSize: "350%", marginTop: "10%" }}>
+        <Col className="tag">                   
+          <h1 style={{ color: `${this.props.agent.textColor}`, textShadow: "1px 1px black", fontSize: "350%", marginTop: "10%" }}>
             What is MPI®?
           </h1>
+          <ButtonBar agent={this.props.agent} Id={this.props.agent.id} />
         </Col>
         <Col style={{paddingLeft: "0px" }}>
           <iframe

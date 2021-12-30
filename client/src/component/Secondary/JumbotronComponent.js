@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { ButtonBar } from "./ButtonBarComponent";
 import { agentService } from "../../services/AgentService";
 
 
@@ -58,7 +57,6 @@ export class Jumbotron extends Component {
                   </h3>
                 </Container>
               </Col>
-              <ButtonBar agent={ag} Id={ag.id} />
             </Row>
           ))}
         </Container>
