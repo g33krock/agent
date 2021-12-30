@@ -21,11 +21,13 @@ export class AltCalendar extends Component {
             <div style={{marginTop: "5%"}}>
               <Button
                 style={{
-                  backgroundColor: this.state.agent.secondaryColor,
+                  // backgroundColor: this.state.agent.secondaryColor,
+                  backgroundColor: "black",
                   border: "none",
                   color: `white`,
                   width: "50%",
-                  textShadow: "1px 1px black"
+                  textShadow: "1px 1px black",
+                  boxShadow: "2px 2px rgba(0, 0, 0, 0.5)",
                 }}
                 onClick={() => this.setState({modal: true})}
               >

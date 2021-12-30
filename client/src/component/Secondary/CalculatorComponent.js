@@ -1035,6 +1035,7 @@ export const Calculator = (props) => {
                             paddingBottom: "0.75rem",
                             border: "1px solid black",
                             alignContent: "center",
+                            borderRadius: "5px"
                           }}
                         >
                           <div
@@ -1052,7 +1053,8 @@ export const Calculator = (props) => {
                                 width: "cover",
                                 marginBottom: "0px",
                                 paddingBottom: "0px",
-                                color: "black"
+                                color: "black",
+                                borderRadius: "5px 5px 0px 0px"
                               }}
                             >
                               Side by Side Comparison
@@ -1113,6 +1115,7 @@ export const Calculator = (props) => {
                               paddingRight: "0px",
                               border: "1px solid black",
                               marginTop: "0px",
+                              borderRadius: "5px 0px 5px 5px"
                             }}
                           >
                             <div
@@ -1125,6 +1128,7 @@ export const Calculator = (props) => {
                                 marginLeft: "0px",
                                 marginRight: "0px",
                                 marginTop: "0px",
+                                borderRadius: "5px 0px 0px 0px"
                               }}
                             >
                               <h5
@@ -1177,6 +1181,7 @@ export const Calculator = (props) => {
                                 style={{
                                   backgroundColor: props.agent.primaryColor,
                                   color:props.agent.textColor,
+                                  borderRadius: "0px 0px 5px 0px"
                                 }}
                               >
                                 <input

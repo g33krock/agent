@@ -12,6 +12,7 @@ export class AgentCarousel extends Component {
     this.state = {
       agent: [],
       addAgents: [],
+      bioDisplay: ""
     };
   }
 
@@ -22,6 +23,7 @@ export class AgentCarousel extends Component {
     this.setState({ agent });
     const addAgents = await agentService.addAgents(agentObject);
     this.setState({ addAgents });
+    this.setState({bioDisplay: "none"})
   }
 
   render() {
@@ -41,6 +43,11 @@ export class AgentCarousel extends Component {
       }
     });
     function toggleBio() {
+      // if (this.state.bioDisplay === "none") {
+      //   this.setState({bioDisplay: "block"});
+      // } else {
+      //   this.setState({bioDisplay: "none"});
+      // }
       var x = document.getElementById("bioBlock");
       if (x.style.display === "none") {
         x.style.display = "block";
@@ -91,16 +98,17 @@ export class AgentCarousel extends Component {
                             {aag.firstName} {aag.lastName}
                           </h3>
                           <h4 style={{ color: ag.textColor }}>{aag.title}</h4>
-                        </Col>
-                        <Col>
                           <Button
+                            style={{backgroundColor: "rgba(0, 0, 0, 0)"}}
                             onClick={() => {
                               toggleBio();
                             }}
                           >
-                            Bio
+                            Read Bio
                           </Button>
-                          <p id="bioBlock" style={{ color: ag.textColor }}>
+                          </Col>
+                          <Col>
+                          <p id="bioBlock" style={{ color: ag.textColor, display:this.state.bioDisplay }}>
                             {aag.bio}
                           </p>
                         </Col>
