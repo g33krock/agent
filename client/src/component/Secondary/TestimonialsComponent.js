@@ -25,6 +25,12 @@ export class Testimonials extends Component {
   }
 
   render() {
+    // eslint-disable-next-line no-restricted-globals
+    console.log(document.documentElement.clientWidth)
+    // eslint-disable-next-line no-restricted-globals
+    const cMode = () => {if(document.documentElement.clientWidth > 690){return true} else {return false}}
+    // eslint-disable-next-line no-restricted-globals
+    const cSliderPercent = () => {if(document.documentElement.clientWidth > 690){return 33} else {return 100}}
     return (
       <div>
         <h1 style={{marginBottom: "0px", fontSize:"300%", marginTop: "3%"}}>
@@ -51,8 +57,8 @@ export class Testimonials extends Component {
               showStatus={false}
               autoPlay={true}
               interval={6100}
-              centerMode={true}
-              centerSlidePercentage={33}
+              centerMode={cMode()}
+              centerSlidePercentage={cSliderPercent()}
               key={ag.toString()}
               style={{
                 backgroundColor: "white",
