@@ -877,10 +877,16 @@ export const Calculator = (props) => {
         // marginTop: "5px"
       }}
     >
-        <Row style={{marginTop: "3%", marginBottom: "1%"}}>
-            <h1 style={{color:props.agent.textColor, textShadow: "1px 1px black"}}>SEE WHAT SECURE COMPOUND<br />INTEREST CAN DO FOR YOUR RETIREMENT</h1>
-        </Row>
-      <Row style={{marginBottom: "3%"}}>
+      <Row style={{ marginTop: "3%", marginBottom: "1%" }}>
+        <h1
+          style={{ color: props.agent.textColor, textShadow: "1px 1px black" }}
+        >
+          SEE WHAT SECURE COMPOUND
+          <br />
+          INTEREST CAN DO FOR YOUR RETIREMENT
+        </h1>
+      </Row>
+      <Row style={{ marginBottom: "3%" }}>
         <Col sm={4}></Col>
         <Col sm={8}>
           <Container>
@@ -896,7 +902,15 @@ export const Calculator = (props) => {
                           className="form-group"
                           style={{ textAlign: "left" }}
                         >
-                          <label className="control-label" style={{color:props.agent.textColor}}>Current Age</label>
+                          <label
+                            className="control-label"
+                            style={{
+                              color: props.agent.textColor,
+                              textShadow: "1px 1px black",
+                            }}
+                          >
+                            Current Age
+                          </label>
                           <input
                             style={{ width: "100%" }}
                             type="number"
@@ -913,7 +927,10 @@ export const Calculator = (props) => {
                           <label
                             className="control-label"
                             htmlFor="desired_age"
-                            style={{color:props.agent.textColor}}
+                            style={{
+                              color: props.agent.textColor,
+                              textShadow: "1px 1px black",
+                            }}
                           >
                             Desired Retirement Age
                           </label>
@@ -932,12 +949,18 @@ export const Calculator = (props) => {
                           <label
                             className="control-label"
                             htmlFor="desired_retirement"
-                            style={{color:props.agent.textColor}}
+                            style={{
+                              color: props.agent.textColor,
+                              textShadow: "1px 1px black",
+                            }}
                           >
                             Desired Retirement Income
                           </label>
                           <input
-                            style={{ width: "100%" }}
+                            style={{
+                              width: "100%",
+                              textShadow: "1px 1px black",
+                            }}
                             type="number"
                             id="desired_retirement"
                             name="desired_retirement"
@@ -949,7 +972,14 @@ export const Calculator = (props) => {
 
                         {/* <!-- Lump Sum --> */}
                         <div className="form-group">
-                          <label className="control-label" htmlFor="LumpSum" style={{color:props.agent.textColor}}>
+                          <label
+                            className="control-label"
+                            htmlFor="LumpSum"
+                            style={{
+                              color: props.agent.textColor,
+                              textShadow: "1px 1px black",
+                            }}
+                          >
                             Lump Sum
                           </label>
                           <input
@@ -968,12 +998,15 @@ export const Calculator = (props) => {
                           <label
                             className="control-label"
                             htmlFor="OngoingContributions"
-                            style={{color:props.agent.textColor}}
+                            style={{
+                              color: props.agent.textColor,
+                              textShadow: "1px 1px black",
+                            }}
                           >
                             Ongoing Contributions
                           </label>
                           <input
-                            style={{ width: "100%"}}
+                            style={{ width: "100%" }}
                             type="number"
                             id="OngoingContributions"
                             name="OngoingContributions"
@@ -1021,7 +1054,14 @@ export const Calculator = (props) => {
                     </fieldset>
                   </Col>
                   {/* <!-- Outputs --> */}
-                  <Col sm={8} style={{marginTop: "5px"}}>
+                  <Col
+                    sm={8}
+                    style={{
+                      marginTop: "5px",
+                      paddingLeft: "5%",
+                      paddingRight: "5%",
+                    }}
+                  >
                     <fieldset>
                       <div className="fields-wrapper">
                         {/* <!-- Annual Retirement Income --> */}
@@ -1029,13 +1069,13 @@ export const Calculator = (props) => {
                         <div
                           className="container"
                           style={{
-                            backgroundColor: props.agent.secondaryColor,
-                            paddingLeft: "0.75rem",
-                            paddingRight: "0.75rem",
-                            paddingBottom: "0.75rem",
-                            border: "1px solid black",
+                            backgroundColor: props.agent.primaryColor,
+                            paddingLeft: "0.1rem",
+                            paddingRight: "0.1rem",
+                            paddingBottom: "0.1rem",
+                            // border: "1px solid black",
                             alignContent: "center",
-                            borderRadius: "5px"
+                            borderRadius: "5px",
                           }}
                         >
                           <div
@@ -1048,13 +1088,12 @@ export const Calculator = (props) => {
                             <h3
                               style={{
                                 textAlign: "center",
-                                backgroundColor: props.agent.tertiaryColor,
-                                borderBottom: "1px solid black",
+                                // borderBottom: "1px solid black",
                                 width: "cover",
                                 marginBottom: "0px",
                                 paddingBottom: "0px",
-                                color: "black",
-                                borderRadius: "5px 5px 0px 0px"
+                                color: "white",
+                                borderRadius: "5px 5px 0px 0px",
                               }}
                             >
                               Side by Side Comparison
@@ -1071,40 +1110,42 @@ export const Calculator = (props) => {
                           >
                             <div
                               className="col"
-                              style={{backgroundColor: props.agent.secondaryColor}}
+                              style={{
+                                backgroundColor: props.agent.secondaryColor,
+                              }}
                             >
-                              <h4
+                              <h3
                                 style={{
                                   textAlign: "center",
-                                  fontSize: "90%",
+                                  fontSize: "125%",
                                   fontWeight: "bold",
                                   paddingTop: "4px",
                                 }}
                               >
                                 MPI® PLAN
-                              </h4>
+                              </h3>
                             </div>
                             <div
                               className="col"
                               style={{
-                                backgroundColor: props.agent.primaryColor,
+                                backgroundColor: "white",
                                 marginTop: "0px",
                                 marginBottom: "0px",
                                 paddingTop: "0px",
                                 paddingBottom: "0px",
                               }}
                             >
-                              <h4
+                              <h3
                                 style={{
                                   textAlign: "center",
-                                  color:props.agent.textColor,
-                                  fontSize: "90%",
+                                  // color:props.agent.textColor,
+                                  fontSize: "125%",
                                   fontWeight: "bold",
                                   paddingTop: "4px",
                                 }}
                               >
                                 ROTH IRA/401K
-                              </h4>
+                              </h3>
                             </div>
                           </div>
                           <div
@@ -1113,28 +1154,24 @@ export const Calculator = (props) => {
                               backgroundColor: props.agent.secondaryColor,
                               paddingLeft: "0px",
                               paddingRight: "0px",
-                              border: "1px solid black",
                               marginTop: "0px",
-                              borderRadius: "5px 0px 5px 5px"
                             }}
                           >
                             <div
                               className="row"
                               style={{
-                                backgroundColor: "white",
-                                borderBottom: "1px solid black",
+                                backgroundColor: props.agent.primaryColor,
                                 paddingLeft: "0px",
                                 paddingRight: "0px",
                                 marginLeft: "0px",
                                 marginRight: "0px",
                                 marginTop: "0px",
-                                borderRadius: "5px 0px 0px 0px"
                               }}
                             >
-                              <h5
+                              <h4
                                 style={{
                                   textAlign: "center",
-                                  fontSize: "80%",
+                                  fontSize: "90%",
                                   paddingLeft: "0px",
                                   paddingRight: "0px",
                                   paddingTop: "4px",
@@ -1142,10 +1179,11 @@ export const Calculator = (props) => {
                                   marginTop: "0px",
                                   marginRight: "0px",
                                   alignContent: "center",
+                                  color: "white",
                                 }}
                               >
                                 ESTIMATED ANNUAL TAX-FREE RETIREMENT INCOME
-                              </h5>
+                              </h4>
                             </div>
                             <div
                               className="row"
@@ -1155,7 +1193,7 @@ export const Calculator = (props) => {
                                 marginRight: "0px",
                                 paddingLeft: "0px",
                                 paddingRight: "0px",
-                                fontSize: "12px",
+                                fontSize: "125%",
                               }}
                             >
                               <div className="col">
@@ -1179,9 +1217,7 @@ export const Calculator = (props) => {
                               <div
                                 className="col"
                                 style={{
-                                  backgroundColor: props.agent.primaryColor,
-                                  color:props.agent.textColor,
-                                  borderRadius: "0px 0px 5px 0px"
+                                  backgroundColor: "white",
                                 }}
                               >
                                 <input
@@ -1190,8 +1226,7 @@ export const Calculator = (props) => {
                                     margin: "0px",
                                     padding: "0px",
                                     border: "none",
-                                    backgroundColor: props.agent.primaryColor,
-                                    color:props.agent.textColor,
+                                    backgroundColor: "white",
                                   }}
                                   type="text"
                                   id="RothMonthly"
@@ -1220,8 +1255,8 @@ export const Calculator = (props) => {
                                   fontSize: "150%",
                                   backgroundColor: "rgb(0,0,0,0)",
                                   fontWeight: "bolder",
-                                  color:props.agent.textColor,
-                                  textShadow: "1px 1px black"
+                                  color: props.agent.textColor,
+                                  textShadow: "1px 1px black",
                                   // color:props.agent.textColor
                                 }}
                                 type="text"
@@ -1234,7 +1269,16 @@ export const Calculator = (props) => {
                               />
                             </Col>
                             <Col xs={6}>
-                              <small style={{color:props.agent.textColor}}>Percentage of Goal</small>
+                              <small
+                                style={{
+                                  color: props.agent.textColor,
+                                  textShadow: "1px 1px black",
+                                  fontSize: "125%",
+                                  margin: "auto",
+                                }}
+                              >
+                                Percentage of Goal
+                              </small>
                             </Col>
                             <Col xs={3}>
                               <input
@@ -1249,8 +1293,8 @@ export const Calculator = (props) => {
                                   fontSize: "150%",
                                   backgroundColor: "rgb(0,0,0,0)",
                                   fontWeight: "bolder",
-                                  color:props.agent.textColor,
-                                  textShadow: "1px 1px black"
+                                  color: props.agent.textColor,
+                                  textShadow: "1px 1px black",
                                   // color:props.agent.textColor
                                 }}
                                 type="text"
@@ -1368,7 +1412,14 @@ export const Calculator = (props) => {
                         </div> */}
                       </div>
                     </fieldset>
-                    <p style={{ marginTop: "10px", fontSize: "12px", color:props.agent.textColor }}>
+                    <p
+                      style={{
+                        marginTop: "10px",
+                        fontSize: "12px",
+                        color: props.agent.textColor,
+                        textShadow: "1px 1px black",
+                      }}
+                    >
                       *DISCLAIMERS: AMOUNTS SHOWN IN THIS CALCULATOR ARE
                       ESTIMATES ONLY AND NOT GUARANTEED IN ANY WAY. ESTIMATES
                       ARE AVERAGE ANNUAL RETURNS OF 6.4% AND LOAN INTEREST OF

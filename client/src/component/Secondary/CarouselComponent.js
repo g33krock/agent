@@ -65,7 +65,7 @@ export class AgentCarousel extends Component {
                 backgroundImage: `-webkit-linear-gradient(45deg, ${ag.primaryColor} 40%, #000000 40%)`,
               }}
             >
-              <Col style={{ margin: "10px" }} sm={4}>
+              <Col style={{ margin: "auto" }} sm={4}>
                 <h2
                   style={{
                     color: ag.textColor,
@@ -73,9 +73,11 @@ export class AgentCarousel extends Component {
                     textShadow: "1px 1px black",
                   }}
                 >
-                  Meet Your MPI®
+                  START YOUR MPI® SECURE
                   <br />
-                  Certified Advisor
+                  COMPOUND INTEREST
+                  <br />
+                  ACCOUNT™ TODAY
                 </h2>
                 <AltCalendar agent={ag} />
               </Col>

@@ -25,7 +25,7 @@ export class AltCalendar extends Component {
                   backgroundColor: "black",
                   border: "none",
                   color: `white`,
-                  width: "50%",
+                  width: "300px",
                   textShadow: "1px 1px black",
                   boxShadow: "2px 2px rgba(0, 0, 0, 0.5)",
                 }}

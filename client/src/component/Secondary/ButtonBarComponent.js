@@ -31,7 +31,7 @@ export class ButtonBar extends Component {
                 style={{
                   // backgroundColor: `${this.props.agent.secondaryColor}`,
                   backgroundColor: "black",
-                  width: "100%",
+                  width: "300px",
                   border: "none",
                   boxShadow: "2px 2px rgba(0, 0, 0, 0.5)",
                   color: `${this.props.agent.textColor}`,
