@@ -1,8 +1,22 @@
 import React, { Component } from "react";
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col, Button, Container } from "react-bootstrap";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { agentService } from "../../services/AgentService";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faInstagram,
+  faPinterest,
+  faTiktok,
+  faTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faEnvelope,
+  faMapMarkerAlt,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
 
 export class About extends Component {
   constructor(props) {
@@ -41,6 +55,7 @@ export class About extends Component {
               key={ag.toString()}
               style={{
                 backgroundImage: `-webkit-linear-gradient(45deg, ${ag.primaryColor} 40%, #000000 40%)`,
+                minHeight: "80vh",
               }}
             >
               <Row>
@@ -49,75 +64,214 @@ export class About extends Component {
                 </h1>
               </Row>
               <Row>
-                <p style={{ color: ag.textColor }}>{ag.bio}</p>
-              </Row>
-              <Col style={{ margin: "10px" }} sm={4}>
-                <h2
+                <p
                   style={{
                     color: ag.textColor,
-                    marginTop: "10%",
-                    textShadow: "1px 1px black",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                    width: "75%",
                   }}
                 >
-                  OUR LOCATION
-                </h2>
-
-              </Col>
-              <Col>
-                <Carousel
-                  showArrows={false}
-                  infiniteLoop={true}
-                  showThumbs={false}
-                  showStatus={false}
-                  autoPlay={true}
-                  interval={6100}
-                >
-                  {this.state.addAgents &&
-                    this.state.addAgents.map((aag) => (
-                      <div key={aag.image}>
-                        <Row>
-                          <Col>
-                            <h2
-                              style={{
-                                color: ag.textColor,
-                                marginTop: "10%",
-                                textShadow: "1px 1px black",
-                              }}
+                  {ag.bio}
+                </p>
+              </Row>
+              <Container
+                fluid
+                style={{
+                  backgroundColor: "whitesmoke",
+                  margin: "auto",
+                  width: "75%",
+                  padding: "1%",
+                }}
+              >
+                <Row>
+                  <Col style={{ margin: "auto" }}>
+                    <h2
+                      style={{
+                        color: "black",
+                        marginTop: "1%",
+                        marginBottom: "1%",
+                      }}
+                    >
+                      OUR LOCATION
+                    </h2>
+                    <Container
+                      style={{
+                        backgroundColor: "white",
+                        marginLeft: "5%",
+                        marginRight: "5%",
+                      }}
+                    >
+                      <Row style={{ marginTop: "1%", paddingTop: "1%" }}>
+                        <Col sm={1}>
+                          <FontAwesomeIcon icon={faMapMarkerAlt} />
+                        </Col>
+                        <Col sm={11} style={{ textAlign: "left" }}>
+                          <p>
+                            <strong>ADDRESS</strong>
+                            <br />
+                            {ag.address1}
+                            <br />
+                            {ag.city}, {ag.state} {ag.zip}
+                          </p>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col sm={1}>
+                          <FontAwesomeIcon icon={faEnvelope} />
+                        </Col>
+                        <Col sm={11} style={{ textAlign: "left" }}>
+                          <p>
+                            <strong>EMAIL</strong>
+                            <br />
+                            {ag.email}
+                          </p>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col sm={1}>
+                          <FontAwesomeIcon icon={faPhone} />
+                        </Col>
+                        <Col sm={11} style={{ textAlign: "left" }}>
+                          <p>
+                            <strong>PHONE</strong>
+                            <br />
+                            {ag.phone}
+                          </p>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col></Col>
+                        {ag.facebook && (
+                          <Col style={{ padding: "0px"}}>
+                            <a
+                              href={ag.facebook}
+                              style={{ color: "blue" }}
+                              
                             >
-                              OUR TEAM
-                            </h2>
-                            <img src={aag.image} alt={aag.firstName} />
-                            <h4 style={{ color: ag.textColor }}>
-                              {aag.firstName} {aag.lastName}
-                              <br />
-                              {aag.title}
-                            </h4>
-                            <Button
-                              variant="link"
-                              style={{ color: ag.textColor }}
-                              onClick={() => {
-                                toggleBio();
-                              }}
-                            >
-                              <strong style={{ color: aag.textColor }}>
-                                READ BIO
-                              </strong>
-                            </Button>
-                            <p
-                              id="bioBlock"
-                              style={{
-                                color: ag.textColor,
-                                display: this.state.bioDisplay,
-                              }}
-                            >
-                              {aag.bio}
-                            </p>
+                              <FontAwesomeIcon icon={faFacebook} />
+                            </a>
                           </Col>
-                        </Row>
-                      </div>
-                    ))}
-                </Carousel>
-              </Col>
+                        )}
+                        {ag.twitter && (
+                          <Col style={{ padding: "0px"}}>
+                            <a
+                              href={ag.twitter}
+                              style={{ color: "lightblue" }}
+                              
+                            >
+                              <FontAwesomeIcon icon={faTwitter} />
+                            </a>
+                          </Col>
+                        )}
+                        {ag.instagram && (
+                          <Col style={{ padding: "0px"}}>
+                            <a
+                              href={ag.instagram}
+                              style={{ color: "orange" }}
+                              
+                            >
+                              <FontAwesomeIcon icon={faInstagram} />
+                            </a>
+                          </Col>
+                        )}
+                        {ag.tiktok && (
+                          <Col style={{ padding: "0px"}}>
+                            <a
+                              href={ag.tiktok}
+                              style={{ color: "purple" }}
+                              
+                            >
+                              <FontAwesomeIcon icon={faTiktok} />
+                            </a>
+                          </Col>
+                        )}
+                        {ag.youtube && (
+                          <Col style={{ padding: "0px"}}>
+                            <a
+                              href={ag.youtube}
+                              style={{ color: "red" }}
+                              
+                            >
+                              <FontAwesomeIcon icon={faYoutube} />
+                            </a>
+                          </Col>
+                        )}
+                        {ag.pinterest && (
+                          <Col style={{ padding: "0px" }}>
+                            <a
+                              href={ag.pinterest}
+                              style={{ color: "pink" }}
+                              
+                            >
+                              <FontAwesomeIcon
+                                icon={faPinterest}
+                                // style={{ marginBottom: "50%" }}
+                              />
+                            </a>
+                          </Col>
+                        )}
+                        <Col></Col>
+                      </Row>
+                    </Container>
+                  </Col>
+                  <Col>
+                    <Carousel
+                      showArrows={false}
+                      infiniteLoop={true}
+                      showThumbs={false}
+                      showStatus={false}
+                      autoPlay={true}
+                      interval={6100}
+                    >
+                      {this.state.addAgents &&
+                        this.state.addAgents.map((aag) => (
+                          <div key={aag.image}>
+                            <Row>
+                              <Col>
+                                <h2
+                                  style={{
+                                    color: "black",
+                                    marginTop: "1%",
+                                    marginBottom: "1%",
+                                  }}
+                                >
+                                  OUR TEAM
+                                </h2>
+                                <img src={aag.image} alt={aag.firstName} />
+                                {/* <h4 style={{ color: "black" }}>
+                                  {aag.firstName} {aag.lastName}
+                                  <br />
+                                  {aag.title}
+                                </h4> */}
+                                <Button
+                                  variant="link"
+                                  style={{ color: "black" }}
+                                  onClick={() => {
+                                    toggleBio();
+                                  }}
+                                >
+                                  <strong style={{ color: "black" }}>
+                                    READ BIO
+                                  </strong>
+                                </Button>
+                                <p
+                                  id="bioBlock"
+                                  style={{
+                                    color: "black",
+                                    display: this.state.bioDisplay,
+                                  }}
+                                >
+                                  {aag.bio}
+                                </p>
+                              </Col>
+                            </Row>
+                          </div>
+                        ))}
+                    </Carousel>
+                  </Col>
+                </Row>
+              </Container>
             </Row>
           ))}
       </div>

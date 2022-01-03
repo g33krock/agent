@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
 import { agentService } from "../../services/AgentService";
 import $ from 'jquery';
 import { ButtonBar } from "./ButtonBarComponent";
@@ -43,7 +43,7 @@ export class Webinar extends Component {
         // borderRadius: "15px",
         alignContent: "right",
         // marginBottom: "5px",
-        // marginTop: "5px"
+        // marginTop: "5px",
       }}
     >
       <Row style={{ minHeight: "300px", marginTop: "5%" }}>
@@ -64,6 +64,23 @@ export class Webinar extends Component {
             allowFullScreen
             style={{  boxShadow: "2px 2px rgba(0, 0, 0, 0.5)", paddingLeft: "0px", marginBottom: "10%"  }}
           ></iframe>
+        </Col>
+      </Row>
+      <Row style={{backgroundColor: "white"}}>
+        <Col style={{margin:"auto"}}>
+          <h3 style={{width:"10vw", margin:"auto"}}>As Seen On</h3>
+        </Col>
+        <Col style={{margin:"auto"}}>
+          <Image src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Forbes-logo black.png" alt="Forbes Black Logo" style={{width:"10vw", margin:"auto"}} />
+        </Col>
+        <Col style={{margin:"auto"}}>
+          <Image src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/YahooFinanceLogo-black.png" alt="Yahoo Finance Black Logo" style={{width:"10vw", margin:"auto"}} />
+        </Col>
+        <Col style={{margin:"auto"}}>
+          <Image src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/entrepreneurblack.png" alt="Entrepreneur Black Logo" style={{width:"10vw", margin:"auto"}} />
+        </Col>
+        <Col style={{margin:"auto"}}>
+          <Image src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/stockhouse-black.png" alt="Stockhouse Black Logo" style={{width:"10vw", margin:"auto"}} />
         </Col>
       </Row>
     </Container>
