@@ -9,6 +9,19 @@
   pointer-events: none;
 }
 
+ul {
+  list-style: none;
+}
+
+ul li::before {
+  content: "\2022";
+  color: blue;
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+}
+
 @font-face {
   font-family: greatvibes;
   src: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/fonts/GreatVibes-Regular.ttf)
