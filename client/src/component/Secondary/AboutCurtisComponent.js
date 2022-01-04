@@ -39,13 +39,14 @@ export class AboutCurtis extends Component {
               <Row
                 style={{
                   backgroundImage: `-webkit-linear-gradient(45deg, ${ag.primaryColor} 40%, white 40%)`,
+                  position: 'relative',
                 }}
               >
                 <Col xs={5}>
                   <Image
-                    src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/SDRPHomeBackground.png"
+                    src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/CurtisFamilyCutoutShadow.png"
                     fluid
-                    style={{ marginBottom: "-3px", zIndex: "1" }}
+                    className='curtisFamilyImage'
                   />
                 </Col>
                 <Col xs={5}>
@@ -150,9 +151,10 @@ export class AboutCurtis extends Component {
                       <Col>
                         <Image
                           fluid
-                          src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/BestSellingAuthor.png"
+                          src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/BestSellingLogoBlack.png"
                         />
                       </Col>
+
                       <Col>
                         <Image
                           fluid
@@ -195,7 +197,7 @@ export class AboutCurtis extends Component {
                     </Row>
                   </Container>
                 </Col>
-                <Col style={{margin: "auto"}}>
+                <Col style={{ margin: "auto" }}>
                   <Container>
                     <iframe
                       width="100%"

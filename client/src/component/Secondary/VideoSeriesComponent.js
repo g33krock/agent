@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button, Image } from "react-bootstrap";
 import { agentService } from "../../services/AgentService";
 import { videoService } from "../../services/VideoService";
+import { AltCalendar } from "./AltCalendarComponent";
 
 export class VideoSeries extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ export class VideoSeries extends Component {
     this.state = {
       agent: this.props.agent,
       videos: [],
-      video: ""
+      video: "",
     };
   }
 
@@ -20,49 +21,72 @@ export class VideoSeries extends Component {
     this.setState({ agent });
     const videos = await videoService.all();
     this.setState({ videos });
-    console.log(videos)
+    console.log(videos);
   }
 
+  setVideo = (vid) => {
+    const videoId = vid.target.value;
+    console.log(vid.value);
+    const video = this.state.videos.find((video) => video.id === videoId);
+    this.setState({ video });
+    console.log(this.state.video);
+  };
+
   render() {
-    // const agency = "Not Your Mother's Insurance Agency";
     return (
       <Container fluid>
         {this.state.agent &&
           this.state.agent.map((ag) => (
-            <Row style={{ margin: "10px", position: "relative", color:ag.textColor }} key={ag.toString()}>
-                <Row ><h1 id="fancyfont">{ag.firstName} {ag.lastName} and Curtis Ray present</h1></Row>
-                <Row style={{ margin: "10px", height: "100vh" }}>
-              {/* <Col xs={2}>
-                {this.state.videos &&
-                  this.state.videos.map((video) => 
-                  <Row key={video.id} value={video} onClick={() => this.setState({video})} style={{backgroundColor: ag.primaryColor, border: `1px solid ${ag.secondaryColor}`, margin: "1px"}}>{video.title}</Row>
-                  )}
-              </Col> */}
-              <Col style={{ margin: "10px", position: "relative" }}>
-                {/* <Container
-                  style={{
-                    backgroundColor: `${ag.primaryColor}`,
-                    borderRadius: "15px",
-                    minHeight: "300px",
-                    marginTop: "10px",
-                    marginBottom: "10px",
-                  }}
-                > */}
-                      <iframe
-                        width="90%"
-                        height="auto"
-                        // src={`${this.state.video.link}`}
-                        src="https://compoundinterest.com/main-page"
-                        title={this.state.video.title}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        style={{ margin: "1%", boxShadow: "2px 2px rgba(0, 0, 0, 0.5)", height:"95vh"}}
-                        className="cropped fade-in-text"
-                      ></iframe>
-                {/* </Container> */}
+            <Row
+              style={{
+                margin: "10px",
+                position: "relative",
+                color: "black",
+              }}
+              key={ag.toString()}
+            >
+              <Col sm={2}>
+                <Row><Button>Arbitrary Button</Button></Row>
+                {this.state.videos.map((vid) => (
+                  <option
+                    value={vid.id}
+                    onClick={this.setVideo}
+                  >{vid.id} | {vid.title}
+                  </option>
+                ))}
               </Col>
-              </Row>
+              <Col sm={8}>
+                <Row>
+                  <h1>COMPOUND INTEREST</h1>
+                  <h2>THER RETIREMENT YOU DESERVE</h2>
+                </Row>
+                <Row><Container style={{backgroundColor: ag.primaryColor, width: "50%"}}><h3>{this.state.video.title}</h3></Container></Row>
+                <Row>
+                <iframe
+                  width="853"
+                  height="480"
+                  src={this.state.video.vidlink}
+                  title={this.state.video.title}
+                />
+                </Row>
+                <Row><h2>ALWAYS BE COMPOUNDING™</h2></Row>
+              </Col>
+              <Col sm={2}>
+                <Row>
+                  <Image
+                  roundedCircle
+                  fluid
+                  src={ag.profilePic} />
+                </Row>
+                <Row>
+                  <Image
+                  fluid
+                  src={ag.logo} />
+                </Row>
+                <Row>
+                <AltCalendar agent={ag} />
+                </Row>
+              </Col>
             </Row>
           ))}
       </Container>

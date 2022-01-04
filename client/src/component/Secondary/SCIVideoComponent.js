@@ -6,6 +6,8 @@ import {
   faHome,
   faDollarSign,
   faVideo,
+  faLock,
+  faAngleDoubleDown
 } from "@fortawesome/free-solid-svg-icons";
 
 export class SCIVideo extends Component {
@@ -29,14 +31,15 @@ export class SCIVideo extends Component {
         style={{
           backgroundColor: `black`,
           position: "relative",
-          zIndex: "-1"
+          zIndex: "-1",
         }}
       >
-        <Row fluid
-            className="scvis"
+        <Row
+          fluid
+          className="scvis"
           style={{
             marginTop: "2%",
-            marginBottom: "2%",
+            marginBottom: "10%",
             justifyContent: "center",
           }}
         >
@@ -48,14 +51,14 @@ export class SCIVideo extends Component {
               top: "5%",
             }}
           >
-            <h1 className="videohead">Secure Compound Interest Video Series</h1>
+            <h1 className="videohead">Secure Compound Interest</h1>
           </Row>
           <Row
             style={{
               backgroundColor: this.props.agent.primaryColor,
               height: "2px",
               position: "absolute",
-              top: "20%",
+              top: "15%",
               width: "50vw",
             }}
           />
@@ -66,21 +69,36 @@ export class SCIVideo extends Component {
               marginLeft: "auto",
               marginRight: "auto",
               position: "absolute",
-              top: "23%",
+              top: "18%",
             }}
           >
-            <h3 className="videobody">WHAT YOU WILL LEARN</h3>
+            <h2 className="videosubhead">The Simple Path To Full Retirement</h2>
+            {/* <h3 className="videobody">WHAT YOU WILL LEARN</h3> */}
           </Row>
           <Col
             sm={0}
             xl={6}
-            style={{ position: "absolute", top: "50%", textAlign: "left" }}
+            style={{ position: "absolute", top: "40%", textAlign: "left" }}
           ></Col>
           <Col
             sm={12}
             xl={6}
-            style={{ position: "absolute", top: "40%", textAlign: "left" }}
+            style={{ position: "absolute", top: "30%", textAlign: "left" }}
           >
+            <Row
+              style={{
+                marginBottom: "2%",
+                padding: "0px",
+              }}
+            >
+              <h3 className="bulletpoints">
+                <FontAwesomeIcon
+                  icon={faAngleDoubleDown}
+                  style={{ color: "white", width: "10%" }}
+                />
+                The Myth of Downsizing
+              </h3>
+            </Row>
             <Row
               style={{
                 marginBottom: "2%",
@@ -103,10 +121,24 @@ export class SCIVideo extends Component {
             >
               <h3 className="bulletpoints">
                 <FontAwesomeIcon
+                  icon={faLock}
+                  style={{ color: "white", width: "10%" }}
+                />
+                Secure Leverage
+              </h3>
+            </Row>
+            <Row
+              style={{
+                marginBottom: "2%",
+                padding: "0px",
+              }}
+            >
+              <h3 className="bulletpoints">
+                <FontAwesomeIcon
                   icon={faDollarSign}
                   style={{ color: "white", width: "10%" }}
                 />
-                Achieve Your Retirement Dream
+                Achieving Full Retirement
               </h3>
             </Row>
             <Row
@@ -125,9 +157,7 @@ export class SCIVideo extends Component {
             </Row>
           </Col>
         </Row>
-        <Row fluid
-          className="videobuttonrow"
-        >
+        <Row fluid className="videobuttonrow">
           {/* <Col xs={1} sm={1} md={1} lg={1} xl={1} />
           <Col
             xs={10}
@@ -137,21 +167,19 @@ export class SCIVideo extends Component {
             xl={10}
             className="videobuttoncol"
           > */}
-            <Button
-              className="videobutton"
-              style={{
-                backgroundColor: this.props.agent.primaryColor,
-                border: "none",
-                boxShadow: "2px 2px rgba(0, 0, 0, 0.5)",
-                color: `${this.props.agent.textColor}`,
-                textShadow: "2px 2px rgba(0, 0, 0, 0.5)",
-              }}
-              href="/videoseries"
-            >
-              <h2 className="videobuttontext">
-                Compound Interest Video Series
-              </h2>
-            </Button>
+          <Button
+            className="videobutton"
+            style={{
+              backgroundColor: this.props.agent.primaryColor,
+              border: "none",
+              boxShadow: "2px 2px rgba(0, 0, 0, 0.5)",
+              color: `${this.props.agent.textColor}`,
+              textShadow: "2px 2px rgba(0, 0, 0, 0.5)",
+            }}
+            href="/videoseries"
+          >
+            <h2 className="videobuttontext">Compound Interest Video Series</h2>
+          </Button>
           {/* </Col>
           <Col xs={1} sm={1} md={1} lg={1} xl={1} /> */}
         </Row>
