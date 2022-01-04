@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Collapsible from "react-collapsible";
+import { BsChevronDown } from "react-icons/bs";
 import { Container, Row, Col } from "react-bootstrap";
 import { agentService } from "../../services/AgentService";
 
@@ -47,7 +49,7 @@ export class FAQ extends Component {
         {this.state.agent &&
           this.state.agent.map((ag) => (
             <Row
-              style={{ color: `${ag.textColor}`, margin: "10px" }}
+              style={{ color: `black`, margin: "10px" }}
               key={ag.toString()}
             >
               <h1 style={{ marginBottom: "20px" }}>
@@ -55,6 +57,7 @@ export class FAQ extends Component {
               </h1>
               <Col>
                 {faq.map((ques) => (
+                  <Collapsible trigger={[<BsChevronDown />, ques.question]}>
                   <Row style={{ margin: "10px" }} key={faq.toString()}>
                     <Col>
                       <h3>{ques.question}</h3>
@@ -74,6 +77,7 @@ export class FAQ extends Component {
                       ></iframe>
                     </Col>
                   </Row>
+                  </Collapsible>
                 ))}
               </Col>
             </Row>

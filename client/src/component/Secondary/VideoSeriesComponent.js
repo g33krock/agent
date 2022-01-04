@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { BsChevronDown } from "react-icons/bs";
 import { Container, Row, Col, Button, Image } from "react-bootstrap";
+import Collapsible from "react-collapsible";
 import { agentService } from "../../services/AgentService";
 import { videoService } from "../../services/VideoService";
 import { AltCalendar } from "./AltCalendarComponent";
@@ -10,7 +12,15 @@ export class VideoSeries extends Component {
     this.state = {
       agent: this.props.agent,
       videos: [],
-      video: "",
+      video: {
+        "id": "1",
+        "created_at": "2021-12-17T17:28:05.000Z",
+        "title": "Welcome to Compound Interest",
+        "vidlink": "https://compoundinterest.com/wp-content/uploads/2021/11/01-Welcome-To-Compound-Interest-1.mp4",
+        "poster": "https://compoundinterest.com/wp-content/uploads/2021/11/Chapter-1_-Welcome-to-Compound-Interest_-The-Retirement-You-Deserve.png",
+        "number": 1,
+        "category": "none"
+    },
     };
   }
 
@@ -34,7 +44,7 @@ export class VideoSeries extends Component {
 
   render() {
     return (
-      <Container fluid style={{backgroundColor: 'grey'}}>
+      <Container fluid style={{backgroundColor: 'grey', minHeight: '80vh', paddingBottom:'3%'}}>
         {this.state.agent &&
           this.state.agent.map((ag) => (
             <Row
@@ -46,10 +56,10 @@ export class VideoSeries extends Component {
               key={ag.toString()}
             >
               <Col sm={3}>
-                <Row style={{marginTop:"2%", marginBottom:"2%"}}><Button>Arbitrary Button</Button></Row>
+                <Row style={{marginTop:"2%", marginBottom:"2%"}}><Button style={{width:"75%", marginLeft: "auto", marginRight: "auto"}}>Arbitrary Button</Button></Row>
                 <Container style={{backgroundColor: "rgba(255, 255, 255, 0.514)", borderRadius: "5px"}}>
                 <Row><h3><strong>Video Series</strong></h3></Row>
-                {this.state.videos.map((vid) => (
+                {this.state.videos.filter(vid => vid.category === 'none').map((vid) => (
                   <option
                   className="selectVideo"
                     value={vid.id}
@@ -57,6 +67,16 @@ export class VideoSeries extends Component {
                   >{vid.id} | {vid.title}
                   </option>
                 ))}
+                <Collapsible trigger={[<BsChevronDown />, "8 MPI® Plans"]}>
+                {this.state.videos.filter(vid => vid.category === 'plans').map((vid) => (
+                  <option
+                  className="selectVideo"
+                    value={vid.id}
+                    onClick={this.setVideo}
+                  >{vid.id} | {vid.title}
+                  </option>
+                ))}
+                </Collapsible>
                 </Container>
               </Col>
               <Col sm={7}>
@@ -79,7 +99,7 @@ export class VideoSeries extends Component {
                 <Row><h2>ALWAYS BE COMPOUNDING™</h2></Row>
               </Col>
               <Col sm={2}>
-                <Row>
+                <Row style={{marginTop:"2%", marginBottom:"2%"}}>
                   <Image
                   roundedCircle
                   fluid

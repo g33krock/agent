@@ -38,6 +38,16 @@ ul li::before {
   }
 }
 
+.Collapsible__trigger {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.Collapsible__trigger.is-open svg {
+  transform: rotate(180deg);
+}
+
 .selectVideo {
   /* wrap text in compatible browsers */
   -moz-white-space: pre-wrap;

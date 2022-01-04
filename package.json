@@ -27,6 +27,8 @@
     "@supabase/supabase-js": "^1.28.5",
     "jquery": "^3.6.0",
     "mkdirp": "^1.0.4",
+    "react-collapsible": "^2.8.4",
+    "react-icons": "^4.3.1",
     "react-responsive-carousel": "^3.2.22",
     "reactstrap": "^9.0.1"
   }
