@@ -38,7 +38,7 @@ ul li::before {
   }
 }
 
-option {
+.selectVideo {
   /* wrap text in compatible browsers */
   -moz-white-space: pre-wrap;
   -o-white-space: pre-wrap;
@@ -48,7 +48,21 @@ option {
   text-overflow: ellipsis;
   /* add border after every option */
   border-bottom: 1px solid black;
-  text-align: left
+  text-align: left;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-weight: bolder;
+  /* background-color: rgba(255, 255, 255, 0.514) */
+}
+
+.selectVideo:hover {
+  color: white;
+  background-color: black
+}
+
+.selectVideo:visited {
+  color: white;
+  background-color: blue
 }
 
 #bioBlock {

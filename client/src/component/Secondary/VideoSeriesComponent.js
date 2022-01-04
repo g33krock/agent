@@ -34,7 +34,7 @@ export class VideoSeries extends Component {
 
   render() {
     return (
-      <Container fluid>
+      <Container fluid style={{backgroundColor: 'grey'}}>
         {this.state.agent &&
           this.state.agent.map((ag) => (
             <Row
@@ -45,28 +45,35 @@ export class VideoSeries extends Component {
               }}
               key={ag.toString()}
             >
-              <Col sm={2}>
-                <Row><Button>Arbitrary Button</Button></Row>
+              <Col sm={3}>
+                <Row style={{marginTop:"2%", marginBottom:"2%"}}><Button>Arbitrary Button</Button></Row>
+                <Container style={{backgroundColor: "rgba(255, 255, 255, 0.514)", borderRadius: "5px"}}>
+                <Row><h3><strong>Video Series</strong></h3></Row>
                 {this.state.videos.map((vid) => (
                   <option
+                  className="selectVideo"
                     value={vid.id}
                     onClick={this.setVideo}
                   >{vid.id} | {vid.title}
                   </option>
                 ))}
+                </Container>
               </Col>
-              <Col sm={8}>
+              <Col sm={7}>
                 <Row>
                   <h1>COMPOUND INTEREST</h1>
                   <h2>THER RETIREMENT YOU DESERVE</h2>
                 </Row>
-                <Row><Container style={{backgroundColor: ag.primaryColor, width: "50%"}}><h3>{this.state.video.title}</h3></Container></Row>
+                <Row style={{marginBottom: "1%"}}><Container style={{backgroundColor: ag.primaryColor, width: "50%", borderRadius: "5px"}}><h3>{this.state.video.title}</h3></Container></Row>
                 <Row>
                 <iframe
                   width="853"
                   height="480"
                   src={this.state.video.vidlink}
                   title={this.state.video.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
                 />
                 </Row>
                 <Row><h2>ALWAYS BE COMPOUNDING™</h2></Row>
