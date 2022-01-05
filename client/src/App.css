@@ -801,7 +801,7 @@ ul li::before {
   }
 
   .documentaryContainer {
-    min-width: 850px
+    border: none
   }
 }
 
@@ -903,6 +903,9 @@ ul li::before {
   .curtisList {
     text-align: left; 
     font-size: 125%
+  }
+  .documentaryContainer {
+    max-width: 50vw
   }
 }
 

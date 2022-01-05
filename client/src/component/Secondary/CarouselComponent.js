@@ -12,7 +12,7 @@ export class AgentCarousel extends Component {
     this.state = {
       agent: [],
       addAgents: [],
-      bioDisplay: ""
+      bioDisplay: "",
     };
   }
 
@@ -23,7 +23,7 @@ export class AgentCarousel extends Component {
     this.setState({ agent });
     const addAgents = await agentService.addAgents(agentObject);
     this.setState({ addAgents });
-    this.setState({bioDisplay: "none"})
+    this.setState({ bioDisplay: "none" });
   }
 
   render() {
@@ -65,7 +65,7 @@ export class AgentCarousel extends Component {
                 backgroundImage: `-webkit-linear-gradient(45deg, ${ag.primaryColor} 40%, #000000 40%)`,
               }}
             >
-              <Col style={{ margin: "auto" }} sm={4}>
+              <Col style={{ margin: "auto" }}sm={4}>
                 <h2
                   style={{
                     color: ag.textColor,
@@ -81,7 +81,7 @@ export class AgentCarousel extends Component {
                 </h2>
                 <AltCalendar agent={ag} />
               </Col>
-              <Col>
+              <Col sm={8}>
                 <Carousel
                   showArrows={false}
                   infiniteLoop={true}
@@ -94,27 +94,38 @@ export class AgentCarousel extends Component {
                     this.state.addAgents.map((aag) => (
                       <div key={aag.image}>
                         <Row>
-                        <Col>
-                        <h1 style={{ color: ag.textColor }}>
-                            MEET YOUR
-                          </h1>
-                          <h2 style={{ color: ag.textColor }}>
-                            MPI® CERTIFIED ADVISOR
-                          </h2>
-                          <img src={aag.image} alt={aag.firstName} />
-                          <h4 style={{ color: ag.textColor }}>{aag.firstName} {aag.lastName}<br/>{aag.title}</h4>
-                          <Button variant="link"
-                          style={{ color: ag.textColor}}
-                            onClick={() => {
-                              toggleBio();
-                            }}
-                          >
-                            <strong style={{ color:aag.textColor}}>READ BIO</strong>
-                          </Button>
-                          <p id="bioBlock" style={{ color: ag.textColor, display:this.state.bioDisplay }}>
-                            {aag.bio}
-                          </p>
-                        </Col>
+                          <Col>
+                            <h1 style={{ color: ag.textColor }}>MEET YOUR</h1>
+                            <h2 style={{ color: ag.textColor }}>
+                              MPI® CERTIFIED ADVISOR
+                            </h2>
+                            <img src={aag.image} alt={aag.firstName} />
+                            <h4 style={{ color: ag.textColor }}>
+                              {aag.firstName} {aag.lastName}
+                              <br />
+                              {aag.title}
+                            </h4>
+                            <Button
+                              variant="link"
+                              style={{ color: ag.textColor }}
+                              onClick={() => {
+                                toggleBio();
+                              }}
+                            >
+                              <strong style={{ color: aag.textColor }}>
+                                READ BIO
+                              </strong>
+                            </Button>
+                            <p
+                              id="bioBlock"
+                              style={{
+                                color: ag.textColor,
+                                display: this.state.bioDisplay,
+                              }}
+                            >
+                              {aag.bio}
+                            </p>
+                          </Col>
                         </Row>
                       </div>
                     ))}

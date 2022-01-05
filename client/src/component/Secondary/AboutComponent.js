@@ -86,7 +86,7 @@ export class About extends Component {
                 }}
               >
                 <Row>
-                  <Col style={{ margin: "auto" }}>
+                  <Col style={{ margin: "auto" }} sm={6}>
                     <h2
                       style={{
                         color: "black",
@@ -217,7 +217,7 @@ export class About extends Component {
                       </Row>
                     </Container>
                   </Col>
-                  <Col>
+                  <Col sm={6}>
                     <Carousel
                       showArrows={false}
                       infiniteLoop={true}

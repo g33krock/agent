@@ -32,8 +32,8 @@ export class Jumbotron extends Component {
                   <img 
                   src={ag.logo}
                   alt={ag.agency}
-                  width="100%"
-                  style={{marginBottom: "0px", marginTop: "10%", maxHeight: "20vh"}}/>
+                  // width="100%"
+                  style={{marginBottom: "0px", marginTop: "10%", height: "20vh"}}/>
                   <h1
                     style={{
                       color: `${ag.textColor}`,

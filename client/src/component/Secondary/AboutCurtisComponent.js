@@ -100,7 +100,7 @@ export class AboutCurtis extends Component {
                 </Col>
               </Row>
               <Row style={{ backgroundColor: ag.primaryColor }}>
-                <Col style={{ backgroundColor: ag.primaryColor }}>
+                <Col style={{ backgroundColor: ag.primaryColor }} sm={6}>
                   <Container
                     style={{ backgroundColor: "white", paddingBottom: "2%" }}
                   >
@@ -196,7 +196,7 @@ export class AboutCurtis extends Component {
                     </Row>
                   </Container>
                 </Col>
-                <Col style={{ marginBottom: "auto", marginTop: "auto" }}>
+                <Col style={{ marginBottom: "auto", marginTop: "auto" }} sm={6}>
                   <Container className="videoWrapper documentaryContainer">
                     <iframe
                       width="853"
