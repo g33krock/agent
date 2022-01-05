@@ -78,6 +78,7 @@ export class About extends Component {
               <Container
                 fluid
                 style={{
+                  borderRadius: "5px",
                   backgroundColor: "whitesmoke",
                   margin: "auto",
                   width: "75%",
@@ -97,9 +98,10 @@ export class About extends Component {
                     </h2>
                     <Container
                       style={{
+                        width: "90%",
                         backgroundColor: "white",
-                        marginLeft: "5%",
-                        marginRight: "5%",
+                        marginLeft: "auto",
+                        marginRight: "auto",
                       }}
                     >
                       <Row style={{ marginTop: "1%", paddingTop: "1%" }}>
