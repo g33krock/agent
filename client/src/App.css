@@ -48,6 +48,24 @@ ul li::before {
   transform: rotate(180deg);
 }
 
+.calendarButton {
+  background-color: black;
+  border: none;
+  color: white;
+  width: 300px;
+  text-shadow: 1px 1px rgb(131, 120, 120);
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.videoCalendarButton {
+  background-color: black;
+  border: none;
+  color: white;
+  width: 100%;
+  text-shadow: 1px 1px rgb(131, 120, 120);
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+
 .selectVideo {
   /* wrap text in compatible browsers */
   -moz-white-space: pre-wrap;

@@ -4,7 +4,7 @@ import { Container, Row, Col, Button, Image } from "react-bootstrap";
 import Collapsible from "react-collapsible";
 import { agentService } from "../../services/AgentService";
 import { videoService } from "../../services/VideoService";
-import { AltCalendar } from "./AltCalendarComponent";
+import { VideoCalendar } from "./VideoCalendarComponent";
 
 export class VideoSeries extends Component {
   constructor(props) {
@@ -111,7 +111,7 @@ export class VideoSeries extends Component {
                   src={ag.logo} />
                 </Row>
                 <Row>
-                <AltCalendar agent={ag} />
+                <VideoCalendar agent={ag} />
                 </Row>
               </Col>
             </Row>

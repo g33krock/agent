@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button, Modal, ModalBody } from "reactstrap";
 import { InlineWidget } from "react-calendly";
 
-export class AltCalendar extends Component {
+export class VideoCalendar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +20,7 @@ export class AltCalendar extends Component {
     return (
             <div style={{marginTop: "5%"}}>
               <Button
-                className="calendarButton"
+                className="videoCalendarButton"
                 onClick={() => this.setState({modal: true})}
               >
                 SCHEDULE A 1 ON 1 WITH AN<br />MPI® CERTFIED ADVISOR
