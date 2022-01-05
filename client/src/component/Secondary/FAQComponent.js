@@ -3,12 +3,14 @@ import Collapsible from "react-collapsible";
 import { BsChevronDown } from "react-icons/bs";
 import { Container, Row, Col } from "react-bootstrap";
 import { agentService } from "../../services/AgentService";
+import { faqService } from "../../services/FAQService";
 
 export class FAQ extends Component {
   constructor(props) {
     super(props);
     this.state = {
       agent: this.props.agent,
+      faqs: [],
     };
   }
 
@@ -18,6 +20,9 @@ export class FAQ extends Component {
     const agent = await agentService.one(agentObject);
     this.setState({ agent });
     console.log(this.props.agent);
+    const faqs = await faqService.all();
+    this.setState({ faqs });
+    console.log(this.state.faqs);
     console.log(ID);
   }
 
@@ -48,37 +53,62 @@ export class FAQ extends Component {
       <Container fluid>
         {this.state.agent &&
           this.state.agent.map((ag) => (
-            <Row
-              style={{ color: `black`, margin: "10px" }}
-              key={ag.toString()}
-            >
+            <Row style={{ color: `black`, margin: "10px" }} key={ag.toString()}>
               <h1 style={{ marginBottom: "20px" }}>
                 Frequently Asked Questions
               </h1>
               <Col>
-                {faq.map((ques) => (
-                  <Collapsible trigger={[<BsChevronDown />, ques.question]}>
-                  <Row style={{ margin: "10px" }} key={faq.toString()}>
-                    <Col>
-                      <h3>{ques.question}</h3>
-                    </Col>
-                    <Col>
-                      <h3>{ques.answer}</h3>
-                    </Col>
-                    <Col>
-                      <iframe
-                        title={ques.question}
-                        src={ques.video}
-                        allowFullScreen
-                        frameBorder="0"
-                        controls poster="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/calculator.png"
-                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        samesite="Strict"
-                      ></iframe>
-                    </Col>
-                  </Row>
-                  </Collapsible>
-                ))}
+                {this.state.faqs &&
+                  this.state.faqs
+                    .filter((n) => n.id % 2)
+                    .map((ques) => (
+                      <Collapsible trigger={[<BsChevronDown />, ques.question]}>
+                        <Row style={{ margin: "10px" }} key={faq.toString()}>
+                          <Col>
+                            <p>{ques.answer}</p>
+                          </Col>
+                          <Col>
+                            <iframe
+                              title={ques.question}
+                              src={ques.video}
+                              allowFullScreen
+                              frameBorder="0"
+                              controls
+                              poster="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/calculator.png"
+                              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              samesite="Strict"
+                            ></iframe>
+                          </Col>
+                        </Row>
+                      </Collapsible>
+                    ))}
+              </Col>
+              <Col>
+                {this.state.faqs &&
+                  this.state.faqs
+                  .filter(function(element, index, array) {
+                    return (index % 2 !== 0)})
+                    .map((ques) => (
+                      <Collapsible trigger={[<BsChevronDown />, ques.question]}>
+                        <Row style={{ margin: "10px" }} key={faq.toString()}>
+                          <Col>
+                            <p>{ques.answer}</p>
+                          </Col>
+                          <Col>
+                            <iframe
+                              title={ques.question}
+                              src={ques.video}
+                              allowFullScreen
+                              frameBorder="0"
+                              controls
+                              poster="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/calculator.png"
+                              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              samesite="Strict"
+                            ></iframe>
+                          </Col>
+                        </Row>
+                      </Collapsible>
+                    ))}
               </Col>
             </Row>
           ))}

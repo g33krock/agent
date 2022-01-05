@@ -169,6 +169,18 @@ const getVideos = (request, response) => {
   );
 };
 
+const getFAQs = (request, response) => {
+  pool.query(
+    "SELECT * FROM faq ORDER BY id ASC",
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    }
+  );
+};
+
 const getAddAgents = (request, response) => {
   const agency = parseInt(request.params.agency);
   pool.query(
@@ -190,5 +202,6 @@ module.exports = {
   updateAgent,
   deleteAgent,
   getVideos,
+  getFAQs,
   getAddAgents,
 };

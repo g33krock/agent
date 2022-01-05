@@ -56,7 +56,8 @@ export class VideoSeries extends Component {
               key={ag.toString()}
             >
               <Col sm={3}>
-                <Row style={{marginTop:"2%", marginBottom:"2%"}}><Button style={{width:"75%", marginLeft: "auto", marginRight: "auto"}}>Arbitrary Button</Button></Row>
+                <Row style={{marginTop:"2%", marginBottom:"2%"}}><Button style={{width:"75%", marginLeft: "auto", marginRight: "auto"}}>Webinar</Button></Row>
+                <Row style={{marginTop:"2%", marginBottom:"2%"}}><Button style={{width:"75%", marginLeft: "auto", marginRight: "auto"}}>Documentary</Button></Row>
                 <Container style={{backgroundColor: "rgba(255, 255, 255, 0.514)", borderRadius: "5px"}}>
                 <Row><h3><strong>Video Series</strong></h3></Row>
                 {this.state.videos.filter(vid => vid.category === 'none').map((vid) => (

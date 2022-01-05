@@ -39,6 +39,9 @@ app.delete('/agent/:id', db.deleteAgent)
 //get all videos
 app.get('/videos', db.getVideos)
 
+//get all faqs
+app.get('/fax', db.getFAQs)
+
 //get all addagents
 app.get('/addagents/:agency', db.getAddAgents)
 
