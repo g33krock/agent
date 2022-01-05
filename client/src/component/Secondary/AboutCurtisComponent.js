@@ -39,26 +39,26 @@ export class AboutCurtis extends Component {
               <Row
                 style={{
                   backgroundImage: `-webkit-linear-gradient(45deg, ${ag.primaryColor} 40%, white 40%)`,
-                  position: 'relative',
+                  position: "relative",
                 }}
               >
                 <Col xs={5}>
                   <Image
                     src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/CurtisFamilyCutoutShadow.png"
                     fluid
-                    className='curtisFamilyImage'
+                    className="curtisFamilyImage"
                   />
                 </Col>
-                <Col xs={5}>
+                <Col xs={7}>
                   <Container
                     style={{
                       borderRadius: "15px",
-                      minHeight: "300px",
+                      // minHeight: "300px",
                       marginTop: "10px",
-                      marginBottom: "10px",
+                      // marginBottom: "10px",
                     }}
                   >
-                    <ul style={{ textAlign: "left", fontSize: "125%" }}>
+                    <ul className="curtisList">
                       <li>FORBES Compound Interest Expert</li>
                       <li>Two-Time Best Selling Author</li>
                       <li>
@@ -69,7 +69,6 @@ export class AboutCurtis extends Component {
                       <li>Married, Five Kids</li>
                       <li>Lives in Gilbert, AZ</li>
                     </ul>
-                    <br />
                     <Button
                       variant="link"
                       style={{ color: "black" }}
@@ -101,11 +100,11 @@ export class AboutCurtis extends Component {
                 </Col>
               </Row>
               <Row style={{ backgroundColor: ag.primaryColor }}>
-                <Col>
+                <Col style={{ backgroundColor: ag.primaryColor }}>
                   <Container
                     style={{ backgroundColor: "white", paddingBottom: "2%" }}
                   >
-                    <Row style={{ marginBottom: "2%", marginTop: "1%" }}>
+                    <Row style={{ marginTop: "auto", marginBottom: "auto" }}>
                       <Col style={{ margin: "auto" }}>
                         <strong style={{ width: "5vw", margin: "auto" }}>
                           As Seen On
@@ -197,16 +196,16 @@ export class AboutCurtis extends Component {
                     </Row>
                   </Container>
                 </Col>
-                <Col style={{ margin: "auto" }}>
-                  <Container>
+                <Col style={{ marginBottom: "auto", marginTop: "auto" }}>
+                  <Container className="videoWrapper documentaryContainer">
                     <iframe
-                      width="100%"
-                      height="500vw"
-                      src="https://www.youtube.com/embed/tQWmF0OJCaw"
-                      title="YouTube video player"
-                      frameborder="0"
+                      width="853"
+                      height="480"
+                      src="https://compoundinterest.com/wp-content/uploads/2021/11/01-Welcome-To-Compound-Interest-1.mp4"
+                      title="Welcome to Compound Interest"
+                      frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
+                      allowFullScreen
                     ></iframe>
                   </Container>
                 </Col>
