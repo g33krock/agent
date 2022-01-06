@@ -57,7 +57,8 @@ export class FAQ extends Component {
               <h1 style={{ marginBottom: "20px" }}>
                 Frequently Asked Questions
               </h1>
-              <Col>
+              <Col sm={2}/>
+              <Col sm={4}>
                 {this.state.faqs &&
                   this.state.faqs
                     .filter((n) => n.id % 2)
@@ -83,14 +84,14 @@ export class FAQ extends Component {
                       </Collapsible>
                     ))}
               </Col>
-              <Col>
+              <Col sm={4}>
                 {this.state.faqs &&
                   this.state.faqs
                   .filter(function(element, index, array) {
                     return (index % 2 !== 0)})
                     .map((ques) => (
                       <Collapsible trigger={[<BsChevronDown />, ques.question]}>
-                        <Row style={{ margin: "10px" }} key={faq.toString()}>
+                        <Row key={faq.toString()}>
                           <Col>
                             <p>{ques.answer}</p>
                           </Col>
@@ -110,6 +111,7 @@ export class FAQ extends Component {
                       </Collapsible>
                     ))}
               </Col>
+              <Col sm={2}/>
             </Row>
           ))}
       </Container>
