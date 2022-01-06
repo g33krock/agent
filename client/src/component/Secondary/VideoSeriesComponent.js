@@ -13,16 +13,14 @@ export class VideoSeries extends Component {
       agent: this.props.agent,
       videos: [],
       video: {
-        id: "1",
-        created_at: "2021-12-17T17:28:05.000Z",
-        title: "Welcome to Compound Interest",
-        vidlink:
-          "https://compoundinterest.com/wp-content/uploads/2021/11/01-Welcome-To-Compound-Interest-1.mp4",
-        poster:
-          "https://compoundinterest.com/wp-content/uploads/2021/11/Chapter-1_-Welcome-to-Compound-Interest_-The-Retirement-You-Deserve.png",
-        number: 1,
-        category: "none",
-      },
+        "id": "1",
+        "created_at": "2021-12-17T17:28:05.000Z",
+        "title": "Welcome to Compound Interest",
+        "vidlink": "https://compoundinterest.com/wp-content/uploads/2021/11/01-Welcome-To-Compound-Interest-1.mp4",
+        "poster": "https://compoundinterest.com/wp-content/uploads/2021/11/Chapter-1_-Welcome-to-Compound-Interest_-The-Retirement-You-Deserve.png",
+        "number": 1,
+        "category": "none"
+    },
     };
   }
 
@@ -46,17 +44,7 @@ export class VideoSeries extends Component {
 
   render() {
     return (
-      <Container
-        fluid
-        style={{
-          backgroundColor: "rgb(211, 211, 211)",
-          minHeight: "80vh",
-          paddingBottom: "3%",
-          border: "4px solid black",
-          margin: "2% auto 2% auto",
-          maxWidth: "90vw",
-        }}
-      >
+      <Container fluid style={{backgroundColor: 'rgb(211, 211, 211)', minHeight: '80vh', paddingBottom:'3%', border: '4px solid black', margin: '2% auto 2% auto', maxWidth: '95vw'}}>
         {this.state.agent &&
           this.state.agent.map((ag) => (
             <Row
@@ -67,107 +55,65 @@ export class VideoSeries extends Component {
               }}
               key={ag.toString()}
             >
-              <Col sm={3} style={{ overflow: "scroll", maxHeight: "90vh" }}>
-                <Row style={{ marginTop: "2%", marginBottom: "2%" }}>
-                  <Button
-                    style={{
-                      width: "75%",
-                      marginLeft: "auto",
-                      marginRight: "auto",
-                    }}
-                  >
-                    Webinar
-                  </Button>
-                </Row>
-                <Row style={{ marginTop: "2%", marginBottom: "2%" }}>
-                  <Button
-                    style={{
-                      width: "75%",
-                      marginLeft: "auto",
-                      marginRight: "auto",
-                    }}
-                  >
-                    Documentary
-                  </Button>
-                </Row>
-                <Container
-                  style={{
-                    backgroundColor: "rgba(255, 255, 255, 0.514)",
-                    borderRadius: "5px",
-                  }}
-                >
-                  <Collapsible trigger={[<BsChevronDown />, <h2> Video Series</h2>]}>
-                    {this.state.videos
-                      .filter((vid) => vid.category === "none")
-                      .map((vid) => (
-                        <option
-                          className="selectVideo"
-                          value={vid.id}
-                          onClick={this.setVideo}
-                        >
-                          {vid.id} | {vid.title}
-                        </option>
-                      ))}
-                    <Collapsible trigger={[<BsChevronDown />, <strong> Video Series</strong>]}>
-                      {this.state.videos
-                        .filter((vid) => vid.category === "plans")
-                        .map((vid) => (
-                          <option
-                            className="selectVideo"
-                            value={vid.id}
-                            onClick={this.setVideo}
-                          >
-                            {vid.id} | {vid.title}
-                          </option>
-                        ))}
-                    </Collapsible>
-                  </Collapsible>
+              <Col sm={3} style={{overflow: 'scroll', maxHeight: '90vh'}}>
+                <Row style={{marginTop:"2%", marginBottom:"2%"}}><Button style={{width:"75%", marginLeft: "auto", marginRight: "auto"}}>Webinar</Button></Row>
+                <Row style={{marginTop:"2%", marginBottom:"2%"}}><Button style={{width:"75%", marginLeft: "auto", marginRight: "auto"}}>Documentary</Button></Row>
+                <Container style={{backgroundColor: "rgba(255, 255, 255, 0.514)", borderRadius: "5px" }}>
+                <Row style={{borderBottom: "2px solid black"}}><h3><strong>Video Series</strong></h3></Row>
+                {this.state.videos.filter(vid => vid.category === 'none').map((vid) => (
+                  <option
+                  className="selectVideo"
+                    value={vid.id}
+                    onClick={this.setVideo}
+                  >{vid.id} | {vid.title}
+                  </option>
+                ))}
+                <Collapsible trigger={[<BsChevronDown />, <h3>8 MPI® Plans</h3>]}>
+                {this.state.videos.filter(vid => vid.category === 'plans').map((vid) => (
+                  <option
+                  className="selectVideo"
+                    value={vid.id}
+                    onClick={this.setVideo}
+                  ><p>{vid.id} | {vid.title}</p>
+                  </option>
+                ))}
+                </Collapsible>
                 </Container>
               </Col>
-              <Col sm={7}>
+              <Col sm={7} style={{marginLeft: "1%", marginRight: "1%"}}>
                 <Row>
                   <h1>COMPOUND INTEREST</h1>
                   <h2>THER RETIREMENT YOU DESERVE</h2>
                 </Row>
-                <Row style={{ marginBottom: "1%" }}>
-                  <Container
-                    style={{
-                      backgroundColor: ag.primaryColor,
-                      width: "75%",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    <h3>{this.state.video.title}</h3>
-                  </Container>
-                </Row>
+                <Row style={{marginBottom: "1%"}}><Container style={{backgroundColor: ag.primaryColor, width: "75%", borderRadius: "5px"}}><h3>{this.state.video.title}</h3></Container></Row>
                 <Row>
-                  <iframe
-                    width="853"
-                    height="480"
-                    src={this.state.video.vidlink}
-                    title={this.state.video.title}
-                    frameBorder="4"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{
-                      border: "4px solid black",
-                      backgroundColor: "black",
-                    }}
-                  />
+                <iframe
+                  width="853"
+                  height="480"
+                  src={this.state.video.vidlink}
+                  title={this.state.video.title}
+                  frameBorder="4"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{border: "4px solid black", backgroundColor: "black"}}
+                />
                 </Row>
-                <Row>
-                  <h2>ALWAYS BE COMPOUNDING™</h2>
-                </Row>
+                <Row><h2>ALWAYS BE COMPOUNDING™</h2></Row>
               </Col>
-              <Col sm={2}>
-                <Row style={{ marginTop: "2%", marginBottom: "2%" }}>
-                  <Image roundedCircle fluid src={ag.profilePic} />
+              <Col>
+                <Row style={{marginTop:"2%", marginBottom:"2%"}}>
+                  <Image
+                  roundedCircle
+                  fluid
+                  src={ag.profilePic} />
                 </Row>
                 <Row>
-                  <Image fluid src={ag.logo} />
+                  <Image
+                  fluid
+                  src={ag.logo} />
                 </Row>
                 <Row>
-                  <VideoCalendar agent={ag} />
+                <VideoCalendar agent={ag} />
                 </Row>
               </Col>
             </Row>

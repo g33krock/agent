@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Form,
+  FormGroup,
+  Input,
+} from "reactstrap";
 import { agentService } from "../../services/AgentService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,7 +15,7 @@ import {
   faDollarSign,
   faVideo,
   faLock,
-  faAngleDoubleDown
+  faAngleDoubleDown,
 } from "@fortawesome/free-solid-svg-icons";
 
 export class SCIVideo extends Component {
@@ -30,8 +38,8 @@ export class SCIVideo extends Component {
       <Container
         style={{
           backgroundColor: `black`,
-          position: "relative",
-          zIndex: "-1",
+
+          // zIndex: "-1",
         }}
       >
         <Row
@@ -47,115 +55,151 @@ export class SCIVideo extends Component {
             style={{
               marginBottom: "0px",
               padding: "0px",
-              position: "absolute",
-              top: "5%",
             }}
           >
-            <h1 className="videohead">Secure Compound Interest</h1>
+            <h1 className="videohead">REGISTER FOR THE FREE WEBINAR</h1>
           </Row>
           <Row
             style={{
               backgroundColor: this.props.agent.primaryColor,
               height: "2px",
-              position: "absolute",
-              top: "15%",
               width: "50vw",
+              marginBottom: "2%",
             }}
           />
           <Row
             style={{
-              marginBottom: "0px",
+              marginBottom: "2%",
               padding: "0px",
               marginLeft: "auto",
               marginRight: "auto",
-              position: "absolute",
-              top: "18%",
             }}
           >
-            <h2 className="videosubhead">The Simple Path To Full Retirement</h2>
+            <h2 className="videosubhead">
+              SECURE COMPOUND INTEREST: "THE SIMPLE PATH TO FULL RETIREMENT"
+            </h2>
             {/* <h3 className="videobody">WHAT YOU WILL LEARN</h3> */}
           </Row>
-          <Col
-            sm={0}
-            xl={6}
-            style={{ position: "absolute", top: "40%", textAlign: "left" }}
-          ></Col>
-          <Col
-            sm={12}
-            xl={6}
-            style={{ position: "absolute", top: "30%", textAlign: "left" }}
-          >
-            <Row
+          <Row>
+            <Col xs={1} />
+            <Col xs={5} style={{ textAlign: "left" }}>
+              <Row
+                style={{
+                  marginBottom: "2%",
+                  padding: "0px",
+                }}
+              >
+                <h2 style={{ color: "blue" }}>What You Will Learn</h2>
+              </Row>
+              <Row
+                style={{
+                  marginBottom: "2%",
+                  padding: "0px",
+                }}
+              >
+                <Col sm={2}>
+                  <FontAwesomeIcon
+                    icon={faAngleDoubleDown}
+                    style={{ color: "white", backgroundColor: "blue", borderRadius: "50%", width: "30px", height: "30px", border: "3px solid blue"}}
+                  />
+                </Col>
+                <Col sm={10}>
+                  <h3 className="bulletpoints">The Myth of Downsizing</h3>
+                </Col>
+              </Row>
+              <Row
+                style={{
+                  marginBottom: "2%",
+                  padding: "0px",
+                }}
+              >
+                <Col sm={2}>
+                  <FontAwesomeIcon
+                    icon={faVideo}
+                    style={{ color: "white", backgroundColor: "blue", borderRadius: "50%", width: "30px", height: "30px", border: "3px solid blue"}}
+                  />
+                </Col>
+                <Col sm={10}>
+                  <h3 className="bulletpoints">The Phenomenon of Secure Compound Interest</h3>
+                </Col>
+              </Row>
+              <Row
+                style={{
+                  marginBottom: "2%",
+                  padding: "0px",
+                }}
+              >
+                <Col sm={2}>
+                  <FontAwesomeIcon
+                    icon={faLock}
+                    style={{ color: "white", backgroundColor: "blue", borderRadius: "50%", width: "30px", height: "30px", border: "3px solid blue"}}
+                  />
+                </Col>
+                <Col sm={10}>
+                  <h3 className="bulletpoints">Secure Leverage</h3>
+                </Col>
+              </Row>
+              <Row
+                style={{
+                  marginBottom: "2%",
+                  padding: "0px",
+                }}
+              >
+                <Col sm={2}>
+                  <FontAwesomeIcon
+                    icon={faDollarSign}
+                    style={{ color: "white", backgroundColor: "blue", borderRadius: "50%", width: "30px", height: "30px", border: "3px solid blue"}}
+                  />
+                </Col>
+                <Col sm={10}>
+                  <h3 className="bulletpoints">Achieving Full Retirement</h3>
+                </Col>
+              </Row>
+              <Row
+                style={{
+                  marginBottom: "2%",
+                  padding: "0px",
+                }}
+              >
+                <Col sm={2}>
+                  
+                  <FontAwesomeIcon
+                    icon={faHome}
+                    style={{ color: "white", backgroundColor: "blue", borderRadius: "50%", width: "30px", height: "30px", border: "3px solid blue"}}
+                  />
+                  
+                </Col>
+                <Col sm={10}>
+                  <h3 className="bulletpoints">Generational Wealth</h3>
+                </Col>
+              </Row>
+            </Col>
+            <Col xs={1} />
+            <Col
+              sm={4}
               style={{
-                marginBottom: "2%",
-                padding: "0px",
+                textAlign: "center",
               }}
             >
-              <h3 className="bulletpoints">
-                <FontAwesomeIcon
-                  icon={faAngleDoubleDown}
-                  style={{ color: "white", width: "10%" }}
-                />
-                The Myth of Downsizing
-              </h3>
-            </Row>
-            <Row
-              style={{
-                marginBottom: "2%",
-                padding: "0px",
-              }}
-            >
-              <h3 className="bulletpoints">
-                <FontAwesomeIcon
-                  icon={faVideo}
-                  style={{ color: "white", width: "10%" }}
-                />
-                The Phenomenon of Secure Compound Interest
-              </h3>
-            </Row>
-            <Row
-              style={{
-                marginBottom: "2%",
-                padding: "0px",
-              }}
-            >
-              <h3 className="bulletpoints">
-                <FontAwesomeIcon
-                  icon={faLock}
-                  style={{ color: "white", width: "10%" }}
-                />
-                Secure Leverage
-              </h3>
-            </Row>
-            <Row
-              style={{
-                marginBottom: "2%",
-                padding: "0px",
-              }}
-            >
-              <h3 className="bulletpoints">
-                <FontAwesomeIcon
-                  icon={faDollarSign}
-                  style={{ color: "white", width: "10%" }}
-                />
-                Achieving Full Retirement
-              </h3>
-            </Row>
-            <Row
-              style={{
-                marginBottom: "2%",
-                padding: "0px",
-              }}
-            >
-              <h3 className="bulletpoints">
-                <FontAwesomeIcon
-                  icon={faHome}
-                  style={{ color: "white", width: "10%" }}
-                />
-                Generational Wealth
-              </h3>
-            </Row>
-          </Col>
+              <h2 style={{ color: "blue" }}>Register Your Spot Below</h2>
+              <small style={{ color: "white"}}>
+                Just enter your name & email below to secure your spot on this
+                webinar.
+              </small>
+              <Form>
+                <FormGroup controlId="formaBasicDate">
+                  <Input type="date" />
+                </FormGroup>
+                <FormGroup controlId="formaBasicName">
+                  <Input placeholder="First and Last Name" type="text" />
+                </FormGroup>
+                <FormGroup controlId="formaBasicEmail">
+                  <Input placeholder="Email Address" type="email" />
+                </FormGroup>
+              </Form>
+            </Col>
+            <Col xs={1} />
+          </Row>
         </Row>
         <Row fluid className="videobuttonrow">
           {/* <Col xs={1} sm={1} md={1} lg={1} xl={1} />

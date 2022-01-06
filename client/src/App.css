@@ -638,7 +638,8 @@ ul li::before {
 
   .videosubhead {
     color: white;
-    font-size: 125%
+    font-size: 125%;
+    font-style: italic
   }
 
   .videobody {
@@ -735,7 +736,7 @@ ul li::before {
   }
 
   .bulletpoints {
-    color: rgb(0, 0, 0);
+    color: white;
     font-size: 150%
   }
 
@@ -746,7 +747,8 @@ ul li::before {
 
   .videosubhead {
     color: white;
-    font-size: 150%
+    font-size: 150%;
+    font-style: italic
   }
 
   .videobody {
@@ -848,7 +850,8 @@ ul li::before {
 
   .videosubhead {
     color: white;
-    font-size: 225%
+    font-size: 225%;
+    font-style: italic
   }
 
   .videobody {
