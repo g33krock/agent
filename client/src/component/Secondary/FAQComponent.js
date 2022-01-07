@@ -36,6 +36,7 @@ export class FAQ extends Component {
             backgroundImage:
               "url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/SDRPBackdrop.png)",
             backgroundSize: "cover",
+            backgroundPosition: 'center',
             margin: "auto",
           }}
         >
