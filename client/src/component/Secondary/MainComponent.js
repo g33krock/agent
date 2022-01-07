@@ -4,7 +4,7 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { agentService } from "../../services/AgentService";
 import { About } from "./AboutComponent";
 import { AboutCurtis } from "./AboutCurtisComponent";
-// import { Bottom } from "./BottomComponent";
+import { Webinar } from "./WebinarComponent";
 import { Calculator } from "./CalculatorComponent";
 import { Calendar } from "./CalendarComponent";
 import { ContactUs } from "./ContactUsComponent";
@@ -81,6 +81,10 @@ export function Main() {
               <Route
                 path="curtisray"
                 element={<AboutCurtis agent={agent[0]} Id={agentId} />}
+              />
+              <Route
+                path="webinarregistration"
+                element={<Webinar agent={agent[0]} Id={agentId} />}
               />
             </Routes>
           </BrowserRouter>
