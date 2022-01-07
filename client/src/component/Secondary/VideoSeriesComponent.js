@@ -107,7 +107,7 @@ export class VideoSeries extends Component {
                   fluid
                   src={ag.profilePic} />
                 </Row>
-                <Row>
+                <Row style={{marginTop:"2%", marginBottom:"10%"}}>
                   <Image
                   fluid
                   src={ag.logo} />
