@@ -242,7 +242,7 @@ export class SCIVideo extends Component {
                     color: `${this.props.agent.textColor}`,
                     textShadow: "2px 2px rgba(0, 0, 0, 0.5)",
                   }}
-                  href="/videoseries"
+                  href="/webinarregistration"
                 >
                   <h2 className="videobuttontext">
                     Register
