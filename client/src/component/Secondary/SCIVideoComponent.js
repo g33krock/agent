@@ -47,7 +47,7 @@ export class SCIVideo extends Component {
           className="scvis"
           style={{
             marginTop: "2%",
-            marginBottom: "10%",
+            marginBottom: "2%",
             justifyContent: "center",
           }}
         >
@@ -100,7 +100,14 @@ export class SCIVideo extends Component {
                 <Col sm={2}>
                   <FontAwesomeIcon
                     icon={faAngleDoubleDown}
-                    style={{ color: "white", backgroundColor: "blue", borderRadius: "50%", width: "30px", height: "30px", border: "3px solid blue"}}
+                    style={{
+                      color: "white",
+                      backgroundColor: "blue",
+                      borderRadius: "50%",
+                      width: "30px",
+                      height: "30px",
+                      border: "3px solid blue",
+                    }}
                   />
                 </Col>
                 <Col sm={10}>
@@ -116,11 +123,20 @@ export class SCIVideo extends Component {
                 <Col sm={2}>
                   <FontAwesomeIcon
                     icon={faVideo}
-                    style={{ color: "white", backgroundColor: "blue", borderRadius: "50%", width: "30px", height: "30px", border: "3px solid blue"}}
+                    style={{
+                      color: "white",
+                      backgroundColor: "blue",
+                      borderRadius: "50%",
+                      width: "30px",
+                      height: "30px",
+                      border: "3px solid blue",
+                    }}
                   />
                 </Col>
                 <Col sm={10}>
-                  <h3 className="bulletpoints">The Phenomenon of Secure Compound Interest</h3>
+                  <h3 className="bulletpoints">
+                    The Phenomenon of Secure Compound Interest
+                  </h3>
                 </Col>
               </Row>
               <Row
@@ -132,7 +148,14 @@ export class SCIVideo extends Component {
                 <Col sm={2}>
                   <FontAwesomeIcon
                     icon={faLock}
-                    style={{ color: "white", backgroundColor: "blue", borderRadius: "50%", width: "30px", height: "30px", border: "3px solid blue"}}
+                    style={{
+                      color: "white",
+                      backgroundColor: "blue",
+                      borderRadius: "50%",
+                      width: "30px",
+                      height: "30px",
+                      border: "3px solid blue",
+                    }}
                   />
                 </Col>
                 <Col sm={10}>
@@ -148,7 +171,14 @@ export class SCIVideo extends Component {
                 <Col sm={2}>
                   <FontAwesomeIcon
                     icon={faDollarSign}
-                    style={{ color: "white", backgroundColor: "blue", borderRadius: "50%", width: "30px", height: "30px", border: "3px solid blue"}}
+                    style={{
+                      color: "white",
+                      backgroundColor: "blue",
+                      borderRadius: "50%",
+                      width: "30px",
+                      height: "30px",
+                      border: "3px solid blue",
+                    }}
                   />
                 </Col>
                 <Col sm={10}>
@@ -162,12 +192,17 @@ export class SCIVideo extends Component {
                 }}
               >
                 <Col sm={2}>
-                  
                   <FontAwesomeIcon
                     icon={faHome}
-                    style={{ color: "white", backgroundColor: "blue", borderRadius: "50%", width: "30px", height: "30px", border: "3px solid blue"}}
+                    style={{
+                      color: "white",
+                      backgroundColor: "blue",
+                      borderRadius: "50%",
+                      width: "30px",
+                      height: "30px",
+                      border: "3px solid blue",
+                    }}
                   />
-                  
                 </Col>
                 <Col sm={10}>
                   <h3 className="bulletpoints">Generational Wealth</h3>
@@ -182,7 +217,7 @@ export class SCIVideo extends Component {
               }}
             >
               <h2 style={{ color: "blue" }}>Register Your Spot Below</h2>
-              <small style={{ color: "white"}}>
+              <small style={{ color: "white" }}>
                 Just enter your name & email below to secure your spot on this
                 webinar.
               </small>
@@ -197,35 +232,26 @@ export class SCIVideo extends Component {
                   <Input placeholder="Email Address" type="email" />
                 </FormGroup>
               </Form>
+              <Row fluid className="videobuttonrow">
+                <Button
+                  className="videobutton"
+                  style={{
+                    backgroundColor: this.props.agent.primaryColor,
+                    border: "none",
+                    boxShadow: "2px 2px rgba(0, 0, 0, 0.5)",
+                    color: `${this.props.agent.textColor}`,
+                    textShadow: "2px 2px rgba(0, 0, 0, 0.5)",
+                  }}
+                  href="/videoseries"
+                >
+                  <h2 className="videobuttontext">
+                    Register
+                  </h2>
+                </Button>
+              </Row>
             </Col>
             <Col xs={1} />
           </Row>
-        </Row>
-        <Row fluid className="videobuttonrow">
-          {/* <Col xs={1} sm={1} md={1} lg={1} xl={1} />
-          <Col
-            xs={10}
-            sm={10}
-            md={10}
-            lg={10}
-            xl={10}
-            className="videobuttoncol"
-          > */}
-          <Button
-            className="videobutton"
-            style={{
-              backgroundColor: this.props.agent.primaryColor,
-              border: "none",
-              boxShadow: "2px 2px rgba(0, 0, 0, 0.5)",
-              color: `${this.props.agent.textColor}`,
-              textShadow: "2px 2px rgba(0, 0, 0, 0.5)",
-            }}
-            href="/videoseries"
-          >
-            <h2 className="videobuttontext">Compound Interest Video Series</h2>
-          </Button>
-          {/* </Col>
-          <Col xs={1} sm={1} md={1} lg={1} xl={1} /> */}
         </Row>
       </Container>
     );

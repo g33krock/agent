@@ -870,7 +870,7 @@ export const Calculator = (props) => {
         backgroundImage:
           "url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/calculator.png)",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "contain",
+        backgroundSize: "40%",
         backgroundPosition: "left bottom",
         // borderRadius: "15px",
         // marginBottom: "10px",
@@ -878,13 +878,21 @@ export const Calculator = (props) => {
       }}
     >
       <Row style={{ marginTop: "3%", marginBottom: "1%" }}>
-        <h1
-          style={{ color: props.agent.textColor, textShadow: "1px 1px black" }}
-        >
-          SEE WHAT SECURE COMPOUND
-          <br />
-          INTEREST CAN DO FOR YOUR RETIREMENT
-        </h1>
+        <Col sm={0} md={4} />
+        <Col sm={12} md={8}>
+          <h1
+            style={{
+              color: props.agent.textColor,
+              textShadow: "1px 1px black",
+              marginLeft: "auto",
+              marginRight: "auto"
+            }}
+          >
+            SEE WHAT SECURE COMPOUND
+            <br />
+            INTEREST CAN DO FOR YOUR RETIREMENT
+          </h1>
+        </Col>
       </Row>
       <Row style={{ marginBottom: "3%" }}>
         <Col sm={4}></Col>
