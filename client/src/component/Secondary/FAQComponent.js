@@ -61,7 +61,7 @@ export class FAQ extends Component {
               {/* <Col sm={2} /> */}
               <Row>
                 <Col style={{ marginLeft: "auto", marginRight: "auto" }}>
-                  <h1 style={{ marginBottom: "20px" }}>
+                  <h1 style={{ marginBottom: "20px", backgroundColor: ag.primaryColor, color: "white" }}>
                     Frequently Asked Questions
                   </h1>
                   {this.state.faqs &&
@@ -91,7 +91,7 @@ export class FAQ extends Component {
                       ))}
                 </Col>
                 <Col style={{ marginLeft: "auto", marginRight: "auto" }}>
-                  <h1 style={{ marginBottom: "20px" }}>
+                  <h1 style={{ marginBottom: "20px", backgroundColor: ag.primaryColor, color: "white" }}>
                     Side By Side Comparison
                   </h1>
                   {this.state.faqs &&
