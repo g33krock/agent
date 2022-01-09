@@ -81,15 +81,15 @@ export class SCIVideo extends Component {
             {/* <h3 className="videobody">WHAT YOU WILL LEARN</h3> */}
           </Row>
           <Row>
-            <Col xs={1} />
-            <Col xs={5} style={{ textAlign: "left" }}>
+            <Col xs={0} md={1} />
+            <Col xs={12} md={5} style={{ textAlign: "left" }}>
               <Row
                 style={{
                   marginBottom: "2%",
                   padding: "0px",
                 }}
               >
-                <h2 style={{ color: "blue" }}>What You Will Learn</h2>
+                <h2 style={{ color: "blue" }} className="whatYouWillLearn">What You Will Learn</h2>
               </Row>
               <Row
                 style={{
@@ -97,7 +97,7 @@ export class SCIVideo extends Component {
                   padding: "0px",
                 }}
               >
-                <Col sm={2}>
+                <Col xs={3} md={2}>
                   <FontAwesomeIcon
                     icon={faAngleDoubleDown}
                     style={{
@@ -110,7 +110,7 @@ export class SCIVideo extends Component {
                     }}
                   />
                 </Col>
-                <Col sm={10}>
+                <Col xs={9} md={10}>
                   <h3 className="bulletpoints">The Myth of Downsizing</h3>
                 </Col>
               </Row>
@@ -120,7 +120,7 @@ export class SCIVideo extends Component {
                   padding: "0px",
                 }}
               >
-                <Col sm={2}>
+                <Col xs={3} sm={2}>
                   <FontAwesomeIcon
                     icon={faVideo}
                     style={{
@@ -133,7 +133,7 @@ export class SCIVideo extends Component {
                     }}
                   />
                 </Col>
-                <Col sm={10}>
+                <Col xs={9} md={10}>
                   <h3 className="bulletpoints">
                     The Phenomenon of Secure Compound Interest
                   </h3>
@@ -145,7 +145,7 @@ export class SCIVideo extends Component {
                   padding: "0px",
                 }}
               >
-                <Col sm={2}>
+                <Col xs={3} md={2}>
                   <FontAwesomeIcon
                     icon={faLock}
                     style={{
@@ -158,7 +158,7 @@ export class SCIVideo extends Component {
                     }}
                   />
                 </Col>
-                <Col sm={10}>
+                <Col xs={9} md={10}>
                   <h3 className="bulletpoints">Secure Leverage</h3>
                 </Col>
               </Row>
@@ -168,7 +168,7 @@ export class SCIVideo extends Component {
                   padding: "0px",
                 }}
               >
-                <Col sm={2}>
+                <Col xs={3} md={2}>
                   <FontAwesomeIcon
                     icon={faDollarSign}
                     style={{
@@ -181,7 +181,7 @@ export class SCIVideo extends Component {
                     }}
                   />
                 </Col>
-                <Col sm={10}>
+                <Col xs={9} md={10}>
                   <h3 className="bulletpoints">Achieving Full Retirement</h3>
                 </Col>
               </Row>
@@ -191,7 +191,7 @@ export class SCIVideo extends Component {
                   padding: "0px",
                 }}
               >
-                <Col sm={2}>
+                <Col xs={3} md={2}>
                   <FontAwesomeIcon
                     icon={faHome}
                     style={{
@@ -204,14 +204,15 @@ export class SCIVideo extends Component {
                     }}
                   />
                 </Col>
-                <Col sm={10}>
+                <Col xs={9} md={10}>
                   <h3 className="bulletpoints">Generational Wealth</h3>
                 </Col>
               </Row>
             </Col>
-            <Col xs={1} />
+            <Col xs={0} md={1} />
             <Col
-              sm={4}
+              xs={12}
+              md={4}
               style={{
                 textAlign: "center",
               }}
@@ -250,7 +251,7 @@ export class SCIVideo extends Component {
                 </Button>
               </Row>
             </Col>
-            <Col xs={1} />
+            <Col xs={0} md={1} />
           </Row>
         </Row>
       </Container>

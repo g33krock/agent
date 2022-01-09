@@ -595,6 +595,22 @@ ul li::before {
 }
 
 @media only screen and (max-width: 690px) {
+  .calcBackground {
+    background-color: rgba(0, 0, 0, 0.75);
+    background-image:
+      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/calculator.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+
+  .whatYouWillLearn {
+    text-align: center;
+  }
+  .asSeenOn {
+    font-size: small;
+  }
+
   #video {
     position: fixed;
     z-index: -1;
@@ -673,6 +689,7 @@ ul li::before {
     background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/SDRPHomeBackground.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     margin: 0px;
     min-height: 250px;
     /* height: 100%; */
@@ -704,6 +721,18 @@ ul li::before {
 }
 
 @media only screen and (min-width: 691px) and (max-width: 1700px) {
+  .calcBackground {
+    background-color: rgba(0, 0, 0, 0.75);
+    background-image:
+      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/calculator.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+  }
+
+  .asSeenOn {
+    font-size: medium;
+  }
+
   #video {
     position: fixed;
     z-index: -1;
@@ -765,7 +794,7 @@ ul li::before {
   }
 
   .videobuttontext {
-    font-size: 150%;
+    font-size: 100%;
   }
 
   .videobuttonrow {
@@ -782,6 +811,7 @@ ul li::before {
     background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/SDRPHomeBackground.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     margin: 0px;
     min-height: 350px;
     /* height: 100%; */
@@ -810,6 +840,18 @@ ul li::before {
 }
 
 @media only screen and (min-width: 1700px) {
+  .calcBackground {
+    background-color: rgba(0, 0, 0, 0.75);
+    background-image:
+      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/calculator.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+  }
+
+  .asSeenOn {
+    font-size: 250%;
+  }
+
   #video {
     position: fixed;
     z-index: -1;
@@ -886,6 +928,7 @@ ul li::before {
     background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/SDRPHomeBackground.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     margin: 0px;
     min-height: 500px;
     /* height: 100%; */
