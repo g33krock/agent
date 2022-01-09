@@ -598,7 +598,7 @@ ul li::before {
   .calcBackground {
     background-color: rgba(0, 0, 0, 0.75);
     background-image:
-      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/calculator.png);
+      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/darkcalculator.png);
     background-size:cover;
     background-repeat: no-repeat;
     background-position: top right;
@@ -724,7 +724,7 @@ ul li::before {
   .calcBackground {
     background-color: rgba(0, 0, 0, 0.75);
     background-image:
-      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/calculator.png);
+      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/darkcalculator.png);
     background-repeat: no-repeat;
     background-position: left bottom;
   }
