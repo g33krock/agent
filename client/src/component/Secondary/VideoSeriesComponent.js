@@ -50,13 +50,13 @@ export class VideoSeries extends Component {
         fluid
         style={{
           backgroundColor: "rgb(211, 211, 211)",
-          minHeight: "80vh",
+          // minHeight: "90vh",
           paddingLeft: '0px',
-          paddingRight: '8px',
-          paddingBottom: "3%",
+          // paddingRight: '8px',
+          // paddingBottom: "3%",
           border: "4px solid black",
-          margin: "2% auto 2% auto",
-          maxWidth: "95vw",
+          // margin: "2% auto 2% auto",
+          // maxWidth: "95vw",
         }}
       >
         {this.state.agent &&
@@ -69,7 +69,7 @@ export class VideoSeries extends Component {
               }}
               key={ag.toString()}
             >
-              <Col sm={3} style={{ overflow: "scroll", maxHeight: "90vh", paddingRight: "0px" }}>
+              <Col sm={3} style={{ overflow: "scroll", minHeight: "100vh", paddingRight: "0px" }}>
                 <Row style={{ marginTop: "2%", marginBottom: "2%" }}>
                   <Button
                     style={{
@@ -92,9 +92,10 @@ export class VideoSeries extends Component {
                     Documentary
                   </Button>
                 </Row>
+                <Row></Row>
                 <Container
                   style={{
-                    backgroundColor: "rgba(255, 255, 255, 0.514)",
+                    backgroundColor: "rgba(211, 211, 211)",
                     borderRadius: "5px",
                   }}
                 >
@@ -115,7 +116,7 @@ export class VideoSeries extends Component {
                       </option>
                     ))}
                   <Collapsible
-                    trigger={[<BsChevronDown />, <h3>8 MPI® Plans</h3>]}
+                    trigger={[<BsChevronDown />, <h4 style={{fontSize: "110%"}}> 8 MPI® Plans</h4>]}
                   >
                     {this.state.videos
                       .filter((vid) => vid.category === "plans")
