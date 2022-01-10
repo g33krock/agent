@@ -89,7 +89,7 @@ export class SCIVideo extends Component {
                   padding: "0px",
                 }}
               >
-                <h2 style={{ color: "blue" }} className="whatYouWillLearn">What You Will Learn</h2>
+                <h2 style={{ color: this.props.agent.primaryColor, fontWeight: '700' }} className="whatYouWillLearn">What You Will Learn</h2>
               </Row>
               <Row
                 style={{
@@ -102,11 +102,11 @@ export class SCIVideo extends Component {
                     icon={faAngleDoubleDown}
                     style={{
                       color: "white",
-                      backgroundColor: "blue",
+                      backgroundColor: this.props.agent.primaryColor,
                       borderRadius: "50%",
                       width: "30px",
                       height: "30px",
-                      border: "3px solid blue",
+                      border: `3px solid ${this.props.agent.primaryColor}`,
                     }}
                   />
                 </Col>
@@ -125,11 +125,11 @@ export class SCIVideo extends Component {
                     icon={faVideo}
                     style={{
                       color: "white",
-                      backgroundColor: "blue",
+                      backgroundColor: this.props.agent.primaryColor,
                       borderRadius: "50%",
                       width: "30px",
                       height: "30px",
-                      border: "3px solid blue",
+                      border: `3px solid ${this.props.agent.primaryColor}`,
                     }}
                   />
                 </Col>
@@ -150,11 +150,11 @@ export class SCIVideo extends Component {
                     icon={faLock}
                     style={{
                       color: "white",
-                      backgroundColor: "blue",
+                      backgroundColor: this.props.agent.primaryColor,
                       borderRadius: "50%",
                       width: "30px",
                       height: "30px",
-                      border: "3px solid blue",
+                      border: `3px solid ${this.props.agent.primaryColor}`,
                     }}
                   />
                 </Col>
@@ -173,11 +173,11 @@ export class SCIVideo extends Component {
                     icon={faDollarSign}
                     style={{
                       color: "white",
-                      backgroundColor: "blue",
+                      backgroundColor: this.props.agent.primaryColor,
                       borderRadius: "50%",
                       width: "30px",
                       height: "30px",
-                      border: "3px solid blue",
+                      border: `3px solid ${this.props.agent.primaryColor}`,
                     }}
                   />
                 </Col>
@@ -196,11 +196,11 @@ export class SCIVideo extends Component {
                     icon={faHome}
                     style={{
                       color: "white",
-                      backgroundColor: "blue",
+                      backgroundColor: this.props.agent.primaryColor,
                       borderRadius: "50%",
                       width: "30px",
                       height: "30px",
-                      border: "3px solid blue",
+                      border: `3px solid ${this.props.agent.primaryColor}`,
                     }}
                   />
                 </Col>
@@ -217,7 +217,7 @@ export class SCIVideo extends Component {
                 textAlign: "center",
               }}
             >
-              <h2 style={{ color: "blue" }}>Register Your Spot Below</h2>
+              <h2 style={{ color: this.props.agent.primaryColor, fontWeight: '700' }}>Register Your Spot Below</h2>
               <small style={{ color: "white" }}>
                 Just enter your name & email below to secure your spot on this
                 webinar.

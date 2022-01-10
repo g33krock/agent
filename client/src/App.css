@@ -721,6 +721,10 @@ ul li::before {
 }
 
 @media only screen and (min-width: 691px) and (max-width: 1700px) {
+  .emailSize {
+    font-size: 50%
+  }
+
   .calcBackground {
     background-color: rgba(0, 0, 0, 0.75);
     background-image:
@@ -840,6 +844,10 @@ ul li::before {
 }
 
 @media only screen and (min-width: 1700px) {
+  .emailSize {
+    font-size: 75%
+  }
+
   .calcBackground {
     background-color: rgba(0, 0, 0, 0.75);
     background-image:
@@ -849,7 +857,7 @@ ul li::before {
   }
 
   .asSeenOn {
-    font-size: 250%;
+    font-size: 200%;
   }
 
   #video {

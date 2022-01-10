@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Collapsible from "react-collapsible";
 import { BsChevronDown } from "react-icons/bs";
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { agentService } from "../../services/AgentService";
 import { faqService } from "../../services/FAQService";
 import { FAQVideo } from "./FAQVideoComponent";
