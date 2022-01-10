@@ -26,7 +26,8 @@ export class Jumbotron extends Component {
         {this.state.agent &&
           this.state.agent.map((ag) => (
             <Row style={{ margin: "0px" }} key={ag.toString()}>
-              <Col style={{ paddingLeft: "0px", paddingRight: "0px" }}>
+              <Row style={{ marginTop: "10%"}}>
+              <Col style={{ paddingLeft: "0px", paddingRight: "0px", backgroundColor: "rgb(0, 0, 0, 0.5)", borderRadius: "15px", marginLeft: "auto", marginRight: "auto" }}>
                 {/* <Container style={{alignContent:'center'}}> */}
 
                   <img 
@@ -34,7 +35,7 @@ export class Jumbotron extends Component {
                   src={ag.logo}
                   alt={ag.agency}
                   // width="80%"
-                  style={{marginBottom: "0px", marginTop: "10%", height: "20vh", maxWidth: "80vw", marginLeft: 'auto', marginRight: 'auto'}}/>
+                  style={{marginTop: '1%', marginBottom: "0px", height: "20vh", maxWidth: "80vw", marginLeft: 'auto', marginRight: 'auto'}}/>
                   <h1
                     style={{
                       color: `${ag.textColor}`,
@@ -45,6 +46,10 @@ export class Jumbotron extends Component {
                   >
                     {ag.about}
                   </h1>
+                  </Col>
+                  </Row>
+                  <Row>
+                  <Col>
                   <h3
                     style={{
                       color: `${ag.textColor}`,
@@ -58,6 +63,7 @@ export class Jumbotron extends Component {
                   </h3>
                 {/* </Container> */}
               </Col>
+              </Row>
             </Row>
           ))}
         </Container>
