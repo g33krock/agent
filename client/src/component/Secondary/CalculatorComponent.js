@@ -864,18 +864,7 @@ export const Calculator = (props) => {
 
   return (
     <Container
-      style={{
-        backgroundColor: "rgba(0, 0, 0, 0.25)",
-        // backgroundColor: props.agent.primaryColor,
-        backgroundImage:
-          "url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/calculator.png)",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "40%",
-        backgroundPosition: "left bottom",
-        // borderRadius: "15px",
-        // marginBottom: "10px",
-        // marginTop: "5px"
-      }}
+      className="calcBackground"
     >
       <Row style={{ marginTop: "3%", marginBottom: "1%" }}>
         <Col sm={0} md={4} />
@@ -885,7 +874,8 @@ export const Calculator = (props) => {
               color: props.agent.textColor,
               textShadow: "1px 1px black",
               marginLeft: "auto",
-              marginRight: "auto"
+              marginRight: "auto",
+              fontWeight: "900"
             }}
           >
             SEE WHAT SECURE COMPOUND
@@ -895,14 +885,14 @@ export const Calculator = (props) => {
         </Col>
       </Row>
       <Row style={{ marginBottom: "3%" }}>
-        <Col sm={4}></Col>
-        <Col sm={8}>
+        <Col sm={0} md={4}></Col>
+        <Col sm={12} md={8}>
           <Container>
             <Form>
               <Container style={{ paddingTop: "5px", paddingBottom: "5px" }}>
                 <Row>
                   {/* <!-- Inputs --> */}
-                  <Col sm={4} className="mx-auto fieldset1">
+                  <Col sm={12} md={4} className="mx-auto fieldset1">
                     <fieldset>
                       <div className="fields-wrapper">
                         {/* <!-- Current Age --> */}
@@ -915,6 +905,7 @@ export const Calculator = (props) => {
                             style={{
                               color: props.agent.textColor,
                               textShadow: "1px 1px black",
+                              fontWeight: "500"
                             }}
                           >
                             Current Age
@@ -938,6 +929,7 @@ export const Calculator = (props) => {
                             style={{
                               color: props.agent.textColor,
                               textShadow: "1px 1px black",
+                              fontWeight: "500"
                             }}
                           >
                             Desired Retirement Age
@@ -960,6 +952,7 @@ export const Calculator = (props) => {
                             style={{
                               color: props.agent.textColor,
                               textShadow: "1px 1px black",
+                              fontWeight: "500"
                             }}
                           >
                             Desired Retirement Income
@@ -986,6 +979,7 @@ export const Calculator = (props) => {
                             style={{
                               color: props.agent.textColor,
                               textShadow: "1px 1px black",
+                              fontWeight: "500"
                             }}
                           >
                             Lump Sum
@@ -1009,6 +1003,7 @@ export const Calculator = (props) => {
                             style={{
                               color: props.agent.textColor,
                               textShadow: "1px 1px black",
+                              fontWeight: "500"
                             }}
                           >
                             Ongoing Contributions
@@ -1063,11 +1058,12 @@ export const Calculator = (props) => {
                   </Col>
                   {/* <!-- Outputs --> */}
                   <Col
-                    sm={8}
+                    sm={12}
+                    md={8}
                     style={{
                       marginTop: "5px",
-                      paddingLeft: "5%",
-                      paddingRight: "5%",
+                      paddingLeft: "2%",
+                      paddingRight: "2%",
                     }}
                   >
                     <fieldset>
@@ -1102,6 +1098,7 @@ export const Calculator = (props) => {
                                 paddingBottom: "0px",
                                 color: "white",
                                 borderRadius: "5px 5px 0px 0px",
+                                fontWeight: "700"
                               }}
                             >
                               Side by Side Comparison
@@ -1126,8 +1123,8 @@ export const Calculator = (props) => {
                                 style={{
                                   textAlign: "center",
                                   fontSize: "125%",
-                                  fontWeight: "bold",
                                   paddingTop: "4px",
+                                  fontWeight: "700"
                                 }}
                               >
                                 MPI® PLAN
@@ -1148,7 +1145,7 @@ export const Calculator = (props) => {
                                   textAlign: "center",
                                   // color:props.agent.textColor,
                                   fontSize: "125%",
-                                  fontWeight: "bold",
+                                  fontWeight: "700",
                                   paddingTop: "4px",
                                 }}
                               >
@@ -1188,6 +1185,7 @@ export const Calculator = (props) => {
                                   marginRight: "0px",
                                   alignContent: "center",
                                   color: "white",
+                                  fontWeight: "500"
                                 }}
                               >
                                 ESTIMATED ANNUAL TAX-FREE RETIREMENT INCOME
@@ -1250,7 +1248,20 @@ export const Calculator = (props) => {
                         </div>
                         <Container>
                           <Row>
-                            <Col xs={3}>
+                          <Row>
+                              <small
+                                style={{
+                                  color: props.agent.textColor,
+                                  textShadow: "1px 1px black",
+                                  fontSize: "125%",
+                                  margin: "auto",
+                                  fontWeight: "900"
+                                }}
+                              >
+                                Percentage of Goal
+                              </small>
+                            </Row>
+                            <Col xs={6}>
                               <input
                                 style={{
                                   width: "100%",
@@ -1262,7 +1273,7 @@ export const Calculator = (props) => {
                                   textAlign: "center",
                                   fontSize: "150%",
                                   backgroundColor: "rgb(0,0,0,0)",
-                                  fontWeight: "bolder",
+                                  fontWeight: "900",
                                   color: props.agent.textColor,
                                   textShadow: "1px 1px black",
                                   // color:props.agent.textColor
@@ -1277,18 +1288,6 @@ export const Calculator = (props) => {
                               />
                             </Col>
                             <Col xs={6}>
-                              <small
-                                style={{
-                                  color: props.agent.textColor,
-                                  textShadow: "1px 1px black",
-                                  fontSize: "125%",
-                                  margin: "auto",
-                                }}
-                              >
-                                Percentage of Goal
-                              </small>
-                            </Col>
-                            <Col xs={3}>
                               <input
                                 style={{
                                   width: "100%",
@@ -1300,7 +1299,7 @@ export const Calculator = (props) => {
                                   textAlign: "center",
                                   fontSize: "150%",
                                   backgroundColor: "rgb(0,0,0,0)",
-                                  fontWeight: "bolder",
+                                  fontWeight: "900",
                                   color: props.agent.textColor,
                                   textShadow: "1px 1px black",
                                   // color:props.agent.textColor
@@ -1426,6 +1425,7 @@ export const Calculator = (props) => {
                         fontSize: "12px",
                         color: props.agent.textColor,
                         textShadow: "1px 1px black",
+                        fontWeight: "500"
                       }}
                     >
                       *DISCLAIMERS: AMOUNTS SHOWN IN THIS CALCULATOR ARE

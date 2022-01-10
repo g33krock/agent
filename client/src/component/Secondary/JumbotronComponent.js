@@ -27,13 +27,14 @@ export class Jumbotron extends Component {
           this.state.agent.map((ag) => (
             <Row style={{ margin: "0px" }} key={ag.toString()}>
               <Col style={{ paddingLeft: "0px", paddingRight: "0px" }}>
-                <Container>
+                {/* <Container style={{alignContent:'center'}}> */}
 
                   <img 
+                  fluid
                   src={ag.logo}
                   alt={ag.agency}
                   // width="80%"
-                  style={{marginBottom: "0px", marginTop: "10%", height: "20vh", maxWidth: "80vw"}}/>
+                  style={{marginBottom: "0px", marginTop: "10%", height: "20vh", maxWidth: "80vw", marginLeft: 'auto', marginRight: 'auto'}}/>
                   <h1
                     style={{
                       color: `${ag.textColor}`,
@@ -55,7 +56,7 @@ export class Jumbotron extends Component {
                       SEE WHAT SECURE COMPOUND INTEREST CAN DO FOR YOU
                     </strong>
                   </h3>
-                </Container>
+                {/* </Container> */}
               </Col>
             </Row>
           ))}

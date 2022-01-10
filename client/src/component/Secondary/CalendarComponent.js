@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button, Modal, ModalBody } from "reactstrap";
 import { InlineWidget } from "react-calendly";
 import { agentService } from "../../services/AgentService";
+// import Nav from "react-bootstrap/Nav";
 
 export class Calendar extends Component {
   constructor(props) {
@@ -34,7 +35,7 @@ export class Calendar extends Component {
             width: "200px",
             textShadow: "1px 1px black"
           }}
-          onClick={() => this.setState({ modal: true })}
+          href="/webinarregistration"
           className="rotateRight"
         ><p className="upsidedown">
           RESERVE YOUR SPOT

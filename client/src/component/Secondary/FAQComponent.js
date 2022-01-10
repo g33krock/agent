@@ -4,6 +4,7 @@ import { BsChevronDown } from "react-icons/bs";
 import { Container, Row, Col } from "react-bootstrap";
 import { agentService } from "../../services/AgentService";
 import { faqService } from "../../services/FAQService";
+import { FAQVideo } from "./FAQVideoComponent";
 
 export class FAQ extends Component {
   constructor(props) {
@@ -27,91 +28,100 @@ export class FAQ extends Component {
   }
 
   render() {
-    const faq = [
-      {
-        id: 1,
-        question: "What does the fox say?",
-        answer: "Yippy-Kay-Ye!",
-        video: "https://www.youtube.com/embed/jofNR_WkoCE",
-      },
-      {
-        id: 2,
-        question: "How do I make lots of money?",
-        answer: "Do Compound Interest Stuff",
-        video:
-          "https://compoundinterest.com/wp-content/uploads/2021/10/Sharing-This-Course.mp4",
-      },
-      {
-        id: 3,
-        question: "What should I do with all my money?",
-        answer: "Get more of it",
-        video:
-          "https://compoundinterest.com/wp-content/uploads/2021/11/02-The-Science-Of-Compound-Interest-1.mp4",
-      },
-    ];
     return (
       <Container fluid>
+        <Row
+          style={{
+            height: "30vh",
+            backgroundImage:
+              "url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/SDRPBackdrop.png)",
+            backgroundSize: "cover",
+            backgroundPosition: 'center',
+            margin: "auto",
+          }}
+        >
+          <h1 style={{marginTop: '15vh'}}>FAQ</h1>
+        </Row>
         {this.state.agent &&
           this.state.agent.map((ag) => (
             <Row style={{ color: `black`, margin: "10px" }} key={ag.toString()}>
-              <h1 style={{ marginBottom: "20px" }}>
-                Frequently Asked Questions
-              </h1>
-              <Col sm={2}/>
-              <Col sm={4}>
-                {this.state.faqs &&
-                  this.state.faqs
-                    .filter((n) => n.id % 2)
-                    .map((ques) => (
-                      <Collapsible trigger={[<BsChevronDown />, ques.question]}>
-                        <Row style={{ margin: "10px" }} key={faq.toString()}>
-                          <Col>
-                            <p>{ques.answer}</p>
+              <Row>
+                <p>
+                  These FAQs are intended use by individuals who have reviewed
+                  the video series educational “COMPOUND INTEREST: THE
+                  RETIREMENT YOU DESERVE” and have a foundational understanding
+                  of the MPI® Secure Compound Interest Strategy, including the
+                  use of cash value life insurance contracts, and the
+                  guarantees, assumptions, features, and risks associated with
+                  them.
+                </p>
+              </Row>
+              <Row
+                style={{ backgroundColor: ag.primaryColor, color: "white" }}
+              ></Row>
+              {/* <Col sm={2} /> */}
+              <Row>
+                <Col style={{ marginLeft: "auto", marginRight: "auto" }}>
+                  <h1 style={{ marginBottom: "20px", backgroundColor: ag.primaryColor, color: "white" }}>
+                    Frequently Asked Questions
+                  </h1>
+                  {this.state.faqs &&
+                    this.state.faqs
+                      .filter((n) => n.id % 2)
+                      .map((ques) => (
+                        <Row style={{ marginTop: "2%", marginBottom: "2%" }}>
+                          <Col sm={1} />
+                          <Col sm={2}>
+                            <FAQVideo faq={ques} />
+                            {/* <Image fluid src={ques.poster} /> */}
                           </Col>
-                          <Col>
-                            <iframe
-                              title={ques.question}
-                              src={ques.video}
-                              allowFullScreen
-                              frameBorder="0"
-                              controls
-                              poster="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/calculator.png"
-                              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              samesite="Strict"
-                            ></iframe>
-                          </Col>
-                        </Row>
-                      </Collapsible>
-                    ))}
-              </Col>
-              <Col sm={4}>
-                {this.state.faqs &&
-                  this.state.faqs
-                  .filter(function(element, index, array) {
-                    return (index % 2 !== 0)})
-                    .map((ques) => (
-                      <Collapsible trigger={[<BsChevronDown />, ques.question]}>
-                        <Row key={faq.toString()}>
-                          <Col>
-                            <p>{ques.answer}</p>
-                          </Col>
-                          <Col>
-                            <iframe
-                              title={ques.question}
-                              src={ques.video}
-                              allowFullScreen
-                              frameBorder="0"
-                              controls
-                              poster="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/calculator.png"
-                              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              samesite="Strict"
-                            ></iframe>
+                          <Col sm={9} style={{ fontSize: "200%" }}>
+                            <Collapsible
+                              trigger={[<BsChevronDown />, ques.question]}
+                            >
+                              <Row style={{ margin: "10px" }}>
+                                <Col>
+                                  <p style={{ fontSize: "50%" }}>
+                                    {ques.answer}
+                                  </p>
+                                </Col>
+                              </Row>
+                            </Collapsible>
                           </Col>
                         </Row>
-                      </Collapsible>
-                    ))}
-              </Col>
-              <Col sm={2}/>
+                      ))}
+                </Col>
+                <Col style={{ marginLeft: "auto", marginRight: "auto" }}>
+                  <h1 style={{ marginBottom: "20px", backgroundColor: ag.primaryColor, color: "white" }}>
+                    Side By Side Comparison
+                  </h1>
+                  {this.state.faqs &&
+                    this.state.faqs
+                      .filter((n) => n.id % 2)
+                      .map((ques) => (
+                        <Row style={{ marginTop: "2%", marginBottom: "2%" }}>
+                          <Col sm={1} />
+                          <Col sm={2}>
+                            <FAQVideo faq={ques} />
+                            {/* <Image fluid src={ques.poster} /> */}
+                          </Col>
+                          <Col sm={9} style={{ fontSize: "200%" }}>
+                            <Collapsible
+                              trigger={[<BsChevronDown />, ques.question]}
+                            >
+                              <Row style={{ margin: "10px" }}>
+                                <Col>
+                                  <p style={{ fontSize: "50%" }}>
+                                    {ques.answer}
+                                  </p>
+                                </Col>
+                              </Row>
+                            </Collapsible>
+                          </Col>
+                        </Row>
+                      ))}
+                </Col>
+              </Row>
             </Row>
           ))}
       </Container>

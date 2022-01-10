@@ -23,7 +23,7 @@ export class VideoCalendar extends Component {
                 className="videoCalendarButton"
                 onClick={() => this.setState({modal: true})}
               >
-                SCHEDULE A 1 ON 1 WITH AN<br />MPI® CERTFIED ADVISOR
+                SCHEDULE A 1 ON 1
               </Button>
  
               <Modal isOpen={this.state.modal} toggle={() => this.toggle()}>

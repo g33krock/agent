@@ -81,15 +81,15 @@ export class SCIVideo extends Component {
             {/* <h3 className="videobody">WHAT YOU WILL LEARN</h3> */}
           </Row>
           <Row>
-            <Col xs={1} />
-            <Col xs={5} style={{ textAlign: "left" }}>
+            <Col xs={0} md={1} />
+            <Col xs={12} md={5} style={{ textAlign: "left" }}>
               <Row
                 style={{
                   marginBottom: "2%",
                   padding: "0px",
                 }}
               >
-                <h2 style={{ color: "blue" }}>What You Will Learn</h2>
+                <h2 style={{ color: this.props.agent.primaryColor, fontWeight: '700' }} className="whatYouWillLearn">What You Will Learn</h2>
               </Row>
               <Row
                 style={{
@@ -97,20 +97,20 @@ export class SCIVideo extends Component {
                   padding: "0px",
                 }}
               >
-                <Col sm={2}>
+                <Col xs={3} md={2}>
                   <FontAwesomeIcon
                     icon={faAngleDoubleDown}
                     style={{
                       color: "white",
-                      backgroundColor: "blue",
+                      backgroundColor: this.props.agent.primaryColor,
                       borderRadius: "50%",
                       width: "30px",
                       height: "30px",
-                      border: "3px solid blue",
+                      border: `3px solid ${this.props.agent.primaryColor}`,
                     }}
                   />
                 </Col>
-                <Col sm={10}>
+                <Col xs={9} md={10}>
                   <h3 className="bulletpoints">The Myth of Downsizing</h3>
                 </Col>
               </Row>
@@ -120,20 +120,20 @@ export class SCIVideo extends Component {
                   padding: "0px",
                 }}
               >
-                <Col sm={2}>
+                <Col xs={3} sm={2}>
                   <FontAwesomeIcon
                     icon={faVideo}
                     style={{
                       color: "white",
-                      backgroundColor: "blue",
+                      backgroundColor: this.props.agent.primaryColor,
                       borderRadius: "50%",
                       width: "30px",
                       height: "30px",
-                      border: "3px solid blue",
+                      border: `3px solid ${this.props.agent.primaryColor}`,
                     }}
                   />
                 </Col>
-                <Col sm={10}>
+                <Col xs={9} md={10}>
                   <h3 className="bulletpoints">
                     The Phenomenon of Secure Compound Interest
                   </h3>
@@ -145,20 +145,20 @@ export class SCIVideo extends Component {
                   padding: "0px",
                 }}
               >
-                <Col sm={2}>
+                <Col xs={3} md={2}>
                   <FontAwesomeIcon
                     icon={faLock}
                     style={{
                       color: "white",
-                      backgroundColor: "blue",
+                      backgroundColor: this.props.agent.primaryColor,
                       borderRadius: "50%",
                       width: "30px",
                       height: "30px",
-                      border: "3px solid blue",
+                      border: `3px solid ${this.props.agent.primaryColor}`,
                     }}
                   />
                 </Col>
-                <Col sm={10}>
+                <Col xs={9} md={10}>
                   <h3 className="bulletpoints">Secure Leverage</h3>
                 </Col>
               </Row>
@@ -168,20 +168,20 @@ export class SCIVideo extends Component {
                   padding: "0px",
                 }}
               >
-                <Col sm={2}>
+                <Col xs={3} md={2}>
                   <FontAwesomeIcon
                     icon={faDollarSign}
                     style={{
                       color: "white",
-                      backgroundColor: "blue",
+                      backgroundColor: this.props.agent.primaryColor,
                       borderRadius: "50%",
                       width: "30px",
                       height: "30px",
-                      border: "3px solid blue",
+                      border: `3px solid ${this.props.agent.primaryColor}`,
                     }}
                   />
                 </Col>
-                <Col sm={10}>
+                <Col xs={9} md={10}>
                   <h3 className="bulletpoints">Achieving Full Retirement</h3>
                 </Col>
               </Row>
@@ -191,32 +191,33 @@ export class SCIVideo extends Component {
                   padding: "0px",
                 }}
               >
-                <Col sm={2}>
+                <Col xs={3} md={2}>
                   <FontAwesomeIcon
                     icon={faHome}
                     style={{
                       color: "white",
-                      backgroundColor: "blue",
+                      backgroundColor: this.props.agent.primaryColor,
                       borderRadius: "50%",
                       width: "30px",
                       height: "30px",
-                      border: "3px solid blue",
+                      border: `3px solid ${this.props.agent.primaryColor}`,
                     }}
                   />
                 </Col>
-                <Col sm={10}>
+                <Col xs={9} md={10}>
                   <h3 className="bulletpoints">Generational Wealth</h3>
                 </Col>
               </Row>
             </Col>
-            <Col xs={1} />
+            <Col xs={0} md={1} />
             <Col
-              sm={4}
+              xs={12}
+              md={4}
               style={{
                 textAlign: "center",
               }}
             >
-              <h2 style={{ color: "blue" }}>Register Your Spot Below</h2>
+              <h2 style={{ color: this.props.agent.primaryColor, fontWeight: '700' }}>Register Your Spot Below</h2>
               <small style={{ color: "white" }}>
                 Just enter your name & email below to secure your spot on this
                 webinar.
@@ -242,7 +243,7 @@ export class SCIVideo extends Component {
                     color: `${this.props.agent.textColor}`,
                     textShadow: "2px 2px rgba(0, 0, 0, 0.5)",
                   }}
-                  href="/videoseries"
+                  href="/webinarregistration"
                 >
                   <h2 className="videobuttontext">
                     Register
@@ -250,7 +251,7 @@ export class SCIVideo extends Component {
                 </Button>
               </Row>
             </Col>
-            <Col xs={1} />
+            <Col xs={0} md={1} />
           </Row>
         </Row>
       </Container>
