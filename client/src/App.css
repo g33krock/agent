@@ -64,7 +64,9 @@ ul li::before {
   width: 100%;
   text-shadow: 1px 1px rgb(131, 120, 120);
   box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
-  font-size: 75%;
+  font-size: 100%;
+  padding-top: 3%;
+  padding-bottom: 3%
 }
 
 .selectVideo {
@@ -636,7 +638,7 @@ ul li::before {
   }
 
   #icons {
-    max-height: 5vw;
+    max-height: 4vh;
   }
 
   .scvis {
@@ -720,7 +722,7 @@ ul li::before {
   }
 }
 
-@media only screen and (min-width: 691px) and (max-width: 1700px) {
+@media only screen and (min-width: 691px) and (max-width: 1079px) {
   .emailSize {
     font-size: 50%
   }
@@ -762,7 +764,253 @@ ul li::before {
   }
 
   #icons {
-    max-height: 5vw;
+    max-height: 4vh;
+  }
+
+  .scvis {
+    min-height: 300px
+  }
+
+  .bulletpoints {
+    color: white;
+    font-size: 150%
+  }
+
+  .videohead {
+    color: white;
+    font-size: 200%
+  }
+
+  .videosubhead {
+    color: white;
+    font-size: 150%;
+    font-style: italic
+  }
+
+  .videobody {
+    color: white;
+    font-size: 150%
+  }
+
+  .videobutton {
+    width: 33%;
+    /* margin-bottom: 3%; */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .videobuttontext {
+    font-size: 100%;
+  }
+
+  .videobuttonrow {
+    width: 100%;
+    margin-bottom: 3%;
+  }
+
+  .videobuttoncol {
+    width: auto;
+    justify-content: center
+  }
+
+  .homebg {
+    background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/SDRPHomeBackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0px;
+    min-height: 350px;
+    /* height: 100%; */
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    /* z-index: -100;  */
+  }
+
+  .curtisFamilyImage {
+    position: absolute;
+    bottom: -10px;
+    left: 2%;
+    width: 45%;
+    /* z-index: 1 */
+  }
+
+  .curtisList {
+    text-align: left; 
+    font-size: 100%
+  }
+
+  .documentaryContainer {
+    border: none
+  }
+}
+
+@media only screen and (min-width: 1080px) and (max-width: 1535px) {
+  .emailSize {
+    font-size: 50%
+  }
+
+  .calcBackground {
+    background-color: rgba(0, 0, 0, 0.75);
+    background-image:
+      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/darkcalculator.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+  }
+
+  .asSeenOn {
+    font-size: medium;
+  }
+
+  #video {
+    position: fixed;
+    z-index: -1;
+    width: auto;
+    height: contain;
+    left: -50%;
+    top: -50%
+  }
+
+  .backdrop {
+    position: fixed;
+    z-index: -1;
+    width: auto;
+    height: contain;
+    left: -50%;
+    top: -50%
+  }
+
+  #fancyfont {
+    font-family: 'greatvibes';
+    font-size: 150%;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  #icons {
+    max-height: 4vh;
+  }
+
+  .scvis {
+    min-height: 300px
+  }
+
+  .bulletpoints {
+    color: white;
+    font-size: 150%
+  }
+
+  .videohead {
+    color: white;
+    font-size: 200%
+  }
+
+  .videosubhead {
+    color: white;
+    font-size: 150%;
+    font-style: italic
+  }
+
+  .videobody {
+    color: white;
+    font-size: 150%
+  }
+
+  .videobutton {
+    width: 33%;
+    /* margin-bottom: 3%; */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .videobuttontext {
+    font-size: 100%;
+  }
+
+  .videobuttonrow {
+    width: 100%;
+    margin-bottom: 3%;
+  }
+
+  .videobuttoncol {
+    width: auto;
+    justify-content: center
+  }
+
+  .homebg {
+    background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/SDRPHomeBackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0px;
+    min-height: 350px;
+    /* height: 100%; */
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    /* z-index: -100;  */
+  }
+
+  .curtisFamilyImage {
+    position: absolute;
+    bottom: -10px;
+    left: 2%;
+    width: 45%;
+    /* z-index: 1 */
+  }
+
+  .curtisList {
+    text-align: left; 
+    font-size: 100%
+  }
+
+  .documentaryContainer {
+    border: none
+  }
+}
+
+@media only screen and (min-width: 1536px) and (max-width: 1699px) {
+  .emailSize {
+    font-size: 50%
+  }
+
+  .calcBackground {
+    background-color: rgba(0, 0, 0, 0.75);
+    background-image:
+      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/darkcalculator.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+  }
+
+  .asSeenOn {
+    font-size: medium;
+  }
+
+  #video {
+    position: fixed;
+    z-index: -1;
+    width: auto;
+    height: contain;
+    left: -50%;
+    top: -50%
+  }
+
+  .backdrop {
+    position: fixed;
+    z-index: -1;
+    width: auto;
+    height: contain;
+    left: -50%;
+    top: -50%
+  }
+
+  #fancyfont {
+    font-family: 'greatvibes';
+    font-size: 150%;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  #icons {
+    max-height: 4vh;
   }
 
   .scvis {
@@ -883,7 +1131,7 @@ ul li::before {
   }
 
   #icons {
-    max-height: 3vw;
+    max-height: 4vh;
   }
 
   .scvis {

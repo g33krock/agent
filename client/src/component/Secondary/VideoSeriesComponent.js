@@ -131,7 +131,7 @@ export class VideoSeries extends Component {
                   </Collapsible>
                 </Container>
               </Col>
-              <Col sm={7}>
+              <Col sm={7} style={{backgroundColor: 'rgb(225, 225, 225'}}>
                 <Row>
                   <h1  style={{fontWeight: '700'}}>COMPOUND INTEREST</h1>
                   <h2  style={{fontWeight: '700'}}>THER RETIREMENT YOU DESERVE</h2>
@@ -168,7 +168,7 @@ export class VideoSeries extends Component {
                   <h2>ALWAYS BE COMPOUNDING™</h2>
                 </Row>
               </Col>
-              <Col>
+              <Col style={{backgroundColor:'rgb(100, 100,100'}}>
                 <Row
                   style={{
                     paddingTop: "2%",
