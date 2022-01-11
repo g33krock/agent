@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import VariantSelector from './VariantSelector';
+// import VariantSelector from './VariantSelector';
 
 class Product extends Component {
   constructor(props) {
@@ -49,24 +49,24 @@ class Product extends Component {
     let variantImage = this.state.selectedVariantImage || this.props.product.images[0]
     let variant = this.state.selectedVariant || this.props.product.variants[0]
     let variantQuantity = this.state.selectedVariantQuantity || 1
-    let variantSelectors = this.props.product.options.map((option) => {
-      return (
-        <VariantSelector
-          handleOptionChange={this.handleOptionChange}
-          key={option.id.toString()}
-          option={option}
-        />
-      );
-    });
+    // let variantSelectors = this.props.product.options.map((option) => {
+    //   return (
+    //     <VariantSelector
+    //       handleOptionChange={this.handleOptionChange}
+    //       key={option.id.toString()}
+    //       option={option}
+    //     />
+    //   );
+    // });
     return (
       <div className="Product">
-        {this.props.product.images.length ? <img src={variantImage.src} alt={`${this.props.product.title} product shot`}/> : null}
+        {this.props.product.images.length ? <img src={variantImage.src} alt={`${this.props.product.title} product shot`} width='100vw'/> : null}
         <h5 className="Product__title">{this.props.product.title}</h5>
         <span className="Product__price">${variant.price}</span>
-        {variantSelectors}
+        {/* {variantSelectors} */}
         <label className="Product__option">
-          Quantity
-          <input min="1" type="number" defaultValue={variantQuantity} onChange={this.handleQuantityChange}></input>
+          {/* Quantity */}
+          {/* <input min="1" type="number" defaultValue={variantQuantity} onChange={this.handleQuantityChange}></input> */}
         </label>
         <button className="Product__buy button" onClick={() => this.props.addVariantToCart(variant.id, variantQuantity)}>Add to Cart</button>
       </div>

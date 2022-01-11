@@ -22,7 +22,7 @@ class LineItem extends Component {
     return (
       <li className="Line-item">
         <div className="Line-item__img">
-          {this.props.line_item.variant.image ? <img src={this.props.line_item.variant.image.src} alt={`${this.props.line_item.title} product shot`}/> : null}
+          {this.props.line_item.variant.image ? <img src={this.props.line_item.variant.image.src} alt={`${this.props.line_item.title} product shot`} width='100vw'/> : null}
         </div>
         <div className="Line-item__content">
           <div className="Line-item__content-row">
@@ -35,9 +35,9 @@ class LineItem extends Component {
           </div>
           <div className="Line-item__content-row">
             <div className="Line-item__quantity-container">
-              <button className="Line-item__quantity-update" onClick={() => this.decrementQuantity(this.props.line_item.id)}>-</button>
-              <span className="Line-item__quantity">{this.props.line_item.quantity}</span>
-              <button className="Line-item__quantity-update" onClick={() => this.incrementQuantity(this.props.line_item.id)}>+</button>
+              {/* <button className="Line-item__quantity-update" onClick={() => this.decrementQuantity(this.props.line_item.id)}>-</button> */}
+              <span className="Line-item__quantity">1</span>
+              {/* <button className="Line-item__quantity-update" onClick={() => this.incrementQuantity(this.props.line_item.id)}>+</button> */}
             </div>
             <span className="Line-item__price">
               $ { (this.props.line_item.quantity * this.props.line_item.variant.price).toFixed(2) }
