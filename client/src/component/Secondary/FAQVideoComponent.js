@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Image } from "react-bootstrap";
+import {Image } from "react-bootstrap";
 import {Modal, ModalBody, Button } from "reactstrap";
 
 export class FAQVideo extends Component {
@@ -18,7 +18,7 @@ export class FAQVideo extends Component {
   
     render() {
       return (
-              <div style={{marginTop: "5%"}}>
+              <div style={{marginTop: "5%"}} className="videoPoster">
                 <Image
                 fluid
                 src={this.props.faq.poster}
