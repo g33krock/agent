@@ -25,8 +25,8 @@ export function Main() {
   });
 
   const client = Client.buildClient({
-    domain: 'testagent.myshopify.com',
-    storefrontAccessToken: '42cdf1077069d938a4af1cb2730a689c',
+    domain: 'mpiunlimited.myshopify.com',
+    storefrontAccessToken: '9ce898b59cd04f20cd3e147fbfa95af2',
   });
   return (
     <div style={{ minHeight: "100vh" }}>

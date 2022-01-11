@@ -134,7 +134,7 @@ export class VideoSeries extends Component {
               </Col>
               <Col sm={7} style={{backgroundColor: 'rgb(225, 225, 225'}}>
                 <Row>
-                  <h1  style={{fontWeight: '700'}}>COMPOUND INTEREST</h1>
+                  <h1  className = "videoseriestitle">COMPOUND INTEREST</h1>
                   <h2  style={{fontWeight: '700'}}>THER RETIREMENT YOU DESERVE</h2>
                 </Row>
                 <Row style={{ marginBottom: "1%" }}>

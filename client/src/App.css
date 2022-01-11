@@ -132,6 +132,12 @@ ul li::before {
   margin-left: -1em;
 }
 
+.videoseriestitle {
+  font-family: 'bigmontserrat';
+  letter-spacing: .2rem;
+  font-size: 350%
+}
+
 @font-face {
   font-family: greatvibes;
   src: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/fonts/GreatVibes-Regular.ttf)
@@ -140,6 +146,11 @@ ul li::before {
 @font-face {
   font-family: montserrat;
   src: url(https://qyctrtcwtwasdktftmuy.supabase.in/storage/v1/object/public/font/Montserrat-Regular.ttf)
+}
+
+@font-face {
+  font-family: bigmontserrat;
+  src: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/fonts/Montserrat-ExtraBold.ttf)
 }
 
 @media (prefers-reduced-motion: no-preference) {
