@@ -146,6 +146,11 @@ ul li::before {
   font-size: 150%
 }
 
+.videofoot {
+  font-family: 'bigmontserrat';
+  letter-spacing: .2rem;
+}
+
 @font-face {
   font-family: greatvibes;
   src: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/fonts/GreatVibes-Regular.ttf)
@@ -200,11 +205,15 @@ ul li::before {
   font-size: 100%;
   padding-top: 3%;
   padding-bottom: 3%;
-  min-height: 50px
+  min-height: 75px
 }
 
 .videoButton {
-  min-height: 50px
+  min-height: 75px;
+  background-color: black;
+  border: none;
+  text-shadow: 1px 1px rgb(131, 120, 120);
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -229,7 +238,7 @@ ul li::before {
 
 .selectVideo:hover {
   color: white;
-  background-color: black
+  background-color: #056fcb
 }
 
 .selectVideo:visited {
