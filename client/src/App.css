@@ -18,7 +18,7 @@
   padding: 10px 10px;
 }
 
-.App__nav{
+.App__nav {
   width: 100%;
   list-style: none;
 }
@@ -96,9 +96,9 @@
 }
 
 .Flash__message {
-  background: rgba(0,0,0,0.88);
+  background: rgba(0, 0, 0, 0.88);
   border-radius: 3px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #ffffff;
   cursor: default;
   display: -webkit-flex;
@@ -133,9 +133,17 @@ ul li::before {
 }
 
 .videoseriestitle {
+  margin-bottom: 0px;
   font-family: 'bigmontserrat';
   letter-spacing: .2rem;
   font-size: 350%
+}
+
+.videoseriessubtitle {
+  margin-top: 0px;
+  font-family: 'bigmontserrat';
+  letter-spacing: .2rem;
+  font-size: 150%
 }
 
 @font-face {
@@ -159,7 +167,7 @@ ul li::before {
   }
 }
 
-.videoPoster:hover{
+.videoPoster:hover {
   cursor: pointer;
 }
 
@@ -191,8 +199,14 @@ ul li::before {
   box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
   font-size: 100%;
   padding-top: 3%;
-  padding-bottom: 3%
+  padding-bottom: 3%;
+  min-height: 50px
 }
+
+.videoButton {
+  min-height: 50px
+}
+
 
 .selectVideo {
   /* wrap text in compatible browsers */
@@ -202,13 +216,15 @@ ul li::before {
   /* hide text that can't wrap with an ellipsis */
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: left;
+  font-weight: bolder;
+  min-height: 50px;
+  line-height: 1.5;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: white;
   /* add border after every option */
   border-bottom: 1px solid black;
-  text-align: left;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  font-weight: bolder;
-  /* background-color: rgba(255, 255, 255, 0.514) */
 }
 
 .selectVideo:hover {
@@ -406,9 +422,11 @@ ul li::before {
 
 .videoWrapper {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%;
+  /* 16:9 */
   height: 0;
 }
+
 .videoWrapper iframe {
   position: absolute;
   top: 0;
@@ -726,7 +744,7 @@ ul li::before {
     background-color: rgba(0, 0, 0, 0.75);
     background-image:
       url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/darkcalculator.png);
-    background-size:cover;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: top right;
   }
@@ -734,6 +752,7 @@ ul li::before {
   .whatYouWillLearn {
     text-align: center;
   }
+
   .asSeenOn {
     font-size: small;
   }
@@ -838,7 +857,7 @@ ul li::before {
   }
 
   .curtisList {
-    text-align: left; 
+    text-align: left;
     font-size: 75%
   }
 
@@ -961,7 +980,7 @@ ul li::before {
   }
 
   .curtisList {
-    text-align: left; 
+    text-align: left;
     font-size: 100%
   }
 
@@ -1084,7 +1103,7 @@ ul li::before {
   }
 
   .curtisList {
-    text-align: left; 
+    text-align: left;
     font-size: 100%
   }
 
@@ -1207,7 +1226,7 @@ ul li::before {
   }
 
   .curtisList {
-    text-align: left; 
+    text-align: left;
     font-size: 100%
   }
 
@@ -1331,9 +1350,10 @@ ul li::before {
   }
 
   .curtisList {
-    text-align: left; 
+    text-align: left;
     font-size: 125%
   }
+
   .documentaryContainer {
     max-width: 50vw
   }

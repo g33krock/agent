@@ -72,6 +72,7 @@ export class VideoSeries extends Component {
               <Col sm={3} style={{ overflow: "scroll", minHeight: "100vh", paddingRight: "0px", backgroundColor: "rgba(211, 211, 211)" }}>
                 <Row style={{ marginTop: "2%", marginBottom: "2%" }}>
                   <Button
+                  className="videoButton"
                     style={{
                       width: "75%",
                       marginLeft: "auto",
@@ -83,6 +84,7 @@ export class VideoSeries extends Component {
                 </Row>
                 <Row style={{ marginTop: "2%", marginBottom: "2%" }}>
                   <Button
+                  className="videoButton"
                     style={{
                       width: "75%",
                       marginLeft: "auto",
@@ -97,6 +99,7 @@ export class VideoSeries extends Component {
                   style={{
                     backgroundColor: "rgba(211, 211, 211)",
                     borderRadius: "5px",
+                    padding: "0px"
                   }}
                 >
                   <Row style={{ borderBottom: "2px solid black" }}>
@@ -108,7 +111,7 @@ export class VideoSeries extends Component {
                     .filter((vid) => vid.category === "none")
                     .map((vid) => (
                       <option
-                        className="selectVideo"
+                      className="selectVideo"
                         value={vid.id}
                         onClick={this.setVideo}
                       >
@@ -135,7 +138,7 @@ export class VideoSeries extends Component {
               <Col sm={7} style={{backgroundColor: 'rgb(225, 225, 225'}}>
                 <Row>
                   <h1  className = "videoseriestitle">COMPOUND INTEREST</h1>
-                  <h2  style={{fontWeight: '700'}}>THER RETIREMENT YOU DESERVE</h2>
+                  <h2  className = "videoseriessubtitle">THE RETIREMENT YOU DESERVE</h2>
                 </Row>
                 <Row style={{ marginBottom: "1%" }}>
                   <Container
@@ -150,10 +153,11 @@ export class VideoSeries extends Component {
                     <h3>{this.state.video.title}</h3>
                   </Container>
                 </Row>
-                <Row>
+                <Row style={{padding: '1%'}}>
+                  <div style={{position:'relative', paddingBottom: '56.25%',}}>
                   <iframe
-                    width="853"
-                    height="480"
+                    width="100%"
+                    height="100%"
                     src={this.state.video.vidlink}
                     title={this.state.video.title}
                     frameBorder="4"
@@ -162,8 +166,11 @@ export class VideoSeries extends Component {
                     style={{
                       border: "4px solid black",
                       backgroundColor: "black",
+                      position: 'absolute',
+                      left: '0px'
                     }}
                   />
+                  </div>
                 </Row>
                 <Row>
                   <h2>ALWAYS BE COMPOUNDING™</h2>
