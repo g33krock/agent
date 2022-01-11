@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
+import Client from 'shopify-buy';
 import { agentService } from "../../services/AgentService";
 import { About } from "./AboutComponent";
 import { AboutCurtis } from "./AboutCurtisComponent";
@@ -13,6 +14,7 @@ import { Footer } from "./FooterComponent";
 import { Header2 } from "./Header2Component";
 import { Home } from "./HomeComponent";
 import { VideoSeries } from "./VideoSeriesComponent";
+import Shopify from "./Shopify/ShopifyComponent";
 
 export function Main() {
   const agentId = 4;
@@ -22,6 +24,10 @@ export function Main() {
     return initialAgent;
   });
 
+  const client = Client.buildClient({
+    domain: 'testagent.myshopify.com',
+    storefrontAccessToken: '42cdf1077069d938a4af1cb2730a689c',
+  });
   return (
     <div style={{ minHeight: "100vh" }}>
       {/* <video autoPlay loop muted id="video">
@@ -85,6 +91,10 @@ export function Main() {
               <Route
                 path="webinarregistration"
                 element={<Webinar agent={agent[0]} Id={agentId} />}
+              />
+              <Route
+                path="shopify"
+                element={<Shopify agent={agent[0]} Id={agentId} client={client}/>}
               />
             </Routes>
           </BrowserRouter>

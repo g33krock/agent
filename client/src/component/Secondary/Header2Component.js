@@ -2,15 +2,6 @@ import React, { Component } from "react";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { agentService } from "../../services/AgentService";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faInstagram,
-  faPinterest,
-  faTiktok,
-  faTwitter,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
 import { Col, Image, Navbar, Row } from "react-bootstrap";
 
 export class Header2 extends Component {

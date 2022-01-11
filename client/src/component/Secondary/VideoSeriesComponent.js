@@ -69,7 +69,7 @@ export class VideoSeries extends Component {
               }}
               key={ag.toString()}
             >
-              <Col sm={3} style={{ overflow: "scroll", minHeight: "100vh", paddingRight: "0px" }}>
+              <Col sm={3} style={{ overflow: "scroll", minHeight: "100vh", paddingRight: "0px", backgroundColor: "rgba(211, 211, 211)" }}>
                 <Row style={{ marginTop: "2%", marginBottom: "2%" }}>
                   <Button
                     style={{

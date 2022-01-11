@@ -30,6 +30,7 @@
     "react-collapsible": "^2.8.4",
     "react-icons": "^4.3.1",
     "react-responsive-carousel": "^3.2.22",
-    "reactstrap": "^9.0.1"
+    "reactstrap": "^9.0.1",
+    "shopify-buy": "^2.14.0"
   }
 }
