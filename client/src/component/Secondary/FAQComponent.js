@@ -67,17 +67,17 @@ export class FAQ extends Component {
                   </h1>
                   {this.state.faqs &&
                     this.state.faqs
-                      .filter((n) => n.id % 2)
+                      .filter((n) => n.category === "faq")
                       .map((ques) => (
                         <Row style={{ marginTop: "2%", marginBottom: "2%" }}>
-                          <Col sm={1} />
-                          <Col sm={2}>
+                          <Col xs={0} md={1}/>
+                          <Col xs={3} md={2}>
                             <FAQVideo faq={ques} />
                             {/* <Image fluid src={ques.poster} /> */}
                           </Col>
-                          <Col sm={9} style={{ fontSize: "200%" }}>
+                          <Col xs={9} md={9} style={{ fontSize: "200%", borderBottom: "2px solid black" }}>
                             <Collapsible
-                              trigger={[<BsChevronDown />, ques.question]}
+                              trigger={[<BsChevronDown />, <span style={{textAlign: "left"}}>{ques.question}</span>]}
                             >
                               <Row style={{ margin: "10px" }}>
                                 <Col>
@@ -97,17 +97,17 @@ export class FAQ extends Component {
                   </h1>
                   {this.state.faqs &&
                     this.state.faqs
-                      .filter((n) => n.id % 2)
+                    .filter((n) => n.category === "sidebyside")
                       .map((ques) => (
                         <Row style={{ marginTop: "2%", marginBottom: "2%" }}>
-                          <Col sm={1} />
-                          <Col sm={2}>
+                          <Col xs={0} md={1}/>
+                          <Col xs={3} md={2}>
                             <FAQVideo faq={ques} />
                             {/* <Image fluid src={ques.poster} /> */}
                           </Col>
-                          <Col sm={9} style={{ fontSize: "200%" }}>
+                          <Col xs={9} md={9} style={{ fontSize: "200%", borderBottom: "2px solid black" }}>
                             <Collapsible
-                              trigger={[<BsChevronDown />, ques.question]}
+                              trigger={[<BsChevronDown />, <span style={{textAlign: "left"}}>{ques.question}</span>]}
                             >
                               <Row style={{ margin: "10px" }}>
                                 <Col>
