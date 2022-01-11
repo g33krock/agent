@@ -9,7 +9,7 @@ class Product extends Component {
     this.props.product.options.forEach((selector) => {
       defaultOptionValues[selector.name] = selector.values[0].value;
     });
-    this.state = { selectedOptions: defaultOptionValues };
+    this.state = { selectedOptions: defaultOptionValues, disabled: false };
 
     this.handleOptionChange = this.handleOptionChange.bind(this);
     this.handleQuantityChange = this.handleQuantityChange.bind(this);
@@ -39,11 +39,20 @@ class Product extends Component {
     });
   }
 
+  handleClick = (event) => {
+    if (this.state.disabled) {
+        return;
+    }
+    this.setState({disabled: true});
+    // Send     
+}
+
   handleQuantityChange(event) {
     this.setState({
       selectedVariantQuantity: event.target.value
     });
   }
+  
 
   render() {
     let variantImage = this.state.selectedVariantImage || this.props.product.images[0]
@@ -62,13 +71,13 @@ class Product extends Component {
       <div className="Product">
         {this.props.product.images.length ? <img src={variantImage.src} alt={`${this.props.product.title} product shot`} width='100vw'/> : null}
         <h5 className="Product__title">{this.props.product.title}</h5>
-        <span className="Product__price">${variant.price}</span>
+        <span className="Product__price">${variant.price}  </span>
         {/* {variantSelectors} */}
         <label className="Product__option">
           {/* Quantity */}
           {/* <input min="1" type="number" defaultValue={variantQuantity} onChange={this.handleQuantityChange}></input> */}
         </label>
-        <button className="Product__buy button" onClick={() => this.props.addVariantToCart(variant.id, variantQuantity)}>Add to Cart</button>
+        <button className="Product__buy button" onClick={() => {this.props.addVariantToCart(variant.id, variantQuantity); this.handleClick();}} disabled={this.state.disabled}>{this.state.disabled ? 'In Cart' : 'Add to Cart'}</button>
       </div>
     );
   }

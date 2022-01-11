@@ -28,11 +28,11 @@ class Cart extends Component {
       <div className={`Cart ${this.props.isCartOpen ? 'Cart--open' : ''}`}>
         <header className="Cart__header">
           <h2>Your cart</h2>
-          <button
+          {/* <button
             onClick={this.props.handleCartClose}
             className="Cart__close">
             ×
-          </button>
+          </button> */}
         </header>
         <ul className="Cart__line-items">
           {line_items}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Products from './Products';
 import Cart from './Cart';
+import { Row, Col } from 'react-bootstrap';
 
 class Shopify extends Component {
   constructor() {
@@ -95,11 +96,15 @@ class Shopify extends Component {
             <h2>{this.state.shop.description}</h2>
           </div>
         </header>
+        <Row>
+          <Col>
         <Products
           products={this.state.products}
           client={this.props.client}
           addVariantToCart={this.addVariantToCart}
         />
+        </Col>
+        <Col>
         <Cart
           checkout={this.state.checkout}
           isCartOpen={this.state.isCartOpen}
@@ -107,6 +112,8 @@ class Shopify extends Component {
           updateQuantityInCart={this.updateQuantityInCart}
           removeLineItemInCart={this.removeLineItemInCart}
         />
+        </Col>
+        </Row>
       </div>
     );
   }
