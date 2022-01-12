@@ -144,7 +144,7 @@ export class AboutCurtis extends Component {
                       <Col>
                         <Image
                           fluid
-                          src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/EveryoneEndsUpPoor.jpg"
+                          src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/Everyone_Ends_Up_Poor!_Book_Cover.png"
                         />
                       </Col>
                       <Col>
@@ -157,7 +157,7 @@ export class AboutCurtis extends Component {
                       <Col>
                         <Image
                           fluid
-                          src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/LostScienceofCompoundInterest.jpg"
+                          src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/The_Lost_Science_of_Compound_Interest_Cover.png"
                         />
                       </Col>
                       <Col sm={1}></Col>
