@@ -50,13 +50,13 @@ export class VideoSeries extends Component {
         fluid
         style={{
           backgroundColor: "rgb(211, 211, 211)",
-          minHeight: "80vh",
-          paddingLeft: '0px',
-          paddingRight: '8px',
-          paddingBottom: "3%",
+          // minHeight: "90vh",
+          paddingLeft: "0px",
+          // paddingRight: '8px',
+          // paddingBottom: "3%",
           border: "4px solid black",
-          margin: "2% auto 2% auto",
-          maxWidth: "95vw",
+          // margin: "2% auto 2% auto",
+          // maxWidth: "95vw",
         }}
       >
         {this.state.agent &&
@@ -69,9 +69,25 @@ export class VideoSeries extends Component {
               }}
               key={ag.toString()}
             >
-              <Col sm={3} style={{ overflow: "scroll", maxHeight: "90vh", paddingRight: "0px" }}>
-                <Row style={{ marginTop: "2%", marginBottom: "2%" }}>
+              <Col
+                sm={3}
+                style={{
+                  overflow: "scroll",
+                  minHeight: "100vh",
+                  paddingRight: "0px",
+                  backgroundColor: "rgba(211, 211, 211)",
+                }}
+              >
+                <Row
+                  style={{
+                    marginTop: "2%",
+                    marginBottom: "2%",
+                    paddingBottom: "2%",
+                    borderBottom: "1px solid black",
+                  }}
+                >
                   <Button
+                    className="videoButton"
                     style={{
                       width: "75%",
                       marginLeft: "auto",
@@ -81,8 +97,16 @@ export class VideoSeries extends Component {
                     Webinar
                   </Button>
                 </Row>
-                <Row style={{ marginTop: "2%", marginBottom: "2%" }}>
+                <Row
+                  style={{
+                    marginTop: "2%",
+                    marginBottom: "2%",
+                    paddingBottom: "2%",
+                    borderBottom: "1px solid black",
+                  }}
+                >
                   <Button
+                    className="videoButton"
                     style={{
                       width: "75%",
                       marginLeft: "auto",
@@ -92,10 +116,12 @@ export class VideoSeries extends Component {
                     Documentary
                   </Button>
                 </Row>
+                <Row></Row>
                 <Container
                   style={{
-                    backgroundColor: "rgba(255, 255, 255, 0.514)",
+                    backgroundColor: "rgba(211, 211, 211)",
                     borderRadius: "5px",
+                    padding: "0px",
                   }}
                 >
                   <Row style={{ borderBottom: "2px solid black" }}>
@@ -115,7 +141,10 @@ export class VideoSeries extends Component {
                       </option>
                     ))}
                   <Collapsible
-                    trigger={[<BsChevronDown />, <h3>8 MPI® Plans</h3>]}
+                    trigger={[
+                      <BsChevronDown />,
+                      <h4 style={{ fontSize: "110%" }}> 8 MPI® Plans</h4>,
+                    ]}
                   >
                     {this.state.videos
                       .filter((vid) => vid.category === "plans")
@@ -124,17 +153,19 @@ export class VideoSeries extends Component {
                           className="selectVideo"
                           value={vid.id}
                           onClick={this.setVideo}
-                        >  
-                            {vid.id} | {vid.title}
+                        >
+                          {vid.id} | {vid.title}
                         </option>
                       ))}
                   </Collapsible>
                 </Container>
               </Col>
-              <Col sm={7}>
+              <Col sm={7} style={{ backgroundColor: "rgb(225, 225, 225" }}>
                 <Row>
-                  <h1  style={{fontWeight: '700'}}>COMPOUND INTEREST</h1>
-                  <h2  style={{fontWeight: '700'}}>THER RETIREMENT YOU DESERVE</h2>
+                  <h1 className="videoseriestitle">COMPOUND INTEREST</h1>
+                  <h2 className="videoseriessubtitle">
+                    THE RETIREMENT YOU DESERVE
+                  </h2>
                 </Row>
                 <Row style={{ marginBottom: "1%" }}>
                   <Container
@@ -143,38 +174,44 @@ export class VideoSeries extends Component {
                       width: "75%",
                       borderRadius: "5px",
                       color: "white",
-                      fontWeight: "700"
+                      fontWeight: "700",
                     }}
                   >
-                    <h3>{this.state.video.title}</h3>
+                    <h3>Curtis Ray Presents</h3>
                   </Container>
                 </Row>
-                <Row>
-                  <iframe
-                    width="853"
-                    height="480"
-                    src={this.state.video.vidlink}
-                    title={this.state.video.title}
-                    frameBorder="4"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{
-                      border: "4px solid black",
-                      backgroundColor: "black",
-                    }}
-                  />
+                <Row style={{ padding: "1%" }}>
+                  <div
+                    style={{ position: "relative", paddingBottom: "56.25%" }}
+                  >
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src={this.state.video.vidlink}
+                      title={this.state.video.title}
+                      frameBorder="4"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      style={{
+                        border: "4px solid black",
+                        backgroundColor: "black",
+                        position: "absolute",
+                        left: "0px",
+                      }}
+                    />
+                  </div>
                 </Row>
                 <Row>
-                  <h2>ALWAYS BE COMPOUNDING™</h2>
+                  <h2 className="videofoot">ALWAYS BE COMPOUNDING™</h2>
                 </Row>
               </Col>
-              <Col>
+              <Col style={{ backgroundColor: "rgb(100, 100,100" }}>
                 <Row
                   style={{
-                    paddingTop: "2%",
-                    paddingBottom: "2%",
+                    paddingTop: "5%",
+                    paddingBottom: "5%",
                     backgroundColor: "white",
-                    borderRight: "4px solid black"
+                    borderRight: "4px solid black",
                   }}
                 >
                   <Image fluid src={ag.profileMPIGrey} />
@@ -184,14 +221,84 @@ export class VideoSeries extends Component {
                     paddingTop: "2%",
                     paddingBottom: "2%",
                     backgroundColor: "white",
-                    borderRight: "4px solid black"
+                    borderRight: "4px solid black",
                   }}
                 >
                   <Image fluid src={ag.logo} />
                   <p className="emailSize">{ag.email}</p>
                 </Row>
-                <Row>
+                <Row
+                  style={{
+                    marginTop: "5%",
+                    marginBottom: "5%",
+                    paddingBottom: "5%",
+                    borderBottom: "1px solid black",
+                  }}
+                >
                   <VideoCalendar agent={ag} />
+                </Row>
+                <Row
+                  style={{
+                    marginTop: "5%",
+                    marginBottom: "5%",
+                    paddingBottom: "5%",
+                    borderBottom: "1px solid black",
+                  }}
+                >
+                  <div>
+                    <Button
+                      className="videoButton"
+                      style={{
+                        width: "100%",
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                      }}
+                    >
+                      MPI® Calculator
+                    </Button>
+                  </div>
+                </Row>
+                <Row
+                  style={{
+                    marginTop: "5%",
+                    marginBottom: "5%",
+                    paddingBottom: "5%",
+                    borderBottom: "1px solid black",
+                  }}
+                >
+                  <div>
+                    <Button
+                      className="videoButton"
+                      style={{
+                        width: "100%",
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                      }}
+                    >
+                      Share
+                    </Button>
+                  </div>
+                </Row>
+                <Row
+                  style={{
+                    marginTop: "5%",
+                    marginBottom: "5%",
+                    paddingBottom: "5%",
+                    borderBottom: "1px solid black",
+                  }}
+                >
+                  <div>
+                    <Button
+                      className="videoButton"
+                      style={{
+                        width: "100%",
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                      }}
+                    >
+                      Leave A Review
+                    </Button>
+                  </div>
                 </Row>
               </Col>
             </Row>

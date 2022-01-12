@@ -37,7 +37,7 @@ export class SCIVideo extends Component {
     return (
       <Container
         style={{
-          backgroundColor: `black`,
+          backgroundColor: `grey`,
 
           // zIndex: "-1",
         }}

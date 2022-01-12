@@ -9,6 +9,116 @@
   pointer-events: none;
 }
 
+/* Shopify CSS */
+.App__header {
+  background-color: #222;
+  background-image: url('https://unsplash.it/1000/300?image=823');
+  background-size: cover;
+  color: white;
+  padding: 10px 10px;
+}
+
+.App__nav {
+  width: 100%;
+  list-style: none;
+}
+
+.App__customer-actions {
+  float: left;
+  padding: 10px;
+}
+
+.App__title {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.Product-wrapper {
+  max-width: 900px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.App__view-cart-wrapper {
+  float: right;
+}
+
+.App__view-cart {
+  font-size: 15px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: white;
+}
+
+.button {
+  background-color: #2752ff;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  padding: 10px 17px;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #222222;
+}
+
+.button:disabled {
+  background: #bfbfbf;
+  cursor: not-allowed;
+}
+
+.login {
+  font-size: 1.2rem;
+  color: #b8b8b8;
+  cursor: pointer;
+}
+
+.login:hover {
+  color: white;
+}
+
+.Flash__message-wrapper {
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  align-items: flex-end;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 227;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.Flash__message {
+  background: rgba(0, 0, 0, 0.88);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  cursor: default;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: none;
+  pointer-events: auto;
+  position: relative;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  padding: 10px 20px;
+  margin: 0;
+}
+
+.Flash__message--open {
+  display: flex;
+}
+
+/* End Shopify CSS */
+
 ul {
   list-style: none;
 }
@@ -22,6 +132,25 @@ ul li::before {
   margin-left: -1em;
 }
 
+.videoseriestitle {
+  margin-bottom: 0px;
+  font-family: 'bigmontserrat';
+  letter-spacing: .2rem;
+  font-size: 350%
+}
+
+.videoseriessubtitle {
+  margin-top: 0px;
+  font-family: 'bigmontserrat';
+  letter-spacing: .2rem;
+  font-size: 150%
+}
+
+.videofoot {
+  font-family: 'bigmontserrat';
+  letter-spacing: .2rem;
+}
+
 @font-face {
   font-family: greatvibes;
   src: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/fonts/GreatVibes-Regular.ttf)
@@ -32,10 +161,19 @@ ul li::before {
   src: url(https://qyctrtcwtwasdktftmuy.supabase.in/storage/v1/object/public/font/Montserrat-Regular.ttf)
 }
 
+@font-face {
+  font-family: bigmontserrat;
+  src: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/fonts/Montserrat-ExtraBold.ttf)
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.videoPoster:hover {
+  cursor: pointer;
 }
 
 .Collapsible__trigger {
@@ -64,8 +202,20 @@ ul li::before {
   width: 100%;
   text-shadow: 1px 1px rgb(131, 120, 120);
   box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
-  font-size: 75%;
+  font-size: 100%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  min-height: 75px
 }
+
+.videoButton {
+  min-height: 75px;
+  background-color: black;
+  border: none;
+  text-shadow: 1px 1px rgb(131, 120, 120);
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+
 
 .selectVideo {
   /* wrap text in compatible browsers */
@@ -75,18 +225,20 @@ ul li::before {
   /* hide text that can't wrap with an ellipsis */
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: left;
+  font-weight: bolder;
+  min-height: 50px;
+  line-height: 1.5;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: white;
   /* add border after every option */
   border-bottom: 1px solid black;
-  text-align: left;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  font-weight: bolder;
-  /* background-color: rgba(255, 255, 255, 0.514) */
 }
 
 .selectVideo:hover {
   color: white;
-  background-color: black
+  background-color: #056fcb
 }
 
 .selectVideo:visited {
@@ -279,9 +431,11 @@ ul li::before {
 
 .videoWrapper {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%;
+  /* 16:9 */
   height: 0;
 }
+
 .videoWrapper iframe {
   position: absolute;
   top: 0;
@@ -599,7 +753,7 @@ ul li::before {
     background-color: rgba(0, 0, 0, 0.75);
     background-image:
       url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/darkcalculator.png);
-    background-size:cover;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: top right;
   }
@@ -607,6 +761,7 @@ ul li::before {
   .whatYouWillLearn {
     text-align: center;
   }
+
   .asSeenOn {
     font-size: small;
   }
@@ -636,7 +791,7 @@ ul li::before {
   }
 
   #icons {
-    max-height: 5vw;
+    max-height: 4vh;
   }
 
   .scvis {
@@ -644,12 +799,12 @@ ul li::before {
   }
 
   .bulletpoints {
-    color: white;
+    /* color: white; */
     font-size: 100%
   }
 
   .videohead {
-    color: white;
+    /* color: white; */
     font-size: 150%
   }
 
@@ -711,7 +866,7 @@ ul li::before {
   }
 
   .curtisList {
-    text-align: left; 
+    text-align: left;
     font-size: 75%
   }
 
@@ -720,7 +875,7 @@ ul li::before {
   }
 }
 
-@media only screen and (min-width: 691px) and (max-width: 1700px) {
+@media only screen and (min-width: 691px) and (max-width: 1079px) {
   .emailSize {
     font-size: 50%
   }
@@ -762,7 +917,7 @@ ul li::before {
   }
 
   #icons {
-    max-height: 5vw;
+    max-height: 4vh;
   }
 
   .scvis {
@@ -770,12 +925,12 @@ ul li::before {
   }
 
   .bulletpoints {
-    color: white;
+    /* color: white; */
     font-size: 150%
   }
 
   .videohead {
-    color: white;
+    /* color: white; */
     font-size: 200%
   }
 
@@ -834,7 +989,253 @@ ul li::before {
   }
 
   .curtisList {
-    text-align: left; 
+    text-align: left;
+    font-size: 100%
+  }
+
+  .documentaryContainer {
+    border: none
+  }
+}
+
+@media only screen and (min-width: 1080px) and (max-width: 1535px) {
+  .emailSize {
+    font-size: 50%
+  }
+
+  .calcBackground {
+    background-color: rgba(0, 0, 0, 0.75);
+    background-image:
+      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/darkcalculator.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+  }
+
+  .asSeenOn {
+    font-size: medium;
+  }
+
+  #video {
+    position: fixed;
+    z-index: -1;
+    width: auto;
+    height: contain;
+    left: -50%;
+    top: -50%
+  }
+
+  .backdrop {
+    position: fixed;
+    z-index: -1;
+    width: auto;
+    height: contain;
+    left: -50%;
+    top: -50%
+  }
+
+  #fancyfont {
+    font-family: 'greatvibes';
+    font-size: 150%;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  #icons {
+    max-height: 4vh;
+  }
+
+  .scvis {
+    min-height: 300px
+  }
+
+  .bulletpoints {
+    /* color: white; */
+    font-size: 150%
+  }
+
+  .videohead {
+    /* color: white; */
+    font-size: 200%
+  }
+
+  .videosubhead {
+    color: white;
+    font-size: 150%;
+    font-style: italic
+  }
+
+  .videobody {
+    color: white;
+    font-size: 150%
+  }
+
+  .videobutton {
+    width: 33%;
+    /* margin-bottom: 3%; */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .videobuttontext {
+    font-size: 100%;
+  }
+
+  .videobuttonrow {
+    width: 100%;
+    margin-bottom: 3%;
+  }
+
+  .videobuttoncol {
+    width: auto;
+    justify-content: center
+  }
+
+  .homebg {
+    background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/SDRPHomeBackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0px;
+    min-height: 350px;
+    /* height: 100%; */
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    /* z-index: -100;  */
+  }
+
+  .curtisFamilyImage {
+    position: absolute;
+    bottom: -10px;
+    left: 2%;
+    width: 45%;
+    /* z-index: 1 */
+  }
+
+  .curtisList {
+    text-align: left;
+    font-size: 100%
+  }
+
+  .documentaryContainer {
+    border: none
+  }
+}
+
+@media only screen and (min-width: 1536px) and (max-width: 1699px) {
+  .emailSize {
+    font-size: 50%
+  }
+
+  .calcBackground {
+    background-color: rgba(0, 0, 0, 0.75);
+    background-image:
+      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/darkcalculator.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+  }
+
+  .asSeenOn {
+    font-size: medium;
+  }
+
+  #video {
+    position: fixed;
+    z-index: -1;
+    width: auto;
+    height: contain;
+    left: -50%;
+    top: -50%
+  }
+
+  .backdrop {
+    position: fixed;
+    z-index: -1;
+    width: auto;
+    height: contain;
+    left: -50%;
+    top: -50%
+  }
+
+  #fancyfont {
+    font-family: 'greatvibes';
+    font-size: 150%;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  #icons {
+    max-height: 4vh;
+  }
+
+  .scvis {
+    min-height: 300px
+  }
+
+  .bulletpoints {
+    /* color: white; */
+    font-size: 150%
+  }
+
+  .videohead {
+    /* color: white; */
+    font-size: 200%
+  }
+
+  .videosubhead {
+    color: white;
+    font-size: 150%;
+    font-style: italic
+  }
+
+  .videobody {
+    color: white;
+    font-size: 150%
+  }
+
+  .videobutton {
+    width: 33%;
+    /* margin-bottom: 3%; */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .videobuttontext {
+    font-size: 100%;
+  }
+
+  .videobuttonrow {
+    width: 100%;
+    margin-bottom: 3%;
+  }
+
+  .videobuttoncol {
+    width: auto;
+    justify-content: center
+  }
+
+  .homebg {
+    background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/SDRPHomeBackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0px;
+    min-height: 350px;
+    /* height: 100%; */
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    /* z-index: -100;  */
+  }
+
+  .curtisFamilyImage {
+    position: absolute;
+    bottom: -10px;
+    left: 2%;
+    width: 45%;
+    /* z-index: 1 */
+  }
+
+  .curtisList {
+    text-align: left;
     font-size: 100%
   }
 
@@ -883,7 +1284,7 @@ ul li::before {
   }
 
   #icons {
-    max-height: 3vw;
+    max-height: 4vh;
   }
 
   .scvis {
@@ -891,12 +1292,12 @@ ul li::before {
   }
 
   .bulletpoints {
-    color: white;
+    /* color: white; */
     font-size: 175%
   }
 
   .videohead {
-    color: white;
+    /* color: white; */
     font-size: 300%
   }
 
@@ -958,9 +1359,10 @@ ul li::before {
   }
 
   .curtisList {
-    text-align: left; 
+    text-align: left;
     font-size: 125%
   }
+
   .documentaryContainer {
     max-width: 50vw
   }

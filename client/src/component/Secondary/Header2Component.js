@@ -2,15 +2,6 @@ import React, { Component } from "react";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { agentService } from "../../services/AgentService";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faInstagram,
-  faPinterest,
-  faTiktok,
-  faTwitter,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
 import { Col, Image, Navbar, Row } from "react-bootstrap";
 
 export class Header2 extends Component {
@@ -37,8 +28,8 @@ export class Header2 extends Component {
       >
         {this.state.agent &&
           this.state.agent.map((ag) => (
-            <Row style={{ width: "101%" }} key={ag.toString()}>
-              <Navbar bg="dark" expand="lg" variant="dark">
+            <Row key={ag.toString()}>
+              <Navbar bg="dark" expand="lg" variant="dark" style={{paddingBottom: '0px', paddingTop: '0px'}}>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse>
                   <Col>
@@ -69,8 +60,6 @@ export class Header2 extends Component {
                       }}
                       href="/videoseries"
                     >
-                      Compound Interest
-                      <br />
                       Video Series
                     </Nav.Link>
                   </Col>
@@ -113,7 +102,7 @@ export class Header2 extends Component {
                         Contact Us
                       </Nav.Link>
                     </Row>
-                    <Row>
+                    {/* <Row>
                       <Col></Col>
                       {ag.facebook && (
                         <Col style={{ padding: "0px", marginTop: "-5px" }}>
@@ -195,7 +184,7 @@ export class Header2 extends Component {
                         </Col>
                       )}
                       <Col></Col>
-                    </Row>
+                    </Row> */}
                   </Col>
                   <Col>
                     <Nav.Link style={{ color: `${ag.textColor}` }} href="/">
