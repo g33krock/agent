@@ -25,7 +25,7 @@ export class Bottom extends Component {
             className="justify-content-md-center"
             style={{ marginBottom: "5%", marginTop: "5%" }}
           >
-            <Col sm={2}></Col>
+            <Col />
             <Col sm={3}>
               <Button
                 style={{
@@ -44,7 +44,7 @@ export class Bottom extends Component {
                 YOUR SPOT
               </Button>{" "}
             </Col>
-            <Col sm={2}></Col>
+            <Col />
             <Col sm={3}>
               <Button
                 style={{
@@ -63,7 +63,26 @@ export class Bottom extends Component {
                 CALCULATOR
               </Button>{" "}
             </Col>
-            <Col sm={2}></Col>
+            <Col />
+            <Col sm={3}>
+              <Button
+                style={{
+                  // backgroundColor: `${this.props.agent.secondaryColor}`,
+                  backgroundColor: `black`,
+                  color: `white`,
+                  width: "100%",
+                  border: "none",
+                  boxShadow: "2px 2px rgba(0, 0, 0, 0.5)",
+                  marginBottom: "5px",
+                }}
+                href="/videoseries"
+              >
+                SCHEDULE A 1 ON 1 WITH A
+                <br />
+                MPI® CERTIFIED ADVISOR
+              </Button>{" "}
+            </Col>
+            <Col />
           </Row>
           {this.state.agent &&
             this.state.agent.map((ag) => (
