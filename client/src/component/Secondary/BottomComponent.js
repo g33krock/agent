@@ -23,7 +23,7 @@ export class Bottom extends Component {
         <Container fluid style={{ flexDirection: "row" }}>
           <Row
             className="justify-content-md-center"
-            style={{ marginBottom: "25px", marginTop: "25px" }}
+            style={{ marginBottom: "5%", marginTop: "5%" }}
           >
             <Col sm={2}></Col>
             <Col sm={3}>
@@ -71,8 +71,6 @@ export class Bottom extends Component {
                 <Row style={{paddingBottom: "5%"}}><Image src={ag.icon} style={{maxHeight: "100px", width: "auto", margin: "auto"}} /></Row>
                 <Row
                   style={{
-                    marginLeft: "auto",
-                    marginRight: "auto",
                     minHeight: "10vh",
                     backgroundColor: ag.primaryColor
                   }}
