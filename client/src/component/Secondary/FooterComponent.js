@@ -23,16 +23,76 @@ export class Footer extends Component {
         {this.state.agent &&
           this.state.agent.map((ag) => (
             <Row key={ag.toString()} style={{backgroundColor:"black", width: "101%", paddingTop: "1%", paddingBottom: "1%"}}>
-              <Col style={{ color: `${ag.textColor}`, padding: "0px" }} >
-                <strong>{ag.address1}</strong>
-                <br />
-                <strong>
-                  {ag.city}, {ag.state}, {ag.zip}
-                </strong>
-                <br />
-                <strong>{ag.phone}</strong>
-              </Col>
-              <Col style={{padding: "1%"}}><Image src={ag.icon} style={{maxHeight: "50px"}} /></Col>
+              <Row style={{marginLeft: "auto", marginRight: "auto"}}>
+                  <Col xs={2} sm={3} md={4} />
+                    {ag.facebook && (
+                      <Col style={{padding: "1%"}}>
+                        <a href={ag.facebook}>
+                          <Image
+                            fluid
+                            src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Facebook.ico"
+
+                          />
+                        </a>
+                      </Col>
+                    )}
+                    {ag.twitter && (
+                      <Col style={{padding: "1%"}}>
+                        <a href={ag.twitter}>
+                        <Image
+                            fluid
+                            src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Twitter.ico"
+
+                          />
+                        </a>
+                      </Col>
+                    )}
+                    {ag.instagram && (
+                      <Col style={{padding: "1%"}}>
+                        <a href={ag.instagram}>
+                        <Image
+                            fluid
+                            src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Instagram.ico"
+
+                          />
+                        </a>
+                      </Col>
+                    )}
+                    {ag.tiktok && (
+                      <Col style={{padding: "1%"}}>
+                        <a href={ag.tiktok}>
+                        <Image
+                            fluid
+                            src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/TikTok.ico"
+
+                          />
+                        </a>
+                      </Col>
+                    )}
+                    {ag.youtube && (
+                      <Col style={{padding: "1%"}}>
+                        <a href={ag.youtube}>
+                        <Image
+                            fluid
+                            src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/YouTube.ico"
+
+                          />
+                        </a>
+                      </Col>
+                    )}
+                    {ag.pinterest && (
+                      <Col style={{padding: "1%"}}>
+                        <a href={ag.pinterest}>
+                        <Image
+                            fluid
+                            src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Pinterest.ico"
+
+                          />
+                        </a>
+                      </Col>
+                    )}
+                    <Col xs={2} sm={3} md={4} />
+                    </Row>
             </Row>
           ))}
       </>
