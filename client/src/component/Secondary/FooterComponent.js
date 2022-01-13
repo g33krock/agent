@@ -33,70 +33,68 @@ export class Footer extends Component {
             >
               <Row style={{ marginLeft: "auto", marginRight: "auto" }}>
                 <Col xs={2} sm={3} md={4} />
-                <Col style={{marginLeft: '9%', marginRight: '9%'}}>
-                <Row>
-                  {ag.facebook && (
-                    <Col style={{ padding: "1%" }}>
-                      <a href={ag.facebook}>
-                        <Image
-                          fluid
-                          src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Facebook.ico"
-                        />
-                      </a>
-                    </Col>
-                  )}
-                  {ag.twitter && (
-                    <Col style={{ padding: "1%" }}>
-                      <a href={ag.twitter}>
-                        <Image
-                          fluid
-                          src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Twitter.ico"
-                        />
-                      </a>
-                    </Col>
-                  )}
-                  {ag.instagram && (
-                    <Col style={{ padding: "1%" }}>
-                      <a href={ag.instagram}>
-                        <Image
-                          fluid
-                          src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Instagram.ico"
-                        />
-                      </a>
-                    </Col>
-                  )}
-                  {ag.tiktok && (
-                    <Col style={{ padding: "1%" }}>
-                      <a href={ag.tiktok}>
-                        <Image
-                          fluid
-                          src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/TikTok.ico"
-                        />
-                      </a>
-                    </Col>
-                  )}
-                  {ag.youtube && (
-                    <Col style={{ padding: "1%" }}>
-                      <a href={ag.youtube}>
-                        <Image
-                          fluid
-                          src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/YouTube.ico"
-                        />
-                      </a>
-                    </Col>
-                  )}
-                  {ag.pinterest && (
-                    <Col style={{ padding: "1%" }}>
-                      <a href={ag.pinterest}>
-                        <Image
-                          fluid
-                          src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Pinterest.ico"
-                        />
-                      </a>
-                    </Col>
-                  )}
-                </Row>
-                </Col>
+
+                {ag.facebook && (
+                  <Col style={{ margin: ".5%", padding: "1%" }}>
+                    <a href={ag.facebook}>
+                      <Image
+                        fluid
+                        src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Facebook.ico"
+                      />
+                    </a>
+                  </Col>
+                )}
+                {ag.twitter && (
+                  <Col style={{ margin: ".5%", padding: "1%" }}>
+                    <a href={ag.twitter}>
+                      <Image
+                        fluid
+                        src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Twitter.ico"
+                      />
+                    </a>
+                  </Col>
+                )}
+                {ag.instagram && (
+                  <Col style={{ margin: ".5%", padding: "1%" }}>
+                    <a href={ag.instagram}>
+                      <Image
+                        fluid
+                        src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Instagram.ico"
+                      />
+                    </a>
+                  </Col>
+                )}
+                {ag.tiktok && (
+                  <Col style={{ margin: ".5%", padding: "1%" }}>
+                    <a href={ag.tiktok}>
+                      <Image
+                        fluid
+                        src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/TikTok.ico"
+                      />
+                    </a>
+                  </Col>
+                )}
+                {ag.youtube && (
+                  <Col style={{ margin: ".5%", padding: "1%" }}>
+                    <a href={ag.youtube}>
+                      <Image
+                        fluid
+                        src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/YouTube.ico"
+                      />
+                    </a>
+                  </Col>
+                )}
+                {ag.pinterest && (
+                  <Col style={{ margin: ".5%", padding: "1%" }}>
+                    <a href={ag.pinterest}>
+                      <Image
+                        fluid
+                        src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Pinterest.ico"
+                      />
+                    </a>
+                  </Col>
+                )}
+
                 <Col xs={2} sm={3} md={4} />
               </Row>
               <Row>

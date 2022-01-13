@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Button, Image } from "react-bootstrap";
+import { Row, Col, Button, Image } from "react-bootstrap";
 import { agentService } from "../../services/AgentService";
 import { BottomCalendar } from "./BottomCalendarComponent";
 
