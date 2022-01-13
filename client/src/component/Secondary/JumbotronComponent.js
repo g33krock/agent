@@ -26,22 +26,28 @@ export class Jumbotron extends Component {
         {this.state.agent &&
           this.state.agent.map((ag) => (
             <Row style={{ margin: "0px" }} key={ag.toString()}>
-              <Row style={{ marginTop: "10%"}}>
-              <Col style={{ paddingLeft: "0px", paddingRight: "0px", backgroundColor: "rgb(0, 0, 0, 0.5)", borderRadius: "15px", marginLeft: "auto", marginRight: "auto" }}>
+              <Row style={{ marginTop: "5%"}}>
+              <Col style={{ paddingLeft: "0px", paddingRight: "0px", marginLeft: "auto", marginRight: "auto" }}>
                 {/* <Container style={{alignContent:'center'}}> */}
 
                   <img 
                   fluid
-                  src={ag.logo}
+                  src={ag.icon}
                   alt={ag.agency}
                   // width="80%"
-                  style={{marginTop: '1%', marginBottom: "0px", height: "20vh", maxWidth: "80vw", marginLeft: 'auto', marginRight: 'auto'}}/>
+                  style={{marginTop: '1%', marginBottom: "0px", maxWidth: "80vw", marginLeft: 'auto', marginRight: 'auto'}}/>
                   <h1
                     style={{
                       color: `${ag.textColor}`,
                       paddingTop: "0px",
                       marginTop: "0px",
-                      textShadow: "1px 1px black"
+                      textShadow: "1px 1px black",
+                      backgroundColor: "rgb(0, 0, 0, 0.5)",
+                      borderRadius: "15px",
+                      marginBottom: "10%",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                      maxWidth: "80vw",
                     }}
                   >
                     {ag.about}
@@ -50,7 +56,7 @@ export class Jumbotron extends Component {
                   </Row>
                   <Row>
                   <Col>
-                  <h3
+                  {/* <h3
                     style={{
                       color: `${ag.textColor}`,
                       marginTop: "15%",
@@ -60,7 +66,7 @@ export class Jumbotron extends Component {
                     <strong style={{textShadow: "1px 1px black"}}>
                       SEE WHAT SECURE COMPOUND INTEREST CAN DO FOR YOU
                     </strong>
-                  </h3>
+                  </h3> */}
                 {/* </Container> */}
               </Col>
               </Row>
