@@ -42,7 +42,7 @@ export class Home extends Component {
               <Calculator agent={ag} />
               <AgentCarousel agent={ag} Id={ag.id} />
               <Testimonials agent={ag} Id={ag.id} />
-              <Bottom agent={ag} Id={ag.id} />
+              <Bottom agent={ag} Id={ag.id} style={{width: "100%"}}/>
             </Row>
           ))}
       </Container>
