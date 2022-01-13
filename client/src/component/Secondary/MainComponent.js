@@ -15,7 +15,6 @@ import { Header2 } from "./Header2Component";
 import { Home } from "./HomeComponent";
 import { VideoSeries } from "./VideoSeriesComponent";
 import Shopify from "./Shopify/ShopifyComponent";
-import { Bottom } from "./BottomComponent";
 
 export function Main() {
   const agentId = 4;
@@ -104,7 +103,6 @@ export function Main() {
           <SideMenu agent={agent[0]} Id={agentId} />
         </Col> */}
       </Row>
-      <Bottom agent={agent[0]} Id={agentId} style={{ marginLeft: "0px" }} />
       <Footer agent={agent[0]} Id={agentId} style={{ marginLeft: "0px" }} />
       {/* <Bottom /> */}
     </div>

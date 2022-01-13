@@ -175,6 +175,8 @@ export class VideoSeries extends Component {
                       borderRadius: "5px",
                       color: "white",
                       fontWeight: "700",
+                      paddingBottom: '1%',
+                      paddingTop: '1%',
                     }}
                   >
                     <h3>Curtis Ray Presents</h3>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container, Row } from "react-bootstrap";
 import { agentService } from "../../services/AgentService";
+import { Bottom } from "./BottomComponent";
 // import { Bottom } from "./BottomComponent";
 // import { ButtonBar } from "./ButtonBarComponent";
 import { Calculator } from "./CalculatorComponent";
@@ -41,7 +42,7 @@ export class Home extends Component {
               <Calculator agent={ag} />
               <AgentCarousel agent={ag} Id={ag.id} />
               <Testimonials agent={ag} Id={ag.id} />
-              {/* <Bottom agent={ag} Id={ag.id} /> */}
+              <Bottom agent={ag} Id={ag.id} />
             </Row>
           ))}
       </Container>
