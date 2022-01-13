@@ -497,6 +497,8 @@ ul li::before {
 
 .form-group {
   text-align: left;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .form-group ul,
@@ -1129,9 +1131,10 @@ ul li::before {
   .calcBackground {
     background-color: rgba(0, 0, 0, 0.75);
     background-image:
-      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/darkcalculator.png);
+      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/croppeddarkcalculator.png);
     background-repeat: no-repeat;
     background-position: left bottom;
+    background-size: contain;
   }
 
   .asSeenOn {
@@ -1252,9 +1255,10 @@ ul li::before {
   .calcBackground {
     background-color: rgba(0, 0, 0, 0.75);
     background-image:
-      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/calculator.png);
+      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/croppeddarkcalculator.png);
     background-repeat: no-repeat;
     background-position: left bottom;
+    background-size: contain;
   }
 
   .asSeenOn {

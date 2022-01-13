@@ -863,6 +863,7 @@ export const Calculator = (props) => {
     // });
   }
 
+
   var form = document.querySelector("form");
   if (form) {
     form.addEventListener("change", calculate());
@@ -964,14 +965,13 @@ export const Calculator = (props) => {
                           <input
                             style={{
                               width: "100%",
-                              textShadow: "1px 1px black",
                             }}
                             type="number"
                             id="desired_retirement"
                             name="desired_retirement"
                             placeholder=""
                             onChange={calculate}
-                            className="form-control ccm-input-text"
+                            className="form-control ccm-input-text moneyz"
                           />
                         </div>
 
@@ -1253,19 +1253,9 @@ export const Calculator = (props) => {
                         <Container>
                           <Row>
                             <Row>
-                              <small
-                                style={{
-                                  color: props.agent.textColor,
-                                  textShadow: "1px 1px black",
-                                  fontSize: "125%",
-                                  margin: "auto",
-                                  fontWeight: "900",
-                                }}
-                              >
-                                Percentage of Goal
-                              </small>
+
                             </Row>
-                            <Col xs={6}>
+                            <Col xs={4}>
                               <input
                                 style={{
                                   width: "100%",
@@ -1275,7 +1265,7 @@ export const Calculator = (props) => {
                                   paddingRight: "0px",
                                   border: "none",
                                   textAlign: "center",
-                                  fontSize: "150%",
+                                  fontSize: "125%",
                                   backgroundColor: "rgb(0,0,0,0)",
                                   fontWeight: "900",
                                   color: props.agent.textColor,
@@ -1291,7 +1281,20 @@ export const Calculator = (props) => {
                                 readOnly
                               />
                             </Col>
-                            <Col xs={6}>
+                            <Col xs={4} style={{margin: "auto"}}>
+                            <small
+                                style={{
+                                  color: props.agent.textColor,
+                                  textShadow: "1px 1px black",
+                                  fontSize: "100%",
+                                  margin: "auto",
+                                  fontWeight: "900",
+                                }}
+                              >
+                                Percentage of Goal
+                              </small>
+                            </Col>
+                            <Col xs={4}>
                               <input
                                 style={{
                                   width: "100%",
@@ -1301,7 +1304,7 @@ export const Calculator = (props) => {
                                   paddingRight: "0px",
                                   border: "none",
                                   textAlign: "center",
-                                  fontSize: "150%",
+                                  fontSize: "125%",
                                   backgroundColor: "rgb(0,0,0,0)",
                                   fontWeight: "900",
                                   color: props.agent.textColor,
