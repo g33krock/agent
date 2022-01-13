@@ -60,7 +60,7 @@ export class WhatIsMPI extends Component {
             <ButtonBar agent={this.props.agent} Id={this.props.agent.id} />
           </Col>
           <Col xs={0} md={2}/>
-          <Col xs={12} md={6} >
+          <Col xs={12} md={6} className="tag">
             <Container className="videoWrapper documentaryContainer" style={{zIndex:"0"}}>
               <iframe
                 width="853"
