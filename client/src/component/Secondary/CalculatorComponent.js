@@ -4,9 +4,11 @@ import jQuery from "jquery";
 
 export const Calculator = (props) => {
   const [showMore, setShowMore] = React.useState(true);
-  const switchShowMore = () => {setShowMore(false); console.log(showMore)}
+  const switchShowMore = () => {
+    setShowMore(false);
+    console.log(showMore);
+  };
 
-  
   var lumpRatios = {
     leverage: {
       8: [
@@ -817,7 +819,7 @@ export const Calculator = (props) => {
     // const time = 10;
     const time = Math.abs(retirement_age - current_age);
     const timeLeft = 90 - retirement_age;
-    const rate = 0.08;
+    const rate = 0.0675;
     const n = 12;
     let total = 0;
 
@@ -1317,13 +1319,15 @@ export const Calculator = (props) => {
                             </Col>
                           </Row>
                           <Row>
-                            <Button onClick={() => switchShowMore()}>See Full Results</Button>
+                            <Button onClick={() => switchShowMore()}>
+                              See Full Results
+                            </Button>
                           </Row>
                         </Container>
                         {/* </div> */}
                         <div hidden={showMore}>
                           {/* <!-- Estimated Spendable Retirement Income --> */}
-                          <div
+                          {/* <div
                             className="form-group"
                             style={{ paddingTop: "15px" }}
                           >
@@ -1342,7 +1346,7 @@ export const Calculator = (props) => {
                               className="form-control ccm-input-email"
                               readOnly
                             />
-                          </div>
+                          </div> */}
 
                           {/* <!-- Cash Value --> */}
                           <div className="form-group">
@@ -1350,7 +1354,7 @@ export const Calculator = (props) => {
                               className="control-label"
                               htmlFor="CashValue"
                             >
-                              Cash Value
+                              Projected Cash Value
                             </label>
                             <input
                               type="text"
@@ -1366,7 +1370,7 @@ export const Calculator = (props) => {
                           {/* <!-- MPI Reloc --> */}
                           <div className="form-group">
                             <label className="control-label" htmlFor="MPIRELOC">
-                              MPI® RELOC™
+                              Projected MPI® RELOC™ Value
                             </label>
                             <input
                               type="tel"
@@ -1379,7 +1383,7 @@ export const Calculator = (props) => {
                           </div>
 
                           {/* <!-- Total MPI Account Value --> */}
-                          <div className="form-group">
+                          {/* <div className="form-group">
                             <label className="control-label" htmlFor="TotalMPI">
                               Total MPI® Account Value
                             </label>
@@ -1387,6 +1391,24 @@ export const Calculator = (props) => {
                               type="tel"
                               id="TotalMPI"
                               name="TotalMPI"
+                              value=""
+                              className="form-control ccm-input-tel"
+                              readOnly
+                            />
+                          </div> */}
+
+                          {/* <!-- Total Contributions --> */}
+                          <div className="form-group">
+                            <label
+                              className="control-label"
+                              htmlFor="TotalContributions"
+                            >
+                              Total Projected Contributions
+                            </label>
+                            <input
+                              type="tel"
+                              id="TotalContributions"
+                              name="TotalContributions"
                               value=""
                               className="form-control ccm-input-tel"
                               readOnly
@@ -1399,7 +1421,7 @@ export const Calculator = (props) => {
                               className="control-label"
                               htmlFor="TotalContributions"
                             >
-                              Total Contributions
+                              Total Death Benefit
                             </label>
                             <input
                               type="tel"
@@ -1412,7 +1434,7 @@ export const Calculator = (props) => {
                           </div>
 
                           {/* <!-- Initial Life Insurance Amount --> */}
-                          <div className="form-group">
+                          {/* <div className="form-group">
                             <label className="control-label" htmlFor="ilia">
                               Initial Life Insurance Amount
                             </label>
@@ -1424,7 +1446,7 @@ export const Calculator = (props) => {
                               className="form-control ccm-input-tel"
                               readOnly
                             />
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </fieldset>

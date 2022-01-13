@@ -167,7 +167,7 @@ export class VideoSeries extends Component {
                     THE RETIREMENT YOU DESERVE
                   </h2>
                 </Row>
-                <Row style={{ marginBottom: "1%" }}>
+                <Row style={{ marginBottom: "1%", marginTop: '1%' }}>
                   <Container
                     style={{
                       backgroundColor: ag.primaryColor,

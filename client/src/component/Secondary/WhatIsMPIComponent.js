@@ -46,20 +46,21 @@ export class WhatIsMPI extends Component {
         }}
       >
         <Row style={{marginTop: "2%", marginBottom: "2%" }}>
-          <Col className="tag">
+          <Col xs={12} md={4} className="tag">
             <h1
               style={{
                 color: `${this.props.agent.textColor}`,
                 textShadow: "1px 1px black",
                 fontSize: "350%",
-                marginTop: "10%",
+                marginTop: "30%",
               }}
             >
               What is MPI®?
             </h1>
             <ButtonBar agent={this.props.agent} Id={this.props.agent.id} />
           </Col>
-          <Col>
+          <Col xs={0} md={2}/>
+          <Col xs={12} md={6} >
             <Container className="videoWrapper documentaryContainer" style={{zIndex:"0"}}>
               <iframe
                 width="853"
