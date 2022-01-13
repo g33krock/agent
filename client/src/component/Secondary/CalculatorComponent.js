@@ -1,8 +1,12 @@
 import React from "react";
-import { Container, Row, Col, Form } from "react-bootstrap";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import jQuery from "jquery";
 
 export const Calculator = (props) => {
+  const [showMore, setShowMore] = React.useState(true);
+  const switchShowMore = () => {setShowMore(false); console.log(showMore)}
+
+  
   var lumpRatios = {
     leverage: {
       8: [
@@ -863,9 +867,7 @@ export const Calculator = (props) => {
   }
 
   return (
-    <Container
-      className="calcBackground"
-    >
+    <Container className="calcBackground">
       <Row style={{ marginTop: "3%", marginBottom: "1%" }}>
         <Col sm={0} md={4} />
         <Col sm={12} md={8}>
@@ -875,7 +877,7 @@ export const Calculator = (props) => {
               textShadow: "1px 1px black",
               marginLeft: "auto",
               marginRight: "auto",
-              fontWeight: "900"
+              fontWeight: "900",
             }}
           >
             SEE WHAT SECURE COMPOUND
@@ -905,7 +907,7 @@ export const Calculator = (props) => {
                             style={{
                               color: props.agent.textColor,
                               textShadow: "1px 1px black",
-                              fontWeight: "500"
+                              fontWeight: "500",
                             }}
                           >
                             Current Age
@@ -929,7 +931,7 @@ export const Calculator = (props) => {
                             style={{
                               color: props.agent.textColor,
                               textShadow: "1px 1px black",
-                              fontWeight: "500"
+                              fontWeight: "500",
                             }}
                           >
                             Desired Retirement Age
@@ -952,7 +954,7 @@ export const Calculator = (props) => {
                             style={{
                               color: props.agent.textColor,
                               textShadow: "1px 1px black",
-                              fontWeight: "500"
+                              fontWeight: "500",
                             }}
                           >
                             Desired Retirement Income
@@ -979,7 +981,7 @@ export const Calculator = (props) => {
                             style={{
                               color: props.agent.textColor,
                               textShadow: "1px 1px black",
-                              fontWeight: "500"
+                              fontWeight: "500",
                             }}
                           >
                             Lump Sum
@@ -1003,7 +1005,7 @@ export const Calculator = (props) => {
                             style={{
                               color: props.agent.textColor,
                               textShadow: "1px 1px black",
-                              fontWeight: "500"
+                              fontWeight: "500",
                             }}
                           >
                             Ongoing Contributions
@@ -1098,7 +1100,7 @@ export const Calculator = (props) => {
                                 paddingBottom: "0px",
                                 color: "white",
                                 borderRadius: "5px 5px 0px 0px",
-                                fontWeight: "700"
+                                fontWeight: "700",
                               }}
                             >
                               Side by Side Comparison
@@ -1124,7 +1126,7 @@ export const Calculator = (props) => {
                                   textAlign: "center",
                                   fontSize: "125%",
                                   paddingTop: "4px",
-                                  fontWeight: "700"
+                                  fontWeight: "700",
                                 }}
                               >
                                 MPI® PLAN
@@ -1185,7 +1187,7 @@ export const Calculator = (props) => {
                                   marginRight: "0px",
                                   alignContent: "center",
                                   color: "white",
-                                  fontWeight: "500"
+                                  fontWeight: "500",
                                 }}
                               >
                                 ESTIMATED ANNUAL TAX-FREE RETIREMENT INCOME
@@ -1248,14 +1250,14 @@ export const Calculator = (props) => {
                         </div>
                         <Container>
                           <Row>
-                          <Row>
+                            <Row>
                               <small
                                 style={{
                                   color: props.agent.textColor,
                                   textShadow: "1px 1px black",
                                   fontSize: "125%",
                                   margin: "auto",
-                                  fontWeight: "900"
+                                  fontWeight: "900",
                                 }}
                               >
                                 Percentage of Goal
@@ -1314,109 +1316,116 @@ export const Calculator = (props) => {
                               />
                             </Col>
                           </Row>
+                          <Row>
+                            <Button onClick={() => switchShowMore()}>See Full Results</Button>
+                          </Row>
                         </Container>
                         {/* </div> */}
-
-                        {/* <!-- Estimated Spendable Retirement Income --> */}
-                        {/* <div
-                          className="form-group"
-                          style={{ paddingTop: "15px" }}
-                        >
-                          <label
-                            className="control-label"
-                            htmlFor="EstimatedSpendable"
+                        <div hidden={showMore}>
+                          {/* <!-- Estimated Spendable Retirement Income --> */}
+                          <div
+                            className="form-group"
+                            style={{ paddingTop: "15px" }}
                           >
-                            Estimated Spendable Retirement Income (sum total
-                            through age 90)
-                          </label>
-                          <input
-                            type="email"
-                            id="EstimatedSpendable"
-                            name="EstimatedSpendable"
-                            value=""
-                            className="form-control ccm-input-email"
-                            readOnly
-                          />
-                        </div> */}
+                            <label
+                              className="control-label"
+                              htmlFor="EstimatedSpendable"
+                            >
+                              Estimated Spendable Retirement Income (sum total
+                              through age 90)
+                            </label>
+                            <input
+                              type="email"
+                              id="EstimatedSpendable"
+                              name="EstimatedSpendable"
+                              value=""
+                              className="form-control ccm-input-email"
+                              readOnly
+                            />
+                          </div>
 
-                        {/* <!-- Cash Value --> */}
-                        {/* <div className="form-group">
-                          <label className="control-label" htmlFor="CashValue">
-                            Cash Value
-                          </label>
-                          <input
-                            type="text"
-                            id="CashValue"
-                            name="CashValue"
-                            value=""
-                            placeholder=""
-                            className="form-control ccm-input-text"
-                            readOnly
-                          />
-                        </div> */}
+                          {/* <!-- Cash Value --> */}
+                          <div className="form-group">
+                            <label
+                              className="control-label"
+                              htmlFor="CashValue"
+                            >
+                              Cash Value
+                            </label>
+                            <input
+                              type="text"
+                              id="CashValue"
+                              name="CashValue"
+                              value=""
+                              placeholder=""
+                              className="form-control ccm-input-text"
+                              readOnly
+                            />
+                          </div>
 
-                        {/* <!-- MPI Reloc --> */}
-                        {/* <div className="form-group">
-                          <label className="control-label" htmlFor="MPIRELOC">
-                            MPI® RELOC™
-                          </label>
-                          <input
-                            type="tel"
-                            id="MPIRELOC"
-                            name="MPIRELOC"
-                            value=""
-                            className="form-control ccm-input-tel"
-                            readOnly
-                          />
-                        </div> */}
+                          {/* <!-- MPI Reloc --> */}
+                          <div className="form-group">
+                            <label className="control-label" htmlFor="MPIRELOC">
+                              MPI® RELOC™
+                            </label>
+                            <input
+                              type="tel"
+                              id="MPIRELOC"
+                              name="MPIRELOC"
+                              value=""
+                              className="form-control ccm-input-tel"
+                              readOnly
+                            />
+                          </div>
 
-                        {/* <!-- Total MPI Account Value --> */}
-                        {/* <div className="form-group">
-                          <label className="control-label" htmlFor="TotalMPI">
-                            Total MPI® Account Value
-                          </label>
-                          <input
-                            type="tel"
-                            id="TotalMPI"
-                            name="TotalMPI"
-                            value=""
-                            className="form-control ccm-input-tel"
-                            readOnly
-                          />
-                        </div> */}
+                          {/* <!-- Total MPI Account Value --> */}
+                          <div className="form-group">
+                            <label className="control-label" htmlFor="TotalMPI">
+                              Total MPI® Account Value
+                            </label>
+                            <input
+                              type="tel"
+                              id="TotalMPI"
+                              name="TotalMPI"
+                              value=""
+                              className="form-control ccm-input-tel"
+                              readOnly
+                            />
+                          </div>
 
-                        {/* <!-- Total Contributions --> */}
-                        {/* <div className="form-group">
-                          <label
-                            className="control-label"
-                            htmlFor="TotalContributions"
-                          >
-                            Total Contributions
-                          </label>
-                          <input
-                            type="tel"
-                            id="TotalContributions"
-                            name="TotalContributions"
-                            value=""
-                            className="form-control ccm-input-tel"
-                            readOnly
-                          />
-                        </div> */}
+                          {/* <!-- Total Contributions --> */}
+                          <div className="form-group">
+                            <label
+                              className="control-label"
+                              htmlFor="TotalContributions"
+                            >
+                              Total Contributions
+                            </label>
+                            <input
+                              type="tel"
+                              id="TotalContributions"
+                              name="TotalContributions"
+                              value=""
+                              className="form-control ccm-input-tel"
+                              readOnly
+                            />
+                          </div>
 
-                        {/* <!-- Initial Life Insurance Amount --> */}
-                        {/* <div className="form-group">
-                          <label className="control-label" htmlFor="ilia">
-                            Initial Life Insurance Amount
-                          </label>
-                          <input
-                            type="tel"
-                            id="ilia"
-                            name="ilia"
-                            value=""
-                            className="form-control ccm-input-tel"
-                            readOnly
-                          />
-                        </div> */}
+                          {/* <!-- Initial Life Insurance Amount --> */}
+                          <div className="form-group">
+                            <label className="control-label" htmlFor="ilia">
+                              Initial Life Insurance Amount
+                            </label>
+                            <input
+                              type="tel"
+                              id="ilia"
+                              name="ilia"
+                              value=""
+                              className="form-control ccm-input-tel"
+                              readOnly
+                            />
+                          </div>
+                        </div>
                       </div>
                     </fieldset>
                     <p
@@ -1425,7 +1434,7 @@ export const Calculator = (props) => {
                         fontSize: "12px",
                         color: props.agent.textColor,
                         textShadow: "1px 1px black",
-                        fontWeight: "500"
+                        fontWeight: "500",
                       }}
                     >
                       *DISCLAIMERS: AMOUNTS SHOWN IN THIS CALCULATOR ARE
