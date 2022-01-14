@@ -5,12 +5,14 @@ import Collapsible from "react-collapsible";
 import { agentService } from "../../services/AgentService";
 import { videoService } from "../../services/VideoService";
 import { VideoCalendar } from "./VideoCalendarComponent";
+import { FullCalc } from "./FullCalcComponent";
 
 export class VideoSeries extends Component {
   constructor(props) {
     super(props);
     this.state = {
       agent: this.props.agent,
+      showCalc: true,
       videos: [],
       video: {
         id: "1",
@@ -34,6 +36,10 @@ export class VideoSeries extends Component {
     const videos = await videoService.all();
     this.setState({ videos });
     console.log(videos);
+  }
+
+  switchShowCalc() {
+    this.setState({showCalc: false})
   }
 
   setVideo = (vid) => {
@@ -210,6 +216,9 @@ export class VideoSeries extends Component {
                 <Row>
                   <h2 className="videofoot">ALWAYS BE COMPOUNDING™</h2>
                 </Row>
+                <div hidden={this.state.showCalc}>
+                <FullCalc agent={ag}/>
+                </div>
               </Col>
               <Col style={{ backgroundColor: "rgb(100, 100,100" }}>
                 <Row
@@ -252,7 +261,7 @@ export class VideoSeries extends Component {
                   }}
                 >
                   <div>
-                    <Button className="videoButton">MPI® Calculator</Button>
+                    <Button className="videoButton" onClick={() => this.switchShowCalc()}>MPI® Calculator</Button>
                   </div>
                 </Row>
                 <Row

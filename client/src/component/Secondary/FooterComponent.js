@@ -32,8 +32,7 @@ export class Footer extends Component {
               }}
             >
               <Row style={{ marginLeft: "auto", marginRight: "auto" }}>
-                <Col xs={2} sm={3} md={4} />
-
+                <Col xs={1} sm={2} md={3} />
                 {ag.facebook && (
                   <Col style={{ margin: ".5%", padding: "1%" }}>
                     <a href={ag.facebook}>
@@ -44,6 +43,7 @@ export class Footer extends Component {
                     </a>
                   </Col>
                 )}
+                <Col />
                 {ag.twitter && (
                   <Col style={{ margin: ".5%", padding: "1%" }}>
                     <a href={ag.twitter}>
@@ -54,6 +54,7 @@ export class Footer extends Component {
                     </a>
                   </Col>
                 )}
+                <Col />
                 {ag.instagram && (
                   <Col style={{ margin: ".5%", padding: "1%" }}>
                     <a href={ag.instagram}>
@@ -64,8 +65,9 @@ export class Footer extends Component {
                     </a>
                   </Col>
                 )}
+                <Col />
                 {ag.tiktok && (
-                  <Col style={{ margin: ".5%", padding: "1%" }}>
+                  <Col style={{ marginTop: ".5%", marginBottom: ".5%", marginLeft: "2%", marginRight: "2%", padding: "1%"  }}>
                     <a href={ag.tiktok}>
                       <Image
                         fluid
@@ -74,6 +76,7 @@ export class Footer extends Component {
                     </a>
                   </Col>
                 )}
+                <Col />
                 {ag.youtube && (
                   <Col style={{ margin: ".5%", padding: "1%" }}>
                     <a href={ag.youtube}>
@@ -84,6 +87,7 @@ export class Footer extends Component {
                     </a>
                   </Col>
                 )}
+                <Col />
                 {ag.pinterest && (
                   <Col style={{ margin: ".5%", padding: "1%" }}>
                     <a href={ag.pinterest}>
@@ -95,7 +99,7 @@ export class Footer extends Component {
                   </Col>
                 )}
 
-                <Col xs={2} sm={3} md={4} />
+                <Col xs={1} sm={2} md={3} />
               </Row>
               <Row>
                 <p style={{ color: "white", fontSize: "80%" }}>
