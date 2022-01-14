@@ -244,9 +244,9 @@ ul li::before {
   background-color: #056fcb
 }
 
-.selectVideo:visited {
+.selectVideo:focus {
   color: white;
-  background-color: blue
+  background-color: black
 }
 
 #bioBlock {

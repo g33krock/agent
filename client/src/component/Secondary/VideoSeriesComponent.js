@@ -119,7 +119,14 @@ export class VideoSeries extends Component {
                     padding: "0px",
                   }}
                 >
-                  <Row style={{ borderBottom: "2px solid black", backgroundColor: ag.primaryColor, color: "white", paddingTop: "2%" }}>
+                  <Row
+                    style={{
+                      borderBottom: "2px solid black",
+                      backgroundColor: ag.primaryColor,
+                      color: "white",
+                      paddingTop: "2%",
+                    }}
+                  >
                     <h3>
                       <strong>Video Series</strong>
                     </h3>
@@ -128,6 +135,7 @@ export class VideoSeries extends Component {
                     .filter((vid) => vid.category === "none")
                     .map((vid) => (
                       <option
+                        tabIndex={vid.id}
                         className="selectVideo"
                         value={vid.id}
                         onClick={this.setVideo}
@@ -145,6 +153,7 @@ export class VideoSeries extends Component {
                       .filter((vid) => vid.category === "plans")
                       .map((vid) => (
                         <option
+                          tabIndex={vid.id}
                           className="selectVideo"
                           value={vid.id}
                           onClick={this.setVideo}
@@ -162,7 +171,7 @@ export class VideoSeries extends Component {
                     THE RETIREMENT YOU DESERVE
                   </h2>
                 </Row>
-                <Row style={{ marginBottom: "1%", marginTop: '1%' }}>
+                <Row style={{ marginBottom: "1%", marginTop: "1%" }}>
                   <Container
                     style={{
                       backgroundColor: ag.primaryColor,
@@ -170,8 +179,8 @@ export class VideoSeries extends Component {
                       borderRadius: "5px",
                       color: "white",
                       fontWeight: "700",
-                      paddingBottom: '1%',
-                      paddingTop: '1%',
+                      paddingBottom: "1%",
+                      paddingTop: "1%",
                     }}
                   >
                     <h3>Curtis Ray Presents</h3>
@@ -243,11 +252,7 @@ export class VideoSeries extends Component {
                   }}
                 >
                   <div>
-                    <Button
-                      className="videoButton"
-                    >
-                      MPI® Calculator
-                    </Button>
+                    <Button className="videoButton">MPI® Calculator</Button>
                   </div>
                 </Row>
                 <Row
@@ -259,11 +264,7 @@ export class VideoSeries extends Component {
                   }}
                 >
                   <div>
-                    <Button
-                      className="videoButton"
-                    >
-                      Share
-                    </Button>
+                    <Button className="videoButton">Share</Button>
                   </div>
                 </Row>
                 <Row
@@ -275,11 +276,7 @@ export class VideoSeries extends Component {
                   }}
                 >
                   <div>
-                    <Button
-                      className="videoButton"
-                    >
-                      Leave A Review
-                    </Button>
+                    <Button className="videoButton">Leave A Review</Button>
                   </div>
                 </Row>
               </Col>
