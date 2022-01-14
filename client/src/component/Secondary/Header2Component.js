@@ -4,6 +4,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { agentService } from "../../services/AgentService";
 import { Col, Image, Navbar, Row } from "react-bootstrap";
 
+
 export class Header2 extends Component {
   constructor(props) {
     super(props);
@@ -29,7 +30,12 @@ export class Header2 extends Component {
         {this.state.agent &&
           this.state.agent.map((ag) => (
             <Row key={ag.toString()}>
-              <Navbar bg="dark" expand="lg" variant="dark" style={{paddingBottom: '0px', paddingTop: '0px'}}>
+              <Navbar
+                bg="dark"
+                expand="lg"
+                variant="dark"
+                style={{ paddingBottom: "0px", paddingTop: "0px" }}
+              >
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse>
                   <Col>
@@ -102,89 +108,82 @@ export class Header2 extends Component {
                         Contact Us
                       </Nav.Link>
                     </Row>
-                    {/* <Row>
+                    <Row>
                       <Col></Col>
                       {ag.facebook && (
-                        <Col style={{ padding: "0px", marginTop: "-5px" }}>
-                          <a
-                            href={ag.facebook}
-                            style={{ color: "blue" }}
-                            className="bouncey"
-                          >
-                            <FontAwesomeIcon
-                              icon={faFacebook}
+                        <Col style={{ padding: "0px" }}>
+                          <a href={ag.facebook} className="socialMediaIcon">
+                            <Image
+                              width="20px"
+                              src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Facebook.ico"
                             />
                           </a>
                         </Col>
                       )}
                       {ag.twitter && (
-                        <Col style={{ padding: "0px", marginTop: "-5px" }}>
-                          <a
-                            href={ag.twitter}
-                            style={{ color: "lightblue" }}
-                            className="bouncey"
-                          >
-                            <FontAwesomeIcon
-                              icon={faTwitter}
+                        <Col style={{ padding: "0px" }}>
+                          <a href={ag.twitter} className="socialMediaIcon">
+                            <Image
+                              width="20px"
+                              src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Twitter.ico"
                             />
                           </a>
                         </Col>
                       )}
                       {ag.instagram && (
-                        <Col style={{ padding: "0px", marginTop: "-5px" }}>
-                          <a
-                            href={ag.instagram}
-                            style={{ color: "orange" }}
-                            className="bouncey"
-                          >
-                            <FontAwesomeIcon
-                              icon={faInstagram}
+                        <Col style={{ padding: "0px" }}>
+                          <a href={ag.instagram} className="socialMediaIcon">
+                            <Image
+                              width="20px"
+                              src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Instagram.ico"
                             />
                           </a>
                         </Col>
                       )}
                       {ag.tiktok && (
-                        <Col style={{ padding: "0px", marginTop: "-5px" }}>
+                        <Col style={{ padding: "0px" }}>
                           <a
                             href={ag.tiktok}
                             style={{ color: "purple" }}
-                            className="bouncey"
+                            className="socialMediaIcon"
                           >
-                            <FontAwesomeIcon
-                              icon={faTiktok}
+                            <Image
+                              width="20px"
+                              src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/TikTok.ico"
                             />
                           </a>
                         </Col>
                       )}
                       {ag.youtube && (
-                        <Col style={{ padding: "0px", marginTop: "-5px" }}>
+                        <Col style={{ padding: "0px" }}>
                           <a
                             href={ag.youtube}
                             style={{ color: "red" }}
-                            className="bouncey"
+                            className="socialMediaIcon"
                           >
-                            <FontAwesomeIcon
-                              icon={faYoutube}
+                            <Image
+                              width="20px"
+                              src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/YouTube.ico"
                             />
                           </a>
                         </Col>
                       )}
                       {ag.pinterest && (
-                        <Col style={{ padding: "0px", marginTop: "-5px" }}>
+                        <Col style={{ padding: "0px" }}>
                           <a
                             href={ag.pinterest}
                             style={{ color: "pink" }}
-                            className="bouncey"
+                            className="socialMediaIcon"
                           >
-                            <FontAwesomeIcon
-                              icon={faPinterest}
-                              // style={{ marginBottom: "50%" }}
+                            <Image
+                              width="20px"
+                              src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Pinterest.ico"
                             />
                           </a>
                         </Col>
                       )}
                       <Col></Col>
-                    </Row> */}
+                    </Row>
                   </Col>
                   <Col>
                     <Nav.Link style={{ color: `${ag.textColor}` }} href="/">

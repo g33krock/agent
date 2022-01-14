@@ -89,9 +89,7 @@ export class VideoSeries extends Component {
                   <Button
                     className="videoButton"
                     style={{
-                      width: "75%",
-                      marginLeft: "auto",
-                      marginRight: "auto",
+                      width: "65%",
                     }}
                   >
                     Webinar
@@ -107,9 +105,7 @@ export class VideoSeries extends Component {
                   <Button
                     className="videoButton"
                     style={{
-                      width: "75%",
-                      marginLeft: "auto",
-                      marginRight: "auto",
+                      width: "65%",
                     }}
                   >
                     Documentary
@@ -249,11 +245,6 @@ export class VideoSeries extends Component {
                   <div>
                     <Button
                       className="videoButton"
-                      style={{
-                        width: "100%",
-                        marginLeft: "auto",
-                        marginRight: "auto",
-                      }}
                     >
                       MPI® Calculator
                     </Button>
@@ -270,11 +261,6 @@ export class VideoSeries extends Component {
                   <div>
                     <Button
                       className="videoButton"
-                      style={{
-                        width: "100%",
-                        marginLeft: "auto",
-                        marginRight: "auto",
-                      }}
                     >
                       Share
                     </Button>
@@ -291,11 +277,6 @@ export class VideoSeries extends Component {
                   <div>
                     <Button
                       className="videoButton"
-                      style={{
-                        width: "100%",
-                        marginLeft: "auto",
-                        marginRight: "auto",
-                      }}
                     >
                       Leave A Review
                     </Button>
