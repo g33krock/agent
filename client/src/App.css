@@ -843,14 +843,14 @@ ul li::before {
   }
 
   .videobutton {
-    width: 50%;
+    width: 100%;
     /* margin-bottom: 3%; */
     margin-left: auto;
     margin-right: auto;
   }
 
   .videobuttontext {
-    font-size: 80%;
+    font-size: 100%;
   }
 
   .videobuttonrow {
@@ -896,6 +896,17 @@ ul li::before {
 
   .documentaryContainer {
     min-width: 345px
+  }
+
+  .webinarBackground {
+    background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/WebinarBackground.png);
+    background-repeat: none;
+    background-size: cover;
+  }
+
+  .webinarImage {
+    width: 100%;
+    height: auto
   }
 }
 
@@ -981,7 +992,7 @@ ul li::before {
   }
 
   .videobutton {
-    width: 50%;
+    width: 100%;
     /* margin-bottom: 3%; */
     margin-left: auto;
     margin-right: auto;
@@ -1033,6 +1044,17 @@ ul li::before {
 
   .documentaryContainer {
     border: none
+  }
+
+  .webinarBackground {
+    background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/WebinarBackground.png);
+    background-repeat: none;
+    background-size: cover;
+  }
+
+  .webinarImage {
+    width: 100%;
+    height: auto
   }
 }
 
@@ -1118,7 +1140,7 @@ ul li::before {
   }
 
   .videobutton {
-    width: 50%;
+    width: 100%;
     /* margin-bottom: 3%; */
     margin-left: auto;
     margin-right: auto;
@@ -1170,6 +1192,17 @@ ul li::before {
 
   .documentaryContainer {
     border: none
+  }
+
+  .webinarBackground {
+    background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/WebinarBackground.png);
+    background-repeat: none;
+    background-size: contain;
+  }
+
+  .webinarImage {
+    width: 100%;
+    height: auto
   }
 }
 
@@ -1309,6 +1342,17 @@ ul li::before {
   .documentaryContainer {
     border: none
   }
+
+  .webinarBackground {
+    background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/WebinarBackground.png);
+    background-repeat: none;
+    background-size: contain;
+  }
+
+  .webinarImage {
+    width: 90%;
+    height: auto
+  }
 }
 
 @media only screen and (min-width: 1700px) {
@@ -1447,6 +1491,17 @@ ul li::before {
 
   .documentaryContainer {
     max-width: 50vw
+  }
+
+  .webinarBackground {
+    background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/WebinarBackground.png);
+    background-repeat: none;
+    background-size: contain;
+  }
+
+  .webinarImage {
+    width: 80%;
+    height: auto
   }
 }
 
@@ -1693,8 +1748,3 @@ ul li::before {
   transform: translate(0, 0);
 }
 
-.webinarBackground {
-  background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/WebinarBackground.png);
-  background-repeat: none;
-  background-size: contain;
-}

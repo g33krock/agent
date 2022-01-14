@@ -88,8 +88,9 @@ export class SCIVideo extends Component {
                 <Col>
                   <Image
                     fluid
-                    src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/CurtisWebinarAlt.png"
+                    src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/CurtisWebinar.png"
                     alt="CurtisWebinar"
+                    className="webinarImage"
                   />
                 </Col>
                 <Col md={1} />
