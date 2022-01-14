@@ -52,15 +52,15 @@ export class WhatIsMPI extends Component {
                 color: `${this.props.agent.textColor}`,
                 textShadow: "1px 1px black",
                 fontSize: "350%",
-                marginTop: "30%",
+                marginTop: "15%",
               }}
             >
               What is MPI®?
             </h1>
             <ButtonBar agent={this.props.agent} Id={this.props.agent.id} />
           </Col>
-          <Col xs={0} md={2}/>
-          <Col xs={12} md={6} className="tag">
+          <Col />
+          <Col xs={12} md={4} className="tag">
             <Container className="videoWrapper documentaryContainer" style={{zIndex:"0"}}>
               <iframe
                 width="853"
@@ -73,6 +73,7 @@ export class WhatIsMPI extends Component {
               ></iframe>
             </Container>
           </Col>
+          <Col md={1}/>
         </Row>
         <Row style={{ backgroundColor: "white" }}>
           <Col style={{ margin: "auto" }}>

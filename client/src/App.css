@@ -1741,6 +1741,8 @@ ul li::before {
   opacity: 0;
   transform: translate(0, 10vh);
   transition: all 1s;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .tag.visible {

@@ -27,10 +27,12 @@ export class Calendar extends Component {
   render() {
     return (
       <div style={{ position: "sticky", top: "25%" }}>
+        {this.state.agent &&
+              this.state.agent.map((ag) =>
         <Button
           style={{
-            backgroundColor: `black`,
-            border: "none",
+            backgroundColor: `${ag.primaryColor}`,
+            border: `2px solid ${ag.secondaryColor}`,
             color: `white`,
             width: "200px",
             textShadow: "1px 1px black"
@@ -41,7 +43,7 @@ export class Calendar extends Component {
           RESERVE YOUR SPOT
           </p>
         </Button>
-
+              )}
         <Modal isOpen={this.state.modal} toggle={() => this.toggle()}>
           {/* <Modal.Header>
                   <Modal.Title style={{ fontFamily: "Montserrat" }}>

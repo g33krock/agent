@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Button } from "react-bootstrap";
 import { agentService } from "../../services/AgentService";
 
 export class ButtonBar extends Component {
@@ -25,8 +25,7 @@ export class ButtonBar extends Component {
             className="justify-content-md-center"
             style={{ marginBottom: "25px", marginTop: "25px" }}
           >
-              <Col sm={4}></Col>
-            <Col sm={4}>
+
               <Button
                 style={{
                   // backgroundColor: `${this.props.agent.secondaryColor}`,
@@ -42,8 +41,7 @@ export class ButtonBar extends Component {
               >
                 <h2>LEARN MORE</h2>
               </Button>{" "}
-            </Col>
-            <Col sm={4}></Col>
+
           </Row>
         </Container>
       </div>
