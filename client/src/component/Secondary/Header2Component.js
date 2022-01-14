@@ -109,10 +109,10 @@ export class Header2 extends Component {
                       </Nav.Link>
                     </Row>
                     <Row>
-                      <Col></Col>
+                      <Col />
                       {ag.facebook && (
                         <Col style={{ padding: "0px" }}>
-                          <a href={ag.facebook} className="socialMediaIcon">
+                          <a href={ag.facebook} style={{ paddingTop: "5px", marginLeft: "auto", marginRight: "auto" }} className="socialMediaIcon">
                             <Image
                               width="20px"
                               src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Facebook.ico"
@@ -122,9 +122,9 @@ export class Header2 extends Component {
                       )}
                       {ag.twitter && (
                         <Col style={{ padding: "0px" }}>
-                          <a href={ag.twitter} className="socialMediaIcon">
+                          <a href={ag.twitter} style={{ paddingTop: "5px", marginLeft: "auto", marginRight: "auto" }} className="socialMediaIcon">
                             <Image
-                              width="20px"
+                              width="25px"
                               src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Twitter.ico"
                             />
                           </a>
@@ -132,7 +132,7 @@ export class Header2 extends Component {
                       )}
                       {ag.instagram && (
                         <Col style={{ padding: "0px" }}>
-                          <a href={ag.instagram} className="socialMediaIcon">
+                          <a href={ag.instagram} style={{ paddingTop: "5px", marginLeft: "auto", marginRight: "auto" }} className="socialMediaIcon">
                             <Image
                               width="20px"
                               src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Instagram.ico"
@@ -141,24 +141,24 @@ export class Header2 extends Component {
                         </Col>
                       )}
                       {ag.tiktok && (
-                        <Col style={{ padding: "0px" }}>
+                        <Col style={{ padding: "0px", marginLeft: "auto", marginRight: "auto" }}>
                           <a
                             href={ag.tiktok}
-                            style={{ color: "purple" }}
+                            style={{ paddingTop: "5px" }}
                             className="socialMediaIcon"
                           >
                             <Image
-                              width="20px"
+                              width="18px"
                               src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/TikTok.ico"
                             />
                           </a>
                         </Col>
                       )}
                       {ag.youtube && (
-                        <Col style={{ padding: "0px" }}>
+                        <Col style={{ padding: "0px", marginLeft: "auto", marginRight: "auto" }}>
                           <a
                             href={ag.youtube}
-                            style={{ color: "red" }}
+                            style={{ paddingTop: "5px" }}
                             className="socialMediaIcon"
                           >
                             <Image
@@ -169,10 +169,10 @@ export class Header2 extends Component {
                         </Col>
                       )}
                       {ag.pinterest && (
-                        <Col style={{ padding: "0px" }}>
+                        <Col style={{ padding: "0px", marginLeft: "auto", marginRight: "auto" }}>
                           <a
                             href={ag.pinterest}
-                            style={{ color: "pink" }}
+                            style={{ paddingTop: "5px" }}
                             className="socialMediaIcon"
                           >
                             <Image
