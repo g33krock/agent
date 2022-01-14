@@ -62,7 +62,7 @@ export class AgentCarousel extends Component {
             <Row
               key={ag.toString()}
               style={{
-                backgroundImage: `-webkit-linear-gradient(45deg, ${ag.primaryColor} 40%, #000000 40%)`,
+                backgroundImage: `-webkit-linear-gradient(45deg, ${ag.primaryColor} 40%, ${ag.secondaryColor} 40%)`,
               }}
             >
               <Col style={{ margin: "auto" }}sm={4}>
@@ -95,12 +95,12 @@ export class AgentCarousel extends Component {
                       <div key={aag.image}>
                         <Row>
                           <Col>
-                            <h1 style={{ color: ag.textColor }}>MEET YOUR</h1>
-                            <h2 style={{ color: ag.textColor }}>
+                            <h1 style={{ color: ag.textColor, textShadow: "1px 1px black", }}>MEET YOUR</h1>
+                            <h2 style={{ color: ag.textColor, textShadow: "1px 1px black", }}>
                               MPI® CERTIFIED ADVISOR
                             </h2>
                             <img src={aag.image} alt={aag.firstName} />
-                            <h4 style={{ color: ag.textColor }}>
+                            <h4 style={{ color: ag.textColor, textShadow: "1px 1px black", }}>
                               {aag.firstName} {aag.lastName}
                               <br />
                               {aag.title}
@@ -112,7 +112,7 @@ export class AgentCarousel extends Component {
                                 toggleBio();
                               }}
                             >
-                              <strong style={{ color: aag.textColor }}>
+                              <strong style={{ color: aag.textColor, textShadow: "1px 1px black", }}>
                                 READ BIO
                               </strong>
                             </Button>
@@ -121,6 +121,7 @@ export class AgentCarousel extends Component {
                               style={{
                                 color: ag.textColor,
                                 display: this.state.bioDisplay,
+                                textShadow: "1px 1px black",
                               }}
                             >
                               {aag.bio}
