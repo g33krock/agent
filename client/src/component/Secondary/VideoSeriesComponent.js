@@ -73,7 +73,7 @@ export class VideoSeries extends Component {
                 sm={3}
                 style={{
                   overflow: "scroll",
-                  minHeight: "100vh",
+                  maxHeight: "100vh",
                   paddingRight: "0px",
                   backgroundColor: "rgba(211, 211, 211)",
                 }}
@@ -100,7 +100,6 @@ export class VideoSeries extends Component {
                 <Row
                   style={{
                     marginTop: "2%",
-                    marginBottom: "2%",
                     paddingBottom: "2%",
                     borderBottom: "1px solid black",
                   }}
@@ -116,7 +115,7 @@ export class VideoSeries extends Component {
                     Documentary
                   </Button>
                 </Row>
-                <Row></Row>
+                {/* <Row></Row> */}
                 <Container
                   style={{
                     backgroundColor: "rgba(211, 211, 211)",
@@ -124,7 +123,7 @@ export class VideoSeries extends Component {
                     padding: "0px",
                   }}
                 >
-                  <Row style={{ borderBottom: "2px solid black" }}>
+                  <Row style={{ borderBottom: "2px solid black", backgroundColor: ag.primaryColor, color: "white", paddingTop: "2%" }}>
                     <h3>
                       <strong>Video Series</strong>
                     </h3>
