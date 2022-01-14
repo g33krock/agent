@@ -759,7 +759,7 @@ ul li::before {
 #columnsubtitle {
   text-align: center;
   font-family: 'bigmontserrat';
-  font: size 30%;
+  font: size 5px;
   font-style: italic
 }
 
@@ -816,12 +816,13 @@ ul li::before {
   .bulletpoints {
     font-family: 'bigmontserrat';
     font-size: 100%;
-    margin-bottom: 0px
+    margin-bottom: 0px;
+    color:rgb(0, 0, 0)
   }
 
   #subbulletpoints {
     font-family: 'bigmontserrat';
-    font: size 25%;
+    font: size 10%;
     font-style: italic
   }
 
@@ -853,7 +854,8 @@ ul li::before {
   }
 
   .videobuttonrow {
-    /* margin-bottom: 3%; */
+   margin-left: auto;
+   margin-right: auto;
     width: 100%;
   }
 
@@ -958,7 +960,7 @@ ul li::before {
 
   #subbulletpoints {
     font-family: 'bigmontserrat';
-    font: size 25%;
+    font: size 15%;
     font-style: italic
   }
 
@@ -990,6 +992,8 @@ ul li::before {
   }
 
   .videobuttonrow {
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     margin-bottom: 3%;
   }
@@ -1092,7 +1096,7 @@ ul li::before {
 
   #subbulletpoints {
     font-family: 'bigmontserrat';
-    font: size 25%;
+    font: size 20%;
     font-style: italic
   }
 
@@ -1124,6 +1128,8 @@ ul li::before {
   }
 
   .videobuttonrow {
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     margin-bottom: 3%;
   }
@@ -1259,6 +1265,8 @@ ul li::before {
   }
 
   .videobuttonrow {
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     margin-bottom: 3%;
   }
@@ -1392,6 +1400,8 @@ ul li::before {
   }
 
   .videobuttonrow {
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     margin-bottom: 3%;
   }

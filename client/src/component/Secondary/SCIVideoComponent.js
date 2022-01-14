@@ -88,7 +88,7 @@ export class SCIVideo extends Component {
                 >
                   WEBINAR HOST
                 </h2>
-                <p id="columnsubtitle">MPI® CREATOR, CURTIS RAY</p>
+                <small id="columnsubtitle">MPI® CREATOR, CURTIS RAY</small>
               </Row>
               <Row>
                 <Col md={1} />
@@ -116,7 +116,7 @@ export class SCIVideo extends Component {
                 >
                   WHAT YOU WILL LEARN
                 </h2>
-                <p id="columnsubtitle">LEARN THE SECRETS TO FULL RETIREMENT INCOME</p>
+                <small id="columnsubtitle">LEARN THE SECRETS TO FULL RETIREMENT INCOME</small>
               </Row>
               <Row
                 style={{
@@ -128,12 +128,12 @@ export class SCIVideo extends Component {
                   <FontAwesomeIcon
                     icon={faAngleDoubleDown}
                     style={{
-                      color: "white",
+                      // color: "white",
                       backgroundColor: this.props.agent.primaryColor,
                       borderRadius: "50%",
-                      width: "30px",
-                      height: "30px",
-                      border: `3px solid ${this.props.agent.primaryColor}`,
+                      width: "50px",
+                      height: "50px",
+                      border: `10px solid ${this.props.agent.primaryColor}`,
                     }}
                   />
                 </Col>
@@ -152,12 +152,12 @@ export class SCIVideo extends Component {
                   <FontAwesomeIcon
                     icon={faVideo}
                     style={{
-                      color: "white",
+                      // color: "white",
                       backgroundColor: this.props.agent.primaryColor,
                       borderRadius: "50%",
-                      width: "30px",
-                      height: "30px",
-                      border: `3px solid ${this.props.agent.primaryColor}`,
+                      width: "50px",
+                      height: "50px",
+                      border: `10px solid ${this.props.agent.primaryColor}`,
                     }}
                   />
                 </Col>
@@ -178,12 +178,12 @@ export class SCIVideo extends Component {
                   <FontAwesomeIcon
                     icon={faLock}
                     style={{
-                      color: "white",
+                      // color: "white",
                       backgroundColor: this.props.agent.primaryColor,
                       borderRadius: "50%",
-                      width: "30px",
-                      height: "30px",
-                      border: `3px solid ${this.props.agent.primaryColor}`,
+                      width: "50px",
+                      height: "50px",
+                      border: `10px solid ${this.props.agent.primaryColor}`,
                     }}
                   />
                 </Col>
@@ -202,12 +202,12 @@ export class SCIVideo extends Component {
                   <FontAwesomeIcon
                     icon={faDollarSign}
                     style={{
-                      color: "white",
+                      // color: "white",
                       backgroundColor: this.props.agent.primaryColor,
                       borderRadius: "50%",
-                      width: "30px",
-                      height: "30px",
-                      border: `3px solid ${this.props.agent.primaryColor}`,
+                      width: "50px",
+                      height: "50px",
+                      border: `10px solid ${this.props.agent.primaryColor}`,
                     }}
                   />
                 </Col>
@@ -230,7 +230,7 @@ export class SCIVideo extends Component {
               >
                 REGISTER BELOW
               </h2>
-              <p id="columnsubtitle">RESERVE YOUR SPOT BELOW FOR OUR FREE WEBINAR</p>
+              <small id="columnsubtitle">RESERVE YOUR SPOT BELOW FOR OUR FREE WEBINAR</small>
               <Form>
                 <FormGroup controlId="formaBasicDate">
                   <Input type="date" />
