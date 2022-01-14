@@ -711,9 +711,13 @@ export const FullCalc = (props) => {
     // Total MPI Account Value (12/18/2020)
     var total_mpi_acct_val = checkNaN(total_cash_value + total_leverage);
 
+    // Death Benefit
+    var death_benefit = checkNaN(total_cash_value + initial_db)
+
     var annual_income_output = document.getElementById(
       "AnnualRetirementIncome"
     );
+    var death_benefit_output = document.getElementById("DeathBenefit");
     var cash_value_output = document.getElementById("CashValue");
     var mpi_leverage_output = document.getElementById("MPIRELOC");
     var projected_contributions = document.getElementById("TotalContributions");
@@ -766,6 +770,9 @@ export const FullCalc = (props) => {
       );
       jQuery(total_mpi_acct_val_output).val(
         "$" + total_mpi_acct_val.toLocaleString("en-us")
+      );
+      jQuery(death_benefit_output).val(
+        "$" + death_benefit.toLocaleString("en-us")
       );
       jQuery(percentage_of_goal_mpi_output).val(
         percentage_of_goal_mpi.toLocaleString("en-us") + "%"
@@ -895,8 +902,6 @@ export const FullCalc = (props) => {
                         <label
                           className="control-label"
                           style={{
-                            color: props.agent.textColor,
-                            textShadow: "1px 1px black",
                             fontWeight: "500",
                           }}
                         >
@@ -919,8 +924,6 @@ export const FullCalc = (props) => {
                           className="control-label"
                           htmlFor="desired_age"
                           style={{
-                            color: props.agent.textColor,
-                            textShadow: "1px 1px black",
                             fontWeight: "500",
                           }}
                         >
@@ -942,8 +945,6 @@ export const FullCalc = (props) => {
                           className="control-label"
                           htmlFor="desired_retirement"
                           style={{
-                            color: props.agent.textColor,
-                            textShadow: "1px 1px black",
                             fontWeight: "500",
                           }}
                         >
@@ -968,8 +969,6 @@ export const FullCalc = (props) => {
                           className="control-label"
                           htmlFor="LumpSum"
                           style={{
-                            color: props.agent.textColor,
-                            textShadow: "1px 1px black",
                             fontWeight: "500",
                           }}
                         >
@@ -992,8 +991,6 @@ export const FullCalc = (props) => {
                           className="control-label"
                           htmlFor="OngoingContributions"
                           style={{
-                            color: props.agent.textColor,
-                            textShadow: "1px 1px black",
                             fontWeight: "500",
                           }}
                         >
@@ -1010,7 +1007,7 @@ export const FullCalc = (props) => {
                       </div>
 
                       {/* <!-- Year 1-2 Contributions --> */}
-                      {/* <div className="form-group">
+                      <div className="form-group">
                           <label className="control-label" htmlFor="Contributions">
                             Year 1-2 Contributions
                           </label>
@@ -1025,10 +1022,10 @@ export const FullCalc = (props) => {
                           <span className="lightTxt">
                             Lump Sum/24 + Monthly Contribution
                           </span>
-                        </div> */}
+                        </div>
 
                       {/* <!-- Year 3+ Contributions --> */}
-                      {/* <div className="form-group">
+                      <div className="form-group">
                           <label
                             className="control-label"
                             htmlFor="Year3Contributions"
@@ -1043,7 +1040,7 @@ export const FullCalc = (props) => {
                             className="form-control ccm-input-text"
                             readOnly
                           />
-                        </div> */}
+                        </div>
                     </div>
                   </fieldset>
                 </Col>
@@ -1134,7 +1131,6 @@ export const FullCalc = (props) => {
                             <h3
                               style={{
                                 textAlign: "center",
-                                // color:props.agent.textColor,
                                 fontSize: "125%",
                                 fontWeight: "700",
                                 paddingTop: "4px",
@@ -1253,15 +1249,12 @@ export const FullCalc = (props) => {
                                 fontSize: "125%",
                                 backgroundColor: "rgb(0,0,0,0)",
                                 fontWeight: "900",
-                                color: props.agent.textColor,
-                                textShadow: "1px 1px black",
-                                // color:props.agent.textColor
                               }}
                               type="text"
                               id="MPIPercentage"
                               name="MPIPercentage"
                               value=""
-                              placeholder=""
+                              placeholder="0%"
                               className="form-control ccm-input-text"
                               readOnly
                             />
@@ -1269,8 +1262,6 @@ export const FullCalc = (props) => {
                           <Col xs={4} style={{ margin: "auto" }}>
                             <small
                               style={{
-                                color: props.agent.textColor,
-                                textShadow: "1px 1px black",
                                 fontSize: "100%",
                                 margin: "auto",
                                 fontWeight: "900",
@@ -1292,15 +1283,12 @@ export const FullCalc = (props) => {
                                 fontSize: "125%",
                                 backgroundColor: "rgb(0,0,0,0)",
                                 fontWeight: "900",
-                                color: props.agent.textColor,
-                                textShadow: "1px 1px black",
-                                // color:props.agent.textColor
                               }}
                               type="text"
                               id="RothPercentage"
                               name="RothPercentage"
                               value=""
-                              placeholder=""
+                              placeholder="0%"
                               className="form-control ccm-input-text"
                               readOnly
                             />
@@ -1404,14 +1392,14 @@ export const FullCalc = (props) => {
                         <div className="form-group">
                           <label
                             className="control-label"
-                            htmlFor="TotalContributions"
+                            htmlFor="DeathBenefit"
                           >
                             Total Death Benefit
                           </label>
                           <input
                             type="tel"
-                            id="TotalContributions"
-                            name="TotalContributions"
+                            id="DeathBenefit"
+                            name="DeathBenefit"
                             value=""
                             className="form-control ccm-input-tel"
                             readOnly
@@ -1419,7 +1407,7 @@ export const FullCalc = (props) => {
                         </div>
 
                         {/* <!-- Initial Life Insurance Amount --> */}
-                        {/* <div className="form-group">
+                        <div className="form-group">
                             <label className="control-label" htmlFor="ilia">
                               Initial Life Insurance Amount
                             </label>
@@ -1431,7 +1419,7 @@ export const FullCalc = (props) => {
                               className="form-control ccm-input-tel"
                               readOnly
                             />
-                          </div> */}
+                          </div>
                       </div>
                     </div>
                   </fieldset>
@@ -1439,8 +1427,6 @@ export const FullCalc = (props) => {
                     style={{
                       marginTop: "10px",
                       fontSize: "12px",
-                      color: props.agent.textColor,
-                      textShadow: "1px 1px black",
                       fontWeight: "500",
                     }}
                   >
