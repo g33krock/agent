@@ -39,7 +39,8 @@ export class VideoSeries extends Component {
   }
 
   switchShowCalc() {
-    this.setState({showCalc: false})
+    this.setState({showCalc: false});
+    this.setState({colHeight: "100vh"})
   }
 
   setVideo = (vid) => {
