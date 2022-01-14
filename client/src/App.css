@@ -750,6 +750,19 @@ ul li::before {
   background-image: -webkit-linear-gradient(45deg, #056FCB 50%, #000000 50%);
 }
 
+.columntitle {
+  text-align: center;
+  font-family: 'bigmontserrat';
+  margin-bottom: 0px
+}
+
+#columnsubtitle {
+  text-align: center;
+  font-family: 'bigmontserrat';
+  font: size 30%;
+  font-style: italic
+}
+
 @media only screen and (max-width: 690px) {
   .calcBackground {
     background-color: rgba(0, 0, 0, 0.75);
@@ -758,10 +771,6 @@ ul li::before {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top right;
-  }
-
-  .whatYouWillLearn {
-    text-align: center;
   }
 
   .asSeenOn {
@@ -800,18 +809,29 @@ ul li::before {
     min-height: 250px
   }
 
+  #bullet {
+    text-align: right;
+  }
+
   .bulletpoints {
-    /* color: white; */
-    font-size: 100%
+    font-family: 'bigmontserrat';
+    font-size: 100%;
+    margin-bottom: 0px
+  }
+
+  #subbulletpoints {
+    font-family: 'bigmontserrat';
+    font: size 25%;
+    font-style: italic
   }
 
   .videohead {
-    /* color: white; */
-    font-size: 150%
+    font-family: 'bigmontserrat';
+    font-size: 250%
   }
 
   .videosubhead {
-    color: white;
+    font-family: 'bigmontserrat';
     font-size: 125%;
     font-style: italic
   }
@@ -822,7 +842,7 @@ ul li::before {
   }
 
   .videobutton {
-    width: 33%;
+    width: 50%;
     /* margin-bottom: 3%; */
     margin-left: auto;
     margin-right: auto;
@@ -926,18 +946,29 @@ ul li::before {
     min-height: 300px
   }
 
+  #bullet {
+    text-align: right;
+  }
+
   .bulletpoints {
-    /* color: white; */
-    font-size: 150%
+    font-family: 'bigmontserrat';
+    font-size: 150%;
+    margin-bottom: 0px
+  }
+
+  #subbulletpoints {
+    font-family: 'bigmontserrat';
+    font: size 25%;
+    font-style: italic
   }
 
   .videohead {
-    /* color: white; */
-    font-size: 200%
+    font-family: 'bigmontserrat';
+    font-size: 300%
   }
 
   .videosubhead {
-    color: white;
+    font-family: 'bigmontserrat';
     font-size: 150%;
     font-style: italic
   }
@@ -948,7 +979,7 @@ ul li::before {
   }
 
   .videobutton {
-    width: 33%;
+    width: 50%;
     /* margin-bottom: 3%; */
     margin-left: auto;
     margin-right: auto;
@@ -1049,18 +1080,29 @@ ul li::before {
     min-height: 300px
   }
 
+  #bullet {
+    text-align: right;
+  }
+
   .bulletpoints {
-    /* color: white; */
-    font-size: 150%
+    font-family: 'bigmontserrat';
+    font-size: 150%;
+    margin-bottom: 0px
+  }
+
+  #subbulletpoints {
+    font-family: 'bigmontserrat';
+    font: size 25%;
+    font-style: italic
   }
 
   .videohead {
-    /* color: white; */
-    font-size: 200%
+    font-family: 'bigmontserrat';
+    font-size: 300%
   }
 
   .videosubhead {
-    color: white;
+    font-family: 'bigmontserrat';
     font-size: 150%;
     font-style: italic
   }
@@ -1071,7 +1113,7 @@ ul li::before {
   }
 
   .videobutton {
-    width: 33%;
+    width: 50%;
     /* margin-bottom: 3%; */
     margin-left: auto;
     margin-right: auto;
@@ -1173,18 +1215,29 @@ ul li::before {
     min-height: 300px
   }
 
+  #bullet {
+    text-align: right;
+  }
+
   .bulletpoints {
-    /* color: white; */
-    font-size: 150%
+    font-family: 'bigmontserrat';
+    font-size: 150%;
+    margin-bottom: 0px
+  }
+
+  #subbulletpoints {
+    font-family: 'bigmontserrat';
+    font: size 25%;
+    font-style: italic
   }
 
   .videohead {
-    /* color: white; */
-    font-size: 200%
+    font-family: 'bigmontserrat';
+    font-size: 300%
   }
 
   .videosubhead {
-    color: white;
+    font-family: 'bigmontserrat';
     font-size: 150%;
     font-style: italic
   }
@@ -1195,7 +1248,7 @@ ul li::before {
   }
 
   .videobutton {
-    width: 33%;
+    width: 100%;
     /* margin-bottom: 3%; */
     margin-left: auto;
     margin-right: auto;
@@ -1295,18 +1348,29 @@ ul li::before {
     min-height: 350px
   }
 
+  #bullet {
+    text-align: right;
+  }
+
   .bulletpoints {
-    /* color: white; */
-    font-size: 175%
+    font-family: 'bigmontserrat';
+    font-size: 175%;
+    margin-bottom: 0px
+  }
+
+  #subbulletpoints {
+    font-family: 'bigmontserrat';
+    font: size 25%;
+    font-style: italic
   }
 
   .videohead {
-    /* color: white; */
-    font-size: 300%
+    font-family: 'bigmontserrat';
+    font-size: 400%
   }
 
   .videosubhead {
-    color: white;
+    font-family: 'bigmontserrat';
     font-size: 225%;
     font-style: italic
   }
@@ -1317,7 +1381,7 @@ ul li::before {
   }
 
   .videobutton {
-    width: 33%;
+    width: 100%;
     margin-bottom: 3%;
     margin-left: auto;
     margin-right: auto;
@@ -1613,4 +1677,10 @@ ul li::before {
 .tag.visible {
   opacity: 1;
   transform: translate(0, 0);
+}
+
+.webinarBackground {
+  background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/WebinarBackground.png);
+  background-repeat: none;
+  background-size: contain;
 }
