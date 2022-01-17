@@ -3,11 +3,11 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import jQuery from "jquery";
 
 export const Calculator = (props) => {
-  const [showMore, setShowMore] = React.useState(true);
-  const switchShowMore = () => {
-    setShowMore(false);
-    console.log(showMore);
-  };
+  // const [showMore, setShowMore] = React.useState(true);
+  // const switchShowMore = () => {
+  //   setShowMore(false);
+  //   console.log(showMore);
+  // };
 
   var lumpRatios = {
     leverage: {
@@ -1275,8 +1275,7 @@ export const Calculator = (props) => {
                                 type="text"
                                 id="MPIPercentage"
                                 name="MPIPercentage"
-                                value=""
-                                placeholder=""
+                                value="0%"
                                 className="form-control ccm-input-text"
                                 readOnly
                               />
@@ -1314,143 +1313,22 @@ export const Calculator = (props) => {
                                 type="text"
                                 id="RothPercentage"
                                 name="RothPercentage"
-                                value=""
-                                placeholder=""
+                                value="0%"
                                 className="form-control ccm-input-text"
                                 readOnly
                               />
                             </Col>
                           </Row>
                           <Row>
-                            <Button onClick={() => switchShowMore()}>
+                            <Button 
+                            href="/videoseries"
+                            // onClick={() => switchShowMore()}
+                            >
                               See Full Results
                             </Button>
                           </Row>
                         </Container>
                         {/* </div> */}
-                        <div hidden={showMore}>
-                          {/* <!-- Estimated Spendable Retirement Income --> */}
-                          {/* <div
-                            className="form-group"
-                            style={{ paddingTop: "15px" }}
-                          >
-                            <label
-                              className="control-label"
-                              htmlFor="EstimatedSpendable"
-                            >
-                              Estimated Spendable Retirement Income (sum total
-                              through age 90)
-                            </label>
-                            <input
-                              type="email"
-                              id="EstimatedSpendable"
-                              name="EstimatedSpendable"
-                              value=""
-                              className="form-control ccm-input-email"
-                              readOnly
-                            />
-                          </div> */}
-
-                          {/* <!-- Cash Value --> */}
-                          <div className="form-group">
-                            <label
-                              className="control-label"
-                              htmlFor="CashValue"
-                            >
-                              Projected Cash Value
-                            </label>
-                            <input
-                              type="text"
-                              id="CashValue"
-                              name="CashValue"
-                              value=""
-                              placeholder=""
-                              className="form-control ccm-input-text"
-                              readOnly
-                            />
-                          </div>
-
-                          {/* <!-- MPI Reloc --> */}
-                          <div className="form-group">
-                            <label className="control-label" htmlFor="MPIRELOC">
-                              Projected MPI® RELOC™ Value
-                            </label>
-                            <input
-                              type="tel"
-                              id="MPIRELOC"
-                              name="MPIRELOC"
-                              value=""
-                              className="form-control ccm-input-tel"
-                              readOnly
-                            />
-                          </div>
-
-                          {/* <!-- Total MPI Account Value --> */}
-                          {/* <div className="form-group">
-                            <label className="control-label" htmlFor="TotalMPI">
-                              Total MPI® Account Value
-                            </label>
-                            <input
-                              type="tel"
-                              id="TotalMPI"
-                              name="TotalMPI"
-                              value=""
-                              className="form-control ccm-input-tel"
-                              readOnly
-                            />
-                          </div> */}
-
-                          {/* <!-- Total Contributions --> */}
-                          <div className="form-group">
-                            <label
-                              className="control-label"
-                              htmlFor="TotalContributions"
-                            >
-                              Total Projected Contributions
-                            </label>
-                            <input
-                              type="tel"
-                              id="TotalContributions"
-                              name="TotalContributions"
-                              value=""
-                              className="form-control ccm-input-tel"
-                              readOnly
-                            />
-                          </div>
-
-                          {/* <!-- Total Contributions --> */}
-                          <div className="form-group">
-                            <label
-                              className="control-label"
-                              htmlFor="TotalContributions"
-                            >
-                              Total Death Benefit
-                            </label>
-                            <input
-                              type="tel"
-                              id="TotalContributions"
-                              name="TotalContributions"
-                              value=""
-                              className="form-control ccm-input-tel"
-                              readOnly
-                            />
-                          </div>
-
-                          {/* <!-- Initial Life Insurance Amount --> */}
-                          {/* <div className="form-group">
-                            <label className="control-label" htmlFor="ilia">
-                              Initial Life Insurance Amount
-                            </label>
-                            <input
-                              type="tel"
-                              id="ilia"
-                              name="ilia"
-                              value=""
-                              className="form-control ccm-input-tel"
-                              readOnly
-                            />
-                          </div> */}
-                        </div>
                       </div>
                     </fieldset>
                     <p

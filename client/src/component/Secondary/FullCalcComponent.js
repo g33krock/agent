@@ -840,7 +840,7 @@ export const FullCalc = (props) => {
     }
     console.log(rothValue(principal, time, rate, n));
     console.log(total + lump_sum);
-    const rothTotal = total + lump_sum;
+    const rothTotal = Math.floor(total + lump_sum);
     const rothMonthly = Math.floor(rothTotal / timeLeft);
 
     // Percentage of goals
@@ -884,7 +884,12 @@ export const FullCalc = (props) => {
               <Row>
                 {/* <!-- Inputs --> */}
                 <Col sm={12} md={4} className="mx-auto fieldset1">
-                  <Row style={{marginBottom: "1%", borderBottom: "2px solid black" }}>
+                  <Row
+                    style={{
+                      marginBottom: "1%",
+                      borderBottom: "2px solid black",
+                    }}
+                  >
                     <h3
                       style={{
                         marginLeft: "auto",
@@ -1058,7 +1063,12 @@ export const FullCalc = (props) => {
                   //   paddingRight: "2%",
                   // }}
                 >
-                  <Row style={{marginBottom: "1%", borderBottom: "2px solid black" }}>
+                  <Row
+                    style={{
+                      marginBottom: "1%",
+                      borderBottom: "2px solid black",
+                    }}
+                  >
                     <h3
                       style={{
                         marginLeft: "auto",
@@ -1074,177 +1084,262 @@ export const FullCalc = (props) => {
                       {/* <!-- Annual Retirement Income --> */}
                       {/* <div className="form-group maincalcualtion"> */}
                       <div
-                        className="container"
+                        className="row"
                         style={{
-                          backgroundColor: props.agent.primaryColor,
-                          paddingLeft: "0.1rem",
-                          paddingRight: "0.1rem",
-                          paddingBottom: "0.1rem",
-                          // border: "1px solid black",
-                          alignContent: "center",
-                          borderRadius: "5px",
+                          marginLeft: "auto",
+                          marginRight: "auto",
+                          marginTop: "0px",
+                          marginBottom: "1%",
                         }}
                       >
                         <div
-                          className="row"
+                          className="col"
                           style={{
+                            backgroundColor: props.agent.primaryColor,
+                            color: props.agent.textColor,
+                          }}
+                        >
+                          <h3
+                            style={{
+                              textAlign: "center",
+                              fontSize: "125%",
+                              paddingTop: "4px",
+                              fontWeight: "700",
+                            }}
+                          >
+                            MPI® PLAN
+                          </h3>
+                        </div>
+                        <div
+                          className="col"
+                          style={{
+                            backgroundColor: props.agent.secondaryColor,
+                            marginTop: "0px",
                             marginBottom: "0px",
+                            paddingTop: "0px",
                             paddingBottom: "0px",
                           }}
                         >
                           <h3
                             style={{
                               textAlign: "center",
-                              // borderBottom: "1px solid black",
-                              width: "cover",
-                              marginBottom: "0px",
-                              paddingBottom: "0px",
-                              color: "white",
-                              borderRadius: "5px 5px 0px 0px",
+                              fontSize: "125%",
                               fontWeight: "700",
+                              paddingTop: "4px",
                             }}
                           >
-                            Side by Side Comparison
+                            ROTH IRA/401K
                           </h3>
+                        </div>
+                      </div>
+                      <div
+                        className="container"
+                        style={{
+                          backgroundColor: props.agent.primaryColor,
+                          padding: "1%",
+                          // border: "1px solid black",
+                          alignContent: "center",
+                          borderRadius: "5px",
+                          border: "1px solid black",
+                        }}
+                      >
+                        <div
+                          className="row"
+                          style={{
+                            backgroundColor: "white",
+                            paddingLeft: "0px",
+                            paddingRight: "0px",
+                            margin: "auto",
+                            border: "1px solid black",
+                          }}
+                        >
+                          <h4
+                            id="bigMonty"
+                            style={{
+                              textAlign: "center",
+                              fontSize: "200%",
+                              paddingLeft: "0px",
+                              paddingRight: "0px",
+                              paddingTop: "4px",
+                              margin: "auto",
+                              alignContent: "center",
+                              backgroundColor: "white",
+                            }}
+                          >
+                            ESTIMATED ANNUAL TAX-FREE RETIREMENT INCOME
+                          </h4>
                         </div>
                         <div
                           className="row"
                           style={{
-                            marginLeft: "auto",
-                            marginRight: "auto",
-                            marginTop: "0px",
-                            marginBottom: "0px",
+                            width: "100%",
+                            marginLeft: "0px",
+                            marginRight: "0px",
+                            paddingLeft: "0px",
+                            paddingRight: "0px",
+                            fontSize: "125%",
                           }}
                         >
+                          <div
+                            className="col"
+                            style={{ border: "1px solid black" }}
+                          >
+                            <input
+                              style={{
+                                width: "100%",
+                                margin: "0px",
+                                padding: "0px",
+                                border: "none",
+                                color: props.agent.textColor,
+                                backgroundColor: props.agent.primaryColor,
+                              }}
+                              type="text"
+                              id="AnnualRetirementIncome"
+                              name="AnnualRetirementIncome"
+                              value=""
+                              placeholder=""
+                              className="form-control ccm-input-text"
+                              readOnly
+                            />
+                          </div>
                           <div
                             className="col"
                             style={{
                               backgroundColor: props.agent.secondaryColor,
+                              border: "1px solid black",
                             }}
                           >
-                            <h3
+                            <input
+                              style={{
+                                width: "100%",
+                                margin: "0px",
+                                padding: "0px",
+                                border: "none",
+                                backgroundColor: props.agent.secondaryColor,
+                              }}
+                              type="text"
+                              id="RothMonthly"
+                              name="RothMonthly"
+                              value=""
+                              placeholder=""
+                              className="form-control ccm-input-text"
+                              readOnly
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="container"
+                        style={{
+                          backgroundColor: props.agent.primaryColor,
+                          padding: "1%",
+                          marginTop: "1%",
+                          alignContent: "center",
+                          borderRadius: "5px",
+                          border: "1px solid black",
+                        }}
+                      >
+                        <div
+                          className="row"
+                          style={{
+                            backgroundColor: "white",
+                            paddingLeft: "0px",
+                            paddingRight: "0px",
+                            margin: "auto",
+                            border: "1px solid black",
+                          }}
+                        >
+                          <h4
+                            id="bigMonty"
+                            style={{
+                              textAlign: "center",
+                              fontSize: "200%",
+                              paddingLeft: "0px",
+                              paddingRight: "0px",
+                              paddingTop: "4px",
+                              margin: "auto",
+                              alignContent: "center",
+                              backgroundColor: "white",
+                            }}
+                          >
+                            LIFETIME PROJECTED TOTAL SPENDABLE RETIREMENT INCOME
+                          </h4>
+                          <h4
+                            style={{
+                              textAlign: "center",
+                              fontSize: "80%",
+                              paddingLeft: "0px",
+                              paddingRight: "0px",
+                              paddingTop: "0px",
+                              margin: "auto",
+                              alignContent: "center",
+                              backgroundColor: "white",
+                            }}
+                          >
+                            Total income projected to a life expectancy of 90
+                            years old
+                          </h4>
+                        </div>
+                        <div
+                          className="row"
+                          style={{
+                            width: "100%",
+                            marginLeft: "0px",
+                            marginRight: "0px",
+                            paddingLeft: "0px",
+                            paddingRight: "0px",
+                            fontSize: "125%",
+                          }}
+                        >
+                          <div
+                            className="col"
+                            style={{ border: "1px solid black" }}
+                          >
+                            <input
                               style={{
                                 textAlign: "center",
-                                fontSize: "125%",
-                                paddingTop: "4px",
-                                fontWeight: "700",
+                                fontSize: "150%",
+                                width: "100%",
+                                margin: "0px",
+                                padding: "0px",
+                                border: "none",
+                                color: props.agent.textColor,
+                                backgroundColor: props.agent.primaryColor,
                               }}
-                            >
-                              MPI® PLAN
-                            </h3>
+                              type="text"
+                              id="EstimatedSpendable"
+                              name="EstimatedSpendable"
+                              value=""
+                              placeholder=""
+                              className="form-control ccm-input-text"
+                              readOnly
+                            />
                           </div>
                           <div
                             className="col"
                             style={{
-                              backgroundColor: "white",
-                              marginTop: "0px",
-                              marginBottom: "0px",
-                              paddingTop: "0px",
-                              paddingBottom: "0px",
+                              backgroundColor: props.agent.secondaryColor,
+                              border: "1px solid black",
                             }}
                           >
-                            <h3
+                            <input
                               style={{
                                 textAlign: "center",
-                                fontSize: "125%",
-                                fontWeight: "700",
-                                paddingTop: "4px",
+                                fontSize: "150%",
+                                width: "100%",
+                                margin: "0px",
+                                padding: "0px",
+                                border: "none",
+                                backgroundColor: props.agent.secondaryColor,
                               }}
-                            >
-                              ROTH IRA/401K
-                            </h3>
-                          </div>
-                        </div>
-                        <div
-                          className="container"
-                          style={{
-                            backgroundColor: props.agent.secondaryColor,
-                            paddingLeft: "0px",
-                            paddingRight: "0px",
-                            marginTop: "0px",
-                          }}
-                        >
-                          <div
-                            className="row"
-                            style={{
-                              backgroundColor: props.agent.primaryColor,
-                              paddingLeft: "0px",
-                              paddingRight: "0px",
-                              marginLeft: "0px",
-                              marginRight: "0px",
-                              marginTop: "0px",
-                            }}
-                          >
-                            <h4
-                              style={{
-                                textAlign: "center",
-                                fontSize: "90%",
-                                paddingLeft: "0px",
-                                paddingRight: "0px",
-                                paddingTop: "4px",
-                                marginLeft: "0px",
-                                marginTop: "0px",
-                                marginRight: "0px",
-                                alignContent: "center",
-                                color: "white",
-                                fontWeight: "500",
-                              }}
-                            >
-                              ESTIMATED ANNUAL TAX-FREE RETIREMENT INCOME
-                            </h4>
-                          </div>
-                          <div
-                            className="row"
-                            style={{
-                              width: "100%",
-                              marginLeft: "0px",
-                              marginRight: "0px",
-                              paddingLeft: "0px",
-                              paddingRight: "0px",
-                              fontSize: "125%",
-                            }}
-                          >
-                            <div className="col">
-                              <input
-                                style={{
-                                  width: "100%",
-                                  margin: "0px",
-                                  padding: "0px",
-                                  border: "none",
-                                  backgroundColor: props.agent.secondaryColor,
-                                }}
-                                type="text"
-                                id="AnnualRetirementIncome"
-                                name="AnnualRetirementIncome"
-                                value=""
-                                placeholder=""
-                                className="form-control ccm-input-text"
-                                readOnly
-                              />
-                            </div>
-                            <div
-                              className="col"
-                              style={{
-                                backgroundColor: "white",
-                              }}
-                            >
-                              <input
-                                style={{
-                                  width: "100%",
-                                  margin: "0px",
-                                  padding: "0px",
-                                  border: "none",
-                                  backgroundColor: "white",
-                                }}
-                                type="text"
-                                id="RothMonthly"
-                                name="RothMonthly"
-                                value=""
-                                placeholder=""
-                                className="form-control ccm-input-text"
-                                readOnly
-                              />
-                            </div>
+                              type="text"
+                              id="RothTotal"
+                              name="RothTotal"
+                              value=""
+                              placeholder=""
+                              className="form-control ccm-input-text"
+                              readOnly
+                            />
                           </div>
                         </div>
                       </div>
@@ -1310,9 +1405,55 @@ export const FullCalc = (props) => {
                           </Col>
                         </Row>
                         <Row>
-                          <Button onClick={() => switchShowMore()}>
-                            See Full Results
+                          <p
+                            style={{
+                              marginTop: "10px",
+                              fontSize: "12px",
+                              fontWeight: "500",
+                              paddingBottom: "10px",
+                              borderBottom: "1px solid black",
+                            }}
+                          >
+                            *If you do not achieve 100% of your retirement goal,
+                            you can either increase your lump sum contribution,
+                            monthly contribution, or extend your retirement age
+                            until your goal is achieved.
+                          </p>
+                        </Row>
+                        <Row style={{marginLeft: "auto", marginRight: "auto", alignContent: "center"}}>
+                          <Col md={1}/>
+                          <Col md={10}>
+                          <Button style={{width:"100%"}}>Email My MPI® Plan</Button>
+                          </Col>
+                          <Col md={1}/>
+                        </Row>
+                        <Row>
+                          <p
+                            style={{
+                              marginTop: "10px",
+                              fontSize: "12px",
+                              fontWeight: "500",
+                            }}
+                          >
+                            *DISCLAIMERS: AMOUNTS SHOWN IN THIS CALCULATOR ARE
+                            ESTIMATES ONLY AND NOT GUARANTEED IN ANY WAY.
+                            ESTIMATES ARE AVERAGE ANNUAL RETURNS OF 6.4% AND
+                            LOAN INTEREST OF 4%. COSTS OF INSURANCE AND POLICY
+                            EXPENSES ARE TAKEN FROM AN NAIC APPROVED
+                            ILLUSTRATION AND ARE BASED ON A SIMILARLY AGED MALE
+                            AT A PREFERRED HEALTH RATING. ESTIMATED CASH VALUE
+                            AND INCOME RESULTS MAY VARY BASED ON ACTUAL GENDER,
+                            AGE, AND APPROVED HEALTH RATING.
+                          </p>
+                        </Row>
+                        <Row style={{marginLeft: "auto", marginRight: "auto", alignContent: "center"}}>
+                        <Col md={1}/>
+                          <Col md={10}>
+                          <Button style={{width:"100%"}} onClick={() => switchShowMore()}>
+                            Additional Financial Information
                           </Button>
+                          </Col>
+                          <Col md={1}/>
                         </Row>
                       </Container>
                       {/* </div> */}
@@ -1438,22 +1579,6 @@ export const FullCalc = (props) => {
                       </div>
                     </div>
                   </fieldset>
-                  <p
-                    style={{
-                      marginTop: "10px",
-                      fontSize: "12px",
-                      fontWeight: "500",
-                    }}
-                  >
-                    *DISCLAIMERS: AMOUNTS SHOWN IN THIS CALCULATOR ARE ESTIMATES
-                    ONLY AND NOT GUARANTEED IN ANY WAY. ESTIMATES ARE AVERAGE
-                    ANNUAL RETURNS OF 6.4% AND LOAN INTEREST OF 4%. COSTS OF
-                    INSURANCE AND POLICY EXPENSES ARE TAKEN FROM AN NAIC
-                    APPROVED ILLUSTRATION AND ARE BASED ON A SIMILARLY AGED MALE
-                    AT A PREFERRED HEALTH RATING. ESTIMATED CASH VALUE AND
-                    INCOME RESULTS MAY VARY BASED ON ACTUAL GENDER, AGE, AND
-                    APPROVED HEALTH RATING.
-                  </p>
                 </Col>
               </Row>
             </Container>
