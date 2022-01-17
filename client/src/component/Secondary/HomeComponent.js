@@ -9,6 +9,7 @@ import { AgentCarousel } from "./CarouselComponent";
 import { Jumbotron } from "./JumbotronComponent";
 import { SCIVideo } from "./SCIVideoComponent";
 import { Testimonials } from "./TestimonialsComponent";
+import { Webinar } from "./WebinarComponent";
 // import { Webinar } from "./WebinarComponent";
 import { WhatIsMPI } from "./WhatIsMPIComponent";
 
@@ -38,7 +39,7 @@ export class Home extends Component {
             <Row style={{ margin: "0px" }} key={ag.toString()}>
               <Jumbotron agent={ag} Id={ag.id} />
               <WhatIsMPI agent={ag} Id={ag.id} />
-              <SCIVideo agent={ag} Id={ag.id} />
+              <Webinar agent={ag} Id={ag.id} />
               <Calculator agent={ag} />
               <AgentCarousel agent={ag} Id={ag.id} />
               <Testimonials agent={ag} Id={ag.id} />
