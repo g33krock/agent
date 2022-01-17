@@ -39,8 +39,8 @@ export class VideoSeries extends Component {
   }
 
   switchShowCalc() {
-    this.setState({showCalc: false});
-    this.setState({colHeight: "100vh"})
+    this.setState({ showCalc: false });
+    this.setState({ colHeight: "100vh" });
   }
 
   setVideo = (vid) => {
@@ -171,7 +171,14 @@ export class VideoSeries extends Component {
                   </Collapsible>
                 </Container>
               </Col>
-              <Col sm={7} style={{ backgroundColor: "rgb(225, 225, 225" }}>
+              <Col
+                sm={7}
+                style={{
+                  backgroundColor: "rgb(225, 225, 225",
+                  overflow: "scroll",
+                  maxHeight: "100vh",
+                }}
+              >
                 <Row>
                   <h1 className="videoseriestitle">COMPOUND INTEREST</h1>
                   <h2 className="videoseriessubtitle">
@@ -218,7 +225,7 @@ export class VideoSeries extends Component {
                   <h2 className="videofoot">ALWAYS BE COMPOUNDING™</h2>
                 </Row>
                 <div hidden={this.state.showCalc}>
-                <FullCalc agent={ag}/>
+                  <FullCalc agent={ag} />
                 </div>
               </Col>
               <Col style={{ backgroundColor: "rgb(100, 100,100" }}>
@@ -262,7 +269,12 @@ export class VideoSeries extends Component {
                   }}
                 >
                   <div>
-                    <Button className="videoButton" onClick={() => this.switchShowCalc()}>MPI® Calculator</Button>
+                    <Button
+                      className="videoButton"
+                      onClick={() => this.switchShowCalc()}
+                    >
+                      MPI® Calculator
+                    </Button>
                   </div>
                 </Row>
                 <Row

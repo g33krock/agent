@@ -2,15 +2,11 @@ import React, { Component } from "react";
 import { Container, Row } from "react-bootstrap";
 import { agentService } from "../../services/AgentService";
 import { Bottom } from "./BottomComponent";
-// import { Bottom } from "./BottomComponent";
-// import { ButtonBar } from "./ButtonBarComponent";
 import { Calculator } from "./CalculatorComponent";
 import { AgentCarousel } from "./CarouselComponent";
 import { Jumbotron } from "./JumbotronComponent";
-import { SCIVideo } from "./SCIVideoComponent";
 import { Testimonials } from "./TestimonialsComponent";
 import { Webinar } from "./WebinarComponent";
-// import { Webinar } from "./WebinarComponent";
 import { WhatIsMPI } from "./WhatIsMPIComponent";
 
 export class Home extends Component {

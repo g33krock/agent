@@ -757,6 +757,10 @@ ul li::before {
   background-image: -webkit-linear-gradient(45deg, #056FCB 50%, #000000 50%);
 }
 
+#bigMonty{
+  font-family: 'bigmontserrat';
+}
+
 .columntitle {
   text-align: center;
   font-family: 'bigmontserrat';
