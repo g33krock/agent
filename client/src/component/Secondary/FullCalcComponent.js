@@ -647,6 +647,8 @@ export const FullCalc = (props) => {
       jQuery(desired_retierment_income).val()
     );
     var lump_amount = lump_sum / 2;
+
+    var lump_sum_over_24 = checkNaN(Math.round((lump_amount / 24) * 100) / 100);
     // var ira_assumed_growth_rate = hardenNumber(jQuery(ira_assumed_growth_rate_field).text());
     // var ira_annual_expense_rate = hardenNumber(jQuery(ira_annual_expense_rate_field).text());
 
@@ -731,6 +733,7 @@ export const FullCalc = (props) => {
     var third_year_contrib_output =
       document.getElementById("Year3Contributions");
     var estimated_spendable = document.getElementById("EstimatedSpendable");
+    var lump_sum_over_24_output = document.getElementById("LumpSumOver24");
     // var ira_projected_retirement_income_field = document.getElementById(
     //   "IRARetirementIncome"
     // );
@@ -747,6 +750,9 @@ export const FullCalc = (props) => {
       );
       jQuery(third_year_contrib_output).val(
         "$" + third_year_contrib.toLocaleString("en-us")
+      );
+      jQuery(lump_sum_over_24_output).val(
+        "$" + lump_sum_over_24.toLocaleString("en-us")
       );
       jQuery(annual_income_output).val(
         "$" + total_annual_income.toLocaleString("en-us")
@@ -864,10 +870,6 @@ export const FullCalc = (props) => {
       //   );
       percentage_of_goal_ira = Math.round(percentage_of_goal_ira * 100) / 100;
     }
-
-    // jQuery(document).ready(function () {
-    //   var lump_sum_over_24 = Math.round((lump_amount / 24) * 100) / 100;
-    // });
   }
 
   var form = document.querySelector("form");
@@ -969,25 +971,48 @@ export const FullCalc = (props) => {
                       </div>
 
                       {/* <!-- Lump Sum --> */}
-                      <div className="form-group">
-                        <label
-                          className="control-label"
-                          htmlFor="LumpSum"
-                          style={{
-                            fontWeight: "500",
-                          }}
-                        >
-                          Lump Sum
-                        </label>
-                        <input
-                          style={{ width: "100%" }}
-                          type="number"
-                          id="LumpSum"
-                          name="LumpSum"
-                          placeholder=""
-                          onChange={calculate}
-                          className="form-control ccm-input-text"
-                        />
+                      <div className="row">
+                        <div className="col">
+                          <div className="form-group">
+                            <label
+                              className="control-label"
+                              htmlFor="LumpSum"
+                              style={{
+                                fontWeight: "500",
+                              }}
+                            >
+                              Lump Sum
+                            </label>
+                            <input
+                              style={{ width: "100%" }}
+                              type="number"
+                              id="LumpSum"
+                              name="LumpSum"
+                              placeholder=""
+                              onChange={calculate}
+                              className="form-control ccm-input-text"
+                            />
+                          </div>
+                        </div>
+                        <div className="col">
+                          <div className="form-group">
+                            <label
+                              className="control-label"
+                              htmlFor="LumpSumOver24"
+                            >
+                              Lump Sum / 24
+                            </label>
+                            <input
+                              style={{ width: "100%" }}
+                              type="text"
+                              id="LumpSumOver24"
+                              name="LumpSumOver24"
+                              placeholder=""
+                              className="form-control ccm-input-text"
+                              readOnly
+                            />
+                          </div>
+                        </div>
                       </div>
 
                       {/* <!-- Ongoing Contributions --> */}
@@ -1420,12 +1445,20 @@ export const FullCalc = (props) => {
                             until your goal is achieved.
                           </p>
                         </Row>
-                        <Row style={{marginLeft: "auto", marginRight: "auto", alignContent: "center"}}>
-                          <Col md={1}/>
+                        <Row
+                          style={{
+                            marginLeft: "auto",
+                            marginRight: "auto",
+                            alignContent: "center",
+                          }}
+                        >
+                          <Col md={1} />
                           <Col md={10}>
-                          <Button style={{width:"100%"}}>Email My MPI® Plan</Button>
+                            <Button style={{ width: "100%" }}>
+                              Email My MPI® Plan
+                            </Button>
                           </Col>
-                          <Col md={1}/>
+                          <Col md={1} />
                         </Row>
                         <Row>
                           <p
@@ -1446,14 +1479,23 @@ export const FullCalc = (props) => {
                             AGE, AND APPROVED HEALTH RATING.
                           </p>
                         </Row>
-                        <Row style={{marginLeft: "auto", marginRight: "auto", alignContent: "center"}}>
-                        <Col md={1}/>
+                        <Row
+                          style={{
+                            marginLeft: "auto",
+                            marginRight: "auto",
+                            alignContent: "center",
+                          }}
+                        >
+                          <Col md={1} />
                           <Col md={10}>
-                          <Button style={{width:"100%"}} onClick={() => switchShowMore()}>
-                            Additional Financial Information
-                          </Button>
+                            <Button
+                              style={{ width: "100%" }}
+                              onClick={() => switchShowMore()}
+                            >
+                              Additional Financial Information
+                            </Button>
                           </Col>
-                          <Col md={1}/>
+                          <Col md={1} />
                         </Row>
                       </Container>
                       {/* </div> */}
