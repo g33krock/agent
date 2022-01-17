@@ -712,7 +712,7 @@ export const FullCalc = (props) => {
     var total_mpi_acct_val = checkNaN(total_cash_value + total_leverage);
 
     // Death Benefit
-    var death_benefit = checkNaN(total_cash_value + initial_db)
+    var death_benefit = checkNaN(total_cash_value + initial_db);
 
     var annual_income_output = document.getElementById(
       "AnnualRetirementIncome"
@@ -877,17 +877,6 @@ export const FullCalc = (props) => {
 
   return (
     <Container>
-      <Row style={{ marginTop: "3%", marginBottom: "1%" }}>
-        <h1
-          style={{
-            marginLeft: "auto",
-            marginRight: "auto",
-            fontWeight: "900",
-          }}
-        >
-            Build Your MPI® Plan
-        </h1>
-      </Row>
       <Row style={{ marginBottom: "3%" }}>
         <Container>
           <Form>
@@ -895,6 +884,17 @@ export const FullCalc = (props) => {
               <Row>
                 {/* <!-- Inputs --> */}
                 <Col sm={12} md={4} className="mx-auto fieldset1">
+                  <Row style={{marginBottom: "1%", borderBottom: "2px solid black" }}>
+                    <h3
+                      style={{
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                        fontWeight: "900",
+                      }}
+                    >
+                      Build Your MPI® Plan
+                    </h3>
+                  </Row>
                   <fieldset>
                     <div className="fields-wrapper">
                       {/* <!-- Current Age --> */}
@@ -1008,39 +1008,42 @@ export const FullCalc = (props) => {
 
                       {/* <!-- Year 1-2 Contributions --> */}
                       <div className="form-group">
-                          <label className="control-label" htmlFor="Contributions">
-                            Year 1-2 Contributions
-                          </label>
-                          <input
-                            type="text"
-                            id="Contributions"
-                            name="Contributions"
-                            placeholder=""
-                            className="form-control ccm-input-text"
-                            readOnly
-                          />
-                          <span className="lightTxt">
-                            Lump Sum/24 + Monthly Contribution
-                          </span>
-                        </div>
+                        <label
+                          className="control-label"
+                          htmlFor="Contributions"
+                        >
+                          Year 1-2 Contributions
+                        </label>
+                        <input
+                          type="text"
+                          id="Contributions"
+                          name="Contributions"
+                          placeholder=""
+                          className="form-control ccm-input-text"
+                          readOnly
+                        />
+                        <span className="lightTxt">
+                          Lump Sum/24 + Monthly Contribution
+                        </span>
+                      </div>
 
                       {/* <!-- Year 3+ Contributions --> */}
                       <div className="form-group">
-                          <label
-                            className="control-label"
-                            htmlFor="Year3Contributions"
-                          >
-                            Year 3+ Contributions
-                          </label>
-                          <input
-                            type="text"
-                            id="Year3Contributions"
-                            name="Year3Contributions"
-                            placeholder=""
-                            className="form-control ccm-input-text"
-                            readOnly
-                          />
-                        </div>
+                        <label
+                          className="control-label"
+                          htmlFor="Year3Contributions"
+                        >
+                          Year 3+ Contributions
+                        </label>
+                        <input
+                          type="text"
+                          id="Year3Contributions"
+                          name="Year3Contributions"
+                          placeholder=""
+                          className="form-control ccm-input-text"
+                          readOnly
+                        />
+                      </div>
                     </div>
                   </fieldset>
                 </Col>
@@ -1048,12 +1051,24 @@ export const FullCalc = (props) => {
                 <Col
                   sm={12}
                   md={8}
-                  style={{
-                    marginTop: "5px",
-                    paddingLeft: "2%",
-                    paddingRight: "2%",
-                  }}
+                  className="mx-auto fieldset1"
+                  // style={{
+                  //   marginTop: "5px",
+                  //   paddingLeft: "2%",
+                  //   paddingRight: "2%",
+                  // }}
                 >
+                  <Row style={{marginBottom: "1%", borderBottom: "2px solid black" }}>
+                    <h3
+                      style={{
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                        fontWeight: "900",
+                      }}
+                    >
+                      Side-By-Side Comparison
+                    </h3>
+                  </Row>
                   <fieldset>
                     <div className="fields-wrapper">
                       {/* <!-- Annual Retirement Income --> */}
@@ -1408,18 +1423,18 @@ export const FullCalc = (props) => {
 
                         {/* <!-- Initial Life Insurance Amount --> */}
                         <div className="form-group">
-                            <label className="control-label" htmlFor="ilia">
-                              Initial Life Insurance Amount
-                            </label>
-                            <input
-                              type="tel"
-                              id="ilia"
-                              name="ilia"
-                              value=""
-                              className="form-control ccm-input-tel"
-                              readOnly
-                            />
-                          </div>
+                          <label className="control-label" htmlFor="ilia">
+                            Initial Life Insurance Amount
+                          </label>
+                          <input
+                            type="tel"
+                            id="ilia"
+                            name="ilia"
+                            value=""
+                            className="form-control ccm-input-tel"
+                            readOnly
+                          />
+                        </div>
                       </div>
                     </div>
                   </fieldset>
