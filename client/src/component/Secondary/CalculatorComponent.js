@@ -863,7 +863,6 @@ export const Calculator = (props) => {
     // });
   }
 
-
   var form = document.querySelector("form");
   if (form) {
     form.addEventListener("change", calculate());
@@ -1252,9 +1251,7 @@ export const Calculator = (props) => {
                         </div>
                         <Container>
                           <Row>
-                            <Row>
-
-                            </Row>
+                            <Row></Row>
                             <Col xs={4}>
                               <input
                                 style={{
@@ -1280,8 +1277,8 @@ export const Calculator = (props) => {
                                 readOnly
                               />
                             </Col>
-                            <Col xs={4} style={{margin: "auto"}}>
-                            <small
+                            <Col xs={4} style={{ margin: "auto" }}>
+                              <small
                                 style={{
                                   color: props.agent.textColor,
                                   textShadow: "1px 1px black",
@@ -1320,9 +1317,9 @@ export const Calculator = (props) => {
                             </Col>
                           </Row>
                           <Row>
-                            <Button 
-                            href="/videoseries"
-                            // onClick={() => switchShowMore()}
+                            <Button
+                              href="/videoseries"
+                              // onClick={() => switchShowMore()}
                             >
                               See Full Results
                             </Button>
@@ -1340,14 +1337,18 @@ export const Calculator = (props) => {
                         fontWeight: "500",
                       }}
                     >
-                      *DISCLAIMERS: AMOUNTS SHOWN IN THIS CALCULATOR ARE
+                      *DISCLAIMERS: AMOUNTS SHOWN IN THIS CALCULATION ARE
                       ESTIMATES ONLY AND NOT GUARANTEED IN ANY WAY. ESTIMATES
                       ARE AVERAGE ANNUAL RETURNS OF 6.4% AND LOAN INTEREST OF
                       4%. COSTS OF INSURANCE AND POLICY EXPENSES ARE TAKEN FROM
                       AN NAIC APPROVED ILLUSTRATION AND ARE BASED ON A SIMILARLY
                       AGED MALE AT A PREFERRED HEALTH RATING. ESTIMATED CASH
                       VALUE AND INCOME RESULTS MAY VARY BASED ON ACTUAL GENDER,
-                      AGE, AND APPROVED HEALTH RATING.
+                      AGE, AND APPROVED HEALTH RATING. ROTH IRA PROJECTIONS ARE
+                      ASSUMED 10% MARKET GROWTH WITH AN ASSUMED EXPENSE RATIO OF
+                      1% ALL-IN FEES. COMPOUND RESULTS ARE CALCULATED ON AN
+                      ANNUAL BASIS. ROTH IRA PROJECTED INCOME BASED OFF THE 4%
+                      RULE.
                     </p>
                   </Col>
                 </Row>

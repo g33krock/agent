@@ -81,7 +81,7 @@ export class FAQ extends Component {
                             xs={9}
                             md={9}
                             style={{
-                              fontSize: "200%",
+                              fontSize: "125%",
                               borderBottom: "2px solid black",
                             }}
                           >
@@ -124,7 +124,7 @@ export class FAQ extends Component {
                             xs={9}
                             md={9}
                             style={{
-                              fontSize: "200%",
+                              fontSize: "125%",
                               borderBottom: "2px solid black",
                             }}
                           >

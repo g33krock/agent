@@ -171,6 +171,7 @@ export class AboutCurtis extends Component {
                             width: "95%",
                             margin: "auto",
                           }}
+                          onClick={() => window.open("https://www.amazon.com/dp/1729218105/ref=cm_sw_em_r_mt_dp_DE89VBBSX4RH6V39KXEP", "_blank")}
                         >
                           <h3>
                             <strong>Buy Now</strong>
@@ -186,6 +187,7 @@ export class AboutCurtis extends Component {
                             width: "95%",
                             margin: "auto",
                           }}
+                          onClick={() => window.open("https://www.amazon.com/dp/1937449076/ref=cm_sw_em_r_mt_dp_PDK7VNJBBG4VQTH5SGV7?_encoding=UTF8&psc=1", "_blank")}
                         >
                           <h3>
                             <strong>Buy Now</strong>

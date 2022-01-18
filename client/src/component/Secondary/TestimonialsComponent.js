@@ -26,14 +26,26 @@ export class Testimonials extends Component {
 
   render() {
     // eslint-disable-next-line no-restricted-globals
-    console.log(document.documentElement.clientWidth)
+    console.log(document.documentElement.clientWidth);
     // eslint-disable-next-line no-restricted-globals
-    const cMode = () => {if(document.documentElement.clientWidth > 690){return true} else {return false}}
+    const cMode = () => {
+      if (document.documentElement.clientWidth > 690) {
+        return true;
+      } else {
+        return false;
+      }
+    };
     // eslint-disable-next-line no-restricted-globals
-    const cSliderPercent = () => {if(document.documentElement.clientWidth > 690){return 33} else {return 100}}
+    const cSliderPercent = () => {
+      if (document.documentElement.clientWidth > 690) {
+        return 33;
+      } else {
+        return 100;
+      }
+    };
     return (
       <div>
-        <h1 style={{marginBottom: "0px", fontSize:"300%", marginTop: "3%"}}>
+        <h1 style={{ marginBottom: "0px", fontSize: "300%", marginTop: "3%" }}>
           <strong>Testimonials</strong>
         </h1>
         <div
@@ -45,12 +57,13 @@ export class Testimonials extends Component {
             width: "50vw",
             marginBottom: "1%",
             marginLeft: "auto",
-            marginRight: "auto"
+            marginRight: "auto",
           }}
         ></div>
         {this.state.agent &&
           this.state.agent.map((ag) => (
             <Carousel
+              showIndicators={false}
               showArrows={false}
               infiniteLoop={true}
               showThumbs={false}

@@ -83,6 +83,7 @@ export class AgentCarousel extends Component {
               </Col>
               <Col sm={8}>
                 <Carousel
+                  showIndicators={false}
                   showArrows={false}
                   infiniteLoop={true}
                   showThumbs={false}
@@ -123,8 +124,12 @@ export class AgentCarousel extends Component {
                               {aag.title}
                             </h4>
                             <Button
-                              variant="link"
-                              style={{ color: ag.textColor }}
+                              // variant="link"
+                              style={{
+                                color: ag.textColor,
+                                backgroundColor: ag.primaryColor,
+                                marginBottom: "1%",
+                              }}
                               onClick={() => {
                                 toggleBio();
                               }}
@@ -138,7 +143,7 @@ export class AgentCarousel extends Component {
                                 READ BIO
                               </strong>
                             </Button>
-                            <Col style={{marginLeft: "20%"}}>
+                            <Col style={{ marginLeft: "20%" }}>
                               <p
                                 id="bioBlock"
                                 style={{
