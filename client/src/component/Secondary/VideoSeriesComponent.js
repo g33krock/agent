@@ -57,20 +57,14 @@ export class VideoSeries extends Component {
         fluid
         style={{
           backgroundColor: "rgb(211, 211, 211)",
-          // minHeight: "90vh",
           paddingLeft: "0px",
-          // paddingRight: '8px',
-          // paddingBottom: "3%",
           border: "4px solid black",
-          // margin: "2% auto 2% auto",
-          // maxWidth: "95vw",
         }}
       >
         {this.state.agent &&
           this.state.agent.map((ag) => (
             <Row
               style={{
-                // margin: "10px",
                 position: "relative",
                 color: "black",
               }}
@@ -138,26 +132,9 @@ export class VideoSeries extends Component {
                       <strong>Video Series</strong>
                     </h3>
                   </Row>
-                  {this.state.videos
-                    .filter((vid) => vid.category === "none")
-                    .map((vid) => (
-                      <option
-                        tabIndex={vid.id}
-                        className="selectVideo"
-                        value={vid.id}
-                        onClick={this.setVideo}
-                      >
-                        {vid.id} | {vid.title}
-                      </option>
-                    ))}
-                  <Collapsible
-                    trigger={[
-                      <BsChevronDown />,
-                      <h4 style={{ fontSize: "110%" }}> 8 MPI® Plans</h4>,
-                    ]}
-                  >
+                  <Col style={{paddingLeft: "1%", backgroundColor: "white"}}>
                     {this.state.videos
-                      .filter((vid) => vid.category === "plans")
+                      .filter((vid) => vid.category === "none")
                       .map((vid) => (
                         <option
                           tabIndex={vid.id}
@@ -168,7 +145,26 @@ export class VideoSeries extends Component {
                           {vid.id} | {vid.title}
                         </option>
                       ))}
-                  </Collapsible>
+                    <Collapsible
+                      trigger={[
+                        <BsChevronDown />,
+                        <h4 style={{ fontSize: "110%" }}> 8 MPI® Plans</h4>,
+                      ]}
+                    >
+                      {this.state.videos
+                        .filter((vid) => vid.category === "plans")
+                        .map((vid) => (
+                          <option
+                            tabIndex={vid.id}
+                            className="selectVideo"
+                            value={vid.id}
+                            onClick={this.setVideo}
+                          >
+                            {vid.id} | {vid.title}
+                          </option>
+                        ))}
+                    </Collapsible>
+                  </Col>
                 </Container>
               </Col>
               <Col

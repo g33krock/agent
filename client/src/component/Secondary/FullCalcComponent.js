@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import jQuery from "jquery";
+import { BsChevronDown } from "react-icons/bs";
 
 export const FullCalc = (props) => {
   const [showMore, setShowMore] = React.useState(true);
@@ -1492,7 +1493,7 @@ export const FullCalc = (props) => {
                               style={{ width: "100%" }}
                               onClick={() => switchShowMore()}
                             >
-                              Additional Financial Information
+                              Additional Financial Information <BsChevronDown />
                             </Button>
                           </Col>
                           <Col md={1} />
