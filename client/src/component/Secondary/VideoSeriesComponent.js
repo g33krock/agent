@@ -73,7 +73,6 @@ export class VideoSeries extends Component {
               <Col
                 sm={3}
                 style={{
-                  overflow: "scroll",
                   maxHeight: "100vh",
                   paddingRight: "0px",
                   backgroundColor: "rgba(211, 211, 211)",
@@ -93,7 +92,9 @@ export class VideoSeries extends Component {
                       width: "65%",
                     }}
                   >
-                    Webinar
+                    Secure Compound Interest
+                    <br />
+                    Webinar Replay
                   </Button>
                 </Row>
                 <Row
@@ -109,6 +110,8 @@ export class VideoSeries extends Component {
                       width: "65%",
                     }}
                   >
+                    MPI®
+                    <br />
                     Documentary
                   </Button>
                 </Row>
@@ -132,9 +135,17 @@ export class VideoSeries extends Component {
                       <strong>Video Series</strong>
                     </h3>
                   </Row>
-                  <Col style={{paddingLeft: "1%", backgroundColor: "white"}}>
+                  <Col
+                    style={{
+                      paddingLeft: "1%",
+                      backgroundColor: "white",
+                      overflow: "scroll",
+                      maxHeight: "75vh",
+                    }}
+                  >
                     {this.state.videos
                       .filter((vid) => vid.category === "none")
+                      .filter((vid) => vid.id < 10)
                       .map((vid) => (
                         <option
                           tabIndex={vid.id}
@@ -142,7 +153,20 @@ export class VideoSeries extends Component {
                           value={vid.id}
                           onClick={this.setVideo}
                         >
-                          {vid.id} | {vid.title}
+                          {`${vid.id}  | ${vid.title}`}
+                        </option>
+                      ))}
+                    {this.state.videos
+                      .filter((vid) => vid.category === "none")
+                      .filter((vid) => vid.id > 9)
+                      .map((vid) => (
+                        <option
+                          tabIndex={vid.id}
+                          className="selectVideo"
+                          value={vid.id}
+                          onClick={this.setVideo}
+                        >
+                          {vid.id}| {vid.title}
                         </option>
                       ))}
                     <Collapsible
@@ -220,7 +244,8 @@ export class VideoSeries extends Component {
                 <Row>
                   <h2 className="videofoot">ALWAYS BE COMPOUNDING™</h2>
                 </Row>
-                <div hidden={this.state.showCalc}>
+                {/* <div hidden={this.state.showCalc}> */}
+                <div id="theCalculator">
                   <FullCalc agent={ag} />
                 </div>
               </Col>
@@ -267,10 +292,9 @@ export class VideoSeries extends Component {
                   <div>
                     <Button
                       className="videoButton"
-                      onClick={() => this.switchShowCalc()}
-                    >
-                      MPI® Calculator
-                    </Button>
+                      // onClick={() => this.switchShowCalc()}
+                      href="#theCalculator"
+                    style={{marginBottom: "0px", alignItems: "center", paddingTop: "18px"}}>MPI® Calculator</Button>
                   </div>
                 </Row>
                 <Row

@@ -30,8 +30,8 @@ export class Bottom extends Component {
             <Col sm={3}>
               <Button
                 style={{
-                  // backgroundColor: `${this.props.agent.secondaryColor}`,
-                  backgroundColor: `black`,
+                  backgroundColor: `${this.props.agent.primaryColor}`,
+                  // backgroundColor: `black`,
                   width: "100%",
                   border: "none",
                   boxShadow: "2px 2px rgba(0, 0, 0, 0.5)",
@@ -49,8 +49,8 @@ export class Bottom extends Component {
             <Col sm={3}>
               <Button
                 style={{
-                  // backgroundColor: `${this.props.agent.secondaryColor}`,
-                  backgroundColor: `black`,
+                  backgroundColor: `${this.props.agent.primaryColor}`,
+                  // backgroundColor: `black`,
                   color: `white`,
                   width: "100%",
                   border: "none",

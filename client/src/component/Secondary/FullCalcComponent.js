@@ -733,6 +733,8 @@ export const FullCalc = (props) => {
     var first_year_contrib_output = document.getElementById("Contributions");
     var third_year_contrib_output =
       document.getElementById("Year3Contributions");
+    var years_to_contribute_output =
+      document.getElementById("YearsToContribute");
     var estimated_spendable = document.getElementById("EstimatedSpendable");
     var lump_sum_over_24_output = document.getElementById("LumpSumOver24");
     // var ira_projected_retirement_income_field = document.getElementById(
@@ -751,6 +753,9 @@ export const FullCalc = (props) => {
       );
       jQuery(third_year_contrib_output).val(
         "$" + third_year_contrib.toLocaleString("en-us")
+      );
+      jQuery(years_to_contribute_output).val(
+        years_to_contribute.toLocaleString("en-us")
       );
       jQuery(lump_sum_over_24_output).val(
         "$" + lump_sum_over_24.toLocaleString("en-us")
@@ -1014,6 +1019,10 @@ export const FullCalc = (props) => {
                             />
                           </div>
                         </div>
+                        <span className="lightTxt">
+                          Lump sums are divided into 24 equal contributions over
+                          the first 2 years.
+                        </span>
                       </div>
 
                       {/* <!-- Ongoing Contributions --> */}
@@ -1037,6 +1046,25 @@ export const FullCalc = (props) => {
                         />
                       </div>
 
+                      {/* Years to Contribute */}
+                      <div className="form-group">
+                        <label
+                          className="control-label"
+                          htmlFor="YearsToContribute"
+                        >
+                          Years To Contribute
+                        </label>
+                        <input
+                          style={{ width: "100%" }}
+                          type="text"
+                          id="YearsToContribute"
+                          name="YearsToContribute"
+                          placeholder=""
+                          className="form-control ccm-input-text"
+                          readOnly
+                        />
+                      </div>
+
                       {/* <!-- Year 1-2 Contributions --> */}
                       <div className="form-group">
                         <label
@@ -1046,6 +1074,7 @@ export const FullCalc = (props) => {
                           Year 1-2 Contributions
                         </label>
                         <input
+                          style={{ width: "100%" }}
                           type="text"
                           id="Contributions"
                           name="Contributions"
@@ -1053,9 +1082,6 @@ export const FullCalc = (props) => {
                           className="form-control ccm-input-text"
                           readOnly
                         />
-                        <span className="lightTxt">
-                          Lump Sum/24 + Monthly Contribution
-                        </span>
                       </div>
 
                       {/* <!-- Year 3+ Contributions --> */}
@@ -1067,6 +1093,7 @@ export const FullCalc = (props) => {
                           Year 3+ Contributions
                         </label>
                         <input
+                          style={{ width: "100%" }}
                           type="text"
                           id="Year3Contributions"
                           name="Year3Contributions"
@@ -1192,7 +1219,7 @@ export const FullCalc = (props) => {
                               backgroundColor: "white",
                             }}
                           >
-                            ESTIMATED ANNUAL TAX-FREE RETIREMENT INCOME
+                            Annual Projected Tax-Free Retirement Income
                           </h4>
                         </div>
                         <div
@@ -1203,7 +1230,7 @@ export const FullCalc = (props) => {
                             marginRight: "0px",
                             paddingLeft: "0px",
                             paddingRight: "0px",
-                            fontSize: "125%",
+                            fontSize: "100%",
                           }}
                         >
                           <div
@@ -1288,7 +1315,7 @@ export const FullCalc = (props) => {
                               backgroundColor: "white",
                             }}
                           >
-                            LIFETIME PROJECTED TOTAL SPENDABLE RETIREMENT INCOME
+                            Lifetime Projected Total Spendable Retirement Income
                           </h4>
                           <h4
                             style={{
@@ -1314,7 +1341,7 @@ export const FullCalc = (props) => {
                             marginRight: "0px",
                             paddingLeft: "0px",
                             paddingRight: "0px",
-                            fontSize: "125%",
+                            fontSize: "100%",
                           }}
                         >
                           <div

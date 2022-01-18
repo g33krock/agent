@@ -199,12 +199,6 @@ export class Header2 extends Component {
                   </Col>
                 </Navbar.Collapse>
               </Navbar>
-              {/* <NavDropdown title="Other Places" id="basic-nav-dropdown">
-                <NavDropdown.Item>Spot 1</NavDropdown.Item>
-                <NavDropdown.Item>Spot 2</NavDropdown.Item>
-                <NavDropdown.Item>Spot 3</NavDropdown.Item>
-                <NavDropdown.Item>Spot 4</NavDropdown.Item>
-              </NavDropdown> */}
             </Row>
           ))}
       </div>
