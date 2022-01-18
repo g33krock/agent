@@ -43,7 +43,7 @@ export class Header2 extends Component {
                       <Image src={ag.icon} id="icons" />{" "}
                     </Nav.Link>
                   </Col>
-                  <Col style={{ color: `${ag.textColor}`, marginTop: "1%" }}>
+                  <Col style={{ color: `${ag.textColor}`, marginTop: "auto", marginBottom: "auto" }}>
                     <NavDropdown
                       title={<span style={{ color: "white" }}>About</span>}
                       style={{ color: `${ag.textColor}` }}
@@ -62,7 +62,7 @@ export class Header2 extends Component {
                       style={{
                         color: `${ag.textColor}`,
                         textShadow: "1px 1px black",
-                        marginTop: "5%",
+                        marginTop: "auto", marginBottom: "auto"
                       }}
                       href="/videoseries"
                     >
@@ -74,7 +74,7 @@ export class Header2 extends Component {
                       style={{
                         color: `${ag.textColor}`,
                         textShadow: "1px 1px black",
-                        marginTop: "5%",
+                        marginTop: "auto", marginBottom: "auto"
                       }}
                       href="https://mympi.com/financial-education/financial-news"
                     >
@@ -86,7 +86,7 @@ export class Header2 extends Component {
                       style={{
                         color: `${ag.textColor}`,
                         textShadow: "1px 1px black",
-                        marginTop: "5%",
+                        marginTop: "auto", marginBottom: "auto"
                       }}
                       href="/faq"
                     >
@@ -99,8 +99,7 @@ export class Header2 extends Component {
                         style={{
                           color: `${ag.textColor}`,
                           textShadow: "1px 1px black",
-                          marginTop: "5%",
-                          marginBottom: "0px",
+                          marginTop: "auto", marginBottom: "auto"
                         }}
                         // onClick={() => window.open(`mailto:${ag.email}`)}
                         href="/contactus"
