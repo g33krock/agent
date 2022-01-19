@@ -1,11 +1,14 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Main } from './component/Secondary/MainComponent';
+import { useState } from 'react';
 
 function App() {
+  const [paidVideo] = useState(true);
+  const [paidDeposit] = useState(true)
   return (
     <div className="App" >
-      <Main/>
+      <Main vids={paidVideo} deposit={paidDeposit}/>
     </div>
   );
 }

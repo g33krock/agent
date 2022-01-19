@@ -151,6 +151,16 @@ ul li::before {
   letter-spacing: .2rem;
 }
 
+.whatIsMPIButton {
+  background-color: black;
+  width: 300px;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  margin-bottom: 5px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5)
+}
+
 @font-face {
   font-family: greatvibes;
   src: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/fonts/GreatVibes-Regular.ttf)

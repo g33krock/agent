@@ -9,6 +9,8 @@ export class WhatIsMPI extends Component {
     super(props);
     this.state = {
       agent: this.props.agent,
+      paidVideo: this.props.vids,
+      paidDeposit: this.props.deposit,
     };
   }
 
@@ -17,6 +19,7 @@ export class WhatIsMPI extends Component {
     const agentObject = { agentID: ID };
     const agent = await agentService.one(agentObject);
     this.setState({ agent });
+    console.log(this.props.vids)
   }
 
   render() {
@@ -46,18 +49,18 @@ export class WhatIsMPI extends Component {
         }}
       >
         <Row style={{marginTop: "2%", marginBottom: "2%" }}>
-          <Col xs={12} md={4} className="tag">
+          <Col xs={12} md={6} className="tag">
             <h1
               style={{
                 color: `${this.props.agent.textColor}`,
                 textShadow: "1px 1px black",
                 fontSize: "350%",
-                marginTop: "15%",
+                marginTop: "10%",
               }}
             >
               What is MPI®?
             </h1>
-            <ButtonBar agent={this.props.agent} Id={this.props.agent.id} />
+            <ButtonBar agent={this.props.agent} Id={this.props.agent.id} vids={this.props.vids} deposit={this.props.deposit}/>
           </Col>
           <Col />
           <Col xs={12} md={4} className="tag">

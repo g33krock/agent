@@ -14,6 +14,8 @@ export class Home extends Component {
     super(props);
     this.state = {
       agent: this.props.agent,
+      paidVideo: this.props.vids,
+      paidDeposit: this.props.deposit,
     }
   }
 
@@ -22,6 +24,7 @@ export class Home extends Component {
     const agentObject = { agentID: ID };
     const agent = await agentService.one(agentObject);
     this.setState({ agent });
+    console.log(this.props.vids)
   }
 
 
@@ -34,7 +37,7 @@ export class Home extends Component {
           this.state.agent.map((ag) => (
             <Row style={{ margin: "0px" }} key={ag.toString()}>
               <Jumbotron agent={ag} Id={ag.id} />
-              <WhatIsMPI agent={ag} Id={ag.id} />
+              <WhatIsMPI agent={ag} Id={ag.id} vids={this.props.vids} deposit={this.props.deposit}/>
               <Webinar agent={ag} Id={ag.id} />
               <Calculator agent={ag} />
               <AgentCarousel agent={ag} Id={ag.id} />

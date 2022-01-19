@@ -16,13 +16,17 @@ import { Home } from "./HomeComponent";
 import { VideoSeries } from "./VideoSeriesComponent";
 import Shopify from "./Shopify/ShopifyComponent";
 
-export function Main() {
+export function Main(props) {
   const agentId = 4;
   const agentObject = { agentID: agentId };
   const [agent] = useState(() => {
     const initialAgent = agentService.one(agentObject);
     return initialAgent;
   });
+  const paidVideo = props.vids;
+  const paidDeposit = props.deposit;
+  console.log(paidVideo);
+  console.log(paidDeposit);
 
   const client = Client.buildClient({
     domain: 'mpiunlimited.myshopify.com',
@@ -30,18 +34,6 @@ export function Main() {
   });
   return (
     <div style={{ minHeight: "100vh" }}>
-      {/* <video autoPlay loop muted id="video">
-        <source
-          src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/videos/waterVideo.mp4"
-          type="video/mp4"
-        />
-      </video> */}
-
-      {/* <img
-        src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/SDRPBackdrop.png"
-        alt="DS"
-        className="backdrop"
-      /> */}
 
       <Header2 agent={agent[0]} Id={agentId} style={{ marginLeft: "0px" }} />
       <Calendar agent={agent[0]} Id={agentId}></Calendar>
@@ -58,7 +50,7 @@ export function Main() {
             <Routes>
               <Route
                 path="/"
-                element={<Home agent={agent[0]} Id={agentId} />}
+                element={<Home agent={agent[0]} Id={agentId} vids={paidVideo} deposit={paidDeposit} />}
               />
               <Route
                 path="about"
