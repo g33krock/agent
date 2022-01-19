@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Main } from './component/Secondary/MainComponent';
+import { Main } from './component/MainComponent';
 import { useState } from 'react';
 
 function App() {
