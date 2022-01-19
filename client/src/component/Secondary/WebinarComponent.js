@@ -20,7 +20,7 @@ export class Webinar extends Component {
 
   render() {
     return (
-      <div style={{height: "100vh", width: "100vw", margin:"0px", padding:"0px"}}>
+      <div style={{height: "80vh", width: "100vw", margin:"0px", padding:"0px", overflow: "hidden"}}>
         <iframe
           src="https://compoundinterest.clickfunnels.com/auto-webinar-registrationhpa135ci"
           title="Webinar Registration"

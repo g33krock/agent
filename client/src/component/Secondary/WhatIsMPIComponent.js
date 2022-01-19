@@ -83,28 +83,28 @@ export class WhatIsMPI extends Component {
             <Image
               src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Forbes-logo black.png"
               alt="Forbes Black Logo"
-              style={{ width: "10vw", margin: "auto" }}
+              className="asSeenOnImage"
             />
           </Col>
           <Col style={{ margin: "auto" }}>
             <Image
               src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/YahooFinanceLogo-black.png"
               alt="Yahoo Finance Black Logo"
-              style={{ width: "10vw", margin: "auto" }}
+              className="asSeenOnImage"
             />
           </Col>
           <Col style={{ margin: "auto" }}>
             <Image
               src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/entrepreneurblack.png"
               alt="Entrepreneur Black Logo"
-              style={{ width: "10vw", margin: "auto" }}
+              className="asSeenOnImage"
             />
           </Col>
           <Col style={{ margin: "auto" }}>
             <Image
               src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/stockhouse-black.png"
               alt="Stockhouse Black Logo"
-              style={{ width: "10vw", margin: "auto" }}
+              className="asSeenOnImage"
             />
           </Col>
         </Row>

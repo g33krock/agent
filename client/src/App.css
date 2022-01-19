@@ -788,6 +788,11 @@ ul li::before {
     font-size: small;
   }
 
+  .asSeenOnImage{
+    margin: auto;
+    width: 6vw
+  }
+
   #video {
     position: fixed;
     z-index: -1;
@@ -938,6 +943,11 @@ ul li::before {
     font-size: medium;
   }
 
+  .asSeenOnImage{
+    margin: auto;
+    width: 6vw
+  }
+
   #video {
     position: fixed;
     z-index: -1;
@@ -1084,6 +1094,11 @@ ul li::before {
 
   .asSeenOn {
     font-size: medium;
+  }
+
+  .asSeenOnImage{
+    margin: auto;
+    width: 6vw
   }
 
   #video {
@@ -1235,6 +1250,11 @@ ul li::before {
     font-size: medium;
   }
 
+  .asSeenOnImage{
+    margin: auto;
+    width: 6vw
+  }
+
   #video {
     position: fixed;
     z-index: -1;
@@ -1364,6 +1384,10 @@ ul li::before {
     width: 90%;
     height: auto
   }
+
+  .webinarFrame {
+    height: 80vh; width: 100vw; margin:0px; padding:0px; overflow: hidden
+  }
 }
 
 @media only screen and (min-width: 1700px) {
@@ -1382,6 +1406,11 @@ ul li::before {
 
   .asSeenOn {
     font-size: 125%;
+  }
+
+  .asSeenOnImage{
+    margin: auto;
+    width: 6vw
   }
 
   #video {
@@ -1514,6 +1543,22 @@ ul li::before {
     width: 80%;
     height: auto
   }
+
+  .webinar {
+    overflow: hidden;
+    /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
+    position: relative;
+  }
+
+  .webinar iframe {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+ }
 }
 
 .sticky {
