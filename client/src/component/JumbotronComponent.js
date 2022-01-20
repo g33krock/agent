@@ -37,20 +37,13 @@ export class Jumbotron extends Component {
                   // width="80%"
                   style={{marginTop: '1%', marginBottom: "0px", maxWidth: "80vw", marginLeft: 'auto', marginRight: 'auto'}}/>
                   <h1
+                  className="slogan"
                     style={{
                       color: `${ag.textColor}`,
-                      paddingTop: "0px",
-                      marginTop: "1%",
-                      textShadow: "1px 1px black",
-                      backgroundColor: "rgb(0, 0, 0, 0.5)",
-                      marginBottom: "8%",
-                      marginLeft: "auto",
-                      marginRight: "auto",
-                      maxWidth: "50vw",
                     }}
                   >
-                    YOUR FUTURE IS SECURE IN<br />FACTS NOT FORECASTS
-                    {/* {ag.about} */}
+                    {/* YOUR FUTURE IS SECURE IN<br />FACTS NOT FORECASTS */}
+                    {ag.slogan}
                   </h1>
                   </Col>
                   </Row>

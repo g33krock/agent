@@ -18,11 +18,17 @@ export class ButtonBar extends Component {
     const agentObject = { agentID: ID };
     const agent = await agentService.one(agentObject);
     this.setState({ agent });
-    console.log(this.props.vids)
+    console.log(this.props.vids);
   }
 
   render() {
-    const vidWall = () => {if (this.props.vids === true) {return "/videoseries"} else {return "/shopify"}}
+    const vidWall = () => {
+      if (this.props.vids === true) {
+        return "/videoseries";
+      } else {
+        return "/shopify";
+      }
+    };
     return (
       <div>
         <Container fluid style={{ flexDirection: "row" }}>
@@ -31,15 +37,15 @@ export class ButtonBar extends Component {
             style={{ marginBottom: "25px", marginTop: `7%` }}
           >
             <Col xs={12} md={6}>
-              <Button
-                className="whatIsMPIButton"
-                href= {vidWall()}
-              >
-                <h2>LEARN MORE</h2>
-              </Button>{" "}
+              <ReadyCalendar
+                agent={this.props.agent}
+                deposit={this.props.deposit}
+              />
             </Col>
             <Col xs={12} md={6}>
-                <ReadyCalendar agent={this.props.agent} deposit={this.props.deposit}/>
+              <Button className="whatIsMPIButton" href={vidWall()}>
+                <h2>LEARN MORE</h2>
+              </Button>{" "}
             </Col>
           </Row>
         </Container>

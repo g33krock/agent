@@ -151,17 +151,6 @@ ul li::before {
   letter-spacing: .2rem;
 }
 
-.whatIsMPIButton {
-  background-color: black;
-  width: 300px;
-  border: none;
-  border-radius: 50px;
-  color: white;
-  margin-bottom: 5px;
-  margin-left: auto;
-  margin-right: auto;
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.5)
-}
 
 @font-face {
   font-family: greatvibes;
@@ -787,6 +776,28 @@ ul li::before {
 }
 
 @media only screen and (max-width: 690px) {
+  .whatIsMPIButton {
+    background-color: black;
+    width: 300px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5)
+  }
+
+  .slogan{
+    padding-top: 0px;
+    margin: 1% auto 8% auto;
+    text-shadow: 1px 1px black;
+    background-color: rgb(0, 0, 0, 0.5);
+    font-size: 100%;
+    max-width: 50vw
+  }
+
+
   .calcBackground {
     background-color: rgba(0, 0, 0, 0.75);
     background-image:
@@ -947,6 +958,31 @@ ul li::before {
     font-size: 50%
   }
 
+  .whatIsMPIButton {
+    background-color: black;
+    width: 150px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5)
+  }
+
+  .whatIsMPIButton h2 {
+    font-size: 100%
+  }
+
+  .slogan{
+    padding-top: 0px;
+    margin: 1% auto 8% auto;
+    text-shadow: 1px 1px black;
+    background-color: rgb(0, 0, 0, 0.5);
+    font-size: 150%;
+    max-width: 50vw
+  }
+
   .calcBackground {
     background-color: rgba(0, 0, 0, 0.75);
     background-image:
@@ -1102,6 +1138,30 @@ ul li::before {
 @media only screen and (min-width: 1080px) and (max-width: 1535px) {
   .emailSize {
     font-size: 50%
+  }
+
+  .whatIsMPIButton {
+    background-color: black;
+    width: 225px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5)
+  }
+
+  .whatIsMPIButton h2 {
+    font-size: 150%
+  }
+
+  .slogan{
+    padding-top: 0px;
+    margin: 1% auto 8% auto;
+    text-shadow: 1px 1px black;
+    background-color: rgb(0, 0, 0, 0.5);
+    max-width: 50vw
   }
 
   .calcBackground {
@@ -1261,6 +1321,28 @@ ul li::before {
     font-size: 50%
   }
 
+  .slogan{
+    padding-top: 0px;
+    margin: 1% auto 8% auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-shadow: 1px 1px black;
+    background-color: rgb(0, 0, 0, 0.5);
+    max-width: 50vw
+  }
+
+  .whatIsMPIButton {
+    background-color: black;
+    width: 300px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5)
+  }
+
   .calcBackground {
     background-color: rgba(0, 0, 0, 0.75);
     background-image:
@@ -1417,6 +1499,28 @@ ul li::before {
 @media only screen and (min-width: 1700px) {
   .emailSize {
     font-size: 75%
+  }
+
+  .slogan{
+    padding-top: 0px;
+    margin: 1% auto 8%;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-shadow: 1px 1px black;
+    background-color: rgb(0, 0, 0, 0.5);
+    max-width: 50vw
+  }
+
+  .whatIsMPIButton {
+    background-color: black;
+    width: 300px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5)
   }
 
   .calcBackground {
