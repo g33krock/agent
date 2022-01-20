@@ -5,17 +5,17 @@ import Client from 'shopify-buy';
 import { agentService } from "../services/AgentService";
 import { About } from "./About/AboutComponent";
 import { AboutCurtis } from "./About/AboutCurtisComponent";
-import { Webinar } from "./WebinarComponent";
-import { Calculator } from "./CalculatorComponent";
+import { Webinar } from "./HomePage/WebinarComponent";
+import { Calculator } from "./HomePage/CalculatorComponent";
 import { Calendar } from "./CalendarComponent";
 import { ContactUs } from "./ContactUsComponent";
-import { FAQ } from "./FAQComponent";
+import { FAQ } from "./FAQ/FAQComponent";
 import { Footer } from "./FooterComponent";
 import { Header2 } from "./Header2Component";
-import { Home } from "./HomeComponent";
-import { VideoSeries } from "./VideoSeriesComponent";
+import { Home } from "./HomePage/HomeComponent";
+import { VideoSeries } from "./VideoSeries/VideoSeriesComponent";
 import Shopify from "./Shopify/ShopifyComponent";
-import SignIn from "./SignInComponent";
+import SignIn from "./NotInUse/SignInComponent";
 
 export function Main(props) {
   const agentId = 4;

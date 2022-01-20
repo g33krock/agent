@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { BsChevronDown } from "react-icons/bs";
 import { Container, Row, Col, Button, Image } from "react-bootstrap";
 import Collapsible from "react-collapsible";
-import { agentService } from "../services/AgentService";
-import { videoService } from "../services/VideoService";
+import { agentService } from "../../services/AgentService";
+import { videoService } from "../../services/VideoService";
 import { VideoCalendar } from "./VideoCalendarComponent";
 import { FullCalc } from "./FullCalcComponent";
 

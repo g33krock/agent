@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-// import { Container, Row, Col, Image } from "react-bootstrap";
-import { agentService } from "../services/AgentService";
-// import { ButtonBar } from "./ButtonBarComponent";
+import { agentService } from "../../services/AgentService";
+
 
 export class Webinar extends Component {
   constructor(props) {

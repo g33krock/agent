@@ -5,7 +5,7 @@ import {
   Col,
   Button,
 } from "reactstrap";
-import { agentService } from "../services/AgentService";
+import { agentService } from "../../services/AgentService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDollarSign,

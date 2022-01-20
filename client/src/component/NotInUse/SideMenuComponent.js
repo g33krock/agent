@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { agentService } from "../services/AgentService";
-import { Calendar } from "./CalendarComponent";
+import { agentService } from "../../services/AgentService";
+import { Calendar } from "../CalendarComponent";
 
 export class SideMenu extends Component {
   constructor(props) {

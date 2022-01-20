@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
-import { agentService } from "../services/AgentService";
+import { agentService } from "../../../services/AgentService";
 import $ from "jquery";
 import { ButtonBar } from "./ButtonBarComponent";
 

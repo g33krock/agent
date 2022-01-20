@@ -1,8 +1,8 @@
 // import { ChakraProvider } from '@chakra-ui/react';
 import { useEffect, useState } from "react";
-import Account from "../Account";
-import Auth from "../Auth";
-import { supabase } from "../supabaseClient";
+import Account from "../../Account";
+import Auth from "../../Auth";
+import { supabase } from "../../supabaseClient";
 
 export default function SignIn() {
   const [session, setSession] = useState(null);
