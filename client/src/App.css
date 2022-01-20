@@ -936,6 +936,10 @@ ul li::before {
     width: 100%;
     height: auto
   }
+
+  .webinarFrame {
+    height: 150vh; width: 100vw; margin:0px; padding:0px; overflow: hidden
+  }
 }
 
 @media only screen and (min-width: 691px) and (max-width: 1079px) {
@@ -1089,6 +1093,10 @@ ul li::before {
     width: 100%;
     height: auto
   }
+
+  .webinarFrame {
+    height: 130vh; width: 100vw; margin:0px; padding:0px; overflow: hidden
+  }
 }
 
 @media only screen and (min-width: 1080px) and (max-width: 1535px) {
@@ -1241,6 +1249,10 @@ ul li::before {
   .webinarImage {
     width: 100%;
     height: auto
+  }
+
+  .webinarFrame {
+    height: 95vh; width: 100vw; margin:0px; padding:0px; overflow: hidden
   }
 }
 
@@ -1571,6 +1583,10 @@ ul li::before {
     top: 0;
     width: 100%;
  }
+
+ .webinarFrame {
+  height: 80vh; width: 100vw; margin:0px; padding:0px; overflow: hidden
+}
 }
 
 .sticky {
