@@ -44,6 +44,7 @@ export function Main(props) {
           marginLeft: "0px",
           width: "100%",
           minHeight: "80vh",
+          marginTop: "49px"
         }}
       >
         <Col style={{ paddingRight: "0px", paddingLeft: "0px" }}>
