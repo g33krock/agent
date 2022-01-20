@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Row, Col, Button, Container, Image } from "react-bootstrap";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import { agentService } from "../services/AgentService";
+import { agentService } from "../../services/AgentService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,

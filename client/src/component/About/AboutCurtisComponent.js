@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
-import { agentService } from "../services/AgentService";
+import { agentService } from "../../services/AgentService";
 
 export class AboutCurtis extends Component {
   constructor(props) {
