@@ -24,6 +24,7 @@ export class VideoSeries extends Component {
           "https://compoundinterest.com/wp-content/uploads/2021/11/Chapter-1_-Welcome-to-Compound-Interest_-The-Retirement-You-Deserve.png",
         number: 1,
         category: "none",
+        curtisBanner: "block"
       },
     };
   }
@@ -41,7 +42,14 @@ export class VideoSeries extends Component {
   switchShowCalc() {
     this.setState({ showCalc: false });
     this.setState({ colHeight: "100vh" });
+    this.setCalcVideo()
   }
+
+  setCalcVideo = () => {
+    const video = this.state.videos.find((video) => video.id === "18");
+    this.setState({ video });
+    this.setState({ curtisBanner: "none" })
+  };
 
   setVideo = (vid) => {
     const videoId = vid.target.value;
@@ -49,7 +57,26 @@ export class VideoSeries extends Component {
     const video = this.state.videos.find((video) => video.id === videoId);
     this.setState({ video });
     console.log(this.state.video);
+    this.theCurtisBlock();
   };
+
+  theCurtisBlock = () => {
+    if(this.state.video.id < 17) {
+      this.setState({ curtisBanner: "block" })
+    } else {
+      this.setState({ curtisBanner: "none" })
+    };
+    setTimeout(() => this.theCurtisBlockAgain(), 500)
+  }
+
+  theCurtisBlockAgain = () => {
+    if(this.state.video.id < 17) {
+      this.setState({ curtisBanner: "block" })
+    } else {
+      this.setState({ curtisBanner: "none" })
+    };
+  }
+
 
   render() {
     return (
@@ -139,7 +166,7 @@ export class VideoSeries extends Component {
                     style={{
                       paddingLeft: "1%",
                       backgroundColor: "white",
-                      overflow: "scroll",
+                      overflowY: "scroll",
                       maxHeight: "75vh",
                     }}
                   >
@@ -195,7 +222,7 @@ export class VideoSeries extends Component {
                 sm={7}
                 style={{
                   backgroundColor: "rgb(225, 225, 225",
-                  overflow: "scroll",
+                  overflowY: "scroll",
                   maxHeight: "100vh",
                 }}
               >
@@ -205,7 +232,7 @@ export class VideoSeries extends Component {
                     THE RETIREMENT YOU DESERVE
                   </h2>
                 </Row>
-                <Row style={{ marginBottom: "1%", marginTop: "1%" }}>
+                <Row style={{ marginBottom: "1%", marginTop: "1%", display: this.state.curtisBanner }}>
                   <Container
                     style={{
                       backgroundColor: ag.primaryColor,
@@ -244,8 +271,7 @@ export class VideoSeries extends Component {
                 <Row>
                   <h2 className="videofoot">ALWAYS BE COMPOUNDING™</h2>
                 </Row>
-                {/* <div hidden={this.state.showCalc}> */}
-                <div id="theCalculator">
+                <div id="theCalculator" hidden={this.state.showCalc}>
                   <FullCalc agent={ag} />
                 </div>
               </Col>
@@ -292,8 +318,7 @@ export class VideoSeries extends Component {
                   <div>
                     <Button
                       className="videoButton"
-                      // onClick={() => this.switchShowCalc()}
-                      href="#theCalculator"
+                      onClick={() => this.switchShowCalc()}
                     style={{marginBottom: "0px", alignItems: "center", paddingTop: "18px"}}>MPI® Calculator</Button>
                   </div>
                 </Row>
