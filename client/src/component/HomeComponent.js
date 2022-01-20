@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Container, Row } from "react-bootstrap";
 import { agentService } from "../services/AgentService";
-import { Bottom } from "./BottomComponent";
+import { Bottom } from "./Bottom/BottomComponent";
 import { Calculator } from "./CalculatorComponent";
-import { AgentCarousel } from "./CarouselComponent";
+import { AgentCarousel } from "./MeetAdvisor/CarouselComponent";
 import { Jumbotron } from "./JumbotronComponent";
 import { Testimonials } from "./TestimonialsComponent";
 import { Webinar } from "./WebinarComponent";
