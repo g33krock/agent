@@ -15,6 +15,7 @@ import { Header2 } from "./Header2Component";
 import { Home } from "./HomeComponent";
 import { VideoSeries } from "./VideoSeriesComponent";
 import Shopify from "./Shopify/ShopifyComponent";
+import SignIn from "./SignInComponent";
 
 export function Main(props) {
   const agentId = 4;
@@ -87,6 +88,10 @@ export function Main(props) {
               <Route
                 path="shopify"
                 element={<Shopify agent={agent[0]} Id={agentId} client={client}/>}
+              />
+              <Route
+                path="signin"
+                element={<SignIn agent={agent[0]} Id={agentId} client={client}/>}
               />
             </Routes>
           </BrowserRouter>

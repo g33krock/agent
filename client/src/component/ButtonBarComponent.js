@@ -30,7 +30,7 @@ export class ButtonBar extends Component {
             className="justify-content-md-center"
             style={{ marginBottom: "25px", marginTop: `7%` }}
           >
-            <Col>
+            <Col xs={12} md={6}>
               <Button
                 className="whatIsMPIButton"
                 href= {vidWall()}
@@ -38,7 +38,7 @@ export class ButtonBar extends Component {
                 <h2>LEARN MORE</h2>
               </Button>{" "}
             </Col>
-            <Col>
+            <Col xs={12} md={6}>
                 <ReadyCalendar agent={this.props.agent} deposit={this.props.deposit}/>
             </Col>
           </Row>

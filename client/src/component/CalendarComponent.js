@@ -26,7 +26,7 @@ export class Calendar extends Component {
 
   render() {
     return (
-      <div style={{ position: "sticky", top: "25%" }}>
+      <div style={{ position: "sticky", top: "25%", height: "0px" }}>
         {this.state.agent &&
               this.state.agent.map((ag) =>
         <Button
