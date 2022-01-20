@@ -24,7 +24,9 @@ export class VideoSeries extends Component {
           "https://compoundinterest.com/wp-content/uploads/2021/11/Chapter-1_-Welcome-to-Compound-Interest_-The-Retirement-You-Deserve.png",
         number: 1,
         category: "none",
-        curtisBanner: "block"
+        curtisBanner: "block",
+        showVid: this.props.vids,
+        deposit: this.props.deposit,
       },
     };
   }
@@ -42,13 +44,13 @@ export class VideoSeries extends Component {
   switchShowCalc() {
     this.setState({ showCalc: false });
     this.setState({ colHeight: "100vh" });
-    this.setCalcVideo()
+    this.setCalcVideo();
   }
 
   setCalcVideo = () => {
     const video = this.state.videos.find((video) => video.id === "18");
     this.setState({ video });
-    this.setState({ curtisBanner: "none" })
+    this.setState({ curtisBanner: "none" });
   };
 
   setVideo = (vid) => {
@@ -61,22 +63,21 @@ export class VideoSeries extends Component {
   };
 
   theCurtisBlock = () => {
-    if(this.state.video.id < 17) {
-      this.setState({ curtisBanner: "block" })
+    if (this.state.video.id < 17) {
+      this.setState({ curtisBanner: "block" });
     } else {
-      this.setState({ curtisBanner: "none" })
-    };
-    setTimeout(() => this.theCurtisBlockAgain(), 500)
-  }
+      this.setState({ curtisBanner: "none" });
+    }
+    setTimeout(() => this.theCurtisBlockAgain(), 500);
+  };
 
   theCurtisBlockAgain = () => {
-    if(this.state.video.id < 17) {
-      this.setState({ curtisBanner: "block" })
+    if (this.state.video.id < 17) {
+      this.setState({ curtisBanner: "block" });
     } else {
-      this.setState({ curtisBanner: "none" })
-    };
-  }
-
+      this.setState({ curtisBanner: "none" });
+    }
+  };
 
   render() {
     return (
@@ -175,6 +176,7 @@ export class VideoSeries extends Component {
                       .filter((vid) => vid.id < 10)
                       .map((vid) => (
                         <option
+                          disabled={!this.props.vids}
                           tabIndex={vid.id}
                           className="selectVideo"
                           value={vid.id}
@@ -188,6 +190,7 @@ export class VideoSeries extends Component {
                       .filter((vid) => vid.id > 9)
                       .map((vid) => (
                         <option
+                          disabled={!this.props.vids}
                           tabIndex={vid.id}
                           className="selectVideo"
                           value={vid.id}
@@ -232,7 +235,13 @@ export class VideoSeries extends Component {
                     THE RETIREMENT YOU DESERVE
                   </h2>
                 </Row>
-                <Row style={{ marginBottom: "1%", marginTop: "1%", display: this.state.curtisBanner }}>
+                <Row
+                  style={{
+                    marginBottom: "1%",
+                    marginTop: "1%",
+                    display: this.state.curtisBanner,
+                  }}
+                >
                   <Container
                     style={{
                       backgroundColor: ag.primaryColor,
@@ -244,7 +253,7 @@ export class VideoSeries extends Component {
                       paddingTop: "1%",
                     }}
                   >
-                    <h3>Curtis Ray Presents</h3>
+                    <h3>Presented By Curtis Ray</h3>
                   </Container>
                 </Row>
                 <Row style={{ padding: "1%" }}>
@@ -305,7 +314,7 @@ export class VideoSeries extends Component {
                     borderBottom: "1px solid black",
                   }}
                 >
-                  <VideoCalendar agent={ag} />
+                  <VideoCalendar agent={ag} deposit={this.props.deposit}/>
                 </Row>
                 <Row
                   style={{
@@ -319,7 +328,14 @@ export class VideoSeries extends Component {
                     <Button
                       className="videoButton"
                       onClick={() => this.switchShowCalc()}
-                    style={{marginBottom: "0px", alignItems: "center", paddingTop: "18px"}}>MPI® Calculator</Button>
+                      style={{
+                        marginBottom: "0px",
+                        alignItems: "center",
+                        paddingTop: "18px",
+                      }}
+                    >
+                      MPI® Calculator
+                    </Button>
                   </div>
                 </Row>
                 <Row

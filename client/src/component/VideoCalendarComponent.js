@@ -11,35 +11,54 @@ export class VideoCalendar extends Component {
     };
   }
 
-
   toggle() {
     return !this.state.modal;
   }
 
   render() {
+    const shop = () => {
+      if (this.props.deposit === true) {
+        return "none";
+      } else {
+        return "block";
+      }
+    };
+    const sched = () => {
+      if (this.props.deposit === true) {
+        return "block";
+      } else {
+        return "none";
+      }
+    };
     return (
-            <div style={{marginTop: "5%"}}>
-              <Button
-                className="videoCalendarButton"
-                onClick={() => this.setState({modal: true})}
-              >
-                Schedule A 1 On 1
-              </Button>
- 
-              <Modal isOpen={this.state.modal} toggle={() => this.toggle()}>
-                <ModalBody>
-                  <InlineWidget url={this.state.agent.calendly} />
-                </ModalBody>
-                  <Button
-                    style={{backgroundColor: this.state.agent.secondaryColor}}
-                    onClick={() => this.setState({modal: false})}
+      <div style={{ marginTop: "5%" }}>
+        <Button
+          style={{ display: shop() }}
+          className="videoCalendarButton"
+          href="/shopify"
+        >
+          Schedule A 1 On 1
+        </Button>
+        <Button
+          style={{ display: sched() }}
+          className="videoCalendarButton"
+          onClick={() => this.setState({ modal: true })}
+        >
+          Schedule A 1 On 1
+        </Button>
 
-                  >
-                    Close
-                  </Button>
-              </Modal>
- 
-            </div>
+        <Modal isOpen={this.state.modal} toggle={() => this.toggle()}>
+          <ModalBody>
+            <InlineWidget url={this.state.agent.calendly} />
+          </ModalBody>
+          <Button
+            style={{ backgroundColor: this.state.agent.secondaryColor }}
+            onClick={() => this.setState({ modal: false })}
+          >
+            Close
+          </Button>
+        </Modal>
+      </div>
     );
   }
 }
