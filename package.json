@@ -24,6 +24,7 @@
     "url": "https://github.com/g33krock/agent/issues"
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.7.4",
     "@supabase/supabase-js": "^1.28.5",
     "iframe-resizer-react": "^1.1.0",
     "jquery": "^3.6.0",
