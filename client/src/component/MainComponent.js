@@ -15,7 +15,7 @@ import { Header2 } from "./Header2Component";
 import { Home } from "./HomePage/HomeComponent";
 import { VideoSeries } from "./VideoSeries/VideoSeriesComponent";
 import Shopify from "./Shopify/ShopifyComponent";
-import SignIn from "./NotInUse/SignInComponent";
+import SignIn from "./SignInComponent";
 
 export function Main(props) {
   const agentId = 4;

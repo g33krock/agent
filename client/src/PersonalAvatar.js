@@ -1,4 +1,4 @@
-// import { Avatar, Button } from '@chakra-ui/react';
+import { Avatar, Button } from '@chakra-ui/react';
 import { useEffect, useState } from "react";
 import { supabase } from "./client";
 
@@ -52,7 +52,7 @@ export default function PersonalAvatar({ url, onUpload}) {
 
     return (
         <div>
-        {/* {avatarUrl ? (
+        {avatarUrl ? (
           <Avatar
             size={'2xl'}
             src={avatarUrl}
@@ -118,7 +118,7 @@ export default function PersonalAvatar({ url, onUpload}) {
             onChange={uploadAvatar}
             disabled={uploading}
           />
-        </div> */}
+        </div>
       </div>
     )
 }
