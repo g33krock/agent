@@ -9,7 +9,7 @@ function App() {
   const [paidVideo] = useState(true);
   const [paidDeposit] = useState(true)
 
-  console.log(user?.email)
+  console.log(Auth())
   return (
     <div className="App" >
       <Main vids={paidVideo} deposit={paidDeposit} userEmail={user?.email}/>
