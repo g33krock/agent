@@ -46,7 +46,7 @@ export default function Auth() {
 
   return (
     <div>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow} className="videoCalendarButton">
         Are You Ready?
       </Button>
 
@@ -75,16 +75,9 @@ export default function Auth() {
                       }}
                       isLoading={loading}
                       loadingText="Signing in ..."
-                      colorScheme="teal"
-                      variant="outline"
-                      spinnerPlacement="start"
-                      bg={"blue.400"}
-                      color={"white"}
-                      _hover={{
-                        bg: "blue.500",
-                      }}
+                      variant="primary"
                     >
-                      {loading || "Send magic link"}
+                      {loading || "Do Something Cool!"}
                     </Button>
                   </Row>
                 </Row>
