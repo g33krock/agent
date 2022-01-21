@@ -1,9 +1,12 @@
 import {
   useToast,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { useContext } from "react";
 import { Modal, Form, Button, Container, Row, Col } from "react-bootstrap";
 import { supabase } from "./supabaseClient";
+
+const AuthContext = React.createContext()
 
 export default function Auth() {
   const [loading, setLoading] = useState(false);
@@ -97,4 +100,8 @@ export default function Auth() {
       </Modal>
     </div>
   );
+}
+
+export function useAuth() {
+  return useContext(AuthContext)
 }
