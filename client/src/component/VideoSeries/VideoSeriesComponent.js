@@ -6,6 +6,7 @@ import { agentService } from "../../services/AgentService";
 import { videoService } from "../../services/VideoService";
 import { VideoCalendar } from "./VideoCalendarComponent";
 import { FullCalc } from "./FullCalcComponent";
+import Auth from "../../Auth";
 
 export class VideoSeries extends Component {
   constructor(props) {
@@ -347,7 +348,8 @@ export class VideoSeries extends Component {
                   }}
                 >
                   <div>
-                    <Button className="videoButton">Share</Button>
+                    {/* <Button className="videoButton">Share</Button> */}
+                    <Auth />
                   </div>
                 </Row>
                 <Row
