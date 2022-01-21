@@ -11,14 +11,14 @@ import {
     useToast
   } from '@chakra-ui/react';
 import { useEffect, useState } from "react";
-import PersonalAvatar from './PersonalAvatar';
+// import PersonalAvatar from './PersonalAvatar';
 import { supabase } from "./supabaseClient";
 
 export default function Account({ session }) {
   const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState(null);
-  const [website, setWebsite] = useState(null);
-  const [avatar_url, setAvatarUrl] = useState(null);
+  // const [website, setWebsite] = useState(null);
+  // const [avatar_url, setAvatarUrl] = useState(null);
   const toast = useToast();
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export default function Account({ session }) {
 
       let { data, error, status } = await supabase
         .from("profiles")
-        .select("username, website, avatar_url")
+        .select("username")
         .eq('id', user?.id)
         .single();
 
@@ -42,8 +42,8 @@ export default function Account({ session }) {
 
       if (data) {
         setUsername(data.username);
-        setWebsite(data.website);
-        setAvatarUrl(data.avatar_url);
+        // setWebsite(data.website);
+        // setAvatarUrl(data.avatar_url);
       }
     } catch (error) {
       alert(error.message);
@@ -52,15 +52,15 @@ export default function Account({ session }) {
     }
   }
 
-  async function updateProfile({ username, website, avatar_url }) {
+  async function updateProfile({ username }) {
     try {
       setLoading(true);
       const user = supabase.auth.user();
       const updates = {
         id: user.id,
         username,
-        website,
-        avatar_url,
+        // website,
+        // avatar_url,
         updated_at: new Date(),
       };
 
@@ -106,13 +106,13 @@ export default function Account({ session }) {
           justifyItems={"center"}
           justifyContent={"center"}
         >
-          <PersonalAvatar
+          {/* <PersonalAvatar
             url={avatar_url}
             onUpload={url => {
               setAvatarUrl(url);
               updateProfile({ username, website, avatar_url: url });
             }}
-          />
+          /> */}
           <Text fontSize={"sm"} fontWeight={500} color={"gray.500"} mb={4}>
             {session.user.email}
           </Text>
@@ -135,7 +135,7 @@ export default function Account({ session }) {
               />
             </FormControl>
           </Stack>
-          <Stack spacing={4} p={4}>
+          {/* <Stack spacing={4} p={4}>
             <FormControl>
               <FormLabel>Website</FormLabel>
               <Input
@@ -153,7 +153,7 @@ export default function Account({ session }) {
                 }}
               />
             </FormControl>
-          </Stack>
+          </Stack> */}
           <Stack mt={8} direction={"row"} spacing={4}>
             <Button
               onClick={() => supabase.auth.signOut()}
@@ -169,7 +169,7 @@ export default function Account({ session }) {
             <Button
               isLoading={loading}
               loadingText="Updating ..."
-              onClick={() => updateProfile({ username, website, avatar_url })}
+              onClick={() => updateProfile({ username })}
               flex={1}
               fontSize={"sm"}
               rounded={"full"}
