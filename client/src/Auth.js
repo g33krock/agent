@@ -17,6 +17,7 @@ import { supabase } from "./supabaseClient";
 export default function Auth() {
     const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const toast = useToast();
 
     const handleLogin = async (email, password) => {
@@ -51,9 +52,9 @@ export default function Auth() {
         <Flex minH={'100vh'} align={'center'} justify={'center'} bg={useColorModeValue('gray.50', 'gray.800')}>
           <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
             <Stack align={'center'}>
-              <Heading fontSize={'4xl'}>Sign in to supabase</Heading>
+              <Heading fontSize={'4xl'}>Sign In</Heading>
               <Text fontSize={'lg'} color={'gray.600'}>
-                via magic link with your email below ✌️
+                a world of retirement planning adventure awaits!
               </Text>
             </Stack>
             <Box rounded={'lg'} bg={useColorModeValue('white', 'gray.700')} boxShadow={'lg'} p={8}>
@@ -61,6 +62,10 @@ export default function Auth() {
                 <FormControl id="email">
                   <FormLabel>Email address</FormLabel>
                   <Input value={email} onChange={e => setEmail(e.target.value)} type="email" />
+                </FormControl>
+                <FormControl id="password">
+                  <FormLabel>Password</FormLabel>
+                  <Input value={password} onChange={e => setPassword(e.target.value)} type="password" />
                 </FormControl>
                 <Stack spacing={10}>
                   <Button
