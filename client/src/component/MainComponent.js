@@ -43,6 +43,7 @@ export function Main(props, user) {
     <RecoverPassword
       token={recoveryToken}
       setRecoveryToken={setRecoveryToken}
+      user={user}
     />
   ) : (
     <div style={{ minHeight: "100vh" }}>
@@ -140,6 +141,12 @@ export function Main(props, user) {
                   path="signup"
                   element={
                     <Signup agent={agent[0]} Id={agentId} client={client} />
+                  }
+                />
+                <Route
+                  path="recoverpassword"
+                  element={
+                    <RecoverPassword agent={agent[0]} Id={agentId} client={client} user={user} />
                   }
                 />
               </Routes>

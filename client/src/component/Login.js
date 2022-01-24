@@ -11,6 +11,7 @@ export function Login() {
   const { signIn } = useAuth()
 
   const history = useNavigate()
+  console.log(useNavigate())
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -26,7 +27,7 @@ export function Login() {
       alert('error signing in')
     } else {
       // Redirect user to Dashboard
-      history.push('/')
+      history('/')
     }
   }
 
