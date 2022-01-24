@@ -53,7 +53,7 @@ export class Jumbotron extends Component {
                   <h1
                     className="slogan"
                     style={{
-                      color: `${ag.textColor}`,
+                      color: `white`,
                     }}
                   >
                     {/* YOUR FUTURE IS SECURE IN<br />FACTS NOT FORECASTS */}
