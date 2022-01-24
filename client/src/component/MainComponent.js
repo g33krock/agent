@@ -23,8 +23,8 @@ import { AuthProvider } from "../contexts/Auth";
 import RecoverPassword from "./RecoverComponent";
 
 export function Main(props, user) {
-  const agentId = (Math.floor(Math.random() * 30));
-  // const agentId = 9;
+  const agentId = (Math.floor(Math.random() * 34));
+  // const agentId = 13;
   const agentObject = { agentID: agentId };
   const [agents] = useState(() => {
     const allAgents = agentService.all();
