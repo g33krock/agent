@@ -42,10 +42,7 @@ export class WhatIsMPI extends Component {
       <Container
         style={{
           backgroundImage: `-webkit-linear-gradient(45deg, ${this.props.agent.primaryColor} 45%, ${this.props.agent.secondaryColor} 45%)`,
-          // borderRadius: "15px",
           alignContent: "right",
-          // marginBottom: "5px",
-          // marginTop: "5px",
         }}
       >
         <Row style={{marginTop: "2%", marginBottom: "2%" }}>

@@ -1,9 +1,9 @@
 import { supabase } from "../supabaseClient";
 import { useRef } from "react";
-import { useAuth } from "../contexts/Auth"
+// import { useAuth } from "../contexts/Auth"
 
 const RecoverPassword = ({ token, setRecoveryToken }) => {
-    const newPasswordRef = useAuth();
+    const newPasswordRef = useRef();
     console.log(newPasswordRef)
 
     const handleNewPassword = async () => {
