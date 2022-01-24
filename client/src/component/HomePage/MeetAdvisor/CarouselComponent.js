@@ -98,7 +98,7 @@ export class AgentCarousel extends Component {
                           <Col>
                             <h1
                               style={{
-                                color: ag.textColor,
+                                color: 'white',
                                 textShadow: "1px 1px black",
                               }}
                             >
@@ -106,7 +106,7 @@ export class AgentCarousel extends Component {
                             </h1>
                             <h2
                               style={{
-                                color: ag.textColor,
+                                color: 'white',
                                 textShadow: "1px 1px black",
                               }}
                             >
@@ -115,7 +115,7 @@ export class AgentCarousel extends Component {
                             <img src={aag.image} alt={aag.firstName} />
                             <h4
                               style={{
-                                color: ag.textColor,
+                                color: 'white',
                                 textShadow: "1px 1px black",
                               }}
                             >
