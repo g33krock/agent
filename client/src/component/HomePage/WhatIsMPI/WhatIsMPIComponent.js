@@ -52,7 +52,7 @@ export class WhatIsMPI extends Component {
           <Col xs={12} md={6} className="tag">
             <h1
               style={{
-                color: `${this.props.agent.textColor}`,
+                color: 'white',
                 textShadow: "1px 1px black",
                 fontSize: "350%",
                 marginTop: "10%",

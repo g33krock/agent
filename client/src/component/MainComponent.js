@@ -23,8 +23,13 @@ import { AuthProvider } from "../contexts/Auth";
 import RecoverPassword from "./RecoverComponent";
 
 export function Main(props, user) {
-  const agentId = 12;
+  const agentId = (Math.floor(Math.random() * 30));
+  // const agentId = 17;
   const agentObject = { agentID: agentId };
+  const [agents] = useState(() => {
+    const allAgents = agentService.all();
+    return allAgents;
+  });
   const [agent] = useState(() => {
     const initialAgent = agentService.one(agentObject);
     return initialAgent;
@@ -34,6 +39,7 @@ export function Main(props, user) {
   const paidDeposit = props.deposit;
   console.log(paidVideo);
   console.log(paidDeposit);
+  console.log(agents);
 
   const client = Client.buildClient({
     domain: "mpiunlimited.myshopify.com",
@@ -146,7 +152,12 @@ export function Main(props, user) {
                 <Route
                   path="recoverpassword"
                   element={
-                    <RecoverPassword agent={agent[0]} Id={agentId} client={client} user={user} />
+                    <RecoverPassword
+                      agent={agent[0]}
+                      Id={agentId}
+                      client={client}
+                      user={user}
+                    />
                   }
                 />
               </Routes>
@@ -155,6 +166,16 @@ export function Main(props, user) {
         </Col>
       </Row>
       <Footer agent={agent[0]} Id={agentId} style={{ marginLeft: "0px" }} />
+
+      <select name="chooseAgent" id="chooseAgent">
+        {async (agents) => {
+          return await agents.map((agen) => (
+            <option value={agen.id}>
+              {agen.firstName} {agen.lastName}
+            </option>
+          ));
+        }}
+      </select>
     </div>
   );
 }

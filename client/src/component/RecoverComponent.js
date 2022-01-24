@@ -1,11 +1,14 @@
 import { supabase } from "../supabaseClient";
 import { useRef } from "react";
+import { useAuth } from "../contexts/Auth"
 
 const RecoverPassword = ({ token, setRecoveryToken }) => {
-    const newPasswordRef = useRef();
+    const newPasswordRef = useAuth();
+    console.log(newPasswordRef)
 
     const handleNewPassword = async () => {
         const newPassword = newPasswordRef.current.value;
+        console.log(newPassword)
         const { error } = await supabase.auth.api.updateUser(token, {
             password: newPassword,
         });

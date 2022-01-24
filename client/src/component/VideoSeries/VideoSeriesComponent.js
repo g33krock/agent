@@ -294,7 +294,7 @@ export class VideoSeries extends Component {
                     borderRight: "4px solid black",
                   }}
                 >
-                  <Image fluid src={ag.profileMPIGrey} />
+                  <Image fluid src={ag.profileMPIGrey ? ag.profileMPIGrey : ag.profilePic} />
                 </Row>
                 <Row
                   style={{

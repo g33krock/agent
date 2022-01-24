@@ -875,7 +875,7 @@ export const Calculator = (props) => {
         <Col sm={12} md={8}>
           <h1
             style={{
-              color: props.agent.textColor,
+              color: "white",
               textShadow: "1px 1px black",
               marginLeft: "auto",
               marginRight: "auto",
@@ -907,7 +907,7 @@ export const Calculator = (props) => {
                           <label
                             className="control-label"
                             style={{
-                              color: props.agent.textColor,
+                              color: "white",
                               textShadow: "1px 1px black",
                               fontWeight: "500",
                             }}
@@ -931,7 +931,7 @@ export const Calculator = (props) => {
                             className="control-label"
                             htmlFor="desired_age"
                             style={{
-                              color: props.agent.textColor,
+                              color: "white",
                               textShadow: "1px 1px black",
                               fontWeight: "500",
                             }}
@@ -954,7 +954,7 @@ export const Calculator = (props) => {
                             className="control-label"
                             htmlFor="desired_retirement"
                             style={{
-                              color: props.agent.textColor,
+                              color: "white",
                               textShadow: "1px 1px black",
                               fontWeight: "500",
                             }}
@@ -980,7 +980,7 @@ export const Calculator = (props) => {
                             className="control-label"
                             htmlFor="LumpSum"
                             style={{
-                              color: props.agent.textColor,
+                              color: "white",
                               textShadow: "1px 1px black",
                               fontWeight: "500",
                             }}
@@ -1004,7 +1004,7 @@ export const Calculator = (props) => {
                             className="control-label"
                             htmlFor="OngoingContributions"
                             style={{
-                              color: props.agent.textColor,
+                              color: "white",
                               textShadow: "1px 1px black",
                               fontWeight: "500",
                             }}
@@ -1128,6 +1128,8 @@ export const Calculator = (props) => {
                                   fontSize: "125%",
                                   paddingTop: "4px",
                                   fontWeight: "700",
+                                  color: "white",
+                                  textShadow: "1px 1px black",
                                 }}
                               >
                                 MPI® PLAN
@@ -1146,7 +1148,7 @@ export const Calculator = (props) => {
                               <h3
                                 style={{
                                   textAlign: "center",
-                                  // color:props.agent.textColor,
+                                  // color:'white',
                                   fontSize: "125%",
                                   fontWeight: "700",
                                   paddingTop: "4px",
@@ -1213,6 +1215,8 @@ export const Calculator = (props) => {
                                     padding: "0px",
                                     border: "none",
                                     backgroundColor: props.agent.secondaryColor,
+                                    color: "white",
+                                    textShadow: "1px 1px black",
                                   }}
                                   type="text"
                                   id="AnnualRetirementIncome"
@@ -1265,9 +1269,9 @@ export const Calculator = (props) => {
                                   fontSize: "125%",
                                   backgroundColor: "rgb(0,0,0,0)",
                                   fontWeight: "900",
-                                  color: props.agent.textColor,
+                                  color: "white",
                                   textShadow: "1px 1px black",
-                                  // color:props.agent.textColor
+                                  // color:'white'
                                 }}
                                 type="text"
                                 id="MPIPercentage"
@@ -1280,7 +1284,7 @@ export const Calculator = (props) => {
                             <Col xs={4} style={{ margin: "auto" }}>
                               <small
                                 style={{
-                                  color: props.agent.textColor,
+                                  color: "white",
                                   textShadow: "1px 1px black",
                                   fontSize: "100%",
                                   margin: "auto",
@@ -1303,9 +1307,9 @@ export const Calculator = (props) => {
                                   fontSize: "125%",
                                   backgroundColor: "rgb(0,0,0,0)",
                                   fontWeight: "900",
-                                  color: props.agent.textColor,
+                                  color: "white",
                                   textShadow: "1px 1px black",
-                                  // color:props.agent.textColor
+                                  // color:'white'
                                 }}
                                 type="text"
                                 id="RothPercentage"
@@ -1319,6 +1323,7 @@ export const Calculator = (props) => {
                           <Row>
                             <Button
                               href="/videoseries"
+                              style={{backgroundColor: props.agent.primaryColor, textShadow: '1px 1px black'}}
                               // onClick={() => switchShowMore()}
                             >
                               See Full Results
@@ -1332,7 +1337,7 @@ export const Calculator = (props) => {
                       style={{
                         marginTop: "10px",
                         fontSize: "12px",
-                        color: props.agent.textColor,
+                        color: "white",
                         textShadow: "1px 1px black",
                         fontWeight: "500",
                       }}

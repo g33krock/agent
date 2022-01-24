@@ -68,7 +68,7 @@ export class AgentCarousel extends Component {
               <Col style={{ margin: "auto" }} sm={4}>
                 <h2
                   style={{
-                    color: ag.textColor,
+                    color: 'white',
                     marginTop: "10%",
                     textShadow: "1px 1px black",
                   }}

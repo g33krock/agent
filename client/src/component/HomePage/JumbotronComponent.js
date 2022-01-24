@@ -20,9 +20,10 @@ export class Jumbotron extends Component {
   }
   render() {
     return (
-      <Container className="homebg">
+      <>
         {this.state.agent &&
           this.state.agent.map((ag) => (
+            <Container className="homebg" style={{backgroundImage: `url("${ag.backdrop}")`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', top: 0, left: 0}}>
             <Row style={{ margin: "0px" }} key={ag.toString()}>
               <Row style={{ marginTop: "5%" }}>
                 <Col
@@ -44,6 +45,7 @@ export class Jumbotron extends Component {
                       marginTop: "1%",
                       marginBottom: "0px",
                       maxWidth: "80vw",
+                      maxHeight: "30vh",
                       marginLeft: "auto",
                       marginRight: "auto",
                     }}
@@ -76,8 +78,9 @@ export class Jumbotron extends Component {
                 </Col>
               </Row>
             </Row>
+            </Container>
           ))}
-      </Container>
+      </>
     );
   }
 }

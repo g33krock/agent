@@ -45,7 +45,7 @@ export class Header2 extends Component {
                   </Col>
                   <Col style={{ color: `${ag.textColor}`, marginTop: "auto", marginBottom: "auto" }}>
                     <NavDropdown
-                      title={<span style={{ color: "white" }}>About</span>}
+                      title={<span style={{ color: `${ag.textColor}` }}>About</span>}
                       style={{ color: `${ag.textColor}` }}
                       id="navbarScrollingDropdown"
                     >

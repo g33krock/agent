@@ -1149,7 +1149,8 @@ export const FullCalc = (props) => {
                           className="col"
                           style={{
                             backgroundColor: props.agent.primaryColor,
-                            color: props.agent.textColor,
+                            color: "white",
+                            textShadow: "1px 1px black",
                           }}
                         >
                           <h3
@@ -1171,6 +1172,10 @@ export const FullCalc = (props) => {
                             marginBottom: "0px",
                             paddingTop: "0px",
                             paddingBottom: "0px",
+                            color: props.agent.textColor
+                              ? props.agent.textColor
+                              : "black",
+                            textShadow: "1px 1px black",
                           }}
                         >
                           <h3
@@ -1179,6 +1184,10 @@ export const FullCalc = (props) => {
                               fontSize: "125%",
                               fontWeight: "700",
                               paddingTop: "4px",
+                              color: props.agent.textColor
+                                ? props.agent.textColor
+                                : "white",
+                              textShadow: "1px 1px black",
                             }}
                           >
                             ROTH IRA/401K
@@ -1243,7 +1252,8 @@ export const FullCalc = (props) => {
                                 margin: "0px",
                                 padding: "0px",
                                 border: "none",
-                                color: props.agent.textColor,
+                                color: "white",
+                                textShadow: "1px 1px black",
                                 backgroundColor: props.agent.primaryColor,
                               }}
                               type="text"
@@ -1269,6 +1279,10 @@ export const FullCalc = (props) => {
                                 padding: "0px",
                                 border: "none",
                                 backgroundColor: props.agent.secondaryColor,
+                                color: props.agent.textColor
+                                  ? props.agent.textColor
+                                  : "white",
+                                textShadow: "1px 1px black",
                               }}
                               type="text"
                               id="RothMonthly"
@@ -1356,7 +1370,8 @@ export const FullCalc = (props) => {
                                 margin: "0px",
                                 padding: "0px",
                                 border: "none",
-                                color: props.agent.textColor,
+                                color: "white",
+                                textShadow: "1px 1px black",
                                 backgroundColor: props.agent.primaryColor,
                               }}
                               type="text"
@@ -1384,6 +1399,10 @@ export const FullCalc = (props) => {
                                 padding: "0px",
                                 border: "none",
                                 backgroundColor: props.agent.secondaryColor,
+                                color: props.agent.textColor
+                                  ? props.agent.textColor
+                                  : "white",
+                                textShadow: "1px 1px black",
                               }}
                               type="text"
                               id="RothTotal"
@@ -1482,7 +1501,7 @@ export const FullCalc = (props) => {
                         >
                           <Col md={1} />
                           <Col md={10}>
-                            <Button style={{ width: "100%" }}>
+                            <Button style={{ width: "100%", backgroundColor: props.agent.primaryColor, color: 'white', textShadow: '1px 1px black' }}>
                               Email My MPI® Plan
                             </Button>
                           </Col>
@@ -1517,7 +1536,7 @@ export const FullCalc = (props) => {
                           <Col md={1} />
                           <Col md={10}>
                             <Button
-                              style={{ width: "100%" }}
+                              style={{ width: "100%", backgroundColor: props.agent.primaryColor, color: 'white', textShadow: '1px 1px black' }}
                               onClick={() => switchShowMore()}
                             >
                               Additional Financial Information <BsChevronDown />

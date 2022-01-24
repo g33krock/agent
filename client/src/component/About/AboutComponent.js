@@ -59,14 +59,15 @@ export class About extends Component {
               }}
             >
               <Row>
-                <h1 style={{ marginTop: "2%", color: ag.textColor }}>
+                <h1 style={{ marginTop: "2%", color: ag.textColor ? ag.textColor : 'white' }}>
                   OUR MISSION
                 </h1>
               </Row>
               <Row>
                 <p
                   style={{
-                    color: ag.textColor,
+                    color: ag.textColor ? ag.textColor : 'white',
+                    textShadow: '1px 1px black',
                     marginLeft: "auto",
                     marginRight: "auto",
                     width: "75%",

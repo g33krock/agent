@@ -9,6 +9,7 @@ export function Login() {
 
   // Get signUp function from the auth context
   const { signIn } = useAuth()
+  console.log(useAuth())
 
   const history = useNavigate()
   console.log(useNavigate())
