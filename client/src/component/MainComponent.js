@@ -22,7 +22,7 @@ import { Signup } from "./Signup";
 import { AuthProvider } from "../contexts/Auth";
 import RecoverPassword from "./RecoverComponent";
 
-export function Main(props) {
+export function Main(props, user) {
   const agentId = 12;
   const agentObject = { agentID: agentId };
   const [agent] = useState(() => {
