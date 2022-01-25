@@ -23,8 +23,8 @@ import { AuthProvider } from "../contexts/Auth";
 import RecoverPassword from "./RecoverComponent";
 
 export function Main(props, user) {
-  const agentId = Math.floor(Math.random() * 34);
-  // const agentId = 31;
+  // const agentId = Math.floor(Math.random() * 34);
+  const agentId = 2;
   const agentObject = { agentID: agentId };
   const [agents] = useState(() => {
     const allAgents = agentService.all();
@@ -34,15 +34,14 @@ export function Main(props, user) {
     const initialAgent = agentService.one(agentObject);
     return initialAgent;
   });
-  const access_token = new URLSearchParams(window.location.hash).get(
-    "access_token"
-  );
-  console.log(access_token);
 
-  var hash = window.location.hash.substr(1);
-  console.log(hash)
+  const params = new URLSearchParams(window.location.search);
 
-  const [recoveryToken, setRecoveryToken] = useState(access_token);
+const accessToken = params.get("access_token");
+
+console.log(accessToken); // "sai"
+
+  const [recoveryToken, setRecoveryToken] = useState(accessToken);
   const paidVideo = props.vids;
   const paidDeposit = props.deposit;
   console.log(paidVideo);
