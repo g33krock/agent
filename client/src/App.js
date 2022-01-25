@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useAuth } from './Auth';
 import { Main } from './component/MainComponent';
 import { useState } from 'react';
-import RecoverPassword from "./RecoverComponent";
+import RecoverPassword from "./cmoponent/RecoverComponent";
 
 function App() {
   const user = useAuth();
