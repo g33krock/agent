@@ -34,10 +34,9 @@ export function Main(props, user) {
     const initialAgent = agentService.one(agentObject);
     return initialAgent;
   });
-  var url_string = window.location;
-var url = new URL(url_string);
-var name = url.searchParams.get("name");
-var tvid = url.searchParams.get("token");
+  var url = window.location;
+  var access_token = new URLSearchParams(url.search).get('access_token');
+
   const [recoveryToken, setRecoveryToken] = useState(null);
   const paidVideo = props.vids;
   const paidDeposit = props.deposit;
@@ -51,7 +50,7 @@ var tvid = url.searchParams.get("token");
   });
   return recoveryToken ? (
     <RecoverPassword
-      token={tvid}
+      token={access_token}
       setRecoveryToken={setRecoveryToken}
       user={user}
     />
