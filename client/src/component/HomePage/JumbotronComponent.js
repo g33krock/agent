@@ -38,7 +38,7 @@ export class Jumbotron extends Component {
 
                   <img
                     fluid
-                    src={ag.icon}
+                    src={ag.logo}
                     alt={ag.agency}
                     // width="80%"
                     style={{
