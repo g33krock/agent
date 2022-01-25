@@ -35,7 +35,7 @@ export function Main(props, user) {
     return initialAgent;
   });
 
-  const params = new URLSearchParams(window.location.search);
+  const params = new URLSearchParams(window.location.hash);
 
 const accessToken = params.get("access_token");
 
