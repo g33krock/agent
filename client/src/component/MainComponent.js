@@ -34,8 +34,14 @@ export function Main(props, user) {
     const initialAgent = agentService.one(agentObject);
     return initialAgent;
   });
-  const access_token = new URLSearchParams(window.location.hash).get('token');
+  const access_token = new URLSearchParams(window.location.hash).get('access_token');
   console.log(access_token)
+
+  if(window.location.hash) {
+    console.log('the hash is real')
+  } else {
+    console.log('the hash is a lie')
+  }
 
   const [recoveryToken, setRecoveryToken] = useState(access_token);
   const paidVideo = props.vids;
