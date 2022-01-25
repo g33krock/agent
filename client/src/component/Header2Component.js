@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import { agentService } from "../services/AgentService";
 import { Col, Image, Navbar, Row } from "react-bootstrap";
-
 
 export class Header2 extends Component {
   constructor(props) {
@@ -11,6 +9,8 @@ export class Header2 extends Component {
     this.state = {
       agent: null,
       email: "",
+      aboutDisplay: "none",
+      contactDisplay: "none",
     };
   }
 
@@ -21,81 +21,117 @@ export class Header2 extends Component {
     this.setState({ agent });
   }
 
+  toggleAboutDisplay() {
+    if (this.state.aboutDisplay === "none") {
+      this.setState({ aboutDisplay: "block" });
+    } else {
+      this.setState({ aboutDisplay: "none" });
+    }
+  }
+
+  toggleContactDisplay() {
+    if (this.state.contactDisplay === "none") {
+      this.setState({ contactDisplay: "block" });
+    } else {
+      this.setState({ contactDisplay: "none" });
+    }
+  }
+
   render() {
     return (
-      <div
-        className="sticky header"
-        style={{ marginRight: "0px", marginBottom: "-52px" }}
-      >
+      <>
         {this.state.agent &&
           this.state.agent.map((ag) => (
-            <Row key={ag.toString()}>
-              <Navbar
-                bg="dark"
-                expand="lg"
-                variant="dark"
-                style={{ paddingBottom: "0px", paddingTop: "0px" }}
-              >
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse>
-                  <Col>
-                    <Nav.Link style={{ color: `${ag.textColor}` }} href="/">
-                      <Image src={ag.icon} id="icons" />{" "}
-                    </Nav.Link>
-                  </Col>
-                  <Col style={{ color: `${ag.textColor}`, marginTop: "auto", marginBottom: "auto" }}>
-                    <NavDropdown
-                      title={<span style={{ color: `${ag.textColor}` }}>About</span>}
-                      style={{ color: `${ag.textColor}` }}
-                      id="navbarScrollingDropdown"
-                    >
-                      <NavDropdown.Item href="/about">
-                        {ag.agency}
-                      </NavDropdown.Item>
-                      <NavDropdown.Item href="/curtisray">
-                        Curtis Ray
-                      </NavDropdown.Item>
-                    </NavDropdown>
-                  </Col>
-                  <Col>
-                    <Nav.Link
+            <div
+              className="sticky header"
+              style={{ marginRight: "0px", marginBottom: "-52px" }}
+            >
+              <Row key={ag.toString()}>
+                <Navbar
+                  bg="dark"
+                  expand="lg"
+                  variant="dark"
+                  style={{ paddingBottom: "0px", paddingTop: "0px" }}
+                >
+                  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                  <Navbar.Collapse>
+                    <Col>
+                      <Nav.Link style={{ color: `${ag.textColor}` }} href="/">
+                        <Image src={ag.icon} id="icons" />{" "}
+                      </Nav.Link>
+                    </Col>
+                    <Col
                       style={{
                         color: `${ag.textColor}`,
-                        textShadow: "1px 1px black",
-                        marginTop: "auto", marginBottom: "auto"
+                        marginTop: "auto",
+                        marginBottom: "auto",
                       }}
-                      href="/videoseries"
                     >
-                      Video Series
-                    </Nav.Link>
-                  </Col>
-                  <Col>
-                    <Nav.Link
-                      style={{
-                        color: `${ag.textColor}`,
-                        textShadow: "1px 1px black",
-                        marginTop: "auto", marginBottom: "auto"
-                      }}
-                      href="https://mympi.com/financial-education/financial-news"
-                    >
-                      Financial News
-                    </Nav.Link>
-                  </Col>
-                  <Col>
-                    <Nav.Link
-                      style={{
-                        color: `${ag.textColor}`,
-                        textShadow: "1px 1px black",
-                        marginTop: "auto", marginBottom: "auto"
-                      }}
-                      href="/faq"
-                    >
-                      FAQs
-                    </Nav.Link>
-                  </Col>
-                  <Col>
-                    <Row>
                       <Nav.Link
+                        onClick={() => this.toggleAboutDisplay()}
+                        style={{
+                          color: `${ag.textColor}`,
+                          textShadow: "1px 1px black",
+                          marginTop: "auto",
+                          marginBottom: "auto",
+                        }}
+                      >
+                        About
+                      </Nav.Link>
+                    </Col>
+                    <Col>
+                      <Nav.Link
+                        style={{
+                          color: `${ag.textColor}`,
+                          textShadow: "1px 1px black",
+                          marginTop: "auto",
+                          marginBottom: "auto",
+                        }}
+                        href="/videoseries"
+                      >
+                        Video Series
+                      </Nav.Link>
+                    </Col>
+                    <Col>
+                      <Nav.Link
+                        style={{
+                          color: `${ag.textColor}`,
+                          textShadow: "1px 1px black",
+                          marginTop: "auto",
+                          marginBottom: "auto",
+                        }}
+                        href="https://mympi.com/financial-education/financial-news"
+                      >
+                        Financial News
+                      </Nav.Link>
+                    </Col>
+                    <Col>
+                      <Nav.Link
+                        style={{
+                          color: `${ag.textColor}`,
+                          textShadow: "1px 1px black",
+                          marginTop: "auto",
+                          marginBottom: "auto",
+                        }}
+                        href="/faq"
+                      >
+                        FAQs
+                      </Nav.Link>
+                    </Col>
+                    <Col>
+                      <Row>
+                        <Nav.Link
+                          onClick={() => this.toggleContactDisplay()}
+                          style={{
+                            color: `${ag.textColor}`,
+                            textShadow: "1px 1px black",
+                            marginTop: "auto",
+                            marginBottom: "auto",
+                          }}
+                        >
+                          Contact Us
+                        </Nav.Link>
+                        {/* <Nav.Link
                         style={{
                           color: `${ag.textColor}`,
                           textShadow: "1px 1px black",
@@ -105,103 +141,210 @@ export class Header2 extends Component {
                         href="/contactus"
                       >
                         Contact Us
+                      </Nav.Link> */}
+                      </Row>
+                      <Row>
+                        <Col />
+                        {ag.facebook && (
+                          <Col style={{ padding: "0px" }}>
+                            <a
+                              href={ag.facebook}
+                              style={{
+                                paddingTop: "5px",
+                                marginLeft: "auto",
+                                marginRight: "auto",
+                              }}
+                              className="socialMediaIcon"
+                            >
+                              <Image
+                                width="20px"
+                                src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Facebook.ico"
+                              />
+                            </a>
+                          </Col>
+                        )}
+                        {ag.twitter && (
+                          <Col style={{ padding: "0px" }}>
+                            <a
+                              href={ag.twitter}
+                              style={{
+                                paddingTop: "5px",
+                                marginLeft: "auto",
+                                marginRight: "auto",
+                              }}
+                              className="socialMediaIcon"
+                            >
+                              <Image
+                                width="25px"
+                                src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Twitter.ico"
+                              />
+                            </a>
+                          </Col>
+                        )}
+                        {ag.instagram && (
+                          <Col style={{ padding: "0px" }}>
+                            <a
+                              href={ag.instagram}
+                              style={{
+                                paddingTop: "5px",
+                                marginLeft: "auto",
+                                marginRight: "auto",
+                              }}
+                              className="socialMediaIcon"
+                            >
+                              <Image
+                                width="20px"
+                                src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Instagram.ico"
+                              />
+                            </a>
+                          </Col>
+                        )}
+                        {ag.tiktok && (
+                          <Col
+                            style={{
+                              padding: "0px",
+                              marginLeft: "auto",
+                              marginRight: "auto",
+                            }}
+                          >
+                            <a
+                              href={ag.tiktok}
+                              style={{ paddingTop: "5px" }}
+                              className="socialMediaIcon"
+                            >
+                              <Image
+                                width="18px"
+                                src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/TikTok.ico"
+                              />
+                            </a>
+                          </Col>
+                        )}
+                        {ag.youtube && (
+                          <Col
+                            style={{
+                              padding: "0px",
+                              marginLeft: "auto",
+                              marginRight: "auto",
+                            }}
+                          >
+                            <a
+                              href={ag.youtube}
+                              style={{ paddingTop: "5px" }}
+                              className="socialMediaIcon"
+                            >
+                              <Image
+                                width="20px"
+                                src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/YouTube.ico"
+                              />
+                            </a>
+                          </Col>
+                        )}
+                        {ag.pinterest && (
+                          <Col
+                            style={{
+                              padding: "0px",
+                              marginLeft: "auto",
+                              marginRight: "auto",
+                            }}
+                          >
+                            <a
+                              href={ag.pinterest}
+                              style={{ paddingTop: "5px" }}
+                              className="socialMediaIcon"
+                            >
+                              <Image
+                                width="20px"
+                                src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Pinterest.ico"
+                              />
+                            </a>
+                          </Col>
+                        )}
+                        <Col></Col>
+                      </Row>
+                    </Col>
+                    <Col>
+                      <Nav.Link style={{ color: `${ag.textColor}` }} href="/">
+                        <Image
+                          src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/MPIBadgeTransparentWHI.png"
+                          fluid
+                          style={{
+                            backgroundColor: `${ag.primaryColor}`,
+                            borderRadius: "50%",
+                          }}
+                          id="icons"
+                        />{" "}
                       </Nav.Link>
-                    </Row>
+                    </Col>
+                  </Navbar.Collapse>
+                </Navbar>
+              </Row>
+              <Row
+                style={{
+                  display: this.state.aboutDisplay,
+                  backgroundColor: "white",
+                }}
+              >
+                <Navbar>
+                  <Col xs={2} />
+                  <Col xs={4}>
                     <Row>
-                      <Col />
-                      {ag.facebook && (
-                        <Col style={{ padding: "0px" }}>
-                          <a href={ag.facebook} style={{ paddingTop: "5px", marginLeft: "auto", marginRight: "auto" }} className="socialMediaIcon">
-                            <Image
-                              width="20px"
-                              src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Facebook.ico"
-                            />
-                          </a>
-                        </Col>
-                      )}
-                      {ag.twitter && (
-                        <Col style={{ padding: "0px" }}>
-                          <a href={ag.twitter} style={{ paddingTop: "5px", marginLeft: "auto", marginRight: "auto" }} className="socialMediaIcon">
-                            <Image
-                              width="25px"
-                              src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Twitter.ico"
-                            />
-                          </a>
-                        </Col>
-                      )}
-                      {ag.instagram && (
-                        <Col style={{ padding: "0px" }}>
-                          <a href={ag.instagram} style={{ paddingTop: "5px", marginLeft: "auto", marginRight: "auto" }} className="socialMediaIcon">
-                            <Image
-                              width="20px"
-                              src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Instagram.ico"
-                            />
-                          </a>
-                        </Col>
-                      )}
-                      {ag.tiktok && (
-                        <Col style={{ padding: "0px", marginLeft: "auto", marginRight: "auto" }}>
-                          <a
-                            href={ag.tiktok}
-                            style={{ paddingTop: "5px" }}
-                            className="socialMediaIcon"
-                          >
-                            <Image
-                              width="18px"
-                              src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/TikTok.ico"
-                            />
-                          </a>
-                        </Col>
-                      )}
-                      {ag.youtube && (
-                        <Col style={{ padding: "0px", marginLeft: "auto", marginRight: "auto" }}>
-                          <a
-                            href={ag.youtube}
-                            style={{ paddingTop: "5px" }}
-                            className="socialMediaIcon"
-                          >
-                            <Image
-                              width="20px"
-                              src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/YouTube.ico"
-                            />
-                          </a>
-                        </Col>
-                      )}
-                      {ag.pinterest && (
-                        <Col style={{ padding: "0px", marginLeft: "auto", marginRight: "auto" }}>
-                          <a
-                            href={ag.pinterest}
-                            style={{ paddingTop: "5px" }}
-                            className="socialMediaIcon"
-                          >
-                            <Image
-                              width="20px"
-                              src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Pinterest.ico"
-                            />
-                          </a>
-                        </Col>
-                      )}
-                      <Col></Col>
+                      <Col xs={3} style={{ textAlign: "right" }}>
+                        <Image src={ag.icon} id="icons" />{" "}
+                      </Col>
+                      <Col xs={9}>
+                        <Nav.Link href="/about" style={{ textAlign: "left" }}>
+                          <h3>{ag.agency}</h3>
+                        </Nav.Link>
+                      </Col>
                     </Row>
                   </Col>
-                  <Col>
-                    <Nav.Link style={{ color: `${ag.textColor}` }} href="/">
-                      <Image
-                        src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/MPIBadgeTransparentWHI.png"
-                        fluid
-                        style={{
-                          backgroundColor: `${ag.primaryColor}`,
-                          borderRadius: "50%",
-                        }}
-                        id="icons"
-                      />{" "}
-                    </Nav.Link>
+
+                  <Col xs={4}>
+                    <Row>
+                      <Col xs={3} style={{ textAlign: "right" }}>
+                        <Image
+                          src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/MPIBadgeTransparentWHI.png"
+                          fluid
+                          style={{
+                            backgroundColor: `${ag.primaryColor}`,
+                            borderRadius: "50%",
+                          }}
+                          id="icons"
+                        />{" "}
+                      </Col>
+                      <Col xs={9}>
+                        <Nav.Link
+                          href="/curtisray"
+                          style={{ textAlign: "left" }}
+                        >
+                          <h3>Curtis Ray</h3>
+                        </Nav.Link>
+                      </Col>
+                    </Row>
                   </Col>
-                </Navbar.Collapse>
-              </Navbar>
-            </Row>
+                  <Col xs={2} />
+                </Navbar>
+              </Row>
+              <Row
+                style={{
+                  display: this.state.contactDisplay,
+                  backgroundColor: "white",
+                }}
+              >
+                <Nav.Link
+                  style={{
+                    textShadow: "1px 1px black",
+                    marginTop: "auto",
+                    marginBottom: "auto",
+                  }}
+                  href="/contactus"
+                >
+                  Contact Us
+                </Nav.Link>
+              </Row>
+            </div>
           ))}
-      </div>
+      </>
     );
   }
 }
