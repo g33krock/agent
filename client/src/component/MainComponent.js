@@ -34,10 +34,10 @@ export function Main(props, user) {
     const initialAgent = agentService.one(agentObject);
     return initialAgent;
   });
-  var access_token = new URLSearchParams(window.location.hash).get('access_token');
+  const access_token = new URLSearchParams(window.location.hash).get('token');
   console.log(access_token)
 
-  const [recoveryToken, setRecoveryToken] = useState(null);
+  const [recoveryToken, setRecoveryToken] = useState(access_token);
   const paidVideo = props.vids;
   const paidDeposit = props.deposit;
   console.log(paidVideo);
@@ -48,9 +48,9 @@ export function Main(props, user) {
     domain: "mpiunlimited.myshopify.com",
     storefrontAccessToken: "9ce898b59cd04f20cd3e147fbfa95af2",
   });
-  return access_token ? (
+  return recoveryToken ? (
     <RecoverPassword
-      token={access_token}
+      token={recoveryToken}
       setRecoveryToken={setRecoveryToken}
       user={user}
     />
