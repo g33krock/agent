@@ -34,8 +34,7 @@ export function Main(props, user) {
     const initialAgent = agentService.one(agentObject);
     return initialAgent;
   });
-  var url = window.location;
-  var access_token = new URLSearchParams(url.search).get('access_token');
+  var access_token = new URLSearchParams(window.location.hash).get('access_token');
   console.log(access_token)
 
   const [recoveryToken, setRecoveryToken] = useState(null);
