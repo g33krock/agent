@@ -18,7 +18,7 @@ function App() {
   console.log(user)
   return recoveryToken ? (
     <RecoverPassword
-      token={recoveryToken}
+      token={accessToken}
       setRecoveryToken={setRecoveryToken}
       user={user}
     />
