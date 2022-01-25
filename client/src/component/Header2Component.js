@@ -131,17 +131,6 @@ export class Header2 extends Component {
                         >
                           Contact Us
                         </Nav.Link>
-                        {/* <Nav.Link
-                        style={{
-                          color: `${ag.textColor}`,
-                          textShadow: "1px 1px black",
-                          marginTop: "auto", marginBottom: "auto"
-                        }}
-                        // onClick={() => window.open(`mailto:${ag.email}`)}
-                        href="/contactus"
-                      >
-                        Contact Us
-                      </Nav.Link> */}
                       </Row>
                       <Row>
                         <Col />
