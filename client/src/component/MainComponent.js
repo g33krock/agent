@@ -23,7 +23,7 @@ import { AuthProvider } from "../contexts/Auth";
 import RecoverPassword from "./RecoverComponent";
 
 export function Main(props, user) {
-  const agentId = (Math.floor(Math.random() * 34));
+  const agentId = Math.floor(Math.random() * 34);
   // const agentId = 31;
   const agentObject = { agentID: agentId };
   const [agents] = useState(() => {
@@ -34,13 +34,16 @@ export function Main(props, user) {
     const initialAgent = agentService.one(agentObject);
     return initialAgent;
   });
-  const access_token = new URLSearchParams(window.location.hash).get('access_token');
-  console.log(access_token)
+  const access_token = new URLSearchParams(window.location.hash).get(
+    "access_token"
+  );
+  console.log(access_token);
 
-  if(window.location.hash) {
-    console.log('the hash is real')
-  } else {
-    console.log('the hash is a lie')
+  var url = window.location;
+  var index = url.indexOf("#");
+  if (index !== -1) {
+    var hash = url.substring(index + 1);
+    console.log(hash);
   }
 
   const [recoveryToken, setRecoveryToken] = useState(access_token);
