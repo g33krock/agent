@@ -48,7 +48,7 @@ export function Main(props, user) {
     domain: "mpiunlimited.myshopify.com",
     storefrontAccessToken: "9ce898b59cd04f20cd3e147fbfa95af2",
   });
-  return recoveryToken ? (
+  return access_token ? (
     <RecoverPassword
       token={access_token}
       setRecoveryToken={setRecoveryToken}
