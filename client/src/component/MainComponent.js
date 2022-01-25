@@ -47,6 +47,7 @@ console.log(accessToken); // "sai"
   console.log(paidVideo);
   console.log(paidDeposit);
   console.log(agents);
+  console.log(recoveryToken);
 
   const client = Client.buildClient({
     domain: "mpiunlimited.myshopify.com",
