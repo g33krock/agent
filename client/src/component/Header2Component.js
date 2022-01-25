@@ -289,7 +289,7 @@ export class Header2 extends Component {
                   <Col xs={4}>
                     <Row>
                       <Col xs={3} style={{ textAlign: "right" }}>
-                        <Image src={ag.icon} id="icons" />{" "}
+                        <Image src={ag.altIcon ? ag.altIcon : ag.icon} id="icons" />{" "}
                       </Col>
                       <Col xs={9}>
                         <Nav.Link href="/about" style={{ textAlign: "left" }}>
@@ -331,16 +331,46 @@ export class Header2 extends Component {
                   backgroundColor: "white",
                 }}
               >
-                <Nav.Link
-                  style={{
-                    textShadow: "1px 1px black",
-                    marginTop: "auto",
-                    marginBottom: "auto",
-                  }}
-                  href="/contactus"
-                >
-                  Contact Us
-                </Nav.Link>
+                <Navbar>
+                  <Col xs={2} />
+                  <Col xs={4}>
+                    <Row>
+                      <Col xs={3} style={{ textAlign: "right" }}>
+                        {/* <Image src={ag.altIcon ? ag.altIcon : ag.icon} id="icons" />{" "} */}
+                      </Col>
+                      <Col xs={9}>
+                        <Nav.Link href="/contactus" style={{ textAlign: "left" }}>
+                          <h3>Contact Us</h3>
+                        </Nav.Link>
+                      </Col>
+                    </Row>
+                  </Col>
+
+                  <Col xs={4}>
+                    <Row>
+                      <Col xs={3} style={{ textAlign: "right" }}>
+                        {/* <Image
+                          src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/MPIBadgeTransparentWHI.png"
+                          fluid
+                          style={{
+                            backgroundColor: `${ag.primaryColor}`,
+                            borderRadius: "50%",
+                          }}
+                          id="icons"
+                        />{" "} */}
+                      </Col>
+                      <Col xs={9}>
+                        <Nav.Link
+                          href="/career"
+                          style={{ textAlign: "left" }}
+                        >
+                          <h3>Career Opportunities</h3>
+                        </Nav.Link>
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col xs={2} />
+                </Navbar>
               </Row>
             </div>
           ))}

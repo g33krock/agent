@@ -27,6 +27,7 @@ export class BottomCalendar extends Component {
             boxShadow: "2px 2px rgba(0, 0, 0, 0.5)",
             color: `white`,
             marginBottom: "5px",
+            textShadow: "1px 1px black"
           }}
           onClick={() => this.setState({ modal: true })}
         >
@@ -40,7 +41,7 @@ export class BottomCalendar extends Component {
             <InlineWidget url={this.state.agent.calendly} />
           </ModalBody>
           <Button
-            style={{ backgroundColor: this.state.agent.secondaryColor }}
+            style={{ backgroundColor: this.state.agent.secondaryColor, textShadow: "1px 1px black" }}
             onClick={() => this.setState({ modal: false })}
           >
             Close

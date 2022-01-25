@@ -21,6 +21,7 @@ import { Login } from "./Login";
 import { Signup } from "./Signup";
 import { AuthProvider } from "../contexts/Auth";
 import RecoverPassword from "./RecoverComponent";
+import Resume from "./ResumeComponent";
 
 export function Main(props, user) {
   // const agentId = Math.floor(Math.random() * 34);
@@ -117,6 +118,10 @@ console.log(accessToken); // "sai"
                 <Route
                   path="contactus"
                   element={<ContactUs agent={agent[0]} Id={agentId} />}
+                />
+                <Route
+                  path="career"
+                  element={<Resume agent={agent[0]} Id={agentId} />}
                 />
                 <Route
                   path="curtisray"

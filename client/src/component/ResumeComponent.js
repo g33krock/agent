@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { supabase } from '../../supabaseClient'
+import { supabase } from '../supabaseClient'
 
 export default function Resume({ url, onUpload, agency }) {
   const [resumeUrl, setResumeUrl] = useState(null)

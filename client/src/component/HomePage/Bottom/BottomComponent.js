@@ -24,7 +24,7 @@ export class Bottom extends Component {
         
           <Row
             className="justify-content-md-center"
-            style={{ marginBottom: "5%", marginTop: "5%" }}
+            style={{ marginBottom: "5%", marginTop: "5%", backgroundColor: 'black', paddingTop: '1%', paddingBottom: '1%' }}
           >
             <Col />
             <Col sm={3}>
@@ -37,6 +37,7 @@ export class Bottom extends Component {
                   boxShadow: "2px 2px rgba(0, 0, 0, 0.5)",
                   color: `white`,
                   marginBottom: "5px",
+                  textShadow: "1px 1px black"
                 }}
                 href="/webinarregistration"
               >
@@ -56,6 +57,7 @@ export class Bottom extends Component {
                   border: "none",
                   boxShadow: "2px 2px rgba(0, 0, 0, 0.5)",
                   marginBottom: "5px",
+                  textShadow: "1px 1px black"
                 }}
                 href="/videoseries"
               >
@@ -76,7 +78,7 @@ export class Bottom extends Component {
               <>
                 <Row style={{ paddingBottom: "5%" }}>
                   <Image
-                    src={ag.icon}
+                    src={ag.altIcon ? ag.altIcon : ag.icon}
                     style={{
                       maxHeight: "100px",
                       width: "auto",

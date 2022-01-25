@@ -1102,6 +1102,7 @@ export const Calculator = (props) => {
                                 color: "white",
                                 borderRadius: "5px 5px 0px 0px",
                                 fontWeight: "700",
+                                textShadow: "1px 1px black"
                               }}
                             >
                               Side by Side Comparison
@@ -1191,6 +1192,7 @@ export const Calculator = (props) => {
                                   alignContent: "center",
                                   color: "white",
                                   fontWeight: "500",
+                                  textShadow: "1px 1px black"
                                 }}
                               >
                                 ESTIMATED ANNUAL TAX-FREE RETIREMENT INCOME
