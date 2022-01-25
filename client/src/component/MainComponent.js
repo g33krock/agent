@@ -36,6 +36,7 @@ export function Main(props, user) {
   });
   var url = window.location;
   var access_token = new URLSearchParams(url.search).get('access_token');
+  console.log(access_token)
 
   const [recoveryToken, setRecoveryToken] = useState(null);
   const paidVideo = props.vids;
