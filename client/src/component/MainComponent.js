@@ -39,12 +39,8 @@ export function Main(props, user) {
   );
   console.log(access_token);
 
-  var url = window.location;
-  var index = url.indexOf("#");
-  if (index !== -1) {
-    var hash = url.substring(index + 1);
-    console.log(hash);
-  }
+  var hash = window.location.hash.substr(1);
+  console.log(hash)
 
   const [recoveryToken, setRecoveryToken] = useState(access_token);
   const paidVideo = props.vids;
