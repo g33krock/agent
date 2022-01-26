@@ -688,7 +688,7 @@ export const Calculator = (props) => {
     var lump_annual_income = checkNaN(
       lump_amount * lumpRatios.income[age][years_to_contribute]
     );
-    var total_annual_income = annual_income + lump_annual_income;
+    var total_annual_income = Math.round(annual_income + lump_annual_income);
 
     // Intial Death Benefit
     var initial_db =

@@ -105,6 +105,8 @@ export class Bottom extends Component {
                       <br />
                       {ag.city}, {ag.state}, {ag.zip}
                       <br />
+                      {ag.email}
+                      <br />
                       {ag.phone}
                     </p>
                   </Col>

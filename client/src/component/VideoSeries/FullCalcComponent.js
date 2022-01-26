@@ -682,7 +682,7 @@ export const FullCalc = (props) => {
     var lump_cash_value = checkNaN(
       lump_amount * lumpRatios.cash_value[age][years_to_contribute]
     );
-    var total_cash_value = cash_value + lump_cash_value;
+    var total_cash_value = Math.round(cash_value + lump_cash_value);
 
     // Annual income
     var annual_income = checkNaN(
@@ -691,7 +691,7 @@ export const FullCalc = (props) => {
     var lump_annual_income = checkNaN(
       lump_amount * lumpRatios.income[age][years_to_contribute]
     );
-    var total_annual_income = annual_income + lump_annual_income;
+    var total_annual_income = Math.round(annual_income + lump_annual_income);
 
     // Intial Death Benefit
     var initial_db =
@@ -707,9 +707,9 @@ export const FullCalc = (props) => {
     var third_year_contrib = checkNaN(amount);
 
     // Esimated Spendable Retirement Income (11/21/2020)
-    var total_spendable = checkNaN(
+    var total_spendable = Math.round(checkNaN(
       (annual_income + lump_annual_income) * (90 - retirement_age)
-    );
+    ));
 
     // Total MPI Account Value (12/18/2020)
     var total_mpi_acct_val = checkNaN(total_cash_value + total_leverage);
