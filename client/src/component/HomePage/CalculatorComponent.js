@@ -1099,7 +1099,7 @@ export const Calculator = (props) => {
                                 width: "cover",
                                 marginBottom: "0px",
                                 paddingBottom: "0px",
-                                color: "white",
+                                color: props.agent.textColor ? props.agent.textColor : "black",
                                 borderRadius: "5px 5px 0px 0px",
                                 fontWeight: "700",
                                 textShadow: "1px 1px black"
@@ -1190,7 +1190,7 @@ export const Calculator = (props) => {
                                   marginTop: "0px",
                                   marginRight: "0px",
                                   alignContent: "center",
-                                  color: "white",
+                                  color: props.agent.textColor ? props.agent.textColor : "black",
                                   fontWeight: "500",
                                   textShadow: "1px 1px black"
                                 }}
@@ -1325,7 +1325,7 @@ export const Calculator = (props) => {
                           <Row>
                             <Button
                               href="/videoseries"
-                              style={{backgroundColor: props.agent.primaryColor, textShadow: '1px 1px black'}}
+                              style={{backgroundColor: props.agent.primaryColor, textShadow: '1px 1px black', color: props.agent.textColor ? props.agent.textColor : "black",}}
                               // onClick={() => switchShowMore()}
                             >
                               See Full Results

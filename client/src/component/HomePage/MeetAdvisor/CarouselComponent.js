@@ -68,7 +68,7 @@ export class AgentCarousel extends Component {
               <Col style={{ margin: "auto" }} sm={4}>
                 <h2
                   style={{
-                    color: 'white',
+                    color: this.props.agent.textColor ? this.props.agent.textColor : "black",
                     marginTop: "10%",
                     textShadow: "1px 1px black",
                   }}

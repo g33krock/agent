@@ -18,6 +18,16 @@ export class Jumbotron extends Component {
     console.log(agent);
     console.log(ID);
   }
+
+  // async componentDidUpdate() {
+  //   const ID = this.props.Id;
+  //   const agentObject = { agentID: ID };
+  //   const agent = await agentService.one(agentObject);
+  //   this.setState({ agent });
+  //   console.log(agent);
+  //   console.log(ID);
+  // }
+
   render() {
     return (
       <>

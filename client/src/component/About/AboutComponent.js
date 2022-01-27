@@ -54,19 +54,18 @@ export class About extends Component {
             <Row
               key={ag.toString()}
               style={{
-                backgroundImage: `-webkit-linear-gradient(45deg, ${ag.primaryColor} 40%, #000000 40%)`,
                 minHeight: "80vh",
               }}
             >
               <Row>
-                <h1 style={{ marginTop: "2%", color: ag.textColor ? ag.textColor : 'white' }}>
+                <h1 style={{ marginTop: "2%", color: ag.textColor ? ag.textColor : "black", }}>
                   OUR MISSION
                 </h1>
               </Row>
               <Row>
                 <p
                   style={{
-                    color: ag.textColor ? ag.textColor : 'white',
+                    color: ag.textColor ? ag.textColor : "black",
                     textShadow: '1px 1px black',
                     marginLeft: "auto",
                     marginRight: "auto",
@@ -76,6 +75,7 @@ export class About extends Component {
                   {ag.bio}
                 </p>
               </Row>
+              <Row style={{backgroundImage: `-webkit-linear-gradient(45deg, ${ag.primaryColor} 40%, #000000 40%)`}}>
               <Container
                 fluid
                 style={{
@@ -264,6 +264,7 @@ export class About extends Component {
                   </Col>
                 </Row>
               </Container>
+              </Row>
             </Row>
           ))}
       </div>

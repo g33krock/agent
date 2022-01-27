@@ -20,8 +20,8 @@ export class BottomCalendar extends Component {
       <div>
         <Button
           style={{
-            backgroundColor: `${this.props.agent.primaryColor}`,
-            // backgroundColor: `black`,
+            // backgroundColor: `${this.props.agent.primaryColor}`,
+            backgroundColor: `black`,
             width: "100%",
             border: "none",
             boxShadow: "2px 2px rgba(0, 0, 0, 0.5)",

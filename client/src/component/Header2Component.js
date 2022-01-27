@@ -7,7 +7,8 @@ export class Header2 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      agent: null,
+      agents: [],
+      agent: [],
       email: "",
       aboutDisplay: "none",
       contactDisplay: "none",
@@ -15,18 +16,21 @@ export class Header2 extends Component {
   }
 
   async componentDidMount() {
+    console.log(this.props.agent)
     const ID = this.props.Id;
     const agentObject = { agentID: ID };
     const agent = await agentService.one(agentObject);
-    this.setState({ agent });
+    this.setState({ agent});
   }
 
-  async componentDidUpdate() {
-    const ID = this.props.Id;
-    const agentObject = { agentID: ID };
-    const agent = await agentService.one(agentObject);
-    this.setState({ agent });
-  }
+  // componentDidUpdate() {
+  //   // const ID = this.props.Id;
+  //   // const agentObject = { agentID: ID };
+  //   // const agent = await agentService.one(agentObject);
+  //   const secretAgent = this.props.agent
+  //   this.setState({ agent: secretAgent });
+  //   console.log('heyhomie')
+  // }
 
   toggleAboutDisplay() {
     if (this.state.aboutDisplay === "none") {
@@ -63,13 +67,13 @@ export class Header2 extends Component {
                   <Navbar.Toggle aria-controls="basic-navbar-nav" />
                   <Navbar.Collapse>
                     <Col>
-                      <Nav.Link style={{ color: `${ag.textColor}` }} href="/">
+                      <Nav.Link style={{ color: ag.textColor ? ag.textColor : "white", }} href="/">
                         <Image src={ag.icon} id="icons" />{" "}
                       </Nav.Link>
                     </Col>
                     <Col
                       style={{
-                        color: `${ag.textColor}`,
+                        color: ag.textColor ? ag.textColor : "white",
                         marginTop: "auto",
                         marginBottom: "auto",
                       }}
@@ -77,7 +81,7 @@ export class Header2 extends Component {
                       <Nav.Link
                         onClick={() => this.toggleAboutDisplay()}
                         style={{
-                          color: `${ag.textColor}`,
+                          color: ag.textColor ? ag.textColor : "white",
                           textShadow: "1px 1px black",
                           marginTop: "auto",
                           marginBottom: "auto",
@@ -89,7 +93,7 @@ export class Header2 extends Component {
                     <Col>
                       <Nav.Link
                         style={{
-                          color: `${ag.textColor}`,
+                          color: ag.textColor ? ag.textColor : "white",
                           textShadow: "1px 1px black",
                           marginTop: "auto",
                           marginBottom: "auto",
@@ -102,7 +106,7 @@ export class Header2 extends Component {
                     <Col>
                       <Nav.Link
                         style={{
-                          color: `${ag.textColor}`,
+                          color: ag.textColor ? ag.textColor : "white",
                           textShadow: "1px 1px black",
                           marginTop: "auto",
                           marginBottom: "auto",
@@ -115,7 +119,7 @@ export class Header2 extends Component {
                     <Col>
                       <Nav.Link
                         style={{
-                          color: `${ag.textColor}`,
+                          color: ag.textColor ? ag.textColor : "white",
                           textShadow: "1px 1px black",
                           marginTop: "auto",
                           marginBottom: "auto",
@@ -130,7 +134,7 @@ export class Header2 extends Component {
                         <Nav.Link
                           onClick={() => this.toggleContactDisplay()}
                           style={{
-                            color: `${ag.textColor}`,
+                            color: ag.textColor ? ag.textColor : "white",
                             textShadow: "1px 1px black",
                             marginTop: "auto",
                             marginBottom: "auto",
@@ -259,7 +263,7 @@ export class Header2 extends Component {
                       </Row>
                     </Col>
                     <Col>
-                      <Nav.Link style={{ color: `${ag.textColor}` }} href="/">
+                      <Nav.Link style={{ color: ag.textColor ? ag.textColor : "white", }} href="/">
                         <Image
                           src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/MPIBadgeTransparentWHI.png"
                           fluid

@@ -25,7 +25,7 @@ import Resume from "./ResumeComponent";
 
 export function Main(props, user) {
   // const agentId = Math.floor(Math.random() * 34);
-  const [agentId, setAgentId] = useState(12);
+  const [agentId, setAgentId] = useState(2);
   const agentObject = { agentID: agentId };
   const agents = useState(() => {
     const allAgents = agentService.all();
@@ -73,7 +73,7 @@ export function Main(props, user) {
     />
   ) : (
     <div style={{ minHeight: "100vh" }}>
-      <Header2 agent={agent[0]} Id={agentId} style={{ marginLeft: "0px" }} />
+      <Header2 agent={agent} Id={agentId} agents={agents} style={{ marginLeft: "0px" }} />
       <Calendar agent={agent[0]} Id={agentId}></Calendar>
       <Row
         style={{

@@ -24,14 +24,14 @@ export class Bottom extends Component {
         
           <Row
             className="justify-content-md-center"
-            style={{ marginBottom: "5%", marginTop: "5%", backgroundColor: 'black', paddingTop: '1%', paddingBottom: '1%' }}
+            style={{ marginBottom: "5%", marginTop: "5%", backgroundColor: this.props.agent.primaryColor, paddingTop: '1%', paddingBottom: '1%' }}
           >
             <Col />
             <Col sm={3}>
               <Button
                 style={{
-                  backgroundColor: `${this.props.agent.primaryColor}`,
-                  // backgroundColor: `black`,
+                  // backgroundColor: `${this.props.agent.primaryColor}`,
+                  backgroundColor: `black`,
                   width: "100%",
                   border: "none",
                   boxShadow: "2px 2px rgba(0, 0, 0, 0.5)",
@@ -50,8 +50,8 @@ export class Bottom extends Component {
             <Col sm={3}>
               <Button
                 style={{
-                  backgroundColor: `${this.props.agent.primaryColor}`,
-                  // backgroundColor: `black`,
+                  // backgroundColor: `${this.props.agent.primaryColor}`,
+                  backgroundColor: `black`,
                   color: `white`,
                   width: "100%",
                   border: "none",
@@ -95,8 +95,7 @@ export class Bottom extends Component {
                   <Col>
                     <p
                       style={{
-                        color: "white",
-                        textShadow: "1px 1px black",
+                        color: ag.textColor ? ag.textColor : "black",
                         marginTop: "1%",
                         marginBottom: "1%",
                       }}
