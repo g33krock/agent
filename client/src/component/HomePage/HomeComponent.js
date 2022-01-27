@@ -13,7 +13,7 @@ export class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      agent: this.props.agent,
+      agent: "",
       paidVideo: this.props.vids,
       paidDeposit: this.props.deposit,
     }
@@ -24,8 +24,18 @@ export class Home extends Component {
     const agentObject = { agentID: ID };
     const agent = await agentService.one(agentObject);
     this.setState({ agent });
-    console.log(this.props.vids)
+    // this.setState({ paidVideo: this.props.vids });
+    // this.setState({ paidDeposit: this.props.deposit });
   }
+
+  // async componentDidUpdate() {
+  //   const ID = this.props.Id;
+  //   const agentObject = { agentID: ID };
+  //   const agent = await agentService.one(agentObject);
+  //   this.setState({ agent });
+  //   // this.setState({ paidVideo: this.props.vids });
+  //   // this.setState({ paidDeposit: this.props.deposit });
+  // }
 
 
 

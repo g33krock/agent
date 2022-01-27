@@ -25,7 +25,7 @@ import Resume from "./ResumeComponent";
 
 export function Main(props, user) {
   // const agentId = Math.floor(Math.random() * 34);
-  const [agentId, setAgentId] = useState(6);
+  const [agentId, setAgentId] = useState(12);
   const agentObject = { agentID: agentId };
   const agents = useState(() => {
     const allAgents = agentService.all();

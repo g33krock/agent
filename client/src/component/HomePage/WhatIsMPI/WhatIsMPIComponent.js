@@ -65,8 +65,8 @@ export class WhatIsMPI extends Component {
               <iframe
                 width="853"
                 height="480"
-                src="https://compoundinterest.com/wp-content/uploads/2022/01/What-Is-Mpi-2022-1.mp4?autoplay=1&mute=1"
-                title="Welcome to Compound Interest"
+                src="https://compoundinterest.com/wp-content/uploads/2022/01/What-Is-Mpi-2022-1-1.mp4"
+                title="What is MPI®"
                 frameBorder="4"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

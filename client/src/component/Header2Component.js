@@ -21,6 +21,13 @@ export class Header2 extends Component {
     this.setState({ agent });
   }
 
+  async componentDidUpdate() {
+    const ID = this.props.Id;
+    const agentObject = { agentID: ID };
+    const agent = await agentService.one(agentObject);
+    this.setState({ agent });
+  }
+
   toggleAboutDisplay() {
     if (this.state.aboutDisplay === "none") {
       this.setState({ aboutDisplay: "block" });
