@@ -126,7 +126,7 @@ export class AgentCarousel extends Component {
                             <Button
                               // variant="link"
                               style={{
-                                color: ag.textColor,
+                                color: ag.textColor ? ag.textColor : 'black',
                                 backgroundColor: ag.primaryColor,
                                 marginBottom: "1%",
                               }}
