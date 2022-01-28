@@ -151,7 +151,7 @@ export function Main(props, user) {
     storefrontAccessToken: "9ce898b59cd04f20cd3e147fbfa95af2",
   });
 
-  console.log(supabase.auth.onAuthStateChange())
+  console.log(supabase.auth.onAuthStateChange)
 
   return !session ? (
     <RecoverPassword
