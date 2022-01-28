@@ -33,7 +33,7 @@ export default function Account({ session }) {
 
       let { data, error, status } = await supabase
         .from("profiles")
-        .select("username", "paidVideo", "paidDeposit")
+        .select(`username, paidVideo, paidDeposit`)
         .eq('id', user?.id)
         .single();
 
