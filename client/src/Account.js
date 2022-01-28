@@ -88,8 +88,8 @@ export default function Account({ session }) {
     }
   }
 
-  console.log(paidDeposit);
-  console.log(paidVideo);
+  console.log(`${paidDeposit}`);
+  console.log(`${paidVideo}`);
 
   return (
     <div>
