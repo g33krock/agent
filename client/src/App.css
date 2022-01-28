@@ -189,7 +189,7 @@ ul li::before {
 }
 
 .Collapsible__trigger.is-open svg {
-  transform: rotate(180deg);
+  transform: rotate(270deg);
 }
 
 .calendarButton {
@@ -225,6 +225,13 @@ ul li::before {
   width: 75%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.collapsibleSelectVideo {
+  border-bottom: 1px solid black;
+  text-align: left;
+  padding-top: 2%;
+  /* padding-bottom: 2% */
 }
 
 

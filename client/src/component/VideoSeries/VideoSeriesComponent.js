@@ -166,7 +166,7 @@ export class VideoSeries extends Component {
                     style={{
                       borderBottom: "2px solid black",
                       backgroundColor: ag.primaryColor,
-                      color: "white",
+                      color: ag.textColor ? ag.textColor : 'black',
                       paddingTop: "2%",
                     }}
                   >
@@ -211,9 +211,10 @@ export class VideoSeries extends Component {
                         </option>
                       ))}
                     <Collapsible
+                    className="collapsibleSelectVideo"
                       trigger={[
-                        <BsChevronDown />,
-                        <h4 style={{ fontSize: "110%" }}> 8 MPI® Plans</h4>,
+                        <BsChevronDown style={{marginRight: "10px", fontSize: '150%'}}/>,
+                        <h4 id="bigMonty" style={{ fontSize: "110%", textAlign: 'left' }}>{" "} 8 MPI® Plans</h4>,
                       ]}
                     >
                       {this.state.videos
@@ -224,6 +225,49 @@ export class VideoSeries extends Component {
                             className="selectVideo"
                             value={vid.id}
                             onClick={this.setVideo}
+                            style={{marginLeft: "30px"}}
+                          >
+                            {vid.id} | {vid.title}
+                          </option>
+                        ))}
+                    </Collapsible>
+                    <Collapsible
+                    className="collapsibleSelectVideo"
+                      trigger={[
+                        <BsChevronDown style={{marginRight: "10px", fontSize: '150%'}}/>,
+                        <h4 id="bigMonty" style={{ fontSize: "110%", textAlign: 'left' }}>{" "} Frequently Asked Questions </h4>,
+                      ]}
+                    >
+                      {this.state.videos
+                        .filter((vid) => vid.category === "faq")
+                        .map((vid) => (
+                          <option
+                            tabIndex={vid.id}
+                            className="selectVideo"
+                            value={vid.id}
+                            onClick={this.setVideo}
+                            style={{marginLeft: "30px"}}
+                          >
+                            {vid.id} | {vid.title}
+                          </option>
+                        ))}
+                    </Collapsible>
+                    <Collapsible
+                    className="collapsibleSelectVideo"
+                      trigger={[
+                        <BsChevronDown style={{marginRight: "10px", fontSize: '150%'}} />,
+                        <h4 id="bigMonty" style={{ fontSize: "110%", textAlign: 'left' }}> Head to Head Comparisons</h4>,
+                      ]}
+                    >
+                      {this.state.videos
+                        .filter((vid) => vid.category === "head2head")
+                        .map((vid) => (
+                          <option
+                            tabIndex={vid.id}
+                            className="selectVideo"
+                            value={vid.id}
+                            onClick={this.setVideo}
+                            style={{marginLeft: "30px"}}
                           >
                             {vid.id} | {vid.title}
                           </option>
@@ -258,7 +302,7 @@ export class VideoSeries extends Component {
                       backgroundColor: ag.primaryColor,
                       width: "75%",
                       borderRadius: "5px",
-                      color: "white",
+                      color: ag.textColor ? ag.textColor : 'black',
                       fontWeight: "700",
                       paddingBottom: "1%",
                       paddingTop: "1%",
