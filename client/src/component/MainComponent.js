@@ -22,6 +22,8 @@ import { Signup } from "./Signup";
 import { AuthProvider } from "../contexts/Auth";
 import RecoverPassword from "./RecoverComponent";
 import Resume from "./ResumeComponent";
+import { supabase } from '../supabaseClient';
+import { useEffect } from "react/cjs/react.development";
 // import { baseURL } from "../baseURL";
 
 export function Main(props, user) {
@@ -36,6 +38,16 @@ export function Main(props, user) {
     const initialAgent = agentService.one(agentObject);
     return initialAgent;
   });
+
+  const [session, setSession] = useState(null);
+
+  useEffect(() => {
+    setSession(supabase.auth.session());
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+  }, []);
 
   const thisURL = 'https://mpiagent.herokuapp.com'
 
@@ -147,7 +159,7 @@ export function Main(props, user) {
     domain: "mpiunlimited.myshopify.com",
     storefrontAccessToken: "9ce898b59cd04f20cd3e147fbfa95af2",
   });
-  return recoveryToken ? (
+  return !session ? (
     <RecoverPassword
       token={recoveryToken}
       setRecoveryToken={setRecoveryToken}
