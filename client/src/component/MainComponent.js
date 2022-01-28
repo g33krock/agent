@@ -22,10 +22,11 @@ import { Signup } from "./Signup";
 import { AuthProvider } from "../contexts/Auth";
 import RecoverPassword from "./RecoverComponent";
 import Resume from "./ResumeComponent";
+// import { baseURL } from "../baseURL";
 
 export function Main(props, user) {
   // const agentId = Math.floor(Math.random() * 34);
-  const [agentId, setAgentId] = useState(4);
+  const [agentId, setAgentId] = useState(2);
   const agentObject = { agentID: agentId };
   const agents = useState(() => {
     const allAgents = agentService.all();
@@ -36,28 +37,97 @@ export function Main(props, user) {
     return initialAgent;
   });
 
+  const thisURL = 'http://localhost:5001'
+
   const handleChange = (e) => {
-    setAgentId(e.currentTarget.value)
+    setAgentId(e.currentTarget.value);
     const agentObject = { agentID: e.currentTarget.value };
     setAgent(() => {
       const initialAgent = agentService.one(agentObject);
       return initialAgent;
     });
     console.log(agentId);
-    console.log(agent)
-  }
+    console.log(agent);
+  };
 
   const makeChanges = () => {
-    changeHeader.current.updateState();
-    changeCalendar.current.updateState();
-    changeHome.current.updateState();
-    changeFooter.current.updateState();
-  }
+    switch (window.location.href) {
+      case `${thisURL}/`:
+        changeHeader.current.updateState();
+        changeHome.current.updateState();
+        changeFooter.current.updateState();
+        changeCalendar.current.updateState();
+        break;
+      case `${thisURL}/calendar`:
+        changeHeader.current.updateState();
+        changeCalendar.current.updateState();
+        changeFooter.current.updateState();
+        break;
+      case `${thisURL}/videoseries`:
+        changeHeader.current.updateState();
+        changeCalendar.current.updateState();
+        changeFooter.current.updateState();
+        changeVideo.current.updateState();
+        break;
+      case `${thisURL}/about`:
+        changeHeader.current.updateState();
+        changeCalendar.current.updateState();
+        changeFooter.current.updateState();
+        changeAbout.current.updateState();
+        break;
+      case `${thisURL}/calculator`:
+        changeHeader.current.updateState();
+        changeCalendar.current.updateState();
+        changeFooter.current.updateState();
+        changeCalculator.current.updateState();
+        break;
+      case `${thisURL}/faq`:
+        changeHeader.current.updateState();
+        changeCalendar.current.updateState();
+        changeFooter.current.updateState();
+        changeFAQ.current.updateState();
+        break;
+      case `${thisURL}/contactus`:
+        changeHeader.current.updateState();
+        changeCalendar.current.updateState();
+        changeFooter.current.updateState();
+        changeContact.current.updateState();
+        break;
+      case `${thisURL}/career`:
+        changeHeader.current.updateState();
+        changeCalendar.current.updateState();
+        changeFooter.current.updateState();
+        changeCareer.current.updateState();
+        break;
+      case `${thisURL}/shopify`:
+        changeHeader.current.updateState();
+        changeCalendar.current.updateState();
+        changeFooter.current.updateState();
+        changeShopify.current.updateState();
+        break;
+      case `${thisURL}/curtisray`:
+        changeHeader.current.updateState();
+        changeCalendar.current.updateState();
+        changeFooter.current.updateState();
+        changeCurtis.current.updateState();
+        break;
+      default:
+        alert("You are in the empty void of the internet");
+    }
+  };
 
   const changeHeader = useRef();
   const changeCalendar = useRef();
   const changeHome = useRef();
   const changeFooter = useRef();
+  const changeAbout = useRef();
+  const changeCalculator = useRef();
+  const changeFAQ = useRef();
+  const changeVideo = useRef();
+  const changeContact = useRef();
+  const changeCareer = useRef();
+  const changeShopify = useRef();
+  const changeCurtis = useRef();
 
   const params = new URLSearchParams(window.location.hash);
 
@@ -85,8 +155,14 @@ export function Main(props, user) {
     />
   ) : (
     <div style={{ minHeight: "100vh" }}>
-      <Header2 agent={agent} Id={agentId} agents={agents} style={{ marginLeft: "0px" }} ref={changeHeader}/>
-      <Calendar agent={agent[0]} Id={agentId} ref={changeCalendar}/>
+      <Header2
+        agent={agent}
+        Id={agentId}
+        agents={agents}
+        style={{ marginLeft: "0px" }}
+        ref={changeHeader}
+      />
+      <Calendar agent={agent[0]} Id={agentId} ref={changeCalendar} />
       <Row
         style={{
           marginRight: "0px",
@@ -114,19 +190,35 @@ export function Main(props, user) {
                 />
                 <Route
                   path="about"
-                  element={<About agent={agent[0]} Id={agentId} />}
+                  element={
+                    <About agent={agent[0]} Id={agentId} ref={changeAbout} />
+                  }
                 />
                 <Route
                   path="calendar"
-                  element={<Calendar agent={agent[0]} Id={agentId} />}
+                  element={
+                    <Calendar
+                      agent={agent[0]}
+                      Id={agentId}
+                      ref={changeCalendar}
+                    />
+                  }
                 />
                 <Route
                   path="calculator"
-                  element={<Calculator agent={agent[0]} Id={agentId} />}
+                  element={
+                    <Calculator
+                      agent={agent[0]}
+                      Id={agentId}
+                      ref={changeCalculator}
+                    />
+                  }
                 />
                 <Route
                   path="faq"
-                  element={<FAQ agent={agent[0]} Id={agentId} />}
+                  element={
+                    <FAQ agent={agent[0]} Id={agentId} ref={changeFAQ} />
+                  }
                 />
                 <Route
                   path="videoseries"
@@ -136,20 +228,35 @@ export function Main(props, user) {
                       Id={agentId}
                       vids={paidVideo}
                       deposit={paidDeposit}
+                      ref={changeVideo}
                     />
                   }
                 />
                 <Route
                   path="contactus"
-                  element={<ContactUs agent={agent[0]} Id={agentId} />}
+                  element={
+                    <ContactUs
+                      agent={agent[0]}
+                      Id={agentId}
+                      ref={changeContact}
+                    />
+                  }
                 />
                 <Route
                   path="career"
-                  element={<Resume agent={agent[0]} Id={agentId} />}
+                  element={
+                    <Resume agent={agent[0]} Id={agentId} ref={changeCareer} />
+                  }
                 />
                 <Route
                   path="curtisray"
-                  element={<AboutCurtis agent={agent[0]} Id={agentId} />}
+                  element={
+                    <AboutCurtis
+                      agent={agent[0]}
+                      Id={agentId}
+                      ref={changeCurtis}
+                    />
+                  }
                 />
                 <Route
                   path="webinarregistration"
@@ -158,7 +265,12 @@ export function Main(props, user) {
                 <Route
                   path="shopify"
                   element={
-                    <Shopify agent={agent[0]} Id={agentId} client={client} />
+                    <Shopify
+                      agent={agent[0]}
+                      Id={agentId}
+                      client={client}
+                      ref={changeShopify}
+                    />
                   }
                 />
                 <Route
@@ -202,7 +314,12 @@ export function Main(props, user) {
           </BrowserRouter>
         </Col>
       </Row>
-      <Footer agent={agent[0]} Id={agentId} style={{ marginLeft: "0px" }} ref={changeFooter}/>
+      <Footer
+        agent={agent[0]}
+        Id={agentId}
+        style={{ marginLeft: "0px" }}
+        ref={changeFooter}
+      />
 
       <select
         name="chooseAgent"
@@ -247,7 +364,7 @@ export function Main(props, user) {
         <option value="35">Lance Watson</option>
         <option value="36">Kindra Watson</option>
       </select>
-      <Button onClick = {makeChanges}>Change Agent</Button>
+      <Button onClick={makeChanges}>Change Agent</Button>
     </div>
   );
 }

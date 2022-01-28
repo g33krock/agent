@@ -26,6 +26,15 @@ export class ContactUs extends Component {
     console.log(ID);
   }
 
+  async updateState() {
+    const ID = this.props.Id;
+    const agentObject = { agentID: ID };
+    const agent = await agentService.one(agentObject);
+    this.setState({ agent });
+    console.log(this.props.agent);
+    console.log(ID);
+  }
+
   render() {
     return (
       <>

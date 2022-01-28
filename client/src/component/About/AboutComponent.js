@@ -38,6 +38,16 @@ export class About extends Component {
     this.setState({ bioDisplay: "none" });
   }
 
+  async updateState() {
+    const ID = this.props.Id;
+    const agentObject = { agentID: ID };
+    const agent = await agentService.one(agentObject);
+    this.setState({ agent });
+    const addAgents = await agentService.addAgents(agentObject);
+    this.setState({ addAgents });
+    this.setState({ bioDisplay: "none" });
+  }
+
   render() {
     function toggleBio() {
       var x = document.getElementById("bioBlock");
@@ -58,15 +68,14 @@ export class About extends Component {
               }}
             >
               <Row>
-                <h1 style={{ marginTop: "2%", color: ag.textColor ? ag.textColor : "black", }}>
+                <h1 style={{ marginTop: "2%", color: "black", }}>
                   OUR MISSION
                 </h1>
               </Row>
               <Row>
                 <p
                   style={{
-                    color: ag.textColor ? ag.textColor : "black",
-                    textShadow: '1px 1px black',
+                    color:"black",
                     marginLeft: "auto",
                     marginRight: "auto",
                     width: "75%",

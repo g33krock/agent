@@ -27,6 +27,18 @@ export class FAQ extends Component {
     console.log(ID);
   }
 
+  async updateState() {
+    const ID = this.props.Id;
+    const agentObject = { agentID: ID };
+    const agent = await agentService.one(agentObject);
+    this.setState({ agent });
+    console.log(this.props.agent);
+    const faqs = await faqService.all();
+    this.setState({ faqs });
+    console.log(this.state.faqs);
+    console.log(ID);
+  }
+
   render() {
     return (
       <>

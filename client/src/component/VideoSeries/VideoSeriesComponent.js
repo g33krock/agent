@@ -42,6 +42,16 @@ export class VideoSeries extends Component {
     console.log(videos);
   }
 
+  async updateState() {
+    const ID = this.props.Id;
+    const agentObject = { agentID: ID };
+    const agent = await agentService.one(agentObject);
+    this.setState({ agent });
+    const videos = await videoService.all();
+    this.setState({ videos });
+    console.log(videos);
+  }
+
   switchShowCalc() {
     this.setState({ showCalc: false });
     this.setState({ colHeight: "100vh" });
