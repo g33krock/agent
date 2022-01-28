@@ -137,7 +137,7 @@ export default function Account({ session }) {
               <FormLabel>Paid Deposit</FormLabel>
               <Switch value={1}
                 onChange={e => setPaidDeposit(e.target.value)}
-                defaultIsChecked={'paidDeposit' === false ? false : true}
+                defaultIsChecked={'paidDeposit' === 0 || paidDeposit === 0 ? 0 : 1}
                 color={useColorModeValue("gray.800", "gray.200")}
                 bg={useColorModeValue("gray.100", "gray.600")}
                 rounded={"full"}
@@ -153,7 +153,7 @@ export default function Account({ session }) {
               <FormLabel>Paid Video</FormLabel>
               <Switch value={1}
                 onChange={e => setPaidVideo(e.target.value)}
-                defaultIsChecked={'paidVideo' === false ? false : true}
+                defaultIsChecked={'paidVideo' === 0 || paidVideo === 0 ? 0 : 1}
                 color={useColorModeValue("gray.800", "gray.200")}
                 bg={useColorModeValue("gray.100", "gray.600")}
                 rounded={"full"}
