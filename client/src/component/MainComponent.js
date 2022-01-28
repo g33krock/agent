@@ -156,9 +156,9 @@ export function Main(props, user) {
     if (event === "PASSWORD_RECOVERY") {
       return (
         <RecoverPassword
-          token={recoveryToken}
-          setRecoveryToken={setRecoveryToken}
-          user={user}
+          // token={recoveryToken}
+          // setRecoveryToken={setRecoveryToken}
+          // user={user}
         />
       );
     } else {
