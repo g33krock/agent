@@ -20,6 +20,13 @@ export class Calendar extends Component {
     this.setState({ agent });
   }
 
+  async updateState() {
+    const ID = this.props.Id;
+    const agentObject = { agentID: ID };
+    const agent = await agentService.one(agentObject);
+    this.setState({ agent });
+  }
+
   toggle() {
     return !this.state.modal;
   }

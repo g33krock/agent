@@ -17,12 +17,12 @@ export class Footer extends Component {
     this.setState({ agent });
   }
 
-  // async componentDidUpdate() {
-  //   const ID = this.props.Id;
-  //   const agentObject = { agentID: ID };
-  //   const agent = await agentService.one(agentObject);
-  //   this.setState({ agent });
-  // }
+  async updateState() {
+    const ID = this.props.Id;
+    const agentObject = { agentID: ID };
+    const agent = await agentService.one(agentObject);
+    this.setState({ agent });
+  }
 
   render() {
     return (

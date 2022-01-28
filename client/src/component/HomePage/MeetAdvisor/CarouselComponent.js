@@ -26,6 +26,16 @@ export class AgentCarousel extends Component {
     this.setState({ bioDisplay: "none" });
   }
 
+  async changeState() {
+    const ID = this.props.Id;
+    const agentObject = { agentID: ID };
+    const agent = await agentService.one(agentObject);
+    this.setState({ agent });
+    const addAgents = await agentService.addAgents(agentObject);
+    this.setState({ addAgents });
+    this.setState({ bioDisplay: "none" });
+  }
+
   render() {
     $(document).on("scroll", function () {
       var pageTop = $(document).scrollTop();

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Client from "shopify-buy";
@@ -47,6 +47,18 @@ export function Main(props, user) {
     console.log(agent)
   }
 
+  const makeChanges = () => {
+    changeHeader.current.updateState();
+    changeCalendar.current.updateState();
+    changeHome.current.updateState();
+    changeFooter.current.updateState();
+  }
+
+  const changeHeader = useRef();
+  const changeCalendar = useRef();
+  const changeHome = useRef();
+  const changeFooter = useRef();
+
   const params = new URLSearchParams(window.location.hash);
 
   const accessToken = params.get("access_token");
@@ -73,8 +85,8 @@ export function Main(props, user) {
     />
   ) : (
     <div style={{ minHeight: "100vh" }}>
-      <Header2 agent={agent} Id={agentId} agents={agents} style={{ marginLeft: "0px" }} />
-      <Calendar agent={agent[0]} Id={agentId}></Calendar>
+      <Header2 agent={agent} Id={agentId} agents={agents} style={{ marginLeft: "0px" }} ref={changeHeader}/>
+      <Calendar agent={agent[0]} Id={agentId} ref={changeCalendar}/>
       <Row
         style={{
           marginRight: "0px",
@@ -96,6 +108,7 @@ export function Main(props, user) {
                       Id={agentId}
                       vids={paidVideo}
                       deposit={paidDeposit}
+                      ref={changeHome}
                     />
                   }
                 />
@@ -189,7 +202,7 @@ export function Main(props, user) {
           </BrowserRouter>
         </Col>
       </Row>
-      <Footer agent={agent[0]} Id={agentId} style={{ marginLeft: "0px" }} />
+      <Footer agent={agent[0]} Id={agentId} style={{ marginLeft: "0px" }} ref={changeFooter}/>
 
       <select
         name="chooseAgent"
@@ -234,7 +247,7 @@ export function Main(props, user) {
         <option value="35">Lance Watson</option>
         <option value="36">Kindra Watson</option>
       </select>
-      <Button onClick = {handleChange}>Change Agent</Button>
+      <Button onClick = {makeChanges}>Change Agent</Button>
     </div>
   );
 }

@@ -8,7 +8,7 @@ export class Header2 extends Component {
     super(props);
     this.state = {
       agents: [],
-      agent: [],
+      agent: null,
       email: "",
       aboutDisplay: "none",
       contactDisplay: "none",
@@ -23,14 +23,13 @@ export class Header2 extends Component {
     this.setState({ agent});
   }
 
-  // componentDidUpdate() {
-  //   // const ID = this.props.Id;
-  //   // const agentObject = { agentID: ID };
-  //   // const agent = await agentService.one(agentObject);
-  //   const secretAgent = this.props.agent
-  //   this.setState({ agent: secretAgent });
-  //   console.log('heyhomie')
-  // }
+  async updateState() {
+    console.log(this.props.agent)
+    const ID = this.props.Id;
+    const agentObject = { agentID: ID };
+    const agent = await agentService.one(agentObject);
+    this.setState({ agent});
+  }
 
   toggleAboutDisplay() {
     if (this.state.aboutDisplay === "none") {
@@ -49,6 +48,7 @@ export class Header2 extends Component {
   }
 
   render() {
+    console.log(this.state.agent)
     return (
       <>
         {this.state.agent &&

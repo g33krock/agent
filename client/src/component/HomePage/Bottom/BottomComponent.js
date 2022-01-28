@@ -18,6 +18,13 @@ export class Bottom extends Component {
     this.setState({ agent });
   }
 
+  async changeState() {
+    const ID = this.props.Id;
+    const agentObject = { agentID: ID };
+    const agent = await agentService.one(agentObject);
+    this.setState({ agent });
+  }
+
   render() {
     return (
       <div>
