@@ -33,9 +33,7 @@ export default function Account({ session }) {
 
       let { data, error, status } = await supabase
         .from("profiles")
-        .select("username")
-        .select("paidVideo")
-        .select("paidDeposit")
+        .select("username", "paidVideo", "paidDeposit")
         .eq('id', user?.id)
         .single();
 
@@ -109,13 +107,6 @@ export default function Account({ session }) {
           justifyItems={"center"}
           justifyContent={"center"}
         >
-          {/* <PersonalAvatar
-            url={avatar_url}
-            onUpload={url => {
-              setAvatarUrl(url);
-              updateProfile({ username, website, avatar_url: url });
-            }}
-          /> */}
           <Text fontSize={"sm"} fontWeight={500} color={"gray.500"} mb={4}>
             {session.user.email}
           </Text>
@@ -143,6 +134,7 @@ export default function Account({ session }) {
               <FormLabel>Paid Deposit</FormLabel>
               <Switch value={1}
                 onChange={e => setPaidDeposit(e.target.value)}
+                placeHolder={paidDeposit || "paidDeposit"}
                 color={useColorModeValue("gray.800", "gray.200")}
                 bg={useColorModeValue("gray.100", "gray.600")}
                 rounded={"full"}
@@ -158,6 +150,7 @@ export default function Account({ session }) {
               <FormLabel>Paid Video</FormLabel>
               <Switch value={1}
                 onChange={e => setPaidVideo(e.target.value)}
+                placeHolder={paidVideo || "paidVideo"}
                 color={useColorModeValue("gray.800", "gray.200")}
                 bg={useColorModeValue("gray.100", "gray.600")}
                 rounded={"full"}
