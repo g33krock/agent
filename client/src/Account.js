@@ -88,6 +88,9 @@ export default function Account({ session }) {
     }
   }
 
+  console.log(paidDeposit);
+  console.log(paidVideo);
+
   return (
     <div>
       <Flex
