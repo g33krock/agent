@@ -153,13 +153,7 @@ export function Main(props, user) {
 
   console.log(supabase.auth.onAuthStateChange)
 
-  return !session ? (
-    <RecoverPassword
-      token={recoveryToken}
-      setRecoveryToken={setRecoveryToken}
-      user={user}
-    />
-  ) : (
+  return (
     <div style={{ minHeight: "100vh" }}>
       <Header2
         agent={agent}
