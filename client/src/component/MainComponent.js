@@ -22,7 +22,7 @@ import { Signup } from "./Signup";
 import { AuthProvider } from "../contexts/Auth";
 import RecoverPassword from "./RecoverComponent";
 import Resume from "./ResumeComponent";
-import { supabase } from '../supabaseClient';
+import { supabase } from "../supabaseClient";
 // import { baseURL } from "../baseURL";
 
 export function Main(props, user) {
@@ -38,17 +38,9 @@ export function Main(props, user) {
     return initialAgent;
   });
 
-  const [session, setSession] = useState(null);
+  const [session] = useState(null);
 
-  useEffect(() => {
-    setSession(supabase.auth.session());
-
-    supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-    });
-  }, []);
-
-  const thisURL = 'https://mpiagent.herokuapp.com'
+  const thisURL = "https://mpiagent.herokuapp.com";
 
   const handleChange = (e) => {
     setAgentId(e.currentTarget.value);
@@ -159,226 +151,244 @@ export function Main(props, user) {
     storefrontAccessToken: "9ce898b59cd04f20cd3e147fbfa95af2",
   });
 
-  console.log(session)
+  console.log(session);
 
-  return !session ? (
-    <RecoverPassword
-      token={recoveryToken}
-      setRecoveryToken={setRecoveryToken}
-      user={user}
-    />
-  ) : (
-    <div style={{ minHeight: "100vh" }}>
-      <Header2
-        agent={agent}
-        Id={agentId}
-        agents={agents}
-        style={{ marginLeft: "0px" }}
-        ref={changeHeader}
-      />
-      <Calendar agent={agent[0]} Id={agentId} ref={changeCalendar} />
-      <Row
-        style={{
-          marginRight: "0px",
-          marginLeft: "0px",
-          width: "100%",
-          minHeight: "80vh",
-          marginTop: "49px",
-        }}
-      >
-        <Col style={{ paddingRight: "0px", paddingLeft: "0px" }}>
-          <BrowserRouter>
-            <AuthProvider>
-              <Routes>
-                <Route
-                  path="/"
-                  element={
-                    <Home
-                      agent={agent[0]}
-                      Id={agentId}
-                      vids={paidVideo}
-                      deposit={paidDeposit}
-                      ref={changeHome}
+  supabase.auth.onAuthStateChange((event, session) => {
+    if (event === "PASSWORD_RECOVERY") {
+      return (
+        <RecoverPassword
+          token={recoveryToken}
+          setRecoveryToken={setRecoveryToken}
+          user={user}
+        />
+      );
+    } else {
+      return (
+        <div style={{ minHeight: "100vh" }}>
+          <Header2
+            agent={agent}
+            Id={agentId}
+            agents={agents}
+            style={{ marginLeft: "0px" }}
+            ref={changeHeader}
+          />
+          <Calendar agent={agent[0]} Id={agentId} ref={changeCalendar} />
+          <Row
+            style={{
+              marginRight: "0px",
+              marginLeft: "0px",
+              width: "100%",
+              minHeight: "80vh",
+              marginTop: "49px",
+            }}
+          >
+            <Col style={{ paddingRight: "0px", paddingLeft: "0px" }}>
+              <BrowserRouter>
+                <AuthProvider>
+                  <Routes>
+                    <Route
+                      path="/"
+                      element={
+                        <Home
+                          agent={agent[0]}
+                          Id={agentId}
+                          vids={paidVideo}
+                          deposit={paidDeposit}
+                          ref={changeHome}
+                        />
+                      }
                     />
-                  }
-                />
-                <Route
-                  path="about"
-                  element={
-                    <About agent={agent[0]} Id={agentId} ref={changeAbout} />
-                  }
-                />
-                <Route
-                  path="calendar"
-                  element={
-                    <Calendar
-                      agent={agent[0]}
-                      Id={agentId}
-                      ref={changeCalendar}
+                    <Route
+                      path="about"
+                      element={
+                        <About
+                          agent={agent[0]}
+                          Id={agentId}
+                          ref={changeAbout}
+                        />
+                      }
                     />
-                  }
-                />
-                <Route
-                  path="calculator"
-                  element={
-                    <Calculator
-                      agent={agent[0]}
-                      Id={agentId}
-                      ref={changeCalculator}
+                    <Route
+                      path="calendar"
+                      element={
+                        <Calendar
+                          agent={agent[0]}
+                          Id={agentId}
+                          ref={changeCalendar}
+                        />
+                      }
                     />
-                  }
-                />
-                <Route
-                  path="faq"
-                  element={
-                    <FAQ agent={agent[0]} Id={agentId} ref={changeFAQ} />
-                  }
-                />
-                <Route
-                  path="videoseries"
-                  element={
-                    <VideoSeries
-                      agent={agent[0]}
-                      Id={agentId}
-                      vids={paidVideo}
-                      deposit={paidDeposit}
-                      ref={changeVideo}
+                    <Route
+                      path="calculator"
+                      element={
+                        <Calculator
+                          agent={agent[0]}
+                          Id={agentId}
+                          ref={changeCalculator}
+                        />
+                      }
                     />
-                  }
-                />
-                <Route
-                  path="contactus"
-                  element={
-                    <ContactUs
-                      agent={agent[0]}
-                      Id={agentId}
-                      ref={changeContact}
+                    <Route
+                      path="faq"
+                      element={
+                        <FAQ agent={agent[0]} Id={agentId} ref={changeFAQ} />
+                      }
                     />
-                  }
-                />
-                <Route
-                  path="career"
-                  element={
-                    <Resume agent={agent[0]} Id={agentId} ref={changeCareer} />
-                  }
-                />
-                <Route
-                  path="curtisray"
-                  element={
-                    <AboutCurtis
-                      agent={agent[0]}
-                      Id={agentId}
-                      ref={changeCurtis}
+                    <Route
+                      path="videoseries"
+                      element={
+                        <VideoSeries
+                          agent={agent[0]}
+                          Id={agentId}
+                          vids={paidVideo}
+                          deposit={paidDeposit}
+                          ref={changeVideo}
+                        />
+                      }
                     />
-                  }
-                />
-                <Route
-                  path="webinarregistration"
-                  element={<Webinar agent={agent[0]} Id={agentId} />}
-                />
-                <Route
-                  path="shopify"
-                  element={
-                    <Shopify
-                      agent={agent[0]}
-                      Id={agentId}
-                      client={client}
-                      ref={changeShopify}
+                    <Route
+                      path="contactus"
+                      element={
+                        <ContactUs
+                          agent={agent[0]}
+                          Id={agentId}
+                          ref={changeContact}
+                        />
+                      }
                     />
-                  }
-                />
-                <Route
-                  path="signin"
-                  element={
-                    <SignIn agent={agent[0]} Id={agentId} client={client} />
-                  }
-                />
+                    <Route
+                      path="career"
+                      element={
+                        <Resume
+                          agent={agent[0]}
+                          Id={agentId}
+                          ref={changeCareer}
+                        />
+                      }
+                    />
+                    <Route
+                      path="curtisray"
+                      element={
+                        <AboutCurtis
+                          agent={agent[0]}
+                          Id={agentId}
+                          ref={changeCurtis}
+                        />
+                      }
+                    />
+                    <Route
+                      path="webinarregistration"
+                      element={<Webinar agent={agent[0]} Id={agentId} />}
+                    />
+                    <Route
+                      path="shopify"
+                      element={
+                        <Shopify
+                          agent={agent[0]}
+                          Id={agentId}
+                          client={client}
+                          ref={changeShopify}
+                        />
+                      }
+                    />
+                    <Route
+                      path="signin"
+                      element={
+                        <SignIn agent={agent[0]} Id={agentId} client={client} />
+                      }
+                    />
 
-                <Route
-                  path="dashboard"
-                  element={
-                    <Dashboard agent={agent[0]} Id={agentId} client={client} />
-                  }
-                />
-                <Route
-                  path="login"
-                  element={
-                    <Login agent={agent[0]} Id={agentId} client={client} />
-                  }
-                />
-                <Route
-                  path="signup"
-                  element={
-                    <Signup agent={agent[0]} Id={agentId} client={client} />
-                  }
-                />
-                <Route
-                  path="recoverpassword"
-                  element={
-                    <RecoverPassword
-                      agent={agent[0]}
-                      Id={agentId}
-                      client={client}
-                      user={user}
+                    <Route
+                      path="dashboard"
+                      element={
+                        <Dashboard
+                          agent={agent[0]}
+                          Id={agentId}
+                          client={client}
+                        />
+                      }
                     />
-                  }
-                />
-              </Routes>
-            </AuthProvider>
-          </BrowserRouter>
-        </Col>
-      </Row>
-      <Footer
-        agent={agent[0]}
-        Id={agentId}
-        style={{ marginLeft: "0px" }}
-        ref={changeFooter}
-      />
+                    <Route
+                      path="login"
+                      element={
+                        <Login agent={agent[0]} Id={agentId} client={client} />
+                      }
+                    />
+                    <Route
+                      path="signup"
+                      element={
+                        <Signup agent={agent[0]} Id={agentId} client={client} />
+                      }
+                    />
+                    <Route
+                      path="recoverpassword"
+                      element={
+                        <RecoverPassword
+                          agent={agent[0]}
+                          Id={agentId}
+                          client={client}
+                          user={user}
+                        />
+                      }
+                    />
+                  </Routes>
+                </AuthProvider>
+              </BrowserRouter>
+            </Col>
+          </Row>
+          <Footer
+            agent={agent[0]}
+            Id={agentId}
+            style={{ marginLeft: "0px" }}
+            ref={changeFooter}
+          />
 
-      <select
-        name="chooseAgent"
-        id="chooseAgent"
-        onChange={handleChange}
-        // value={agentId.chooseAgent}
-      >
-        <option value="1">Geek Empire</option>
-        <option value="2">Curtis Ray</option>
-        <option value="3">Adam Rummler</option>
-        <option value="4">Aidan Stout</option>
-        <option value="5">Alex Alonso</option>
-        <option value="6">Amy White</option>
-        <option value="7">Brian Yoakam</option>
-        <option value="8">Buddy Howel</option>
-        <option value="9">Carmen Cuevas</option>
-        <option value="10">Carolyn Blosil</option>
-        <option value="11">Deb Brundage</option>
-        <option value="12">Donnell Stidhum</option>
-        <option value="13">Eric Rominger</option>
-        <option value="14">Jae Kim</option>
-        <option value="15">Jeffrey Blosil</option>
-        <option value="16">Jimmy Rios</option>
-        <option value="17">Joe Begalle</option>
-        <option value="18">John Turner</option>
-        <option value="19">Jose De Vega</option>
-        <option value="20">Ken Kilday</option>
-        <option value="21">Leon King</option>
-        <option value="22">Norman Sanders</option>
-        <option value="23">Porter Shumway</option>
-        <option value="24">Riley Nelson</option>
-        <option value="25">Robert Reid</option>
-        <option value="26">Rustin Pearce</option>
-        <option value="27">Rusty Vandall</option>
-        <option value="28">Ryan Richardson</option>
-        <option value="29">Scott McLaine</option>
-        <option value="30">Shaun Akin</option>
-        <option value="31">Spencer Alldredge</option>
-        <option value="32">Steve Thurmond</option>
-        <option value="33">Tyler Reynolds</option>
-        <option value="34">Victor James</option>
-        <option value="35">Lance Watson</option>
-        <option value="36">Kindra Watson</option>
-      </select>
-      <Button onClick={makeChanges}>Change Agent</Button>
-    </div>
-  );
+          <select
+            name="chooseAgent"
+            id="chooseAgent"
+            onChange={handleChange}
+            // value={agentId.chooseAgent}
+          >
+            <option value="1">Geek Empire</option>
+            <option value="2">Curtis Ray</option>
+            <option value="3">Adam Rummler</option>
+            <option value="4">Aidan Stout</option>
+            <option value="5">Alex Alonso</option>
+            <option value="6">Amy White</option>
+            <option value="7">Brian Yoakam</option>
+            <option value="8">Buddy Howel</option>
+            <option value="9">Carmen Cuevas</option>
+            <option value="10">Carolyn Blosil</option>
+            <option value="11">Deb Brundage</option>
+            <option value="12">Donnell Stidhum</option>
+            <option value="13">Eric Rominger</option>
+            <option value="14">Jae Kim</option>
+            <option value="15">Jeffrey Blosil</option>
+            <option value="16">Jimmy Rios</option>
+            <option value="17">Joe Begalle</option>
+            <option value="18">John Turner</option>
+            <option value="19">Jose De Vega</option>
+            <option value="20">Ken Kilday</option>
+            <option value="21">Leon King</option>
+            <option value="22">Norman Sanders</option>
+            <option value="23">Porter Shumway</option>
+            <option value="24">Riley Nelson</option>
+            <option value="25">Robert Reid</option>
+            <option value="26">Rustin Pearce</option>
+            <option value="27">Rusty Vandall</option>
+            <option value="28">Ryan Richardson</option>
+            <option value="29">Scott McLaine</option>
+            <option value="30">Shaun Akin</option>
+            <option value="31">Spencer Alldredge</option>
+            <option value="32">Steve Thurmond</option>
+            <option value="33">Tyler Reynolds</option>
+            <option value="34">Victor James</option>
+            <option value="35">Lance Watson</option>
+            <option value="36">Kindra Watson</option>
+          </select>
+          <Button onClick={makeChanges}>Change Agent</Button>
+        </div>
+      );
+    }
+  });
 }
