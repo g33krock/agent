@@ -151,9 +151,8 @@ export function Main(props, user) {
     storefrontAccessToken: "9ce898b59cd04f20cd3e147fbfa95af2",
   });
 
-  console.log(session);
-
   supabase.auth.onAuthStateChange((event, session) => {
+    console.log(event);
     if (event === "PASSWORD_RECOVERY") {
       return (
         <RecoverPassword
