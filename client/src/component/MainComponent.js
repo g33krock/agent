@@ -37,7 +37,7 @@ export function Main(props, user) {
     return initialAgent;
   });
 
-  const thisURL = 'http://localhost:5001'
+  const thisURL = 'https://mpiagent.herokuapp.com/'
 
   const handleChange = (e) => {
     setAgentId(e.currentTarget.value);
