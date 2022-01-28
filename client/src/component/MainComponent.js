@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Client from "shopify-buy";
@@ -23,7 +23,6 @@ import { AuthProvider } from "../contexts/Auth";
 import RecoverPassword from "./RecoverComponent";
 import Resume from "./ResumeComponent";
 import { supabase } from '../supabaseClient';
-import { useEffect } from "react/cjs/react.development";
 // import { baseURL } from "../baseURL";
 
 export function Main(props, user) {
