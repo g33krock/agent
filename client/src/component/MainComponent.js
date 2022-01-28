@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Client from "shopify-buy";
@@ -38,7 +38,7 @@ export function Main(props, user) {
     return initialAgent;
   });
 
-  const [session, setSession] = useState(null);
+  // const [session, setSession] = useState(null);
 
   const thisURL = 'https://mpiagent.herokuapp.com'
 
@@ -138,13 +138,13 @@ export function Main(props, user) {
 
   console.log(accessToken);
 
-  const [recoveryToken, setRecoveryToken] = useState(accessToken);
+  // const [recoveryToken, setRecoveryToken] = useState(accessToken);
   const paidVideo = props.vids;
   const paidDeposit = props.deposit;
   console.log(paidVideo);
   console.log(paidDeposit);
   console.log(agents);
-  console.log(recoveryToken);
+  // console.log(recoveryToken);
 
   const client = Client.buildClient({
     domain: "mpiunlimited.myshopify.com",

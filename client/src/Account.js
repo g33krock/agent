@@ -6,6 +6,7 @@ import {
     FormLabel,
     Input,
     Stack,
+    Switch,
     Text,
     useColorModeValue,
     useToast
@@ -17,8 +18,8 @@ import { supabase } from "./supabaseClient";
 export default function Account({ session }) {
   const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState(null);
-  // const [website, setWebsite] = useState(null);
-  // const [avatar_url, setAvatarUrl] = useState(null);
+  const [paidVideo, setPaidVideo] = useState(null);
+  const [paidDeposit, setPaidDeposit] = useState(null);
   const toast = useToast();
 
   useEffect(() => {
@@ -33,6 +34,8 @@ export default function Account({ session }) {
       let { data, error, status } = await supabase
         .from("profiles")
         .select("username")
+        .select("paidVideo")
+        .select("paidDeposit")
         .eq('id', user?.id)
         .single();
 
@@ -42,8 +45,8 @@ export default function Account({ session }) {
 
       if (data) {
         setUsername(data.username);
-        // setWebsite(data.website);
-        // setAvatarUrl(data.avatar_url);
+        setPaidVideo(data.paidVideo);
+        setPaidDeposit(data.paidDeposit);
       }
     } catch (error) {
       alert(error.message);
@@ -52,15 +55,15 @@ export default function Account({ session }) {
     }
   }
 
-  async function updateProfile({ username }) {
+  async function updateProfile({ username, paidVideo, paidDeposit }) {
     try {
       setLoading(true);
       const user = supabase.auth.user();
       const updates = {
         id: user.id,
         username,
-        // website,
-        // avatar_url,
+        paidVideo,
+        paidDeposit,
         updated_at: new Date(),
       };
 
@@ -135,14 +138,11 @@ export default function Account({ session }) {
               />
             </FormControl>
           </Stack>
-          {/* <Stack spacing={4} p={4}>
+          <Stack spacing={4} p={4}>
             <FormControl>
-              <FormLabel>Website</FormLabel>
-              <Input
-                type={"text"}
-                value={website || ""}
-                onChange={e => setWebsite(e.target.value)}
-                placeholder={website || "website"}
+              <FormLabel>Paid Deposit</FormLabel>
+              <Switch value={1}
+                onChange={e => setPaidDeposit(e.target.value)}
                 color={useColorModeValue("gray.800", "gray.200")}
                 bg={useColorModeValue("gray.100", "gray.600")}
                 rounded={"full"}
@@ -150,10 +150,24 @@ export default function Account({ session }) {
                 _focus={{
                   bg: useColorModeValue("gray.200", "gray.800"),
                   outline: "none",
-                }}
-              />
+                }}/>
             </FormControl>
-          </Stack> */}
+          </Stack>
+          <Stack spacing={4} p={4}>
+            <FormControl>
+              <FormLabel>Paid Video</FormLabel>
+              <Switch value={1}
+                onChange={e => setPaidVideo(e.target.value)}
+                color={useColorModeValue("gray.800", "gray.200")}
+                bg={useColorModeValue("gray.100", "gray.600")}
+                rounded={"full"}
+                border={0}
+                _focus={{
+                  bg: useColorModeValue("gray.200", "gray.800"),
+                  outline: "none",
+                }}/>
+            </FormControl>
+          </Stack>
           <Stack mt={8} direction={"row"} spacing={4}>
             <Button
               onClick={() => supabase.auth.signOut()}
@@ -169,7 +183,7 @@ export default function Account({ session }) {
             <Button
               isLoading={loading}
               loadingText="Updating ..."
-              onClick={() => updateProfile({ username })}
+              onClick={() => updateProfile({ username, paidDeposit, paidVideo })}
               flex={1}
               fontSize={"sm"}
               rounded={"full"}
