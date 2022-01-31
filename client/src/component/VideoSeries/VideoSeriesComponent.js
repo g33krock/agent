@@ -7,6 +7,7 @@ import { videoService } from "../../services/VideoService";
 import { VideoCalendar } from "./VideoCalendarComponent";
 import { FullCalc } from "./FullCalcComponent";
 import Auth from "../../Auth";
+import { supabase } from "../../supabaseClient";
 
 export class VideoSeries extends Component {
   constructor(props) {
@@ -26,8 +27,7 @@ export class VideoSeries extends Component {
         number: 1,
         category: "none",
         curtisBanner: "block",
-        showVid: this.props.vids,
-        deposit: this.props.deposit,
+        user: null,
       },
     };
   }
@@ -40,6 +40,26 @@ export class VideoSeries extends Component {
     const videos = await videoService.all();
     this.setState({ videos });
     console.log(videos);
+    try {
+      const user = supabase.auth.user();
+
+      let { data, error, status } = await supabase
+        .from("profiles")
+        .select(`username, paidVideo, paidDeposit`)
+        .eq("id", user?.id)
+        .single();
+
+      if (error && status !== 406) {
+        throw error;
+      }
+
+      if (data) {
+        this.setState(user);
+      }
+    } catch (error) {
+      alert(error.message);
+    } finally {
+    }
   }
 
   async updateState() {
@@ -87,6 +107,16 @@ export class VideoSeries extends Component {
       this.setState({ curtisBanner: "block" });
     } else {
       this.setState({ curtisBanner: "none" });
+    }
+  };
+
+  freeVideo = (vid) => {
+    if (vid.isFree === true) {
+      return;
+    } else if (vid.isFree === false && this.state.user?.paidVideo === false) {
+      return "disabled: 'disabled'";
+    } else if (vid.isFree === false && this.state.user?.paidVideo === true) {
+      return;
     }
   };
 
@@ -166,7 +196,7 @@ export class VideoSeries extends Component {
                     style={{
                       borderBottom: "2px solid black",
                       backgroundColor: ag.primaryColor,
-                      color: ag.textColor ? ag.textColor : 'black',
+                      color: ag.textColor ? ag.textColor : "black",
                       paddingTop: "2%",
                     }}
                   >
@@ -187,7 +217,7 @@ export class VideoSeries extends Component {
                       .filter((vid) => vid.id < 10)
                       .map((vid) => (
                         <option
-                          disabled={!this.props.vids}
+                          disabled={this.freeVideo(vid)}
                           tabIndex={vid.id}
                           className="selectVideo"
                           value={vid.id}
@@ -201,7 +231,7 @@ export class VideoSeries extends Component {
                       .filter((vid) => vid.id > 9)
                       .map((vid) => (
                         <option
-                          disabled={!this.props.vids}
+                          disabled={this.freeVideo(vid)}
                           tabIndex={vid.id}
                           className="selectVideo"
                           value={vid.id}
@@ -211,63 +241,90 @@ export class VideoSeries extends Component {
                         </option>
                       ))}
                     <Collapsible
-                    className="collapsibleSelectVideo"
+                      className="collapsibleSelectVideo"
                       trigger={[
-                        <BsChevronDown style={{marginRight: "10px", fontSize: '150%'}}/>,
-                        <h4 id="bigMonty" style={{ fontSize: "110%", textAlign: 'left' }}>{" "} 8 MPI® Plans</h4>,
+                        <BsChevronDown
+                          style={{ marginRight: "10px", fontSize: "150%" }}
+                        />,
+                        <h4
+                          id="bigMonty"
+                          style={{ fontSize: "110%", textAlign: "left" }}
+                        >
+                          {" "}
+                          8 MPI® Plans
+                        </h4>,
                       ]}
                     >
                       {this.state.videos
                         .filter((vid) => vid.category === "plans")
                         .map((vid) => (
                           <option
+                            disabled={this.freeVideo(vid)}
                             tabIndex={vid.id}
                             className="selectVideo"
                             value={vid.id}
                             onClick={this.setVideo}
-                            style={{marginLeft: "30px"}}
+                            style={{ marginLeft: "30px" }}
                           >
                             {vid.id} | {vid.title}
                           </option>
                         ))}
                     </Collapsible>
                     <Collapsible
-                    className="collapsibleSelectVideo"
+                      className="collapsibleSelectVideo"
                       trigger={[
-                        <BsChevronDown style={{marginRight: "10px", fontSize: '150%'}}/>,
-                        <h4 id="bigMonty" style={{ fontSize: "110%", textAlign: 'left' }}>{" "} Frequently Asked Questions </h4>,
+                        <BsChevronDown
+                          style={{ marginRight: "10px", fontSize: "150%" }}
+                        />,
+                        <h4
+                          id="bigMonty"
+                          style={{ fontSize: "110%", textAlign: "left" }}
+                        >
+                          {" "}
+                          Frequently Asked Questions{" "}
+                        </h4>,
                       ]}
                     >
                       {this.state.videos
                         .filter((vid) => vid.category === "faq")
                         .map((vid) => (
                           <option
+                            disabled={this.freeVideo(vid)}
                             tabIndex={vid.id}
                             className="selectVideo"
                             value={vid.id}
                             onClick={this.setVideo}
-                            style={{marginLeft: "30px"}}
+                            style={{ marginLeft: "30px" }}
                           >
                             {vid.id} | {vid.title}
                           </option>
                         ))}
                     </Collapsible>
                     <Collapsible
-                    className="collapsibleSelectVideo"
+                      className="collapsibleSelectVideo"
                       trigger={[
-                        <BsChevronDown style={{marginRight: "10px", fontSize: '150%'}} />,
-                        <h4 id="bigMonty" style={{ fontSize: "110%", textAlign: 'left' }}> Head to Head Comparisons</h4>,
+                        <BsChevronDown
+                          style={{ marginRight: "10px", fontSize: "150%" }}
+                        />,
+                        <h4
+                          id="bigMonty"
+                          style={{ fontSize: "110%", textAlign: "left" }}
+                        >
+                          {" "}
+                          Head to Head Comparisons
+                        </h4>,
                       ]}
                     >
                       {this.state.videos
                         .filter((vid) => vid.category === "head2head")
                         .map((vid) => (
                           <option
+                            disabled={this.freeVideo(vid)}
                             tabIndex={vid.id}
                             className="selectVideo"
                             value={vid.id}
                             onClick={this.setVideo}
-                            style={{marginLeft: "30px"}}
+                            style={{ marginLeft: "30px" }}
                           >
                             {vid.id} | {vid.title}
                           </option>
@@ -302,7 +359,7 @@ export class VideoSeries extends Component {
                       backgroundColor: ag.primaryColor,
                       width: "75%",
                       borderRadius: "5px",
-                      color: ag.textColor ? ag.textColor : 'black',
+                      color: ag.textColor ? ag.textColor : "black",
                       fontWeight: "700",
                       paddingBottom: "1%",
                       paddingTop: "1%",
@@ -348,7 +405,10 @@ export class VideoSeries extends Component {
                     borderRight: "4px solid black",
                   }}
                 >
-                  <Image fluid src={ag.profileMPIGrey ? ag.profileMPIGrey : ag.profilePic} />
+                  <Image
+                    fluid
+                    src={ag.profileMPIGrey ? ag.profileMPIGrey : ag.profilePic}
+                  />
                 </Row>
                 <Row
                   style={{
@@ -369,7 +429,7 @@ export class VideoSeries extends Component {
                     borderBottom: "1px solid black",
                   }}
                 >
-                  <VideoCalendar agent={ag} deposit={this.props.deposit}/>
+                  <VideoCalendar agent={ag} deposit={this.props.deposit} />
                 </Row>
                 <Row
                   style={{
