@@ -7,7 +7,6 @@ import { videoService } from "../../services/VideoService";
 import { VideoCalendar } from "./VideoCalendarComponent";
 import { FullCalc } from "./FullCalcComponent";
 import Auth from "../../Auth";
-import { supabase } from "../../supabaseClient";
 
 export class VideoSeries extends Component {
   constructor(props) {
@@ -39,28 +38,7 @@ export class VideoSeries extends Component {
     this.setState({ agent });
     const videos = await videoService.all();
     this.setState({ videos });
-    console.log(videos);
-    try {
-      const user = await supabase.auth.user();
-
-      let { data, error, status } = await supabase
-        .from("profiles")
-        .select(`username, paidVideo, paidDeposit`)
-        .eq("id", user?.id)
-        .single();
-
-      if (error && status !== 406) {
-        throw error;
-      }
-
-      if (data) {
-        this.setState(user);
-      }
-    } catch (error) {
-      alert(error.message);
-    } finally {
-    }
-    console.log(this.state.user)
+    console.log(this.props.vids);
   };
 
   async updateState() {
@@ -114,9 +92,9 @@ export class VideoSeries extends Component {
   freeVideo = (vid) => {
     if (vid.isFree === true) {
       return;
-    } else if (vid.isFree === false && this.state.user?.paidVideo === false) {
+    } else if (vid.isFree === false && this.props.vids === false) {
       return "disabled: 'disabled'";
-    } else if (vid.isFree === false && this.state.user?.paidVideo === true) {
+    } else if (vid.isFree === false && this.props.vids === true) {
       return;
     } else {
       return "disabled: 'disabled'";

@@ -38,7 +38,6 @@ export function Main(props, user) {
     return initialAgent;
   });
 
-  // const [session, setSession] = useState(null);
 
   const thisURL = 'https://mpiagent.herokuapp.com'
 
