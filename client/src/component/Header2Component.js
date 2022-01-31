@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Nav from "react-bootstrap/Nav";
 import { agentService } from "../services/AgentService";
 import { Col, Image, Navbar, Row } from "react-bootstrap";
+import { MyAccount } from "./AccountComponent";
 
 export class Header2 extends Component {
   constructor(props) {
@@ -263,7 +264,9 @@ export class Header2 extends Component {
                       </Row>
                     </Col>
                     <Col>
-                      <Nav.Link style={{ color: ag.textColor ? ag.textColor : "white", }} href="/">
+                      <Nav.Link style={{ color: ag.textColor ? ag.textColor : "white", }}>
+                        <Row>
+                        <Col>
                         <Image
                           src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/MPIBadgeTransparentWHI.png"
                           fluid
@@ -273,6 +276,11 @@ export class Header2 extends Component {
                           }}
                           id="icons"
                         />{" "}
+                        </Col>
+                        <Col>
+                        <MyAccount />
+                        </Col>
+                        </Row>
                       </Nav.Link>
                     </Col>
                   </Navbar.Collapse>
