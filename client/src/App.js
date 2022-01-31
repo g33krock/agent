@@ -37,7 +37,7 @@ function App({ session }) {
         setPaidDeposit(data.paidDeposit);
       }
     } catch (error) {
-      alert(error.message);
+      // alert(error.message);
     } finally {
       // setLoading(false);
     }

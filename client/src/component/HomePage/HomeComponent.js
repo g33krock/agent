@@ -44,23 +44,20 @@ export class Home extends Component {
     const agent = await agentService.one(agentObject);
     this.setState({ agent });
     this.refreshState()
-    // this.setState({ paidVideo: this.props.vids });
-    // this.setState({ paidDeposit: this.props.deposit });
   }
 
 
 
   render() {
-    // const agency = "Not Your Mother's Insurance Agency";
     return (
       <Container fluid style={{ paddingLeft: "0px", paddingRight: "0px", marginTop: "0px"}}>
         {this.state.agent &&
           this.state.agent.map((ag) => (
             <Row style={{ margin: "0px 0px 0px 0px" }} key={ag.toString()}>
               <Jumbotron agent={ag} Id={ag.id} ref={this.jumbotron}/>
+              <Calculator agent={ag} />
               <WhatIsMPI agent={ag} Id={ag.id} vids={this.props.vids} deposit={this.props.deposit}/>
               <Webinar agent={ag} Id={ag.id} />
-              <Calculator agent={ag} />
               <AgentCarousel agent={ag} Id={ag.id} ref={this.carousel}/>
               <Testimonials agent={ag} Id={ag.id} />
               <Bottom agent={ag} Id={ag.id} style={{width: "100%"}} ref={this.bottom}/>
