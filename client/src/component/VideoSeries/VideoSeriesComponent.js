@@ -41,7 +41,7 @@ export class VideoSeries extends Component {
     this.setState({ videos });
     console.log(videos);
     try {
-      const user = supabase.auth.user();
+      const user = await supabase.auth.user();
 
       let { data, error, status } = await supabase
         .from("profiles")
@@ -60,7 +60,8 @@ export class VideoSeries extends Component {
       alert(error.message);
     } finally {
     }
-  }
+    console.log(this.state.user)
+  };
 
   async updateState() {
     const ID = this.props.Id;
@@ -113,9 +114,9 @@ export class VideoSeries extends Component {
   freeVideo = (vid) => {
     if (vid.isFree === true) {
       return;
-    } else if (vid.isFree === false && this.state.user?.paidVideo === 'false') {
+    } else if (vid.isFree === false && this.state.user?.paidVideo === false) {
       return "disabled: 'disabled'";
-    } else if (vid.isFree === false && this.state.user?.paidVideo === 'true') {
+    } else if (vid.isFree === false && this.state.user?.paidVideo === true) {
       return;
     } else {
       return "disabled: 'disabled'";
