@@ -113,10 +113,12 @@ export class VideoSeries extends Component {
   freeVideo = (vid) => {
     if (vid.isFree === true) {
       return;
-    } else if (vid.isFree === false && this.state.user?.paidVideo === false) {
+    } else if (vid.isFree === false && this.state.user?.paidVideo === 'false') {
       return "disabled: 'disabled'";
-    } else if (vid.isFree === false && this.state.user?.paidVideo === true) {
+    } else if (vid.isFree === false && this.state.user?.paidVideo === 'true') {
       return;
+    } else {
+      return "disabled: 'disabled'";
     }
   };
 
