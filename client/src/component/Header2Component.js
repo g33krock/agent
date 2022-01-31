@@ -264,23 +264,8 @@ export class Header2 extends Component {
                       </Row>
                     </Col>
                     <Col>
-                      <Nav.Link style={{ color: ag.textColor ? ag.textColor : "white", }}>
-                        <Row>
-                        <Col>
-                        <Image
-                          src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/MPIBadgeTransparentWHI.png"
-                          fluid
-                          style={{
-                            backgroundColor: `${ag.primaryColor}`,
-                            borderRadius: "50%",
-                          }}
-                          id="icons"
-                        />{" "}
-                        </Col>
-                        <Col>
-                        <MyAccount />
-                        </Col>
-                        </Row>
+                      <Nav.Link style={{ color: ag.textColor ? ag.textColor : "white", padding: "0px"}}>
+                        <MyAccount agent={ag}/>
                       </Nav.Link>
                     </Col>
                   </Navbar.Collapse>
