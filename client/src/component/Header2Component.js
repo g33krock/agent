@@ -17,19 +17,19 @@ export class Header2 extends Component {
   }
 
   async componentDidMount() {
-    console.log(this.props.agent)
+    console.log(this.props.agent);
     const ID = this.props.Id;
     const agentObject = { agentID: ID };
     const agent = await agentService.one(agentObject);
-    this.setState({ agent});
+    this.setState({ agent });
   }
 
   async updateState() {
-    console.log(this.props.agent)
+    console.log(this.props.agent);
     const ID = this.props.Id;
     const agentObject = { agentID: ID };
     const agent = await agentService.one(agentObject);
-    this.setState({ agent});
+    this.setState({ agent });
   }
 
   toggleAboutDisplay() {
@@ -49,7 +49,7 @@ export class Header2 extends Component {
   }
 
   render() {
-    console.log(this.state.agent)
+    console.log(this.state.agent);
     return (
       <>
         {this.state.agent &&
@@ -68,7 +68,10 @@ export class Header2 extends Component {
                   <Navbar.Toggle aria-controls="basic-navbar-nav" />
                   <Navbar.Collapse>
                     <Col>
-                      <Nav.Link style={{ color: ag.textColor ? ag.textColor : "white", }} href="/">
+                      <Nav.Link
+                        style={{ color: ag.textColor ? ag.textColor : "white" }}
+                        href="/"
+                      >
                         <Image src={ag.icon} id="icons" />{" "}
                       </Nav.Link>
                     </Col>
@@ -264,8 +267,22 @@ export class Header2 extends Component {
                       </Row>
                     </Col>
                     <Col>
-                      <Nav.Link style={{ color: ag.textColor ? ag.textColor : "white", padding: "0px"}}>
-                        <MyAccount agent={ag}/>
+                      <Nav.Link
+                        style={{
+                          color: ag.textColor ? ag.textColor : "white",
+                          padding: "0px",
+                        }}
+                      >
+                        {/* <MyAccount agent={ag}/> */}
+                        <Image
+                          src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/MPIBadgeTransparentWHI.png"
+                          fluid
+                          style={{
+                            backgroundColor: `${ag.primaryColor}`,
+                            borderRadius: "50%",
+                          }}
+                          id="icons"
+                        />
                       </Nav.Link>
                     </Col>
                   </Navbar.Collapse>
@@ -282,7 +299,10 @@ export class Header2 extends Component {
                   <Col xs={4}>
                     <Row>
                       <Col xs={3} style={{ textAlign: "right" }}>
-                        <Image src={ag.altIcon ? ag.altIcon : ag.icon} id="icons" />{" "}
+                        <Image
+                          src={ag.altIcon ? ag.altIcon : ag.icon}
+                          id="icons"
+                        />{" "}
                       </Col>
                       <Col xs={9}>
                         <Nav.Link href="/about" style={{ textAlign: "left" }}>
@@ -332,7 +352,10 @@ export class Header2 extends Component {
                         {/* <Image src={ag.altIcon ? ag.altIcon : ag.icon} id="icons" />{" "} */}
                       </Col>
                       <Col xs={9}>
-                        <Nav.Link href="/contactus" style={{ textAlign: "left" }}>
+                        <Nav.Link
+                          href="/contactus"
+                          style={{ textAlign: "left" }}
+                        >
                           <h3>Contact Us</h3>
                         </Nav.Link>
                       </Col>
@@ -353,10 +376,7 @@ export class Header2 extends Component {
                         />{" "} */}
                       </Col>
                       <Col xs={9}>
-                        <Nav.Link
-                          href="/career"
-                          style={{ textAlign: "left" }}
-                        >
+                        <Nav.Link href="/career" style={{ textAlign: "left" }}>
                           <h3>Career Opportunities</h3>
                         </Nav.Link>
                       </Col>

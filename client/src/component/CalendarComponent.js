@@ -45,7 +45,7 @@ export class Calendar extends Component {
             width: "200px",
             textShadow: "1px 1px black"
           }}
-          href="/webinarregistration"
+          href="#webinarTag"
           className="rotateRight"
         ><p className="upsidedown">
           RESERVE YOUR SPOT

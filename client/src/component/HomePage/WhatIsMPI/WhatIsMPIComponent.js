@@ -107,6 +107,7 @@ export class WhatIsMPI extends Component {
               src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/stockhouse-black.png"
               alt="Stockhouse Black Logo"
               className="asSeenOnImage"
+              id="webinarTag"
             />
           </Col>
         </Row>

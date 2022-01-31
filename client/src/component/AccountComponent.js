@@ -18,7 +18,7 @@ export class MyAccount extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{display: "none"}}>
         <Button
           color="link"
           style={{

@@ -57,7 +57,7 @@ export class Home extends Component {
               <Jumbotron agent={ag} Id={ag.id} ref={this.jumbotron}/>
               <Calculator agent={ag} />
               <WhatIsMPI agent={ag} Id={ag.id} vids={this.props.vids} deposit={this.props.deposit}/>
-              <Webinar agent={ag} Id={ag.id} />
+              <Webinar agent={ag} Id={ag.id}/>
               <AgentCarousel agent={ag} Id={ag.id} ref={this.carousel}/>
               <Testimonials agent={ag} Id={ag.id} />
               <Bottom agent={ag} Id={ag.id} style={{width: "100%"}} ref={this.bottom}/>

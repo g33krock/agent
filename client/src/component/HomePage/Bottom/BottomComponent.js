@@ -46,7 +46,7 @@ export class Bottom extends Component {
                   marginBottom: "5px",
                   textShadow: "1px 1px black"
                 }}
-                href="/webinarregistration"
+                href="#webinarTag"
               >
                 RESERVE
                 <br />
