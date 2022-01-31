@@ -44,7 +44,7 @@ function App({ session }) {
   }
   return (
     <div className="App" >
-      <Main vids={paidVideo} deposit={paidDeposit} userName={username} email={session.user.email}/>
+      <Main vids={paidVideo} deposit={paidDeposit} userName={username}/>
     </div>
   );
 }
