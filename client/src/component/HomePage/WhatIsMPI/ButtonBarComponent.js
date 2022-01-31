@@ -26,7 +26,7 @@ export class ButtonBar extends Component {
       if (this.props.vids === true) {
         return "/videoseries";
       } else {
-        return "/shopify";
+        return "/videoseries";
       }
     };
     return (

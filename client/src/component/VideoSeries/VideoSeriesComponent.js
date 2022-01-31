@@ -440,6 +440,7 @@ export class VideoSeries extends Component {
                     marginBottom: "5%",
                     paddingBottom: "5%",
                     borderBottom: "1px solid black",
+                    display:"none"
                   }}
                 >
                   <div>
@@ -453,6 +454,7 @@ export class VideoSeries extends Component {
                     marginBottom: "5%",
                     paddingBottom: "5%",
                     borderBottom: "1px solid black",
+                    display:"none"
                   }}
                 >
                   <div>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Nav from "react-bootstrap/Nav";
 import { agentService } from "../services/AgentService";
 import { Col, Image, Navbar, Row } from "react-bootstrap";
-import { MyAccount } from "./AccountComponent";
+// import { MyAccount } from "./AccountComponent";
 
 export class Header2 extends Component {
   constructor(props) {
@@ -116,6 +116,7 @@ export class Header2 extends Component {
                           marginBottom: "auto",
                         }}
                         href="https://mympi.com/financial-education/financial-news"
+                        target="_blank"
                       >
                         Financial News
                       </Nav.Link>
@@ -136,13 +137,14 @@ export class Header2 extends Component {
                     <Col>
                       <Row>
                         <Nav.Link
-                          onClick={() => this.toggleContactDisplay()}
+                          // onClick={() => this.toggleContactDisplay()}
                           style={{
                             color: ag.textColor ? ag.textColor : "white",
                             textShadow: "1px 1px black",
                             marginTop: "auto",
                             marginBottom: "auto",
                           }}
+                          href="contactus"
                         >
                           Contact Us
                         </Nav.Link>

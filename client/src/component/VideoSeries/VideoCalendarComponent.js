@@ -20,14 +20,14 @@ export class VideoCalendar extends Component {
       if (this.props.deposit === true) {
         return "none";
       } else {
-        return "block";
+        return "none";
       }
     };
     const sched = () => {
       if (this.props.deposit === true) {
         return "block";
       } else {
-        return "none";
+        return "block";
       }
     };
     return (

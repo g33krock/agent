@@ -30,8 +30,8 @@ export class ReadyCalendar extends Component {
   };
 
   render() {
-      const shop = () => {if (this.props.deposit === true) {return "none"} else {return "block"}}
-      const sched = () => {if (this.props.deposit === true) {return "block"} else {return "none"}}
+      const shop = () => {if (this.props.deposit === true) {return "none"} else {return "none"}}
+      const sched = () => {if (this.props.deposit === true) {return "block"} else {return "block"}}
     return (
       <>
         <Button
