@@ -54,7 +54,7 @@
 }
 
 .testing {
-  color:#ffffff00;
+  color: #ffffff00;
   color: #151f2a
 }
 
@@ -773,7 +773,7 @@ ul li::before {
   background-image: -webkit-linear-gradient(45deg, #056FCB 50%, #000000 50%);
 }
 
-#bigMonty{
+#bigMonty {
   font-family: 'bigmontserrat';
 }
 
@@ -791,6 +791,10 @@ ul li::before {
 }
 
 @media only screen and (max-width: 690px) {
+  #mpiPercentAdvantage {
+    padding-top: 20%
+  }
+
   .whatIsMPIButton {
     background-color: black;
     width: 300px;
@@ -803,7 +807,7 @@ ul li::before {
     text-shadow: 2px 2px rgba(0, 0, 0, 0.5)
   }
 
-  .slogan{
+  .slogan {
     padding-top: 0px;
     margin: 1% auto 8% auto;
     text-shadow: 1px 1px black;
@@ -826,7 +830,7 @@ ul li::before {
     font-size: small;
   }
 
-  .asSeenOnImage{
+  .asSeenOnImage {
     margin: auto;
     width: 6vw
   }
@@ -871,7 +875,7 @@ ul li::before {
     font-family: 'bigmontserrat';
     font-size: 100%;
     margin-bottom: 0px;
-    color:rgb(0, 0, 0)
+    color: rgb(0, 0, 0)
   }
 
   #subbulletpoints {
@@ -908,8 +912,8 @@ ul li::before {
   }
 
   .videobuttonrow {
-   margin-left: auto;
-   margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
   }
 
@@ -964,11 +968,19 @@ ul li::before {
   }
 
   .webinarFrame {
-    height: 150vh; width: 100vw; margin:0px; padding:0px; overflow: hidden
+    height: 150vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden
   }
 }
 
 @media only screen and (min-width: 691px) and (max-width: 1079px) {
+  #mpiPercentAdvantage {
+    padding-top: 20%
+  }
+
   .emailSize {
     font-size: 50%
   }
@@ -989,7 +1001,7 @@ ul li::before {
     font-size: 100%
   }
 
-  .slogan{
+  .slogan {
     padding-top: 0px;
     margin: 1% auto 8% auto;
     text-shadow: 1px 1px black;
@@ -1010,7 +1022,7 @@ ul li::before {
     font-size: medium;
   }
 
-  .asSeenOnImage{
+  .asSeenOnImage {
     margin: auto;
     width: 6vw
   }
@@ -1146,7 +1158,11 @@ ul li::before {
   }
 
   .webinarFrame {
-    height: 130vh; width: 100vw; margin:0px; padding:0px; overflow: hidden
+    height: 130vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden
   }
 }
 
@@ -1171,7 +1187,7 @@ ul li::before {
     font-size: 150%
   }
 
-  .slogan{
+  .slogan {
     padding-top: 0px;
     margin: 1% auto 8% auto;
     text-shadow: 1px 1px black;
@@ -1191,7 +1207,7 @@ ul li::before {
     font-size: medium;
   }
 
-  .asSeenOnImage{
+  .asSeenOnImage {
     margin: auto;
     width: 6vw
   }
@@ -1327,7 +1343,11 @@ ul li::before {
   }
 
   .webinarFrame {
-    height: 95vh; width: 100vw; margin:0px; padding:0px; overflow: hidden
+    height: 95vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden
   }
 }
 
@@ -1336,7 +1356,7 @@ ul li::before {
     font-size: 50%
   }
 
-  .slogan{
+  .slogan {
     padding-top: 0px;
     margin: 1% auto 8% auto;
     padding-left: 5%;
@@ -1371,7 +1391,7 @@ ul li::before {
     font-size: medium;
   }
 
-  .asSeenOnImage{
+  .asSeenOnImage {
     margin: auto;
     width: 6vw
   }
@@ -1507,7 +1527,11 @@ ul li::before {
   }
 
   .webinarFrame {
-    height: 80vh; width: 100vw; margin:0px; padding:0px; overflow: hidden
+    height: 80vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden
   }
 }
 
@@ -1516,7 +1540,7 @@ ul li::before {
     font-size: 75%
   }
 
-  .slogan{
+  .slogan {
     padding-top: 0px;
     margin: 1% auto 8%;
     padding-left: 10%;
@@ -1551,7 +1575,7 @@ ul li::before {
     font-size: 125%;
   }
 
-  .asSeenOnImage{
+  .asSeenOnImage {
     margin: auto;
     width: 6vw
   }
@@ -1701,11 +1725,15 @@ ul li::before {
     position: absolute;
     top: 0;
     width: 100%;
- }
+  }
 
- .webinarFrame {
-  height: 80vh; width: 100vw; margin:0px; padding:0px; overflow: hidden
-}
+  .webinarFrame {
+    height: 80vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden
+  }
 }
 
 .sticky {
@@ -1952,4 +1980,3 @@ ul li::before {
   opacity: 1;
   transform: translate(0, 0);
 }
-

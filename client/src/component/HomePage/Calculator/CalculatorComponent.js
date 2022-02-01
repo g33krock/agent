@@ -1,6 +1,7 @@
 import React from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form, Image } from "react-bootstrap";
 import jQuery from "jquery";
+import { CalcContact } from "./CalcContactComponent";
 
 export const Calculator = (props) => {
   // const [showMore, setShowMore] = React.useState(true);
@@ -736,6 +737,7 @@ export const Calculator = (props) => {
     // var ira_percentage_of_goal_field = document.getElementById("IRAPercentage");
     var roth_total_output = document.getElementById("RothTotal");
     var roth_monthly_output = document.getElementById("RothMonthly");
+    var my_MPI_advantage = document.getElementById("mpiPercentAdvantage");
 
     jQuery(document).ready(function () {
       jQuery(first_year_contrib_output).val(
@@ -747,9 +749,9 @@ export const Calculator = (props) => {
       jQuery(annual_income_output).val(
         "$" + total_annual_income.toLocaleString("en-us")
       );
-      jQuery(roth_monthly_output).val(
-        "$" + total_annual_income.toLocaleString("en-us")
-      );
+      // jQuery(roth_monthly_output).val(
+      //   "$" + total_annual_income.toLocaleString("en-us")
+      // );
 
       jQuery(cash_value_output).val(
         "$" + total_cash_value.toLocaleString("en-us")
@@ -787,6 +789,7 @@ export const Calculator = (props) => {
       jQuery(roth_monthly_output).val(
         "$" + rothMonthly.toLocaleString("en-us")
       );
+      jQuery(my_MPI_advantage).val(mpiAdvantage.toLocaleString("en-us") + "%");
     });
 
     // // IRA Cash value
@@ -831,10 +834,12 @@ export const Calculator = (props) => {
     for (let i = 0; i < time; i++) {
       total = rothValue(principal, time, rate, n) + total;
     }
-    console.log(rothValue(principal, time, rate, n));
-    console.log(total + lump_sum);
     const rothTotal = total + lump_sum;
     const rothMonthly = Math.floor(rothTotal / timeLeft);
+
+    const mpiAdvantage = checkNaN(
+      Math.floor(((total_annual_income - rothMonthly) / rothMonthly) * 100)
+    );
 
     // Percentage of goals
     var percentage_of_goal_mpi, percentage_of_goal_ira;
@@ -845,8 +850,6 @@ export const Calculator = (props) => {
       percentage_of_goal_mpi = checkNaN(
         (annual_income / desiredRetirementIncome) * 100
       );
-
-      console.log(desiredRetirementIncome);
 
       percentage_of_goal_ira = checkNaN(
         (rothMonthly / desiredRetirementIncome) * 100
@@ -868,8 +871,45 @@ export const Calculator = (props) => {
     form.addEventListener("change", calculate());
   }
 
+  const agent = props.agent
+  console.log(props.agent)
+
   return (
     <Container className="calcBackground">
+      <Row style={{ backgroundColor: "white" }}>
+        <Col style={{ margin: "auto" }}>
+          <h3 className="asSeenOn">As Seen On</h3>
+        </Col>
+        <Col style={{ margin: "auto" }}>
+          <Image
+            src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/Forbes-logo black.png"
+            alt="Forbes Black Logo"
+            className="asSeenOnImage"
+          />
+        </Col>
+        <Col style={{ margin: "auto" }}>
+          <Image
+            src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/YahooFinanceLogo-black.png"
+            alt="Yahoo Finance Black Logo"
+            className="asSeenOnImage"
+          />
+        </Col>
+        <Col style={{ margin: "auto" }}>
+          <Image
+            src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/entrepreneurblack.png"
+            alt="Entrepreneur Black Logo"
+            className="asSeenOnImage"
+          />
+        </Col>
+        <Col style={{ margin: "auto" }}>
+          <Image
+            src="https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/icons/stockhouse-black.png"
+            alt="Stockhouse Black Logo"
+            className="asSeenOnImage"
+            id="webinarTag"
+          />
+        </Col>
+      </Row>
       <Row style={{ marginTop: "3%", marginBottom: "1%" }}>
         <Col sm={0} md={4} />
         <Col sm={12} md={8}>
@@ -882,9 +922,9 @@ export const Calculator = (props) => {
               fontWeight: "900",
             }}
           >
-            SEE WHAT SECURE COMPOUND
+            INCREASE YOUR RETIREMENT INCOME
             <br />
-            INTEREST CAN DO FOR YOUR RETIREMENT
+            THROUGH SECURE COMPOUND INTEREST
           </h1>
         </Col>
       </Row>
@@ -1099,10 +1139,12 @@ export const Calculator = (props) => {
                                 width: "cover",
                                 marginBottom: "0px",
                                 paddingBottom: "0px",
-                                color: props.agent.textColor ? props.agent.textColor : "black",
+                                color: props.agent.textColor
+                                  ? props.agent.textColor
+                                  : "black",
                                 borderRadius: "5px 5px 0px 0px",
                                 fontWeight: "700",
-                                textShadow: "1px 1px black"
+                                textShadow: "1px 1px black",
                               }}
                             >
                               Side by Side Comparison
@@ -1133,7 +1175,9 @@ export const Calculator = (props) => {
                                   textShadow: "1px 1px black",
                                 }}
                               >
-                                MPI® PLAN
+                                MPI® SECURE COMPOUND
+                                <br />
+                                INTEREST ACCOUNT™
                               </h3>
                             </div>
                             <div
@@ -1156,6 +1200,8 @@ export const Calculator = (props) => {
                                 }}
                               >
                                 ROTH IRA/401K
+                                <br />
+                                INVESTMENT ACCOUNT
                               </h3>
                             </div>
                           </div>
@@ -1190,9 +1236,11 @@ export const Calculator = (props) => {
                                   marginTop: "0px",
                                   marginRight: "0px",
                                   alignContent: "center",
-                                  color: props.agent.textColor ? props.agent.textColor : "black",
+                                  color: props.agent.textColor
+                                    ? props.agent.textColor
+                                    : "black",
                                   fontWeight: "500",
-                                  textShadow: "1px 1px black"
+                                  textShadow: "1px 1px black",
                                 }}
                               >
                                 ESTIMATED ANNUAL TAX-FREE RETIREMENT INCOME
@@ -1242,6 +1290,7 @@ export const Calculator = (props) => {
                                     padding: "0px",
                                     border: "none",
                                     backgroundColor: "white",
+                                    color: "red",
                                   }}
                                   type="text"
                                   id="RothMonthly"
@@ -1255,7 +1304,67 @@ export const Calculator = (props) => {
                             </div>
                           </div>
                         </div>
-                        <Container>
+                        <Container style={{ marginTop: "3%", paddingLeft: "0px", paddingRight: "0px" }}>
+                          <Row>
+                            <Col
+                              xs={12}
+                              md={8}
+                              style={{
+                                display: "flex",
+                                justifyContent: "left",
+                                alignItems: "center",
+                                paddingRight: "0px"
+                              }}
+                            >
+                              <small
+                                style={{
+                                  color: "white",
+                                  // margin: "auto",
+                                  fontSize: "125%",
+                                  fontWeight: "900",
+                                }}
+                              >
+                                MPI® CAN{" "}
+                                <strong>
+                                  <em>
+                                    <u>INCREASE</u>
+                                  </em>
+                                </strong>{" "}
+                                YOUR<br/>TAX-FREE RETIREMENT INCOME BY UP TO:
+                              </small>
+                            </Col>
+                            <Col
+                              xs={12}
+                              md={4}
+                              style={{ backgroundColor: "rgb(0,0,0,0)", paddingLeft: "0px" }}
+                            >
+                              <input
+                                style={{
+                                  width: "100%",
+                                  marginLeft: "0px",
+                                  marginRight: "0px",
+                                  paddingLeft: "0px",
+                                  paddingRight: "0px",
+                                  textAlign: "center",
+                                  fontSize: "125%",
+                                  backgroundColor: "white",
+                                  fontWeight: "900",
+                                  color: "black",
+                                  border: "1px 1px black",
+                                  borderRadius: "5px",
+                                  // color:'white'
+                                }}
+                                type="text"
+                                id="mpiPercentAdvantage"
+                                name="mpiPercentAdvantage"
+                                value="0%"
+                                className="form-control ccm-input-text"
+                                readOnly
+                              />
+                            </Col>
+                          </Row>
+                        </Container>
+                        {/* <Container>
                           <Row>
                             <Row></Row>
                             <Col xs={4}>
@@ -1331,14 +1440,14 @@ export const Calculator = (props) => {
                               See Full Results
                             </Button>
                           </Row>
-                        </Container>
+                        </Container> */}
                         {/* </div> */}
                       </div>
                     </fieldset>
                     <p
                       style={{
                         marginTop: "10px",
-                        fontSize: "12px",
+                        fontSize: "9px",
                         color: "white",
                         textShadow: "1px 1px black",
                         fontWeight: "500",
@@ -1361,6 +1470,11 @@ export const Calculator = (props) => {
                 </Row>
               </Container>
             </Form>
+          </Container>
+          <Container style={{color: "white", marginTop: "3%"}}>
+            <h2 id="bigMonty">I WANT MORE RETIREMENT INCOME!</h2>
+            <h1 id="bigMonty">LEARN MORE</h1>
+            <CalcContact agent={agent} Id={agent.id}/>
           </Container>
         </Col>
       </Row>

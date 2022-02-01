@@ -6,7 +6,7 @@ import { agentService } from "../services/AgentService";
 import { About } from "./About/AboutComponent";
 import { AboutCurtis } from "./About/AboutCurtisComponent";
 import { Webinar } from "./HomePage/WebinarComponent";
-import { Calculator } from "./HomePage/CalculatorComponent";
+import { Calculator } from "./HomePage/Calculator/CalculatorComponent";
 import { Calendar } from "./CalendarComponent";
 import { ContactUs } from "./ContactUsComponent";
 import { FAQ } from "./FAQ/FAQComponent";
@@ -27,7 +27,7 @@ import { supabase } from '../supabaseClient';
 
 export function Main(props, user) {
   // const agentId = Math.floor(Math.random() * 34);
-  const [agentId, setAgentId] = useState(1);
+  const [agentId, setAgentId] = useState(3);
   const agentObject = { agentID: agentId };
   const agents = useState(() => {
     const allAgents = agentService.all();
