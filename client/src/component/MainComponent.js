@@ -27,7 +27,7 @@ import { supabase } from '../supabaseClient';
 
 export function Main(props, user) {
   // const agentId = Math.floor(Math.random() * 34);
-  const [agentId, setAgentId] = useState(2);
+  const [agentId, setAgentId] = useState(1);
   const agentObject = { agentID: agentId };
   const agents = useState(() => {
     const allAgents = agentService.all();
@@ -52,71 +52,71 @@ export function Main(props, user) {
     console.log(agent);
   };
 
-  const makeChanges = () => {
-    switch (window.location.href) {
-      case `${thisURL}/`:
-        changeHeader.current.updateState();
-        changeHome.current.updateState();
-        changeFooter.current.updateState();
-        changeCalendar.current.updateState();
-        break;
-      case `${thisURL}/calendar`:
-        changeHeader.current.updateState();
-        changeCalendar.current.updateState();
-        changeFooter.current.updateState();
-        break;
-      case `${thisURL}/videoseries`:
-        changeHeader.current.updateState();
-        changeCalendar.current.updateState();
-        changeFooter.current.updateState();
-        changeVideo.current.updateState();
-        break;
-      case `${thisURL}/about`:
-        changeHeader.current.updateState();
-        changeCalendar.current.updateState();
-        changeFooter.current.updateState();
-        changeAbout.current.updateState();
-        break;
-      case `${thisURL}/calculator`:
-        changeHeader.current.updateState();
-        changeCalendar.current.updateState();
-        changeFooter.current.updateState();
-        changeCalculator.current.updateState();
-        break;
-      case `${thisURL}/faq`:
-        changeHeader.current.updateState();
-        changeCalendar.current.updateState();
-        changeFooter.current.updateState();
-        changeFAQ.current.updateState();
-        break;
-      case `${thisURL}/contactus`:
-        changeHeader.current.updateState();
-        changeCalendar.current.updateState();
-        changeFooter.current.updateState();
-        changeContact.current.updateState();
-        break;
-      case `${thisURL}/career`:
-        changeHeader.current.updateState();
-        changeCalendar.current.updateState();
-        changeFooter.current.updateState();
-        changeCareer.current.updateState();
-        break;
-      case `${thisURL}/shopify`:
-        changeHeader.current.updateState();
-        changeCalendar.current.updateState();
-        changeFooter.current.updateState();
-        changeShopify.current.updateState();
-        break;
-      case `${thisURL}/curtisray`:
-        changeHeader.current.updateState();
-        changeCalendar.current.updateState();
-        changeFooter.current.updateState();
-        changeCurtis.current.updateState();
-        break;
-      default:
-        alert("You are in the empty void of the internet");
-    }
-  };
+  // const makeChanges = () => {
+  //   switch (window.location.href) {
+  //     case `${thisURL}/`:
+  //       changeHeader.current.updateState();
+  //       changeHome.current.updateState();
+  //       changeFooter.current.updateState();
+  //       changeCalendar.current.updateState();
+  //       break;
+  //     case `${thisURL}/calendar`:
+  //       changeHeader.current.updateState();
+  //       changeCalendar.current.updateState();
+  //       changeFooter.current.updateState();
+  //       break;
+  //     case `${thisURL}/videoseries`:
+  //       changeHeader.current.updateState();
+  //       changeCalendar.current.updateState();
+  //       changeFooter.current.updateState();
+  //       changeVideo.current.updateState();
+  //       break;
+  //     case `${thisURL}/about`:
+  //       changeHeader.current.updateState();
+  //       changeCalendar.current.updateState();
+  //       changeFooter.current.updateState();
+  //       changeAbout.current.updateState();
+  //       break;
+  //     case `${thisURL}/calculator`:
+  //       changeHeader.current.updateState();
+  //       changeCalendar.current.updateState();
+  //       changeFooter.current.updateState();
+  //       changeCalculator.current.updateState();
+  //       break;
+  //     case `${thisURL}/faq`:
+  //       changeHeader.current.updateState();
+  //       changeCalendar.current.updateState();
+  //       changeFooter.current.updateState();
+  //       changeFAQ.current.updateState();
+  //       break;
+  //     case `${thisURL}/contactus`:
+  //       changeHeader.current.updateState();
+  //       changeCalendar.current.updateState();
+  //       changeFooter.current.updateState();
+  //       changeContact.current.updateState();
+  //       break;
+  //     case `${thisURL}/career`:
+  //       changeHeader.current.updateState();
+  //       changeCalendar.current.updateState();
+  //       changeFooter.current.updateState();
+  //       changeCareer.current.updateState();
+  //       break;
+  //     case `${thisURL}/shopify`:
+  //       changeHeader.current.updateState();
+  //       changeCalendar.current.updateState();
+  //       changeFooter.current.updateState();
+  //       changeShopify.current.updateState();
+  //       break;
+  //     case `${thisURL}/curtisray`:
+  //       changeHeader.current.updateState();
+  //       changeCalendar.current.updateState();
+  //       changeFooter.current.updateState();
+  //       changeCurtis.current.updateState();
+  //       break;
+  //     default:
+  //       alert("You are in the empty void of the internet");
+  //   }
+  // };
 
   const changeHeader = useRef();
   const changeCalendar = useRef();
@@ -363,7 +363,7 @@ export function Main(props, user) {
         <option value="35">Lance Watson</option>
         <option value="36">Kindra Watson</option>
       </select>
-      <Button onClick={makeChanges}>Change Agent</Button>
+      {/* <Button onClick={makeChanges}>Change Agent</Button> */}
     </div>
   );
 }
