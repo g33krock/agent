@@ -792,7 +792,12 @@ ul li::before {
 
 @media only screen and (max-width: 690px) {
   #mpiPercentAdvantage {
-    padding-top: 20%
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #mpiPercentAdvantageCol {
+   justify-content: center;
   }
 
   .whatIsMPIButton {
@@ -978,7 +983,12 @@ ul li::before {
 
 @media only screen and (min-width: 691px) and (max-width: 1079px) {
   #mpiPercentAdvantage {
-    padding-top: 20%
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #mpiPercentAdvantageCol {
+    justify-content: center;
   }
 
   .emailSize {

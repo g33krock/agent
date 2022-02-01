@@ -24,6 +24,9 @@ app.use(express.static(staticPath))
 // create an agent
 app.post("/agent", db.createAgent)
 
+// create an contact
+app.post("/contact", db.createContact)
+
 //get all agents
 app.get('/agents', db.getAgents)
 

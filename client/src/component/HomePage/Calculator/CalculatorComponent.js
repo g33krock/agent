@@ -1337,6 +1337,7 @@ export const Calculator = (props) => {
                               xs={12}
                               md={4}
                               style={{ backgroundColor: "rgb(0,0,0,0)", paddingLeft: "0px" }}
+                              id="mpiPercentAdvantageCol"
                             >
                               <input
                                 style={{
@@ -1471,7 +1472,7 @@ export const Calculator = (props) => {
               </Container>
             </Form>
           </Container>
-          <Container style={{color: "white", marginTop: "3%"}}>
+          <Container style={{color: "white", marginTop: "3%", marginBottom: "3%"}}>
             <h2 id="bigMonty">I WANT MORE RETIREMENT INCOME!</h2>
             <h1 id="bigMonty">LEARN MORE</h1>
             <CalcContact agent={agent} Id={agent.id}/>
