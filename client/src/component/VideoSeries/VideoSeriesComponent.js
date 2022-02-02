@@ -205,12 +205,7 @@ export class VideoSeries extends Component {
                     </h3>
                   </Row>
                   <Col
-                    style={{
-                      paddingLeft: "1%",
-                      backgroundColor: "white",
-                      overflowY: "scroll",
-                      maxHeight: "75vh",
-                    }}
+                  className="videoList"
                   >
                     {this.state.videos
                       .filter((vid) => vid.category === "none")

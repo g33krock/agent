@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   /* background-color: rgba(0, 0, 0, 0.295); */
-  font-family: 'montserrat';
+  font-family: "montserrat";
 }
 
 .App-logo {
@@ -12,7 +12,7 @@
 /* Shopify CSS */
 .App__header {
   background-color: #222;
-  background-image: url('https://unsplash.it/1000/300?image=823');
+  background-image: url("https://unsplash.it/1000/300?image=823");
   background-size: cover;
   color: white;
   padding: 10px 10px;
@@ -55,7 +55,7 @@
 
 .testing {
   color: #ffffff00;
-  color: #151f2a
+  color: #151f2a;
 }
 
 .button {
@@ -139,37 +139,36 @@ ul li::before {
 
 .videoseriestitle {
   margin-bottom: 0px;
-  font-family: 'bigmontserrat';
-  letter-spacing: .2rem;
-  font-size: 350%
+  font-family: "bigmontserrat";
+  letter-spacing: 0.2rem;
+  font-size: 350%;
 }
 
 .videoseriessubtitle {
   margin-top: 0px;
-  font-family: 'bigmontserrat';
-  letter-spacing: .2rem;
-  font-size: 150%
+  font-family: "bigmontserrat";
+  letter-spacing: 0.2rem;
+  font-size: 150%;
 }
 
 .videofoot {
-  font-family: 'bigmontserrat';
-  letter-spacing: .2rem;
+  font-family: "bigmontserrat";
+  letter-spacing: 0.2rem;
 }
-
 
 @font-face {
   font-family: greatvibes;
-  src: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/fonts/GreatVibes-Regular.ttf)
+  src: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/fonts/GreatVibes-Regular.ttf);
 }
 
 @font-face {
   font-family: montserrat;
-  src: url(https://qyctrtcwtwasdktftmuy.supabase.in/storage/v1/object/public/font/Montserrat-Regular.ttf)
+  src: url(https://qyctrtcwtwasdktftmuy.supabase.in/storage/v1/object/public/font/Montserrat-Regular.ttf);
 }
 
 @font-face {
   font-family: bigmontserrat;
-  src: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/fonts/Montserrat-ExtraBold.ttf)
+  src: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/fonts/Montserrat-ExtraBold.ttf);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -213,7 +212,7 @@ ul li::before {
   padding-bottom: 3%;
   margin-left: auto;
   margin-right: auto;
-  min-height: 56px
+  min-height: 56px;
 }
 
 .videoButton {
@@ -233,7 +232,6 @@ ul li::before {
   padding-top: 2%;
   /* padding-bottom: 2% */
 }
-
 
 .selectVideo {
   /* wrap text in compatible browsers */
@@ -257,7 +255,7 @@ ul li::before {
 .selectVideo:hover {
   color: white;
   background-color: #6d6d6d;
-  text-shadow: 1px 1px black
+  text-shadow: 1px 1px black;
 }
 
 .selectVideo:focus {
@@ -266,7 +264,7 @@ ul li::before {
 }
 
 #bioBlock {
-  display: block
+  display: block;
 }
 
 .App-header {
@@ -289,7 +287,7 @@ ul li::before {
 }
 
 #basic-nav-dropdown {
-  color: rgba(4, 0, 255, 0.5)
+  color: rgba(4, 0, 255, 0.5);
 }
 
 @keyframes App-logo-spin {
@@ -318,11 +316,15 @@ ul li::before {
 
 .bottom {
   height: 200px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 #bottom-left {
-  background-image: radial-gradient(rgb(255, 255, 74), rgb(255, 255, 0), rgb(150, 150, 1));
+  background-image: radial-gradient(
+    rgb(255, 255, 74),
+    rgb(255, 255, 0),
+    rgb(150, 150, 1)
+  );
   position: relative;
   padding: 20px;
   border-radius: 1%;
@@ -330,7 +332,11 @@ ul li::before {
 }
 
 #bottom-center {
-  background-image: radial-gradient(rgb(255, 255, 255), rgb(187, 187, 187), rgb(143, 143, 143));
+  background-image: radial-gradient(
+    rgb(255, 255, 255),
+    rgb(187, 187, 187),
+    rgb(143, 143, 143)
+  );
   position: relative;
   padding: 20px;
   border-radius: 1%;
@@ -343,8 +349,8 @@ ul li::before {
   position: relative;
   padding: 20px;
   margin-right: 0px;
-  margin-left: 0px
-    /* border-radius: 1%;
+  margin-left: 0px;
+  /* border-radius: 1%;
   border: 2px solid grey; */
 }
 
@@ -360,7 +366,7 @@ ul li::before {
 
 .foot {
   background-image: linear-gradient(to right, black, rgb(78, 78, 78), black);
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 .fade-in-text {
@@ -424,7 +430,6 @@ ul li::before {
 }
 
 @keyframes bounce {
-
   0%,
   100%,
   20%,
@@ -432,19 +437,19 @@ ul li::before {
   80% {
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
-    transform: translateY(0)
+    transform: translateY(0);
   }
 
   40% {
     -webkit-transform: translateY(-30px);
     -ms-transform: translateY(-30px);
-    transform: translateY(-30px)
+    transform: translateY(-30px);
   }
 
   60% {
     -webkit-transform: translateY(-15px);
     -ms-transform: translateY(-15px);
-    transform: translateY(-15px)
+    transform: translateY(-15px);
   }
 }
 
@@ -464,7 +469,7 @@ ul li::before {
 }
 
 .socialMediaIcon {
-  position: absolute
+  position: absolute;
 }
 
 .bouncey {
@@ -491,7 +496,7 @@ ul li::before {
   /* color: rgb(136, 136, 136); */
   padding: 0px 0;
   margin-top: 0px;
-  font-size: .553em;
+  font-size: 0.553em;
   line-height: inherit;
 }
 
@@ -552,7 +557,7 @@ ul li::before {
   /* background-color: rgba(255, 214, 51, .7); */
   text-align: center;
   /* text-shadow: 0.1em 0.1em 0.14em #000000; */
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 
 .maincalcualtion input,
@@ -563,7 +568,7 @@ ul li::before {
   /* background-color: rgba(255, 214, 51, .7); */
   text-align: center;
   /* text-shadow: 0.1em 0.1em 0.14em #000000; */
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 
 .ci-hero-item-hidden {
@@ -694,7 +699,7 @@ ul li::before {
   font-weight: 900;
   font-size: 1.5em;
   color: #000;
-  background-color: #FFF !important;
+  background-color: #fff !important;
 }
 
 .ci-rpw-desktop .ci-income-wrapper {
@@ -769,25 +774,25 @@ ul li::before {
 }
 
 .cont {
-  background-color: #013A6B;
-  background-image: -webkit-linear-gradient(45deg, #056FCB 50%, #000000 50%);
+  background-color: #013a6b;
+  background-image: -webkit-linear-gradient(45deg, #056fcb 50%, #000000 50%);
 }
 
 #bigMonty {
-  font-family: 'bigmontserrat';
+  font-family: "bigmontserrat";
 }
 
 .columntitle {
   text-align: center;
-  font-family: 'bigmontserrat';
-  margin-bottom: 0px
+  font-family: "bigmontserrat";
+  margin-bottom: 0px;
 }
 
 #columnsubtitle {
   text-align: center;
-  font-family: 'bigmontserrat';
+  font-family: "bigmontserrat";
   font: size 5px;
-  font-style: italic
+  font-style: italic;
 }
 
 @media only screen and (max-width: 690px) {
@@ -797,7 +802,7 @@ ul li::before {
   }
 
   #mpiPercentAdvantageCol {
-   justify-content: center;
+    justify-content: center;
   }
 
   .whatIsMPIButton {
@@ -809,7 +814,7 @@ ul li::before {
     margin-bottom: 5px;
     margin-left: auto;
     margin-right: auto;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.5)
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
   }
 
   .slogan {
@@ -818,14 +823,12 @@ ul li::before {
     text-shadow: 1px 1px black;
     background-color: rgb(0, 0, 0, 0.5);
     font-size: 100%;
-    max-width: 50vw
+    max-width: 50vw;
   }
-
 
   .calcBackground {
     background-color: rgba(0, 0, 0, 0.75);
-    background-image:
-      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/darkcalculator.png);
+    background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/darkcalculator.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top right;
@@ -837,7 +840,7 @@ ul li::before {
 
   .asSeenOnImage {
     margin: auto;
-    width: 6vw
+    width: 6vw;
   }
 
   #video {
@@ -846,7 +849,7 @@ ul li::before {
     width: auto;
     height: contain;
     left: -50%;
-    top: -50%
+    top: -50%;
   }
 
   .backdrop {
@@ -855,11 +858,11 @@ ul li::before {
     width: auto;
     height: contain;
     left: -50%;
-    top: -50%
+    top: -50%;
   }
 
   #fancyfont {
-    font-family: 'greatvibes';
+    font-family: "greatvibes";
     font-size: 150%;
     text-shadow: 1px 1px 1px black;
   }
@@ -869,7 +872,7 @@ ul li::before {
   }
 
   .scvis {
-    min-height: 250px
+    min-height: 250px;
   }
 
   #bullet {
@@ -877,32 +880,39 @@ ul li::before {
   }
 
   .bulletpoints {
-    font-family: 'bigmontserrat';
+    font-family: "bigmontserrat";
     font-size: 100%;
     margin-bottom: 0px;
-    color: rgb(0, 0, 0)
+    color: rgb(0, 0, 0);
   }
 
   #subbulletpoints {
-    font-family: 'bigmontserrat';
+    font-family: "bigmontserrat";
     font: size 10%;
-    font-style: italic
+    font-style: italic;
+  }
+
+  .videoList {
+    padding-left: "1%";
+    background-color: white;
+    overflow-y: scroll;
+    max-height: 70vh;
   }
 
   .videohead {
-    font-family: 'bigmontserrat';
-    font-size: 250%
+    font-family: "bigmontserrat";
+    font-size: 250%;
   }
 
   .videosubhead {
-    font-family: 'bigmontserrat';
+    font-family: "bigmontserrat";
     font-size: 125%;
-    font-style: italic
+    font-style: italic;
   }
 
   .videobody {
     color: white;
-    font-size: 100%
+    font-size: 100%;
   }
 
   .videobutton {
@@ -954,11 +964,11 @@ ul li::before {
 
   .curtisList {
     text-align: left;
-    font-size: 75%
+    font-size: 75%;
   }
 
   .documentaryContainer {
-    min-width: 345px
+    min-width: 345px;
   }
 
   .webinarBackground {
@@ -969,7 +979,7 @@ ul li::before {
 
   .webinarImage {
     width: 100%;
-    height: auto
+    height: auto;
   }
 
   .webinarFrame {
@@ -977,7 +987,7 @@ ul li::before {
     width: 100vw;
     margin: 0px;
     padding: 0px;
-    overflow: hidden
+    overflow: hidden;
   }
 }
 
@@ -992,7 +1002,7 @@ ul li::before {
   }
 
   .emailSize {
-    font-size: 50%
+    font-size: 50%;
   }
 
   .whatIsMPIButton {
@@ -1004,11 +1014,11 @@ ul li::before {
     margin-bottom: 5px;
     margin-left: auto;
     margin-right: auto;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.5)
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
   }
 
   .whatIsMPIButton h2 {
-    font-size: 100%
+    font-size: 100%;
   }
 
   .slogan {
@@ -1017,13 +1027,12 @@ ul li::before {
     text-shadow: 1px 1px black;
     background-color: rgb(0, 0, 0, 0.5);
     font-size: 150%;
-    max-width: 50vw
+    max-width: 50vw;
   }
 
   .calcBackground {
     background-color: rgba(0, 0, 0, 0.75);
-    background-image:
-      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/darkcalculator.png);
+    background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/darkcalculator.png);
     background-repeat: no-repeat;
     background-position: left bottom;
   }
@@ -1034,7 +1043,7 @@ ul li::before {
 
   .asSeenOnImage {
     margin: auto;
-    width: 6vw
+    width: 6vw;
   }
 
   #video {
@@ -1043,7 +1052,7 @@ ul li::before {
     width: auto;
     height: contain;
     left: -50%;
-    top: -50%
+    top: -50%;
   }
 
   .backdrop {
@@ -1052,11 +1061,11 @@ ul li::before {
     width: auto;
     height: contain;
     left: -50%;
-    top: -50%
+    top: -50%;
   }
 
   #fancyfont {
-    font-family: 'greatvibes';
+    font-family: "greatvibes";
     font-size: 150%;
     text-shadow: 1px 1px 1px black;
   }
@@ -1066,7 +1075,7 @@ ul li::before {
   }
 
   .scvis {
-    min-height: 300px
+    min-height: 300px;
   }
 
   #bullet {
@@ -1074,31 +1083,38 @@ ul li::before {
   }
 
   .bulletpoints {
-    font-family: 'bigmontserrat';
+    font-family: "bigmontserrat";
     font-size: 150%;
-    margin-bottom: 0px
+    margin-bottom: 0px;
   }
 
   #subbulletpoints {
-    font-family: 'bigmontserrat';
+    font-family: "bigmontserrat";
     font: size 15%;
-    font-style: italic
+    font-style: italic;
+  }
+
+  .videoList {
+    padding-left: "1%";
+    background-color: white;
+    overflow-y: scroll;
+    max-height: 65vh;
   }
 
   .videohead {
-    font-family: 'bigmontserrat';
-    font-size: 300%
+    font-family: "bigmontserrat";
+    font-size: 300%;
   }
 
   .videosubhead {
-    font-family: 'bigmontserrat';
+    font-family: "bigmontserrat";
     font-size: 150%;
-    font-style: italic
+    font-style: italic;
   }
 
   .videobody {
     color: white;
-    font-size: 150%
+    font-size: 150%;
   }
 
   .videobutton {
@@ -1122,7 +1138,7 @@ ul li::before {
 
   .videobuttoncol {
     width: auto;
-    justify-content: center
+    justify-content: center;
   }
 
   .homebg {
@@ -1149,11 +1165,11 @@ ul li::before {
 
   .curtisList {
     text-align: left;
-    font-size: 100%
+    font-size: 100%;
   }
 
   .documentaryContainer {
-    border: none
+    border: none;
   }
 
   .webinarBackground {
@@ -1164,7 +1180,7 @@ ul li::before {
 
   .webinarImage {
     width: 100%;
-    height: auto
+    height: auto;
   }
 
   .webinarFrame {
@@ -1172,13 +1188,13 @@ ul li::before {
     width: 100vw;
     margin: 0px;
     padding: 0px;
-    overflow: hidden
+    overflow: hidden;
   }
 }
 
 @media only screen and (min-width: 1080px) and (max-width: 1535px) {
   .emailSize {
-    font-size: 50%
+    font-size: 50%;
   }
 
   .whatIsMPIButton {
@@ -1190,11 +1206,11 @@ ul li::before {
     margin-bottom: 5px;
     margin-left: auto;
     margin-right: auto;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.5)
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
   }
 
   .whatIsMPIButton h2 {
-    font-size: 150%
+    font-size: 150%;
   }
 
   .slogan {
@@ -1202,13 +1218,12 @@ ul li::before {
     margin: 1% auto 8% auto;
     text-shadow: 1px 1px black;
     background-color: rgb(0, 0, 0, 0.5);
-    max-width: 50vw
+    max-width: 50vw;
   }
 
   .calcBackground {
     background-color: rgba(0, 0, 0, 0.75);
-    background-image:
-      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/darkcalculator.png);
+    background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/darkcalculator.png);
     background-repeat: no-repeat;
     background-position: left bottom;
   }
@@ -1219,7 +1234,7 @@ ul li::before {
 
   .asSeenOnImage {
     margin: auto;
-    width: 6vw
+    width: 6vw;
   }
 
   #video {
@@ -1228,7 +1243,7 @@ ul li::before {
     width: auto;
     height: contain;
     left: -50%;
-    top: -50%
+    top: -50%;
   }
 
   .backdrop {
@@ -1237,11 +1252,11 @@ ul li::before {
     width: auto;
     height: contain;
     left: -50%;
-    top: -50%
+    top: -50%;
   }
 
   #fancyfont {
-    font-family: 'greatvibes';
+    font-family: "greatvibes";
     font-size: 150%;
     text-shadow: 1px 1px 1px black;
   }
@@ -1251,7 +1266,7 @@ ul li::before {
   }
 
   .scvis {
-    min-height: 300px
+    min-height: 300px;
   }
 
   #bullet {
@@ -1259,31 +1274,38 @@ ul li::before {
   }
 
   .bulletpoints {
-    font-family: 'bigmontserrat';
+    font-family: "bigmontserrat";
     font-size: 150%;
-    margin-bottom: 0px
+    margin-bottom: 0px;
   }
 
   #subbulletpoints {
-    font-family: 'bigmontserrat';
+    font-family: "bigmontserrat";
     font: size 20%;
-    font-style: italic
+    font-style: italic;
+  }
+
+  .videoList {
+    padding-left: "1%";
+    background-color: white;
+    overflow-y: scroll;
+    max-height: 65vh;
   }
 
   .videohead {
-    font-family: 'bigmontserrat';
-    font-size: 300%
+    font-family: "bigmontserrat";
+    font-size: 300%;
   }
 
   .videosubhead {
-    font-family: 'bigmontserrat';
+    font-family: "bigmontserrat";
     font-size: 150%;
-    font-style: italic
+    font-style: italic;
   }
 
   .videobody {
     color: white;
-    font-size: 150%
+    font-size: 150%;
   }
 
   .videobutton {
@@ -1307,7 +1329,7 @@ ul li::before {
 
   .videobuttoncol {
     width: auto;
-    justify-content: center
+    justify-content: center;
   }
 
   .homebg {
@@ -1334,11 +1356,11 @@ ul li::before {
 
   .curtisList {
     text-align: left;
-    font-size: 100%
+    font-size: 100%;
   }
 
   .documentaryContainer {
-    border: none
+    border: none;
   }
 
   .webinarBackground {
@@ -1349,7 +1371,7 @@ ul li::before {
 
   .webinarImage {
     width: 100%;
-    height: auto
+    height: auto;
   }
 
   .webinarFrame {
@@ -1357,13 +1379,13 @@ ul li::before {
     width: 100vw;
     margin: 0px;
     padding: 0px;
-    overflow: hidden
+    overflow: hidden;
   }
 }
 
 @media only screen and (min-width: 1536px) and (max-width: 1699px) {
   .emailSize {
-    font-size: 50%
+    font-size: 50%;
   }
 
   .slogan {
@@ -1373,7 +1395,7 @@ ul li::before {
     padding-right: 5%;
     text-shadow: 1px 1px black;
     background-color: rgb(0, 0, 0, 0.5);
-    max-width: 50vw
+    max-width: 50vw;
   }
 
   .whatIsMPIButton {
@@ -1385,13 +1407,12 @@ ul li::before {
     margin-bottom: 5px;
     margin-left: auto;
     margin-right: auto;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.5)
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
   }
 
   .calcBackground {
     background-color: rgba(0, 0, 0, 0.75);
-    background-image:
-      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/croppeddarkcalculator.png);
+    background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/croppeddarkcalculator.png);
     background-repeat: no-repeat;
     background-position: left bottom;
     background-size: contain;
@@ -1403,7 +1424,7 @@ ul li::before {
 
   .asSeenOnImage {
     margin: auto;
-    width: 6vw
+    width: 6vw;
   }
 
   #video {
@@ -1412,7 +1433,7 @@ ul li::before {
     width: auto;
     height: contain;
     left: -50%;
-    top: -50%
+    top: -50%;
   }
 
   .backdrop {
@@ -1421,11 +1442,11 @@ ul li::before {
     width: auto;
     height: contain;
     left: -50%;
-    top: -50%
+    top: -50%;
   }
 
   #fancyfont {
-    font-family: 'greatvibes';
+    font-family: "greatvibes";
     font-size: 150%;
     text-shadow: 1px 1px 1px black;
   }
@@ -1435,7 +1456,7 @@ ul li::before {
   }
 
   .scvis {
-    min-height: 300px
+    min-height: 300px;
   }
 
   #bullet {
@@ -1443,31 +1464,38 @@ ul li::before {
   }
 
   .bulletpoints {
-    font-family: 'bigmontserrat';
+    font-family: "bigmontserrat";
     font-size: 150%;
-    margin-bottom: 0px
+    margin-bottom: 0px;
   }
 
   #subbulletpoints {
-    font-family: 'bigmontserrat';
+    font-family: "bigmontserrat";
     font: size 25%;
-    font-style: italic
+    font-style: italic;
+  }
+
+  .videoList {
+    padding-left: "1%";
+    background-color: white;
+    overflow-y: scroll;
+    max-height: 70vh;
   }
 
   .videohead {
-    font-family: 'bigmontserrat';
-    font-size: 300%
+    font-family: "bigmontserrat";
+    font-size: 300%;
   }
 
   .videosubhead {
-    font-family: 'bigmontserrat';
+    font-family: "bigmontserrat";
     font-size: 150%;
-    font-style: italic
+    font-style: italic;
   }
 
   .videobody {
     color: white;
-    font-size: 150%
+    font-size: 150%;
   }
 
   .videobutton {
@@ -1491,7 +1519,7 @@ ul li::before {
 
   .videobuttoncol {
     width: auto;
-    justify-content: center
+    justify-content: center;
   }
 
   .homebg {
@@ -1518,11 +1546,11 @@ ul li::before {
 
   .curtisList {
     text-align: left;
-    font-size: 100%
+    font-size: 100%;
   }
 
   .documentaryContainer {
-    border: none
+    border: none;
   }
 
   .webinarBackground {
@@ -1533,7 +1561,7 @@ ul li::before {
 
   .webinarImage {
     width: 90%;
-    height: auto
+    height: auto;
   }
 
   .webinarFrame {
@@ -1541,13 +1569,13 @@ ul li::before {
     width: 100vw;
     margin: 0px;
     padding: 0px;
-    overflow: hidden
+    overflow: hidden;
   }
 }
 
 @media only screen and (min-width: 1700px) {
   .emailSize {
-    font-size: 75%
+    font-size: 75%;
   }
 
   .slogan {
@@ -1557,7 +1585,7 @@ ul li::before {
     padding-right: 10%;
     text-shadow: 1px 1px black;
     background-color: rgb(0, 0, 0, 0.5);
-    max-width: 50vw
+    max-width: 50vw;
   }
 
   .whatIsMPIButton {
@@ -1569,13 +1597,12 @@ ul li::before {
     margin-bottom: 5px;
     margin-left: auto;
     margin-right: auto;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.5)
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
   }
 
   .calcBackground {
     background-color: rgba(0, 0, 0, 0.75);
-    background-image:
-      url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/croppeddarkcalculator.png);
+    background-image: url(https://jwvonytjrpiueyuwsjpa.supabase.in/storage/v1/object/public/images/croppeddarkcalculator.png);
     background-repeat: no-repeat;
     background-position: left bottom;
     background-size: contain;
@@ -1587,7 +1614,7 @@ ul li::before {
 
   .asSeenOnImage {
     margin: auto;
-    width: 6vw
+    width: 6vw;
   }
 
   #video {
@@ -1595,7 +1622,7 @@ ul li::before {
     z-index: -1;
     width: 100%;
     height: auto;
-    left: 0px
+    left: 0px;
   }
 
   .backdrop {
@@ -1603,11 +1630,11 @@ ul li::before {
     z-index: -1;
     width: 100%;
     height: auto;
-    left: 0px
+    left: 0px;
   }
 
   #fancyfont {
-    font-family: 'greatvibes';
+    font-family: "greatvibes";
     font-size: 400%;
     text-shadow: 2px 2px 2px black;
   }
@@ -1617,7 +1644,7 @@ ul li::before {
   }
 
   .scvis {
-    min-height: 350px
+    min-height: 350px;
   }
 
   #bullet {
@@ -1625,31 +1652,38 @@ ul li::before {
   }
 
   .bulletpoints {
-    font-family: 'bigmontserrat';
+    font-family: "bigmontserrat";
     font-size: 175%;
-    margin-bottom: 0px
+    margin-bottom: 0px;
   }
 
   #subbulletpoints {
-    font-family: 'bigmontserrat';
+    font-family: "bigmontserrat";
     font: size 25%;
-    font-style: italic
+    font-style: italic;
+  }
+
+  .videoList {
+    padding-left: "1%";
+    background-color: white;
+    overflow-y: scroll;
+    max-height: 70vh;
   }
 
   .videohead {
-    font-family: 'bigmontserrat';
-    font-size: 400%
+    font-family: "bigmontserrat";
+    font-size: 400%;
   }
 
   .videosubhead {
-    font-family: 'bigmontserrat';
+    font-family: "bigmontserrat";
     font-size: 225%;
-    font-style: italic
+    font-style: italic;
   }
 
   .videobody {
     color: white;
-    font-size: 200%
+    font-size: 200%;
   }
 
   .videobutton {
@@ -1673,7 +1707,7 @@ ul li::before {
 
   .videobuttoncol {
     width: auto;
-    justify-content: center
+    justify-content: center;
   }
 
   .homebg {
@@ -1703,11 +1737,11 @@ ul li::before {
 
   .curtisList {
     text-align: left;
-    font-size: 125%
+    font-size: 125%;
   }
 
   .documentaryContainer {
-    max-width: 50vw
+    max-width: 50vw;
   }
 
   .webinarBackground {
@@ -1718,7 +1752,7 @@ ul li::before {
 
   .webinarImage {
     width: 80%;
-    height: auto
+    height: auto;
   }
 
   .webinar {
@@ -1742,7 +1776,7 @@ ul li::before {
     width: 100vw;
     margin: 0px;
     padding: 0px;
-    overflow: hidden
+    overflow: hidden;
   }
 }
 
@@ -1781,13 +1815,13 @@ ul li::before {
 .upsidedown {
   transform: rotate(180deg);
   z-index: 100;
-  padding-bottom: 3%
+  padding-bottom: 3%;
 }
 
 .cropped {
   clip: rect(0em, 83em, 100em, 0em);
   position: absolute;
-  left: 10%
+  left: 10%;
 }
 
 .carousel-root {
