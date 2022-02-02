@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Row, Col, Modal, ModalHeader, ModalBody, Button } from "reactstrap";
 import { Form } from "react-bootstrap";
 import { agentService } from "../../../services/AgentService";
+import { contactService } from "../../../services/ContactService";
 
 export class CalcContact extends Component {
   constructor(props) {
@@ -26,6 +27,21 @@ export class CalcContact extends Component {
 //     const agent = await agentService.one(agentObject);
 //     this.setState({ agent });
 //   }
+
+  async createContact() {
+    const contactObject = {
+      agent: this.props.id,
+      firstname: document.getElementById("firstName").value,
+      lastname: document.getElementById("lastName").value,
+      email: document.getElementById("email").value,
+      usstate: document.getElementById("usState").value,
+      phone: document.getElementById("phone").value,
+      subject: document.getElementById("subject").value,
+      message: document.getElementById("message").value,
+    };
+    const contact = await contactService.create(contactObject);
+    console.log(contact)
+  }
 
   toggler() {
     return !this.state.modale;
@@ -67,35 +83,37 @@ export class CalcContact extends Component {
                     <Col sm={6}>
                       <Form.Group
                         className="mb-3"
-                        controlId="formGroupfirstName"
+                        controlId="firstName"
+                        
                       >
-                        <Form.Control placeholder="First Name" />
+                        <Form.Control placeholder="First Name" id="firstName" />
                       </Form.Group>
                     </Col>
                     <Col sm={6}>
                       <Form.Group
                         className="mb-3"
-                        controlId="formGrouplastName"
+                        controlId="lastName"
+                        
                       >
-                        <Form.Control placeholder="Last Name" />
+                        <Form.Control placeholder="Last Name" id="lastName"/>
                       </Form.Group>
                     </Col>
                   </Row>
                   <Row>
                     <Col xs={8}>
-                      <Form.Group className="mb-3" controlId="formGroupEmail">
+                      <Form.Group className="mb-3" controlId="email" >
                         <p style={{ textAlign: "left", marginBottom: "0px" }}>
                           Email address
                         </p>
-                        <Form.Control type="email" placeholder="Enter email" />
+                        <Form.Control type="email" placeholder="Enter email" id="email"/>
                       </Form.Group>
                     </Col>
                     <Col xs={4}>
-                      <Form.Group className="mb-3" controlId="formGroupState">
+                      <Form.Group className="mb-3" controlId="usState" >
                         <p style={{ textAlign: "left", marginBottom: "0px" }}>
                           State
                         </p>
-                        <Form.Select>
+                        <Form.Select id="usState">
                           <option></option>
                           <option value="AL">Alabama</option>
                           <option value="AK">Alaska</option>
@@ -159,23 +177,23 @@ export class CalcContact extends Component {
                     </Col>
                   </Row>
                   <Row>
-                    <Form.Group className="mb-3" controlId="formGroupPhone">
+                    <Form.Group className="mb-3" controlId="phone" >
                       <p style={{ textAlign: "left", marginBottom: "0px" }}>
                         Phone
                       </p>
-                      <Form.Control placeholder="(123)456-7890" />
+                      <Form.Control placeholder="(123)456-7890" id="phone"/>
                     </Form.Group>
                   </Row>
                   <Row>
-                    <Form.Group className="mb-3" controlId="formGroupSubject">
+                    <Form.Group className="mb-3" controlId="subject" >
                       <p style={{ textAlign: "left", marginBottom: "0px" }}>
                         Subject
                       </p>
-                      <Form.Control placeholder="Enter Subject" />
+                      <Form.Control placeholder="Enter Subject" id="subject"/>
                     </Form.Group>
                   </Row>
                   <Row>
-                    <Form.Group className="mb-3" controlId="formGroupText">
+                    <Form.Group className="mb-3" controlId="message" >
                       <p style={{ textAlign: "left", marginBottom: "0px" }}>
                         Your Message
                       </p>
@@ -183,6 +201,7 @@ export class CalcContact extends Component {
                         as="textarea"
                         rows={3}
                         placeholder="Enter Message"
+                        id="message"
                       />
                     </Form.Group>
                   </Row>
@@ -192,6 +211,9 @@ export class CalcContact extends Component {
                         backgroundColor: ag.primaryColor,
                         textShadow: "1px 1px black",
                         color: ag.textColor ? ag.textColor : "white",
+                      }}
+                      onClick={() => {
+                        this.createContact()
                       }}
                     >
                       Submit

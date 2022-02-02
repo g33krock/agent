@@ -198,23 +198,23 @@ const getAddAgents = (request, response) => {
 const createContact = (request, response) => {
   const {
     agent,
-    firstName,
-    lastName,
+    firstname,
+    lastname,
     email,
-    usState,
+    usstate,
     phone,
     subject,
     message,
   } = request.body;
 
   pool.query(
-    "INSERT INTO contact (agent, firstName, lastName, email, usState, phone, subject, message) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)",
+    "INSERT INTO contact (agent, firstname, lastname, email, usstate, phone, subject, message) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)",
     [
     agent,
-    firstName,
-    lastName,
+    firstname,
+    lastname,
     email,
-    usState,
+    usstate,
     phone,
     subject,
     message,
