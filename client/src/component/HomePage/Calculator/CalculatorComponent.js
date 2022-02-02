@@ -1272,7 +1272,7 @@ export const Calculator = (props) => {
                                   id="AnnualRetirementIncome"
                                   name="AnnualRetirementIncome"
                                   value=""
-                                  placeholder=""
+                                  placeholder="0%"
                                   className="form-control ccm-input-text"
                                   readOnly
                                 />
@@ -1296,7 +1296,7 @@ export const Calculator = (props) => {
                                   id="RothMonthly"
                                   name="RothMonthly"
                                   value=""
-                                  placeholder=""
+                                  placeholder="0%"
                                   className="form-control ccm-input-text"
                                   readOnly
                                 />

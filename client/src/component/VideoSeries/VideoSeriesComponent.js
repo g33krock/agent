@@ -31,6 +31,20 @@ export class VideoSeries extends Component {
     };
   }
 
+  documentary = {
+    id: "65",
+    created_at: "2022-02-02T17:48:34.000Z",
+    title: "Curtis Ray: Everyone Ends Up Poor Documentary",
+    vidlink:
+      "https://www.youtube.com/embed/aYqGbT1PzHE",
+    poster:
+      "https://compoundinterest.com/wp-content/uploads/2021/11/Chapter-1_-Welcome-to-Compound-Interest_-The-Retirement-You-Deserve.png",
+    number: 100,
+    category: "documentary",
+    curtisBanner: "block",
+    user: null,
+  }
+
   async componentDidMount() {
     const ID = this.props.Id;
     const agentObject = { agentID: ID };
@@ -71,6 +85,10 @@ export class VideoSeries extends Component {
     console.log(this.state.video);
     this.theCurtisBlock();
   };
+
+  setDocumentary = () => {
+    this.setState({ video: this.documentary})
+  }
 
   theCurtisBlock = () => {
     if (this.state.video.id < 17) {
@@ -159,6 +177,7 @@ export class VideoSeries extends Component {
                     style={{
                       width: "65%",
                     }}
+                    onClick={this.setDocumentary}
                   >
                     MPI®
                     <br />
@@ -361,6 +380,7 @@ export class VideoSeries extends Component {
                       frameBorder="4"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
+                      autoplay
                       style={{
                         border: "4px solid black",
                         backgroundColor: "black",
